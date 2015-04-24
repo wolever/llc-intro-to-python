@@ -14,7 +14,7 @@ def attendees_in_city(city, reader):
         if row['Event Name'].find(city) > 0:
             attendee_count += 1
 
-    print("%d people attended events in %s in 2014" % (attendee_count, city))
+    print("{attendees} people attended events in {city} in 2014".format(attendees=attendee_count, city=city))
 
 
 def youth_event_attendees(reader):
@@ -24,7 +24,7 @@ def youth_event_attendees(reader):
         if name.find('Kid') > 0 or name.find('Girl') > 0:
             attendee_count += 1
 
-    print("%d people attended youth events in 2014" % attendee_count)
+    print("{count} people attended youth events in 2014".format(count=attendee_count))
 
 
 def py_ruby_workshops(reader):
@@ -37,7 +37,7 @@ def py_ruby_workshops(reader):
         elif name.find('Ruby') > 0:
             ruby_count += 1
 
-    print("Ruby got %d attendees while Python got %d" % (ruby_count, python_count))
+    print("Ruby got {ruby} attendees while Python got {python}".format(ruby=ruby_count, python=python_count))
 
 
 def volunteers(reader):
@@ -51,7 +51,8 @@ def volunteers(reader):
         elif ticket_type.find('Mentor') > 0 or ticket_type.find('Volunteer') > 0:
             Volunteer_count += 1
 
-    print("There were %d volunteers or mentors, but %d Volunteers or Mentors. Wait, what??" % (volunteer_count, Volunteer_count))
+    print("There were {lower} volunteers or mentors, but {upper} Volunteers or Mentors. Wait, what??".format(
+        lower=volunteer_count, upper=Volunteer_count))
 
 
 def main(filename):
