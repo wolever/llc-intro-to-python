@@ -223,11 +223,7 @@
         >>> 1 / 2
         0
         ```
-
-        ```
-        >>> float(1) / float(2)
-        0.5
-        ```
+        Why is 1 / 2 = 0? We&#39;ll come back to that.
         
       </script>
     </section>
@@ -266,17 +262,11 @@
       <script type="text/template">
         ## Why did that error happen?
 
-        * Programming languages have "types"
+        * Python needs to know what "type" something is so it can figure out how to work with it. 
         * The first 2 is an integer.
         * "2" is a string, or "literal text". 
-        * Python can&#39;t figure out that "2" is really a number.
+        * Python can&#39;t figure out how to add a number and string, so it spit out an error.
 
-        ```
-        >>> print(2 + int("2"))
-        4
-        ```
-        
-        The ability to tell python to change the "type" will come in handy later.
       </script>
     </section>
 
@@ -296,6 +286,27 @@
         ```
       </script>
     </section>
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Typecasting
+
+         We can tell python how to convert that "2" into a number.
+
+        ```
+        >>> print(2 + int("2"))
+        4
+        ```
+         And we can fix that problem from before where 1/2 = 0
+        ```
+        >>> print(float(1) / float(2))
+        0.5
+        ```
+
+        The ability to tell python to change the "type" will come in handy later.
+      </script>
+    </section>
+
+
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -431,7 +442,21 @@
       </script>
     </section>
 
-      <section class="slide" data-markdown>
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Indentation
+        
+         * Python uses indentation to figure out which code goes with which if
+         ```
+        if x > 5:
+              print("x is greater than 5!")
+        else:
+        print("x is something else!")
+        ```
+      </script>
+    </section>
+
+<section class="slide" data-markdown>
       <script type="text/template">
         ## And / Or
         
@@ -442,7 +467,77 @@
       </script>
     </section>
 
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Loops
+        
+         * Sometimes we want the program to do something many times
+         * Computers are excellent at repetitive tasks
+      </script>
+</section>
 
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Type of Loops
+        
+          * A **while** loop runs forever until you tell it to stop
+          ```
+        while True:
+              print("Are we there yet?")
+        ```
+          * A **for** loop needs to know exactly how many times to run
+
+          ```
+        for i in range(1,10):
+              print(i)
+        ```
+      </script>
+</section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## For Loops
+        
+          * Today we will be using for loops
+      </script>
+</section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Lists
+        
+          * Programming languages have data structures
+          * You can store multiple things in one variable name 
+          * Each list element has an index, starting at 0
+
+          ```
+        my_list = [1234, "hello", True]
+
+          ```
+          * There are others! [Link to documentation]
+      </script>
+</section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Lists
+        
+          * Grab one list element by using square brackets
+
+          ```
+        >>> my_list[0]
+        1234
+
+          ```
+          * You can add to a list
+          ```
+        my_list.append("another thing")
+        >>> print(my_list)
+        [1234, 'hello', True, 'another thing']
+
+          ```
+      </script>
+</section>
     <!-- Last slide -->
     <section class="slide last">
       <h2>Thank you!</h2>
