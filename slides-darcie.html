@@ -97,18 +97,15 @@
       ###Afternoon
 
       * Loops
-      * point 4
+      * Lists
+      * File I/O
+      * Exceptions
+      * Final Project
+
 
     </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## What you can do with Python
-
-        * example 1
-        * example 2
-      </script>
-    </section>
+   
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -128,56 +125,323 @@
 
       You will need:
 
-      1. **editor** - 
+      1. **[Python 2.7.x installed](https://www.python.org/downloads/)**
+      1. **[Pycharm Educational Edition](https://www.jetbrains.com/pycharm-educational/)** 
 
       1. **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
 
-      1. whatever else
+      1. Learner files from LLC (containing the csv files)
     </section>
 
     <section class="slide title" data-markdown>
       <script type="text/template">
-        # Data Types
+        # Let&#39;s get started
+      </script>
+    </section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## What is programming?
+
+        * Programming is giving instructions to your computer to get it to do things for you
+        * Except computers are stupid and need very specific instructions
+        * We use a programming language to give the computer instructions in a form that it can understand 
+        * Programming languages have syntax, just like human languages do
+
       </script>
     </section>
 
 
-    <section class="slide" data-markdown>
+ <section class="slide" data-markdown>
       <script type="text/template">
-        ## Data Types: first concept
+        ## Why Python Is Awesome
 
-        Summary of concept. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi voluptatibus quis odio possimus officia odit nisi? In, molestias ipsam. Totam ab, corporis omnis eos ipsam eligendi dolore minima harum inventore!
+        * Free
+        * Open source
+        * Write once, run anywhere
+        * Great community
+        * The syntax looks like english
+        * Add pictures to this slide?
 
-        * examples here
-        * or key concepts
-
-        ```
-        code samples of syntax or code examples
-        ```
       </script>
     </section>
 
+      <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Who uses python?
+
+        * Data Analysis
+        * Scientific Computing
+        * Scripting
+        * Testing 
+        * Web Applications (Django, Flask)
+        * Youtube, Reddit, Pinterest, Instagram, Dropbox, The Onion
+        * Add pictures to this slide?
+
+      </script>
+    </section>
+
+
+      <section class="slide" data-markdown>
+      <script type="text/template">
+        ## PyCharm IDE
+
+        * IDE (Integrated Development Environment)
+        * IDEs help us write code faster with fewer mistakes
+        * "http://33.media.tumblr.com/01744bb3d8772b180de821b6cb9e31f1/tumblr_mormzpYsBZ1s410g9o2_400.gif"
+
+      </script>
+    </section> 
+
+         <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Tour of PyCharm
+
+        * Add Screenshots
+
+      </script>
+    
+    </section> 
+
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Getting your site online
+        ## Python can do math
 
-        [Affiliate info for last slide]
+        Open up the console in PyCharm (screenshot?)
 
-        You will need to register a domain name (www.mysite.com) and get hosting. Here are a couple domain & hosting suggestions:
+        ```
+        >>> 2 + 2
+        4
+        ```
+
+        ```
+        >>> 2 * 15
+        30
+        ```
+
+        ```
+        >>> 1 / 2
+        0
+        ```
+
+        ```
+        >>> float(1) / float(2)
+        0.5
+        ```
         
-        * [hover.com](http://hover.com/ladiescode) - Domain registration
-        * [dreamhost.com](http://www.dreamhost.com/r.cgi?2085384) - Domain and hosting - Use coupon code **LLC40** to get $40 off your registration!
-
-        To get your files online, you will need upload your files to your newly purchased hosting server. There are a few pieces of information you will need and are usually provided to you by your hosting service provider.
-
-        * FTP Address
-        * Username
-        * Password
-
-        Here's a nice tutorial getting your files online using FileZilla: [FileZilla Client Tutorial](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)  
-        Feeling adventurous? Try [Hosting Static Sites on Github for Beginners](http://thephuse.com/development/hosting-static-sites-on-github-for-beginners/).
       </script>
     </section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Printing
+
+
+        ```
+        >>> print("Hello World!")
+        Hello World!
+        ```
+
+         ```
+        >>> print("Hello " + "World!")
+        Hello World!
+        ```
+
+        ```
+        >>> print(2 + 2)
+        4
+        ```
+
+        ```
+        >>> print(2 + "2")
+        Traceback (most recent call last):
+        File "<input>", line 1, in <module>
+        TypeError: unsupported operand type(s) for +: 'int' and 'str'
+        ```
+        
+      </script>
+    </section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Why did that error happen?
+
+        * Programming languages have "types"
+        * The first 2 is an integer.
+        * "2" is a string, or "literal text". 
+        * Python can&#39;t figure out that "2" is really a number.
+
+        ```
+        >>> print(2 + int("2"))
+        4
+        ```
+        
+        The ability to tell python to change the "type" will come in handy later.
+      </script>
+    </section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Types
+        * Numbers (such as integer &amp; float)
+        * Strings 
+        * Boolean (true, false)
+        * lists
+        * and more!
+        * Use type() to figure out what type something is. 
+
+        ```
+        >>> type("hello")
+        <type 'str'>
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Variables
+        * We usually want to store a value to use later 
+        * Variables are boxes in your computer&#39;s memory that you can store stuff in
+        * Use the '=' symbol to assign a value to a variable
+
+        ```
+        >>> x = 5
+        >>> y = 4
+        >>> x * y
+        20
+
+        ```
+
+        ```
+        >>> today = "Saturday"
+        >>> print("Today is " + today)
+        Today is Saturday
+        ```
+      </script>
+    </section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Variables
+        * Variables can vary
+        * Anything else we can add here?
+
+        ```
+        >>> x = 10
+        >>> x * y
+        40
+        ```
+      </script>
+    </section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Create your first program
+        * Create a new project </br>
+        File > New Project > Pure Python  
+        * Right click on the project </br>
+        New > Python File </br>
+        [Insert what the name will be here]
+        * Add Screenshot?
+
+      </script>
+    </section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Create your first program
+        ```
+        Type the text of the program here 
+        ```
+        Save it, then run it by clicking the [put green arrow picture here] button 
+
+      </script>
+    </section>
+
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Comments
+        * Programmers use <i>comments</i> to leave notes for themselves
+        * Add some comments to your program 
+        ```
+        # Python will ignore anything after the # symbol
+        ```
+
+      </script>
+    </section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Conditionals &amp; Logic
+        * The program we just wrote ran straight from top to bottom
+        * What if the program could act differently and decide what to do?
+        * Each "if" statement contains a test, and the intented block below is the code that will run if the test is **true** but not if it is **false**
+        ```
+        example:
+        if it is cold outside:
+            wear a sweater
+        elif it is raining:
+            bring an umbrella
+        else:
+            dress normally :)
+        ```
+
+        [Not sure if we should add elif to a later slide after the examples or leave it here]
+
+      </script>
+    </section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Examples
+        
+         Check for equality
+         ```
+        if x = 5:
+            print("x is 5!")
+        else:
+            print("x is something else!")
+        ```
+        Check for inequality
+        ```
+        if x != 5:
+            print "x is something else! "
+        else:
+            print("x is 5!")
+        ```
+        
+      </script>
+    </section>
+
+  <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Examples
+        
+         Use The Math Operators: </br>
+         [Put this in a table?] </br>
+         Greater than >  </br>
+         Less than <  </br>
+         Greater than or equal to >= </br>
+         Less than or equal to <= </br>
+         ```
+        if x > 5:
+            print("x is greater than 5!")
+        ```
+      </script>
+    </section>
+
+      <section class="slide" data-markdown>
+      <script type="text/template">
+        ## And / Or
+        
+         Add this content if we need it for the project 
+         ```
+        example
+        ```
+      </script>
+    </section>
+
 
     <!-- Last slide -->
     <section class="slide last">
