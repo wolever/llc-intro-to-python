@@ -55,6 +55,28 @@ def volunteers(reader):
         lower=volunteer_count, upper=Volunteer_count))
 
 
+def national_learn_code(reader):
+    attendee_count = 0
+
+    for row in reader:
+        name = row['Event Name']
+        if name.find('National Learn to Code Day') >= 0:
+            attendee_count += 1
+
+    print("{coders} attended National Learn to Code Day".format(coders=attendee_count))
+
+
+def national_girls_code(reader):
+    attendee_count = 0
+
+    for row in reader:
+        name = row['Event Name']
+        if name.find('Girls Learning Code Day') >= 0:
+            attendee_count += 1
+
+    print("{coders} attended Girls Learning Code Day".format(coders=attendee_count))
+
+
 def main(filename):
     workshop_file = open(filename)
 
@@ -70,6 +92,12 @@ def main(filename):
 
     workshop_file.seek(0)
     volunteers(reader)
+
+    workshop_file.seek(0)
+    national_learn_code(reader)
+
+    workshop_file.seek(0)
+    national_girls_code(reader)
 
     workshop_file.close()
 
