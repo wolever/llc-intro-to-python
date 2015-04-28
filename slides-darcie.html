@@ -404,7 +404,7 @@
 
          Check for equality
          ```
-        if x = 5:
+        if x == 5:
             print("x is 5!")
         else:
             print("x is something else!")
@@ -455,10 +455,34 @@
       <script type="text/template">
         ## And / Or
 
-         Add this content if we need it for the project
+         Suppose we want multiple things to be true before we run the code in the indented block. 
          ```
-        example
+        example:
+        if it is cold outside AND it is snowing:
+            wear a winter jacket
+        if it is raining OR it is snowing:
+            bring a change of socks
         ```
+        And : Both of the things need to be true </br>
+        Or : Either one, or both of the things need to be true.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## And / Or
+         
+         ```
+        example:
+        x = 5
+        if x > 0 and x < 6:
+            print("x is between 0 and 6.")
+        if x > 10 or type(x)==int:
+            print("x is an integer, but less than 10.")
+        if x > 10 and type(x)==int:
+            print("This will not print out.")
+        ```
+        
       </script>
     </section>
 
@@ -531,6 +555,93 @@
           ```
       </script>
 </section>
+      <!-- Opening a file --> 
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Comma Separated Value (CSV) Files
+        A CSV file looks something like this:
+         ```
+        Example: Breakfast foods
+
+        Weekday, Food, Drink, Location
+        Monday, Eggs, Juice, Home
+        Tuesday, Oatmeal, Coffee, Work
+        Wednesday, Pancakes, Tea, Home
+        Thursday, Nutella Crepes, Cappucino, Cafe
+        ... and so on.
+        ```
+        Each item on each row has something to do with a particular <i>instance</i> of breakfast. The day, food, drinks, and where you ate it.  </br>
+
+      </script>
+</section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Libraries
+
+        Our goal with the final project will be to get python to open up a file for us and look through it for information.
+        
+        In pycharm, open up the file <i>llc-chapters.csv</i>. It has the same kind of format as the last example. 
+
+        Python has wonderful built in <i>libraries</i> which are collections of code that other people have written. 
+
+        Today we will use a library called <i>csv</i>. It contains instructions that tell python how to work with csv files. 
+
+        More info: https://docs.python.org/2/library/csv.html
+
+      </script>
+</section>
+
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## Opening a File
+
+        Create a new python file in pycharm called 'chapterleads.py'.  
+
+        To access the code in the csv library, type: 
+         ```
+        import csv
+        ```
+        To open the file, and print out the contents, type: 
+        ```
+        csv_file = open('llc-chapters.csv')
+        csv_data = csv.reader(csv_file)
+
+        for row in csv_data:
+            print(row)
+        ```
+        Then run the file. 
+      </script>
+</section>
+
+<section class="slide" data-markdown>
+      <script type="text/template">
+        ## What does it all mean?
+
+        Christina please create a table so we can compare the code line by line.
+        data for the right hand side is in comments.
+         ```
+        import csv     #fetch the library
+       
+        csv_file = open('llc-chapters.csv') # open the file and store it in this variable. 
+        csv_data = csv.reader(csv_file) # From the csv library, get a function called reader. It goes through each line of the file and stores whatever it finds in a list of strings. 
+
+        for row in csv_data:   #for each row of data that the reader got for us, print it out.
+            print(row)
+        ```
+
+      </script>
+</section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Lunch! 
+      </script>
+    </section>
+
+<!-- Afternoon Content-->
+
     <!-- Last slide -->
     <section class="slide last">
       <h2>Thank you!</h2>
