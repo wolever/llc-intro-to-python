@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="framework/css/highlightjs-themes/github.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/theme-llc.css" data-noprefix>
-  <link rel="shortcut icon" href="framework/img/favicon.ico"> 
+  <link rel="shortcut icon" href="framework/img/favicon.ico">
 
   <!-- Workshop-specific styles -->
   <link rel="stylesheet" href="framework/css/workshop.css" data-noprefix>
@@ -26,7 +26,7 @@
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body data-duration="360">
-  
+
   <!-- Welcome slide -->
   <header class="slide intro first">
     <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
@@ -67,16 +67,6 @@
       </div>
     </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Documentation
-
-        View documentation here: http://ladieslearningcode.github.io/llc-slidedeck-template/slides.html
-
-        Sample/example starter slides to follow. 
-      </script>
-    </section>
-
 <section class="slide" data-markdown>
       ## About me
 
@@ -105,18 +95,18 @@
 
     </section>
 
-   
-
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Today's project
+
+        Imagine you're organising **National Learn to Code Day 2015**. You want it to be an *even bigger success* than last year, so not only do you need to know how many people attended (so you can beat that target), but you also want to pull other salient stats to put in a press release – news outlets *love* stats. 
         
-        Imagine you’re organising workshops for Ladies Learning Code. In order to serve participants and improve the program, you need to know what’s working and who is coming to workshops. When you have larger sets of data, it can be helpful to use computers to analyse it and filter out smaller subsets depending on the questions you want to answer. 
-
-
-        ![Today's project](framework/img/workshop/)
-
-        Follow this [link](project/final/index.html) to see the project in action!
+        Computers are very good at repetitive tasks, but they require *precise instructions*. Today, you'll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2014.
+        
+        <small>Whether you take these tools and apply them to your own data or keep using the tools you know, by the end of the day, you'll hopefully have greater confidence in leveraging computers to do your work faster and focus on what matters to you.</small>
+        
+        
+        
       </script>
     </section>
 
@@ -126,7 +116,7 @@
       You will need:
 
       1. **[Python 2.7.x installed](https://www.python.org/downloads/)**
-      1. **[Pycharm Educational Edition](https://www.jetbrains.com/pycharm-educational/)** 
+      1. **[Pycharm Educational Edition](https://www.jetbrains.com/pycharm-educational/)**
 
       1. **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
 
@@ -145,7 +135,7 @@
 
         * Programming is giving instructions to your computer to get it to do things for you
         * Except computers are stupid and need very specific instructions
-        * We use a programming language to give the computer instructions in a form that it can understand 
+        * We use a programming language to give the computer instructions in a form that it can understand
         * Programming languages have syntax, just like human languages do
 
       </script>
@@ -173,7 +163,7 @@
         * Data Analysis
         * Scientific Computing
         * Scripting
-        * Testing 
+        * Testing
         * Web Applications (Django, Flask)
         * Youtube, Reddit, Pinterest, Instagram, Dropbox, The Onion
         * Add pictures to this slide?
@@ -188,20 +178,25 @@
 
         * IDE (Integrated Development Environment)
         * IDEs help us write code faster with fewer mistakes
-        * "http://33.media.tumblr.com/01744bb3d8772b180de821b6cb9e31f1/tumblr_mormzpYsBZ1s410g9o2_400.gif"
+
+        ![Yes! That is awesome!](http://33.media.tumblr.com/01744bb3d8772b180de821b6cb9e31f1/tumblr_mormzpYsBZ1s410g9o2_400.gif)
 
       </script>
-    </section> 
+    </section>
 
-         <section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
-        ## Tour of PyCharm
+        ## Running Python in PyCharm
 
-        * Add Screenshots
+        1. Open the console  
+        ![Tools &gt; Python Console&hellip;](./framework/img/workshop/tool-open-console.png)
+
+        2. Python is ready to do your bidding…  
+        ![Python Console in PyCharm](./framework/img/workshop/python-console.png)
 
       </script>
-    
-    </section> 
+
+    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -224,7 +219,7 @@
         0
         ```
         Why is 1 / 2 = 0? We&#39;ll come back to that.
-        
+
       </script>
     </section>
 
@@ -251,10 +246,10 @@
         ```
         >>> print(2 + "2")
         Traceback (most recent call last):
-        File "<input>", line 1, in <module>
+        File "&lt;input>", line 1, in &lt;module>
         TypeError: unsupported operand type(s) for +: 'int' and 'str'
         ```
-        
+
       </script>
     </section>
 
@@ -262,9 +257,9 @@
       <script type="text/template">
         ## Why did that error happen?
 
-        * Python needs to know what "type" something is so it can figure out how to work with it. 
+        * Python needs to know what "type" something is so it can figure out how to work with it.
         * The first 2 is an integer.
-        * "2" is a string, or "literal text". 
+        * "2" is a string, or "literal text".
         * Python can&#39;t figure out how to add a number and string, so it spit out an error.
 
       </script>
@@ -274,11 +269,11 @@
       <script type="text/template">
         ## Types
         * Numbers (such as integer &amp; float)
-        * Strings 
+        * Strings
         * Boolean (true, false)
         * lists
         * and more!
-        * Use type() to figure out what type something is. 
+        * Use type() to figure out what type something is.
 
         ```
         >>> type("hello")
@@ -311,7 +306,7 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Variables
-        * We usually want to store a value to use later 
+        * We usually want to store a value to use later
         * Variables are boxes in your computer&#39;s memory that you can store stuff in
         * Use the '=' symbol to assign a value to a variable
 
@@ -348,10 +343,10 @@
 <section class="slide" data-markdown>
       <script type="text/template">
         ## Create your first program
-        * Create a new project </br>
-        File > New Project > Pure Python  
-        * Right click on the project </br>
-        New > Python File </br>
+        * Create a new project  
+        File > New Project > Pure Python
+        * Right click on the project  
+        New > Python File  
         [Insert what the name will be here]
         * Add Screenshot?
 
@@ -362,9 +357,9 @@
       <script type="text/template">
         ## Create your first program
         ```
-        Type the text of the program here 
+        Type the text of the program here
         ```
-        Save it, then run it by clicking the [put green arrow picture here] button 
+        Save it, then run it by clicking the [put green arrow picture here] button
 
       </script>
     </section>
@@ -374,7 +369,7 @@
       <script type="text/template">
         ## Comments
         * Programmers use <i>comments</i> to leave notes for themselves
-        * Add some comments to your program 
+        * Add some comments to your program
         ```
         # Python will ignore anything after the # symbol
         ```
@@ -406,7 +401,7 @@
 <section class="slide" data-markdown>
       <script type="text/template">
         ## Examples
-        
+
          Check for equality
          ```
         if x = 5:
@@ -421,7 +416,7 @@
         else:
             print("x is 5!")
         ```
-        
+
       </script>
     </section>
 
@@ -429,15 +424,15 @@
       <script type="text/template">
         ## Examples
         
-         Use The Math Operators: </br>
-         [Put this in a table?] </br>
-         Greater than >  </br>
-         Less than <  </br>
-         Greater than or equal to >= </br>
-         Less than or equal to <= </br>
-         ```
+        Use The Math Operators:  
+        `>` Greater than  
+        `<` Less than  
+        `>=` Greater than or equal to  
+        `<=` Less than or equal to  
+
+        ```python
         if x > 5:
-            print("x is greater than 5!")
+           print("x is greater than 5!")
         ```
       </script>
     </section>
@@ -445,7 +440,7 @@
 <section class="slide" data-markdown>
       <script type="text/template">
         ## Indentation
-        
+
          * Python uses indentation to figure out which code goes with which if
          ```
         if x > 5:
@@ -459,8 +454,8 @@
 <section class="slide" data-markdown>
       <script type="text/template">
         ## And / Or
-        
-         Add this content if we need it for the project 
+
+         Add this content if we need it for the project
          ```
         example
         ```
@@ -470,7 +465,7 @@
 <section class="slide" data-markdown>
       <script type="text/template">
         ## Loops
-        
+
          * Sometimes we want the program to do something many times
          * Computers are excellent at repetitive tasks
       </script>
@@ -479,7 +474,7 @@
 <section class="slide" data-markdown>
       <script type="text/template">
         ## Type of Loops
-        
+
           * A **while** loop runs forever until you tell it to stop
           ```
         while True:
@@ -497,7 +492,7 @@
 <section class="slide" data-markdown>
       <script type="text/template">
         ## For Loops
-        
+
           * Today we will be using for loops
       </script>
 </section>
@@ -505,9 +500,9 @@
 <section class="slide" data-markdown>
       <script type="text/template">
         ## Lists
-        
+
           * Programming languages have data structures
-          * You can store multiple things in one variable name 
+          * You can store multiple things in one variable name
           * Each list element has an index, starting at 0
 
           ```
@@ -521,16 +516,14 @@
 <section class="slide" data-markdown>
       <script type="text/template">
         ## Lists
-        
-          * Grab one list element by using square brackets
 
-          ```
+        * Grab one list element by using square brackets
+        ```
         >>> my_list[0]
         1234
-
-          ```
-          * You can add to a list
-          ```
+        ```
+        * You can add to a list
+        ```
         my_list.append("another thing")
         >>> print(my_list)
         [1234, 'hello', True, 'another thing']
@@ -564,7 +557,7 @@
     <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
     <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
   </footer>
-  
+
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="framework/scripts/slideshow.js"></script>
 
