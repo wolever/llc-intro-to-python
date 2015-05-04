@@ -99,11 +99,15 @@
       <script type="text/template">
         ## Today's project
 
-        Imagine you're organising **National Learn to Code Day 2015**. You want it to be an *even bigger success* than last year, so not only do you need to know how many people attended (so you can beat that target), but you also want to pull other salient stats to put in a press release – news outlets *love* stats. 
+        Imagine you're organizing **National Learn to Code Day 2015**. 
+
+        You want it to be an *even bigger success* than last year, so not only do you need to know how many people attended (so you can beat that target), but you also want to pull other salient stats to put in a press release – news outlets *love* stats. 
         
-        Computers are very good at repetitive tasks, but they require *precise instructions*. Today, you'll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2014.
+        Computers are very good at repetitive tasks, but they require *precise instructions*. 
+
+        Today, you'll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2014.
         
-        <small>Whether you take these tools and apply them to your own data or keep using the tools you know, by the end of the day, you'll hopefully have greater confidence in leveraging computers to do your work faster and focus on what matters to you.</small>
+        Whether you take these tools and apply them to your own data or keep using the tools you know, by the end of the day, you'll hopefully have greater confidence in leveraging computers to do your work faster and focus on what matters to you.
       </script>
     </section>
 
@@ -112,12 +116,14 @@
 
       You will need:
 
-      1. **[Python 2.7.x installed](https://www.python.org/downloads/)**
+      1. **Python 2.7.x installed** ( [Mac](https://www.python.org/downloads/), [Windows](https://www.python.org/downloads/windows/) )
       1. **[Pycharm Educational Edition](https://www.jetbrains.com/pycharm-educational/)**
 
-      1. **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
+      1. **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). 
 
-      1. Learner files from LLC (containing the csv files)
+        (Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.) 
+
+      1. Learner files from LLC (containing the csv files), located in the **exercises** folder.
     </section>
 
     <section class="slide title" data-markdown>
@@ -131,29 +137,24 @@
         ## What is programming?
 
         * Programming is giving instructions to your computer to get it to do things for you
-        * Except computers are stupid and need very specific instructions
+        * Computers need *very specific* instructions
         * We use a programming language to give the computer instructions in a form that it can understand
         * Programming languages have syntax, just like human languages do
 
+        <div class="delayed">
+          <h3>Why Python Is Awesome</h3>
+          <ul>
+            <li>Free</li>
+            <li>Open source</li>
+            <li>Write once, run anywhere</li>
+            <li>Great community</li>
+            <li>The syntax looks like English</li>
+          </ul>
+        </div>
       </script>
     </section>
 
-
- <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Why Python Is Awesome
-
-        * Free
-        * Open source
-        * Write once, run anywhere
-        * Great community
-        * The syntax looks like english
-        <!--* Add pictures to this slide?-->
-
-      </script>
-    </section>
-
-      <section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Who uses python?
 
@@ -169,15 +170,23 @@
     </section>
 
 
-      <section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## PyCharm IDE
 
         * IDE (Integrated Development Environment)
         * IDEs help us write code faster with fewer mistakes
 
-        ![Yes! That is awesome!](http://33.media.tumblr.com/01744bb3d8772b180de821b6cb9e31f1/tumblr_mormzpYsBZ1s410g9o2_400.gif)
+        ![Yes! That is awesome!](http://33.media.tumblr.com/01744bb3d8772b180de821b6cb9e31f1/tumblr_mormzpYsBZ1s410g9o2_400.gif) <!-- .element: class="delayed" style="width: 75%" -->
 
+        [TODO open/setting up PyCharm? new project?]
+
+        ![](framework/img/workshop/pycharm-ide1.png)
+        ![](framework/img/workshop/pycharm-ide2.png)
+        ![](framework/img/workshop/pycharm-ide3.png)
+
+        ![](framework/img/workshop/view-toolbar1.png)
+        ![](framework/img/workshop/view-toolbar2.png)
       </script>
     </section>
 
@@ -186,10 +195,18 @@
         ## Running Python in PyCharm
 
         1. Open the console  
-        ![Tools &gt; Python Console&hellip;](./framework/img/workshop/tool-open-console.png)
+
+          Windows (?)  
+          ![Tools &gt; Python Console&hellip;](./framework/img/workshop/tool-open-console.png)
+
+          Mac   
+          ![Tools &gt; Python Console&hellip;](./framework/img/workshop/tool-open-console-mac.png)
 
         2. Python is ready to do your bidding…  
-        ![Python Console in PyCharm](./framework/img/workshop/python-console.png)
+
+          ![Python Console in PyCharm](./framework/img/workshop/python-console.png)
+
+         Note the `>>>` symbol. It is used by the console to represent a space for you to enter your input but you don&#39;t have to actually type it.
 
       </script>
 
@@ -203,7 +220,7 @@
       <script type="text/template">
         ## Python can do math
 
-        Open up the console in PyCharm (see previous slide)
+        Open up the console in PyCharm (see previous slide) and try out these examples. The command you input into the console after the `>>>` gets *evaluated* and a value is returned back to you.
 
         ```
         >>> 2 + 2
@@ -219,7 +236,7 @@
         >>> 1 / 2
         0
         ```
-        Why is `1 / 2 = 0`? We'll come back to that.
+        Why is `1 / 2 = 0`? We&#39;ll come back to that.
 
       </script>
     </section>
@@ -228,21 +245,21 @@
       <script type="text/template">
         ## Printing
 
-        The `print()` function outputs values to the screen
+        The `print()` **function** outputs values to the screen. Functions at its most basic definition holds a set of instructions. More on functions later. Also, note the usage of quotes. 
 
         ```
         >>> print("Hello World!")
         Hello World!
         ```
 
-         ```
-        >>> print("Hello " + "World!")
-        Hello World!
-        ```
-
         ```
         >>> print(2 + 2)
         4
+        ```
+
+        ```
+        >>> print("Hello " + "World!")
+        Hello World!
         ```
 
         ```python
@@ -258,10 +275,27 @@
       <script type="text/template">
         ## Why did that error happen?
 
-        * Python needs to know what "type" something is so it can figure out how to work with it.
+        Python needs to know what **type** something is to figure out how to work with it.  Let&#39;s look at the examples again.
+
+        ```python
+        >>> print(2 + "2")
+        Traceback (most recent call last):
+        File "<input>", line 1, in <module>
+        TypeError: unsupported operand type(s) for +: 'int' and 'str'
+        ```
+
+
         * The first 2 is an integer.
-        * "2" is a string, or "literal text".
-        * Python can&#39;t figure out how to add a number and string, so it spit out an error.
+        * `"2"` enclosed in the quotes, is a **string** type, or "literal text".
+        * Python can&#39;t figure out how to add a number and string, so it spits out an error.
+
+
+        ```
+        >>> print("Hello " + "World!")
+        Hello World!
+        ```
+
+        The above example doesn&#39;t output an error because both `"Hello "` and `"World!"` are both strings.  "Adding" strings together is called **concatenation** and it simply joins the strings.
 
       </script>
     </section>
@@ -274,11 +308,12 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Types
-        * Numbers (such as integer &amp; float)
-        * Strings
+        * Integer (`int`, whole numbers)
+        * Float (numbers containing decimals)
+        * String (`str`, words, sentences, literal text)
         * Boolean (true, false)
-        * lists
-        * and more!
+        * list
+        * and more! [TODO: ADD LINK TO RESOURCE]
         * Use `type()` to figure out what type something is.
 
         ```
@@ -301,19 +336,20 @@
       <script type="text/template">
         ## Typecasting
 
-         We can tell python how to convert that "2" into a number.
+        We can tell Python how to convert that `"2"` into a number and change the **type**. Try it in your console.
 
         ```
         >>> print(2 + int("2"))
         4
         ```
-         And we can fix that problem from before where 1/2 = 0
+
+        And we can fix that problem from before where `1/2 = 0`
         ```
         >>> print(float(1) / float(2))
         0.5
         ```
-
-        The ability to tell python to change the "type" will come in handy later.
+        <br>
+        The ability to tell Python to change the "type" will come in handy later.
       </script>
     </section>
 
@@ -326,7 +362,7 @@
         ## Variables
         * We usually want to store a value to use later
         * Variables store data in your computer's memory (like a book in a giant bookcase)
-        * Use the '=' symbol to assign a value to a variable
+        * Use the equal (`=`) symbol to assign a value to a variable
 
         ```python
         >>> x = 5
@@ -340,14 +376,25 @@
         >>> print("Today is " + today)
         Today is Saturday
         ```
-        
-        * Variables can change over time
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Reassigning Variables
+
+        Variables can be changed after you've assigned the value by "reassigning" them.
 
         ```python
+        >>> x = 5
+        >>> y = 4
         >>> x = 10
         >>> x * y
-        40
         ```
+
+        What do you think the value of `x * y` will be?
+
+        40 <!-- .element: class="delayed" -->
       </script>
     </section>
 
@@ -359,40 +406,23 @@
       <script type="text/template">
         ## Create your first program
         
-        * Open the `llc-intro-to-python` folder on your computer  
-          File > Open…
-        * Right click on the `exercises` folder to create a new file  
-          New > Python File  
+        1.  Open the today&#39;s project files in PyCharm using **File** > **Open…** and navigating to your `llc-intro-to-python-master` folder.  It should now show in your sidebar.
+
+          ![](framework/img/workshop/open-options.png)
+
+        1. Right click or two-finger tap on the **exercises** folder to create a new file and select **New > Python File**
+
           ![Create a new Python File](./framework/img/workshop/new-file.png)
-        * Enter the name `ex1_hello_world.py`
+          ![Create a new Python File](./framework/img/workshop/new-file-mac.png)
+
+        1. Enter the name `ex1_hello_world.py`
+
+          ![new python file name](framework/img/workshop/new-python-file.png)
+
+          TODO:Your new file will open in a new tab with the `__author__ = 'yourusername'` - what is this, can it be erased?
 
       </script>
     </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Exercise 1: Hello World
-        
-        Now that you know how to use variables, we'll use a built-in function of Python `raw_input` to capture whatever you type and store it for you.  
-        
-        ```
-        # raw_input takes whatever you pass it and puts it in a variable
-        name = raw_input("Please enter your name so we can greet you: ")
-        
-        print("Hello " + name)
-        ```
-        * Save it, then run it  
-          Run > Run…  
-          ![Run your program](./framework/img/workshop/run-file.png)
-        * Click on `ex1_hello_world` (again) in the menu that appears in the middle of the screen  
-          ![Click to run your program](./framework/img/workshop/run-mini-menu.png)
-        * Now click into the console window that opened, type your name and press the Enter key  
-          ![Demo of hello_world example](./framework/img/workshop/ex1-hello-world.png)
-        * You should see you name repeated back at you
-
-      </script>
-    </section>
-
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -400,11 +430,39 @@
         * Programmers use *comments* to leave notes for themselves (and other people reading their code in the future)
         * Good comments add information that isn't immediately obvious
         * You'll see more comments throughout the exercises
+        * Feel free to add your own!
+
         ```
         # Python will ignore anything after the # symbol
         ```
       </script>
     </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Class Exercise 1: Hello World
+        
+        Now that you know how to use variables, we&#39;ll use a built-in function of Python `raw_input` to capture whatever you type and store it for you.  
+        
+        ```
+        # raw_input takes whatever you pass it and puts it in a variable (remember, this is a comment)
+        name = raw_input("Please enter your name so we can greet you: ")
+        
+        print("Hello " + name)
+        ```
+
+        1. Save it, then run it by selecting **File > Save All** and **Run > Run… ** 
+
+          ![Run your program](./framework/img/workshop/run-file.png)
+        1. Click on `ex1_hello_world` (again) in the menu popup that appears in the middle of the screen. 
+
+          ![Click to run your program](./framework/img/workshop/run-mini-menu.png)
+        1. Now click into the console window that opened, type your name and press the **Enter** key. You should see your name repeated back at you. 
+
+          ![Demo of hello_world example](./framework/img/workshop/ex1-hello-world.png)
+      </script>
+    </section>
+
 
 <!-- -------------------- -->
 <!-- Conditionals & Booleans -->
@@ -415,7 +473,8 @@
         ## Conditionals &amp; Logic
         * The program we just wrote ran straight from top to bottom
         * What if the program could act differently and decide what to do?
-        * Each `if` statement contains a test, and the intented block below is the code that will run if the test is `True` but not if it is `False`
+        * Use conidtionals like and `if` statement
+        * Each `if` statement contains a test, and the indented block is the code that will run if the test is `True` but not if it is `False` and looks something like this:
         
         ```python
         # Not real code
@@ -425,7 +484,7 @@
             dress normally :)
         ```
         
-        * Sometimes we have more conditions
+        You can also have more than one condition.
 
         ```python
         # Still not real code
@@ -443,16 +502,22 @@
       <script type="text/template">
         ## Boolean values
         
-        * How does `if` know what's `True` or `False`? We use 'Boolean' statements to test against values
+        How does `if` know what&#39;s `True` or `False`? We use 'Boolean' statements to test against values.
+
+        Reminder, one equals sign only *assigns* a value to the variable.
 
         ```python
         >>> weather = "raining"
+        ```
+        
+        Test the values. The double equals symbol (`==`) will evaluate if the value on the right matches the assigned value.
+        ```
         >>> weather == "cold"
         False
         >>> weather == "raining"
         True
         ```
-        * We can use these statements with our `if` values to test for our weather conditions
+        We can use these *statements* with our `if` values to test for our weather conditions
 
       </script>
     </section>
@@ -463,9 +528,10 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 2: Weather advice
+        ## Exercise 2: Weather advice (10 mins)
         
-        * Create a new file `ex2_weather_advice.py`
+        Create a new file `ex2_weather_advice.py` and add the below code snippet.   
+        Note the syntax and try to type in one line at a time.
         
         ```python
         # file: ex2_weather_advice.py
@@ -479,7 +545,7 @@
             print("Dress normally :)")
         ```
         
-        * Run your file a few times to get different advice (the weather is so unpredictable!)
+        Try running your file a few times to get different advice (the weather is so unpredictable!)
 
       </script>
     </section>
@@ -488,8 +554,10 @@
       <script type="text/template">
         ## Hint: Indentation
 
-        * Python uses indentation to figure out which 'block' of code belongs inside the `if` or `else`
-            * Whitespace is important in Python!
+        Python uses indentation to figure out which 'block' of code belongs inside the `if` or `else`.
+
+        Whitespace is very important in Python!
+
         
         ```python
         >>> x = 6
@@ -542,7 +610,7 @@
       <script type="text/template">
         ## And / Or
 
-        Sometimes, you can't neatly capture your conditions with one expression. You need to combine multiple expressions to determine what to do next 
+        Sometimes, you can&#39;t neatly capture your conditions with one expression. You need to combine multiple expressions to determine what to do next.
         
         ```python
         weather = "cold"
@@ -597,79 +665,82 @@
       <script type="text/template">
         ## Loops
 
-         * Sometimes we want the program to do something many times
-         * Computers are excellent at repetitive tasks
+        Sometimes we want the program to do something many times. Computers and programming are excellent at repetitive tasks.
+
+        ### While Loop
+        
+        A **while** loop runs forever until you tell it to stop.
+        
+        ```
+        while True:
+          print("Are we there yet?")
+        ```
+        
+        ### For Loop
+        A **for** loop needs to know exactly how many times to run
+
+        ```
+        for i in range(1,10):
+          print(i)
+        ```
+
+        Today we will be using **for loops** and will go into more detail in the afternoon.
       </script>
     </section>
 
-<section class="slide" data-markdown>
-      <script type="text/template">
-        ## Type of Loops
-
-          * A **while** loop runs forever until you tell it to stop
-          ```
-        while True:
-              print("Are we there yet?")
-        ```
-          * A **for** loop needs to know exactly how many times to run
-
-          ```
-        for i in range(1,10):
-              print(i)
-        ```
-      </script>
-</section>
-
-<section class="slide" data-markdown>
-      <script type="text/template">
-        ## For Loops
-
-          * Today we will be using for loops
-      </script>
-</section>
-
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Lists
 
-          * Programming languages have data structures
-          * You can store multiple things in one variable name
-          * Each list element has an index, starting at 0
+        * Programming languages have data structures, a particular way of organizing data
+        * You can store multiple things in one variable name by using a list
+        * Each list element has an index, **starting at 0**
 
-          ```
+        ```
         my_list = [1234, "hello", True]
+        ```
 
-          ```
-          * There are others! [Link to documentation]
+        `my_list` is the variable  name  
+        `[1234, "hello", True]` is the whole list element  
+        `1234` has an index of 0  
+        `"hello"` has an index of 1   
+        `True` has an index of 2    
+          
+        <br>
+        There are many others! See here for the documentaton: [Link to documentation].
       </script>
-</section>
+    </section>
 
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
-        ## Lists
+        ## Accessing the List values
 
-        * Grab one list element by using square brackets
+        Grab one list element by using square brackets and the index number.
         ```
         >>> my_list[0]
         1234
         ```
-        * You can add to a list
+        <br>
+        You can also add values to a list using `append()` and using a period (`.`) to attach it to the variable.
         ```
-        my_list.append("another thing")
+        >>> my_list.append("another thing")
         >>> print(my_list)
         [1234, 'hello', True, 'another thing']
 
-          ```
+        ```
       </script>
-</section>
-      <!-- Opening a file --> 
-<section class="slide" data-markdown>
+    </section>
+    
+    <!-- Opening a file --> 
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Comma Separated Value (CSV) Files
-        A CSV file looks something like this:
-         ```
+
+        We can use CSV files to hold data to use in our program. A CSV file looks something like this:
+
         Example: Breakfast foods
 
+        ```
         Weekday, Food, Drink, Location
         Monday, Eggs, Juice, Home
         Tuesday, Oatmeal, Coffee, Work
@@ -677,69 +748,99 @@
         Thursday, Nutella Crepes, Cappucino, Cafe
         ... and so on.
         ```
-        Each item on each row has something to do with a particular <i>instance</i> of breakfast. The day, food, drinks, and where you ate it.  </br>
-
+        Each item, on each row, has something to do with a particular *instance* of breakfast.  
+        The day, food, drinks, and where you ate it.
       </script>
-</section>
+    </section>
 
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Libraries
 
-        Our goal with the final project will be to get python to open up a file for us and look through it for information.
+        Python has wonderful built in **libraries** which are collections of code that other people have written. Today we will use a library called **csv**. It contains instructions that tell python how to work with csv files.
+
+        Our goal with the final project will be to get Python to open up a file for us and look through it for information.
         
-        In pycharm, open up the file <i>llc-chapters.csv</i>. It has the same kind of format as the last example. 
+        In PyCharm, open up the file **llc-chapters.csv**. It has the same kind of format as the last example. 
 
-        Python has wonderful built in <i>libraries</i> which are collections of code that other people have written. 
-
-        Today we will use a library called <i>csv</i>. It contains instructions that tell python how to work with csv files. 
-
-        More info: https://docs.python.org/2/library/csv.html
-
+        More info:<!-- .element: class="footnote" --> https://docs.python.org/2/library/csv.html 
       </script>
-</section>
+    </section>
 
-
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Opening a File
 
-        Create a new python file in pycharm called 'chapterleads.py'.  
+        Create a new Python file in PyCharm called 'chapterleads.py' in the **exercises** folder.
 
-        To access the code in the csv library, type: 
-         ```
+        (Right click or two-finger tap<!-- .element: class="footnote" --> **exercises** and select **New > New Python File**)
+
+        To access the code in the csv library, type the below snippet.
+        
+        ```
         import csv
         ```
+        
         To open the file, and print out the contents, type: 
+        
         ```
         csv_file = open('llc-chapters.csv')
         csv_data = csv.reader(csv_file)
 
         for row in csv_data:
-            print(row)
+          print(row)
         ```
-        Then run the file. 
-      </script>
-</section>
 
-<section class="slide" data-markdown>
+        Then run the file and check the results in the console.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## What does it all mean?
 
-        Christina please create a table so we can compare the code line by line.
-        data for the right hand side is in comments.
-         ```
-        import csv     #fetch the library
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td width="42%"><code>import csv</code></td>
+              <td>fetch the library</td>
+            </tr>
+            <tr>
+              <td><code>csv_file = open('llc-chapters.csv')</code></td>
+              <td>open the file and store it in this variable.</td>
+            </tr>
+            <tr>
+              <td><code>csv_data = csv.reader(csv_file)</code></td>
+              <td>From the csv library, get a function called reader. It goes through each line of the file and stores whatever it finds in a list of strings.</td>
+            </tr>
+            <tr>
+<td><pre><code>for row in csv_data:
+  print(row)</code></pre>
+</td>
+              <td>for each row of data that the reader got for us, print it out.</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        You can add these notes as comments to your code to help provide explanations.
+        ```
+        import csv #fetch the library
        
         csv_file = open('llc-chapters.csv') # open the file and store it in this variable. 
         csv_data = csv.reader(csv_file) # From the csv library, get a function called reader. It goes through each line of the file and stores whatever it finds in a list of strings. 
 
         for row in csv_data:   #for each row of data that the reader got for us, print it out.
-            print(row)
+          print(row)
         ```
-
       </script>
-</section>
+    </section>
 
     <section class="slide title" data-markdown>
       <script type="text/template">
@@ -747,8 +848,7 @@
       </script>
     </section>
 
-    
-        <section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Functions
         * Hold a set of instructions and can take *arguments* (variables) to give you different results
