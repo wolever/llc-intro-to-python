@@ -55,8 +55,10 @@
       <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
       <div class="info">
         <h1 class="heading-bg">
-          <span>Intro to Python</span><br>
+          <span>Fundamentals of Programming:</span><br>
+          <span>Intro to Python</span>
         </h1>
+        <!-- TODO: Fill in instructor details -->
         <h2><span>with</span> Instructor Name</h2>
 
         <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
@@ -69,13 +71,9 @@
     </section>
 
     <section class="slide" data-markdown>
-      ## About me
-
-      <!-- TODO: Fill in instructor details -->
-    </section>
-
-    <section class="slide" data-markdown>
       ## Agenda
+
+      [[will this need to be amended?]] <!-- .element: class="footnote" -->
 
       ###Morning
 
@@ -99,6 +97,8 @@
       <script type="text/template">
         ## Today's project
 
+        [[ small detail but should we take out the year so it can be reused next year? Or just update the CSV file and this slide? ]]
+
         Imagine you're organizing **National Learn to Code Day 2015**. 
 
         You want it to be an *even bigger success* than last year, so not only do you need to know how many people attended (so you can beat that target), but you also want to pull other salient stats to put in a press release – news outlets *love* stats. 
@@ -115,6 +115,8 @@
       ## Getting Started
 
       You will need:
+
+      [[ Added links to mac & windows version, though they should already come with python installed.  Should we say something about it being pre-installed on macs? Also, should we say to download the "latest" version and just note that syntax we're using is compatible in 2 & 3? ]]
 
       1. **Python 2.7.x installed** ( [Mac](https://www.python.org/downloads/), [Windows](https://www.python.org/downloads/windows/) )
       1. **[Pycharm Educational Edition](https://www.jetbrains.com/pycharm-educational/)**
@@ -166,6 +168,8 @@
         * Youtube, Reddit, Pinterest, Instagram, Dropbox, The Onion
         <!--* Add pictures to this slide?-->
 
+        [[ maybe add the logos of the companies who use it?  but not high priority.  Though gifs & pictures are a nice way to break up the content with some humor.]]
+
       </script>
     </section>
 
@@ -178,8 +182,14 @@
         * IDEs help us write code faster with fewer mistakes
 
         ![Yes! That is awesome!](http://33.media.tumblr.com/01744bb3d8772b180de821b6cb9e31f1/tumblr_mormzpYsBZ1s410g9o2_400.gif) <!-- .element: class="delayed" style="width: 75%" -->
+      </script>
+    </section>
 
-        [TODO open/setting up PyCharm? new project?]
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## open/setting up PyCharm?
+
+        [[ When I opened the IDE for the first time, I got these quickstart options.  Maybe go through this and possible add the toolbar?  I took some screenshots just in case. ]]
 
         ![](framework/img/workshop/pycharm-ide1.png)
         ![](framework/img/workshop/pycharm-ide2.png)
@@ -194,22 +204,22 @@
       <script type="text/template">
         ## Running Python in PyCharm
 
+        [[ Opening the console looked different for me, not sure it's b/c I have the education version or b/c I'm on a mac.  Added a screenshot and a explantion of >>> at the bottom .]]
+
         1. Open the console  
 
-          Windows (?)  
           ![Tools &gt; Python Console&hellip;](./framework/img/workshop/tool-open-console.png)
 
-          Mac   
+          [[mine]]   
           ![Tools &gt; Python Console&hellip;](./framework/img/workshop/tool-open-console-mac.png)
 
-        2. Python is ready to do your bidding…  
+        2. Python is ready to do your bidding…  [[ my console is white - not a huge deal but just wanted to check if screenshot is of a theme. ]]
 
           ![Python Console in PyCharm](./framework/img/workshop/python-console.png)
 
          Note the `>>>` symbol. It is used by the console to represent a space for you to enter your input but you don&#39;t have to actually type it.
 
       </script>
-
     </section>
 
 <!-- -------------------- -->
@@ -219,6 +229,8 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Python can do math
+
+        [[ added some extra info about >>>]]
 
         Open up the console in PyCharm (see previous slide) and try out these examples. The command you input into the console after the `>>>` gets *evaluated* and a value is returned back to you.
 
@@ -244,6 +256,8 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Printing
+
+        [[ added some basic info about functions and syntax]]
 
         The `print()` **function** outputs values to the screen. Functions at its most basic definition holds a set of instructions. More on functions later. Also, note the usage of quotes. 
 
@@ -274,6 +288,8 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Why did that error happen?
+
+        [[ repeated examples from previous screen to compare and added the hello + world example to explain concatenation]]
 
         Python needs to know what **type** something is to figure out how to work with it.  Let&#39;s look at the examples again.
 
@@ -308,6 +324,9 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Types
+
+        [[ split up numbers into integers and floats. double check? Also, add link to resource ]]
+
         * Integer (`int`, whole numbers)
         * Float (numbers containing decimals)
         * String (`str`, words, sentences, literal text)
@@ -361,7 +380,7 @@
       <script type="text/template">
         ## Variables
         * We usually want to store a value to use later
-        * Variables store data in your computer's memory (like a book in a giant bookcase)
+        * Variables store data in your computer&#39;s memory (like a book in a giant bookcase)
         * Use the equal (`=`) symbol to assign a value to a variable
 
         ```python
@@ -383,7 +402,9 @@
       <script type="text/template">
         ## Reassigning Variables
 
-        Variables can be changed after you've assigned the value by "reassigning" them.
+        [[ does this make sense? separated it from the previous example ]]
+
+        Variables can be changed after you have assigned the value by "reassigning" them.
 
         ```python
         >>> x = 5
@@ -406,11 +427,15 @@
       <script type="text/template">
         ## Create your first program
         
+        [[ expanded description for step one ]]
+
         1.  Open the today&#39;s project files in PyCharm using **File** > **Open…** and navigating to your `llc-intro-to-python-master` folder.  It should now show in your sidebar.
 
           ![](framework/img/workshop/open-options.png)
 
         1. Right click or two-finger tap on the **exercises** folder to create a new file and select **New > Python File**
+
+          [[add two-finger tap for macs. also my screenshot is white.  also assuming this is just a default theme? ]]
 
           ![Create a new Python File](./framework/img/workshop/new-file.png)
           ![Create a new Python File](./framework/img/workshop/new-file-mac.png)
@@ -419,7 +444,7 @@
 
           ![new python file name](framework/img/workshop/new-python-file.png)
 
-          TODO:Your new file will open in a new tab with the `__author__ = 'yourusername'` - what is this, can it be erased?
+          [[ when I create a new file, it opened in a new tab with the `__author__ = 'yourusername'` - what is this, can it be erased? Should we provide explanation? ]]
 
       </script>
     </section>
@@ -501,10 +526,12 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Boolean values
+
+        [[ expanded definition of = and ==   double check? ]]
         
         How does `if` know what&#39;s `True` or `False`? We use 'Boolean' statements to test against values.
 
-        Reminder, one equals sign only *assigns* a value to the variable.
+        Reminder, one equals symbol only *assigns* a value to the variable.
 
         ```python
         >>> weather = "raining"
@@ -530,6 +557,8 @@
       <script type="text/template">
         ## Exercise 2: Weather advice (10 mins)
         
+        [[ added 10mins note to make this an independant excercise - give learners a chance to work through it themselves - added bonus for those who may finish early.  encourage them to look at the syntax and try to type it out rather than copy & paste.  - also are all these new files to be saved in the exercises folder? ]]
+
         Create a new file `ex2_weather_advice.py` and add the below code snippet.   
         Note the syntax and try to type in one line at a time.
         
@@ -547,12 +576,16 @@
         
         Try running your file a few times to get different advice (the weather is so unpredictable!)
 
+        **Bonus: ** Update the conditions or add more conditions.
+
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Hint: Indentation
+
+        [[ Not sure what the  ... in the code samples mean? ]]
 
         Python uses indentation to figure out which 'block' of code belongs inside the `if` or `else`.
 
@@ -579,11 +612,10 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Testing numbers
+        ## Testing numbers with Math Comparison Operators  
         
         Just as you could check the exact value of a string or number you can use typical math operators to check relative numeric values
         
-        ### Math Comparison Operators  
         `>`: Greater than  
         `<`: Less than  
         `>=`: Greater than or equal to  
@@ -611,6 +643,9 @@
         ## And / Or
 
         Sometimes, you can&#39;t neatly capture your conditions with one expression. You need to combine multiple expressions to determine what to do next.
+
+        `and`: both things must be true  
+        `or`: Either one, or both things must be true.
         
         ```python
         weather = "cold"
@@ -626,9 +661,6 @@
         ... 
         bring a change of socks
         ```
-        
-        `and`: both things must be true  
-        `or`: Either one, or both things must be true.
       </script>
     </section>
 
@@ -636,6 +668,8 @@
       <script type="text/template">
         ## Examples with and/or
         
+        [[ turn this into an independant exercise?]]
+
         ```python
         >>> x = 5
         >>> if x > 0 and x < 6:
@@ -664,6 +698,8 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Loops
+
+        [[ add link to documentaion ]]
 
         Sometimes we want the program to do something many times. Computers and programming are excellent at repetitive tasks.
 
@@ -715,6 +751,8 @@
       <script type="text/template">
         ## Accessing the List values
 
+        [[ is this a type along exercise? ]]
+
         Grab one list element by using square brackets and the index number.
         ```
         >>> my_list[0]
@@ -736,6 +774,8 @@
       <script type="text/template">
         ## Comma Separated Value (CSV) Files
 
+        [[ added short sentence for why you would use CSV - double check? ]]
+
         We can use CSV files to hold data to use in our program. A CSV file looks something like this:
 
         Example: Breakfast foods
@@ -748,6 +788,7 @@
         Thursday, Nutella Crepes, Cappucino, Cafe
         ... and so on.
         ```
+
         Each item, on each row, has something to do with a particular *instance* of breakfast.  
         The day, food, drinks, and where you ate it.
       </script>
@@ -771,7 +812,9 @@
       <script type="text/template">
         ## Opening a File
 
-        Create a new Python file in PyCharm called 'chapterleads.py' in the **exercises** folder.
+        [[ create file in exercises folder?]]
+        
+        Create a new Python file in PyCharm called **chapterleads.py** in the **exercises** folder.
 
         (Right click or two-finger tap<!-- .element: class="footnote" --> **exercises** and select **New > New Python File**)
 
