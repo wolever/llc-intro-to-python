@@ -67,6 +67,9 @@ h2 {
 		background: none;
 		text-transform: lowercase;
 	}
+	+ table {
+		margin-top: 15px;
+	}
 }
 h3 {
 	margin-bottom: 5px;
@@ -106,14 +109,14 @@ p, ol, ul {
 
 ol, ul {
 	> li {
-		font-size: $font-size-default - 2px;
+		font-size: $font-size-default - 2;
 		margin: 4px 0;
 	}
 	ul, ol {
 		margin: 5px 0;
 
 		li {
-			font-size: $font-size-default - 4px;
+			font-size: $font-size-default - 4;
 		}	
 	}
 }
@@ -126,13 +129,37 @@ pre {
 	}
 }
 code {
-	font-family: Andale Mono, Monaco, monospace;
+	font-family: Monaco, Andale Mono, monospace;
 	color: #444;
-	padding: 1px 4px;
 	font-size: $font-size-code;
 	background: white;
 	border-radius: 4px;
-	padding: 0 6px;
+	padding: 3px 6px;
+}
+
+/* table styles */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+	
+	pre {
+		margin: 0;
+	}
+	code {
+		background: transparent;
+	}
+  .hljs {
+  	border: none;
+  	background: transparent;
+  }
+}
+td {
+  border: 1px solid $llc-pink;
+  padding: 10px 50px 10px 10px;
+}
+th {
+  text-align: left;
+  padding-left: 10px;
 }
 
 .footnote {
