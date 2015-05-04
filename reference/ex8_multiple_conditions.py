@@ -9,7 +9,7 @@ In order to count all these events, we'll need to use the boolean `or` operator 
 
 import csv
 
-workshop_file = open('./llc-workshop-data.csv')
+workshop_file = open('../exercises/llc-workshop-data.csv')
 
 reader = csv.DictReader(workshop_file)
 

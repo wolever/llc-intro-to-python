@@ -29,7 +29,7 @@ print('National Learn to Code Day 2014 Intro to HTML & CSS: Building a Multi-Pag
 print('Kids Learning Code: Intro to Programming with Python'.find(learn))
 # -1
 
-workshop_file = open('./llc-workshop-data   .csv')
+workshop_file = open('../exercises/llc-workshop-data.csv')
 
 reader = csv.DictReader(workshop_file)
 

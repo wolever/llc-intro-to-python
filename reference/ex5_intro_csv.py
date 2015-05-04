@@ -10,7 +10,7 @@ import csv
 #
 # In order to read a CSV file. First, we need to open the file (the reader needs file input)
 #
-chapters_file = open('./llc-chapters.csv')
+chapters_file = open('../exercises/llc-chapters.csv')
 
 #
 # Then we use the DictReader to parse that file. It will read the first row, and expose each subsequent row as a

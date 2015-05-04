@@ -37,6 +37,7 @@
       </h1>
       <div class="heading-bg connected">
         <span class="dark">GET CONNECTED:</span>
+        <!-- TODO: Fill in WiFi details -->
         <span class="light">NETWORK: network name</span><br>
         <span class="light">PASSWORD: thepassword</span>
       </div>
@@ -67,10 +68,10 @@
       </div>
     </section>
 
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       ## About me
 
-
+      <!-- TODO: Fill in instructor details -->
     </section>
 
     <section class="slide" data-markdown>
@@ -79,17 +80,16 @@
       ###Morning
 
       * Types
-      * Built in Functions
       * Variables
-      * Comments
       * Conditionals &amp; Logic
+      * Loops
+      * Built-in functions
 
       ###Afternoon
 
       * Loops
       * Lists
       * File I/O
-      * Exceptions
       * Final Project
 
 
@@ -104,9 +104,6 @@
         Computers are very good at repetitive tasks, but they require *precise instructions*. Today, you'll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2014.
         
         <small>Whether you take these tools and apply them to your own data or keep using the tools you know, by the end of the day, you'll hopefully have greater confidence in leveraging computers to do your work faster and focus on what matters to you.</small>
-        
-        
-        
       </script>
     </section>
 
@@ -129,7 +126,7 @@
       </script>
     </section>
 
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## What is programming?
 
@@ -151,7 +148,7 @@
         * Write once, run anywhere
         * Great community
         * The syntax looks like english
-        * Add pictures to this slide?
+        <!--* Add pictures to this slide?-->
 
       </script>
     </section>
@@ -166,7 +163,7 @@
         * Testing
         * Web Applications (Django, Flask)
         * Youtube, Reddit, Pinterest, Instagram, Dropbox, The Onion
-        * Add pictures to this slide?
+        <!--* Add pictures to this slide?-->
 
       </script>
     </section>
@@ -198,11 +195,15 @@
 
     </section>
 
+<!-- -------------------- -->
+<!-- First Steps -->
+<!-- -------------------- -->
+
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Python can do math
 
-        Open up the console in PyCharm (screenshot?)
+        Open up the console in PyCharm (see previous slide)
 
         ```
         >>> 2 + 2
@@ -218,15 +219,16 @@
         >>> 1 / 2
         0
         ```
-        Why is 1 / 2 = 0? We&#39;ll come back to that.
+        Why is `1 / 2 = 0`? We'll come back to that.
 
       </script>
     </section>
 
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Printing
 
+        The `print()` function outputs values to the screen
 
         ```
         >>> print("Hello World!")
@@ -243,17 +245,16 @@
         4
         ```
 
-        ```
+        ```python
         >>> print(2 + "2")
         Traceback (most recent call last):
-        File "&lt;input>", line 1, in &lt;module>
+        File "<input>", line 1, in <module>
         TypeError: unsupported operand type(s) for +: 'int' and 'str'
         ```
-
       </script>
     </section>
 
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Why did that error happen?
 
@@ -265,7 +266,12 @@
       </script>
     </section>
 
-<section class="slide" data-markdown>
+<!-- -------------------- -->
+<!--Types-->
+<!-- -------------------- -->
+
+    
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Types
         * Numbers (such as integer &amp; float)
@@ -273,15 +279,25 @@
         * Boolean (true, false)
         * lists
         * and more!
-        * Use type() to figure out what type something is.
+        * Use `type()` to figure out what type something is.
 
         ```
         >>> type("hello")
         <type 'str'>
+        
+        >>> type(42)
+        <type 'int'>
+        
+        >>> type(3.14159)
+        <type 'float'>
+        
+        >>> type([1, 2, 3, 4])
+        <type 'list'>
         ```
       </script>
     </section>
-<section class="slide" data-markdown>
+    
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Typecasting
 
@@ -301,13 +317,15 @@
       </script>
     </section>
 
-
+<!-- -------------------- -->
+<!--Variables-->
+<!-- -------------------- -->
 
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Variables
         * We usually want to store a value to use later
-        * Variables are boxes in your computer&#39;s memory that you can store stuff in
+        * Variables store data in your computer's memory (like a book in a giant bookcase)
         * Use the '=' symbol to assign a value to a variable
 
         ```
@@ -315,7 +333,6 @@
         >>> y = 4
         >>> x * y
         20
-
         ```
 
         ```
@@ -326,65 +343,110 @@
       </script>
     </section>
 
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
-        ## Variables
-        * Variables can vary
-        * Anything else we can add here?
+        ## Variables (cont'd)
+        * Variables can change over time
 
         ```
         >>> x = 10
         >>> x * y
         40
         ```
+        
+        * Variables are often used to count things, so there are special operators `+=` and `-=` for increasing and decreasing the count
+   
+        ```
+        >>> x = x + 1
+        11
+        
+        >>> x += 1
+        12
+        
+        >> x -= 2
+        10
+        ```
       </script>
     </section>
 
-<section class="slide" data-markdown>
+<!-- -------------------- -->
+<!-- Exercise 1: Hello World -->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Create your first program
-        * Create a new project  
-        File > New Project > Pure Python
-        * Right click on the project  
-        New > Python File  
-        [Insert what the name will be here]
-        * Add Screenshot?
+        
+        * Open the `llc-intro-to-python` folder on your computer  
+          File > Open…
+        * Right click on the `exercises` folder to create a new file  
+          New > Python File  
+          ![Create a new Python File](./framework/img/workshop/new-file.png)
+        * Enter the name `ex1_hello_world.py`
 
       </script>
     </section>
 
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
-        ## Create your first program
+        ## Exercise 1: Hello World
+        
+        * Now that you know how to use variables, we'll use a built-in function of Python `raw_input` to capture whatever you type and store it for you.  
+        
         ```
-        Type the text of the program here
+        # raw_input takes whatever you pass it and puts it in a variable
+        name = raw_input("Please enter your name so we can greet you: ")
+        
+        print("Hello " + name)
         ```
-        Save it, then run it by clicking the [put green arrow picture here] button
+        * Save it, then run it  
+          Run > Run…  
+          ![Run your program](./framework/img/workshop/run-file.png)
+        * Click on `ex1_hello_world` (again) in the menu that appears in the middle of the screen  
+          ![Click to run your program](./framework/img/workshop/run-mini-menu.png)
+        * Now click into the console window that opened, type your name and press the Enter key  
+          ![Demo of hello_world example](./framework/img/workshop/ex1-hello-world.png)
+        * You should see you name repeated back at you
 
       </script>
     </section>
 
 
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
-        ## Comments
-        * Programmers use <i>comments</i> to leave notes for themselves
-        * Add some comments to your program
+        ## Hint: Comments
+        * Programmers use *comments* to leave notes for themselves (and other people reading their code in the future)
+        * Good comments add information that isn't immediately obvious
+        * You'll see more comments throughout the exercises
         ```
         # Python will ignore anything after the # symbol
         ```
-
       </script>
     </section>
 
-<section class="slide" data-markdown>
+<!-- -------------------- -->
+<!-- Conditionals & Booleans -->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Conditionals &amp; Logic
         * The program we just wrote ran straight from top to bottom
         * What if the program could act differently and decide what to do?
-        * Each "if" statement contains a test, and the intented block below is the code that will run if the test is **true** but not if it is **false**
+        * Each `if` statement contains a test, and the intented block below is the code that will run if the test is `True` but not if it is `False`
+        
+        ```python
+        # Not real code
+        if it is cold outside:
+            wear a sweater
+        else:
+            dress normally :)
         ```
-        example:
+        
+        * Sometimes we have more conditions
+
+        ```python
+        # Still not real code
         if it is cold outside:
             wear a sweater
         elif it is raining:
@@ -392,108 +454,171 @@
         else:
             dress normally :)
         ```
-
-        [Not sure if we should add elif to a later slide after the examples or leave it here]
-
       </script>
     </section>
 
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
-        ## Examples
-
-         Check for equality
-         ```
-        if x == 5:
-            print("x is 5!")
-        else:
-            print("x is something else!")
-        ```
-        Check for inequality
-        ```
-        if x != 5:
-            print "x is something else! "
-        else:
-            print("x is 5!")
-        ```
-
-      </script>
-    </section>
-
-  <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Examples
+        ## Boolean values
         
-        Use The Math Operators:  
-        `>` Greater than  
-        `<` Less than  
-        `>=` Greater than or equal to  
-        `<=` Less than or equal to  
+        * How does `if` know what's `True` or `False`? We use 'Boolean' statements to test against values
 
         ```python
-        if x > 5:
-           print("x is greater than 5!")
+        >>> weather = "raining"
+        >>> weather == "cold"
+        False
+        >>> weather == "raining"
+        True
         ```
+        * We can use these statements with our `if` values to test for our weather conditions
+
       </script>
     </section>
 
-<section class="slide" data-markdown>
-      <script type="text/template">
-        ## Indentation
+<!-- -------------------- -->
+<!-- Exercise 2: Weather advice -->
+<!-- -------------------- -->
 
-         * Python uses indentation to figure out which code goes with which if
-         ```
-        if x > 5:
-              print("x is greater than 5!")
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Exercise 2: Weather advice
+        
+        * Create a new file `ex2_weather_advice.py`
+        
+        ```python
+        # file: ex2_weather_advice.py
+        weather = raw_input("What is the weather? (cold, raining, etc.)")
+        
+        if weather == "cold":
+            print("Wear a sweater!")
+        elif weather == "raining":
+            print("Bring an umbrella")
         else:
-        print("x is something else!")
+            print("Dress normally :)")
+        ```
+        
+        * Run your file a few times to get different advice (the weather is so unpredictable!)
+
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Hint: Indentation
+
+        * Python uses indentation to figure out which 'block' of code belongs inside the `if` or `else`
+            * Whitespace is important in Python!
+        
+        ```python
+        >>> x = 6
+        >>> if x > 5:
+        ...     print("x is greater than 5!")
+        ... else:
+        ... print("x is something else!")
+        File "<input>", line 5
+            print("x is something else!")
+                ^
+        IndentationError: expected an indented block
         ```
       </script>
     </section>
 
-<section class="slide" data-markdown>
+<!-- -------------------- -->
+<!-- More conditions -->
+<!-- -------------------- -->
+    
+    <section class="slide" data-markdown>
       <script type="text/template">
-        ## And / Or
+        ## Testing numbers
+        
+        Just as you could check the exact value of a string or number you can use typical math operators to check relative numeric values
+        
+        ### Math Comparison Operators  
+        `>`: Greater than  
+        `<`: Less than  
+        `>=`: Greater than or equal to  
+        `<=`: Less than or equal to  
 
-         Suppose we want multiple things to be true before we run the code in the indented block. 
-         ```
-        example:
-        if it is cold outside AND it is snowing:
-            wear a winter jacket
-        if it is raining OR it is snowing:
-            bring a change of socks
+        ```python
+        >>> x = 5
+        >>> print(x > 5)
+        False
+        >>> print(x >= 5)
+        True
+        
+        >>> if x >= 5:
+        ...     print(x + " is greater than or equal to 5")
+        ... else:
+        ...     print(x + " is less than 5")
+        ... 
+        5 is greater than or equal to 5
         ```
-        And : Both of the things need to be true </br>
-        Or : Either one, or both of the things need to be true.
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
         ## And / Or
-         
-         ```
-        example:
-        x = 5
-        if x > 0 and x < 6:
-            print("x is between 0 and 6.")
-        if x > 10 or type(x)==int:
-            print("x is an integer, but less than 10.")
-        if x > 10 and type(x)==int:
-            print("This will not print out.")
+
+        Sometimes, you can't neatly capture your conditions with one expression. You need to combine multiple expressions to determine what to do next 
+        
+        ```python
+        weather = "cold"
+        snowing = True
+        
+        >>> if weather == "cold" and snowing == True:
+        ...     print("wear a winter jacket")
+        ... 
+        
+        wear a winter jacket
+        >>> if weather == "raining" or snowing == True:
+        ...     print("bring a change of socks")
+        ... 
+        bring a change of socks
+        ```
+        
+        `and`: both things must be true  
+        `or`: Either one, or both things must be true.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Examples with and/or
+        
+        ```python
+        >>> x = 5
+        >>> if x > 0 and x < 6:
+        ...     print("x is between 0 and 6.")
+        ...
+        x is between 0 and 6.
+        ```
+        
+        ```python
+        >>> if type(x) == float or type(x) == int:
+        ...     print("x is a numeric value")
+        ... 
+        x is a numeric value
+        ```
+        
+        ```python
+        >>> if x > 10 and x < 0:
+        ...     print("x could never be greater than 10 AND less than 0")
+        ... 
+        # Nothing prints here
         ```
         
       </script>
     </section>
 
-<section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         ## Loops
 
          * Sometimes we want the program to do something many times
          * Computers are excellent at repetitive tasks
       </script>
-</section>
+    </section>
 
 <section class="slide" data-markdown>
       <script type="text/template">
@@ -640,9 +765,33 @@
       </script>
     </section>
 
-<!-- Afternoon Content-->
+    
+        <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Functions
+        * Hold a set of instructions and can take *arguments* (variables) to give you different results
+        * Give a name to functionality like variables give a name to data
 
-    <!-- Last slide -->
+        ```
+        >>> def hello(name="World"):
+        ...     print("Hello " + name)
+        ... 
+        >>> hello()
+        Hello World
+        >>> hello("Pythonistas")
+        Hello Pythonistas
+        ```
+      </script>
+    </section>
+
+<!-- ==================== -->
+<!-- Afternoon Content-->
+<!-- ==================== -->
+    
+    
+    
+<!-- Last slide -->
+
     <section class="slide last">
       <h2>Thank you!</h2>
 

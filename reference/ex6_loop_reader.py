@@ -11,7 +11,7 @@ We can use a variable to count the number of loops, and that will give us the to
 
 import csv
 
-chapters_file = open('./llc-chapters.csv')
+chapters_file = open('../exercises/llc-chapters.csv')
 
 reader = csv.DictReader(chapters_file)
 
