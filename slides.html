@@ -80,16 +80,15 @@
       * Types
       * Variables
       * Conditionals &amp; Logic
-      * Loops
-      * Built-in functions
+      * Reading a file
+      * For loops
 
       ###Afternoon
 
-      * Loops
-      * Lists
-      * File I/O
+      * Libraries
+      * Dictionaries
+      * 
       * Final Project
-
 
     </section>
 
@@ -698,199 +697,214 @@
       </script>
     </section>
 
+<!-- -------------------- -->
+<!-- Opening a file -->
+<!-- -------------------- --> 
+
+    <section class="slide title full-monty">
+      <!-- Mandatory Monty Python reference -->
+      <h1 class="heading-bg"><span>And now for something completely different</span></h1>
+
+      <aside style="position: absolute; bottom: 20px; right: 20px;">Source: <a href="https://www.flickr.com/photos/nerdcoreblog/13995269592/">flickr.com/photos/nerdcoreblog</a></aside>
+    </section>
+
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Loops
+        # Opening a file
 
-        [[ add link to documentaion ]]
+        We typically store computer data in files. The data in some files is human-readable text (while in others, like images, it's in a format that's only readable by programs with specific code to interpret the data).
 
-        Sometimes we want the program to do something many times. Computers and programming are excellent at repetitive tasks.
+        It's fairly easy in Python to open a human-readable file and print the contents to the screen.
 
-        ### While Loop
-        
-        A **while** loop runs forever until you tell it to stop.
-        
+        ```python
+        >>> chapters = open('./exercises/llc-chapters.csv')
+        >>> print(chapters.read())
+        # … lots of file data …
+        >>> chapters.close()
+        # When you're done with a file it's a good idea to close it
         ```
-        while True:
-          print("Are we there yet?")
-        ```
-        
-        ### For Loop
-        A **for** loop needs to know exactly how many times to run
-
-        ```
-        for i in range(1,10):
-          print(i)
-        ```
-
-        Today we will be using **for loops** and will go into more detail in the afternoon.
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Lists
+        # One line at a time
 
-        * Programming languages have data structures, a particular way of organizing data
-        * You can store multiple things in one variable name by using a list
-        * Each list element has an index, **starting at 0**
+        In order to make use of the data in a file, we need to make sense of small portions at a time.
 
+        In the `llc-chapters.csv` file, each line of the file represents a Ladies Learning Code Chapter
+
+        Let's print out a few individual lines
+
+        ```python
+        >>> chapters = open('./exercises/llc-chapters.csv')
+        >>> print(chapters.readline())
+        City,Province,Chapter Lead(s)
+
+        >>> print(chapters.readline())
+        Vancouver,BC,Meghan
+
+        >>> print(chapters.readline())
+        Calgary,AB,Darcie
+
+        >>> chapters.close()
         ```
-        my_list = [1234, "hello", True]
-        ```
-
-        `my_list` is the variable  name  
-        `[1234, "hello", True]` is the whole list element  
-        `1234` has an index of 0  
-        `"hello"` has an index of 1   
-        `True` has an index of 2    
-          
-        <br>
-        There are many others! See here for the documentaton: [Link to documentation].
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Accessing the List values
+        ## Comma-Separated Values (CSV) Files
 
-        [[ is this a type along exercise? ]]
-
-        Grab one list element by using square brackets and the index number.
-        ```
-        >>> my_list[0]
-        1234
-        ```
-        <br>
-        You can also add values to a list using `append()` and using a period (`.`) to attach it to the variable.
-        ```
-        >>> my_list.append("another thing")
-        >>> print(my_list)
-        [1234, 'hello', True, 'another thing']
+        In the previous slide we printed out three lines in the file, one at a time.
 
         ```
-      </script>
-    </section>
-    
-    <!-- Opening a file --> 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Comma Separated Value (CSV) Files
-
-        [[ added short sentence for why you would use CSV - double check? ]]
-
-        We can use CSV files to hold data to use in our program. A CSV file looks something like this:
-
-        Example: Breakfast foods
-
-        ```
-        Weekday, Food, Drink, Location
-        Monday, Eggs, Juice, Home
-        Tuesday, Oatmeal, Coffee, Work
-        Wednesday, Pancakes, Tea, Home
-        Thursday, Nutella Crepes, Cappucino, Cafe
-        ... and so on.
+        City,Province,Chapter Lead(s)
+        Vancouver,BC,Meghan
+        Calgary,AB,Darcie
         ```
 
-        Each item, on each row, has something to do with a particular *instance* of breakfast.  
-        The day, food, drinks, and where you ate it.
-      </script>
+        Notice that all three lines have exactly three values, separated by a comma (`,`)
+
+        The first line doesn't tell us about a chapter, it has headings than describe the data in the next lines
+
+        The second and third line each represent one of the LLC chapters.
+
+        This is a specific *file format* called **CSV** (short for *comma-separated values*) that is used to represent spreadsheet-like data
+
+        This is a widely used file-format because it's such a simple representation of rows and columns of data. It doesn't matter whether you're on a Mac, Windows, Linux or even on a web app like Google Docs – everyone can use this data.
+        </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Libraries
+        ## Reading all the lines in a file
 
-        Python has wonderful built in **libraries** which are collections of code that other people have written. Today we will use a library called **csv**. It contains instructions that tell python how to work with csv files.
+        It's all well and good to print out the lines in a file one-at-a-time while you're learning, but surely, there's a better way to read *all* the lines in a file.
 
-        Our goal with the final project will be to get Python to open up a file for us and look through it for information.
-        
-        In PyCharm, open up the file **llc-chapters.csv**. It has the same kind of format as the last example. 
+        In programming, when you want to perform the same action many times in a row, we use **loops**. In Python, the main kind of loop is the `for` loop.
 
-        More info:<!-- .element: class="footnote" --> https://docs.python.org/2/library/csv.html 
+        If we want to print each of the rows in our file, we can use the following code:
+
+        ```python
+        >>> chapters = open('./exercises/llc-chapters.csv')
+        >>> for line in chapters:
+        ...     print(line)
+        ... 
+        >>> chapters.close()
+        ```
+
+        More info:<!-- .element: class="footnote" --> https://docs.python.org/2/tutorial/controlflow.html#for-statements
+
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Opening a File
+        ## `for` loop behind the scenes
 
-        [[ create file in exercises folder?]]
-        
-        Create a new Python file in PyCharm called **chapterleads.py** in the **exercises** folder.
+        If you play around with the `chapters` variable in your console, you might notice that it has a `.next()` function which does the same thing as `.readline()`
 
-        (Right click or two-finger tap<!-- .element: class="footnote" --> **exercises** and select **New > New Python File**)
+        `for` can work with many different collections of data, all it's looking for is that `.next()` function.
 
-        To access the code in the csv library, type the below snippet.
-        
-        ```
-        import csv
-        ```
-        
-        To open the file, and print out the contents, type: 
-        
-        ```
-        csv_file = open('llc-chapters.csv')
-        csv_data = csv.reader(csv_file)
+        Behind the scenes, it's doing something roughly like
 
-        for row in csv_data:
-          print(row)
+        ```python
+        line = chapters.next()
+        # Execute your code block
+        # …
+        # Go back to get the next value and repeat until there are no more values
         ```
 
-        Then run the file and check the results in the console.
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## What does it all mean?
-
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td width="42%"><code>import csv</code></td>
-              <td>fetch the library</td>
-            </tr>
-            <tr>
-              <td><code>csv_file = open('llc-chapters.csv')</code></td>
-              <td>open the file and store it in this variable.</td>
-            </tr>
-            <tr>
-              <td><code>csv_data = csv.reader(csv_file)</code></td>
-              <td>From the csv library, get a function called reader. It goes through each line of the file and stores whatever it finds in a list of strings.</td>
-            </tr>
-            <tr>
-<td><pre><code>for row in csv_data:
-  print(row)</code></pre>
-</td>
-              <td>for each row of data that the reader got for us, print it out.</td>
-            </tr>
-          </tbody>
-        </table>
-
-
-        You can add these notes as comments to your code to help provide explanations.
-        ```
-        import csv #fetch the library
-       
-        csv_file = open('llc-chapters.csv') # open the file and store it in this variable. 
-        csv_data = csv.reader(csv_file) # From the csv library, get a function called reader. It goes through each line of the file and stores whatever it finds in a list of strings. 
-
-        for row in csv_data:   #for each row of data that the reader got for us, print it out.
-          print(row)
-        ```
+        We'll use the for loop for our final exercise after lunch.
       </script>
     </section>
 
     <section class="slide title" data-markdown>
       <script type="text/template">
         # Lunch! 
+      </script>
+    </section>
+
+<!-- ==================== -->
+<!-- Afternoon Content-->
+<!-- ==================== -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Libraries
+
+        Python has wonderful built in **libraries** which are collections of code that other people have written. Today we'll use the **csv** library. It contains instructions that tell python how to work with CSV files.
+
+        This library will help us makes sense of the data contained in a CSV file to learn more about LLC activities in 2014.
+
+        More info:<!-- .element: class="footnote" --> https://docs.python.org/2/library/csv.html
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!-- Reading a CSV -->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Reading data from a CSV file
+
+        The CSV libary has a number of different tools for extracting actual data from a CSV file.
+
+        Whereas before we were looking at the whole line, with the CSV library we can get individual pieces of data (like the cells of a spreadsheet)
+
+        Today we'll mostly be using the `DictReader` tool because it makes it easier to understand the data in each row (without remembering anything about the headings)
+        
+        * First we open the file  
+          
+          ```
+          >>> chapters_file = open('llc-chapters.csv')
+          ```
+        * Then, we import the `csv` library and pass it a reference to our file  
+        
+          ```
+          >>> import csv
+          >>> chapters_data = csv.DictReader(chapters_file)
+          ```
+        * Now, we can pull out one row at a time  
+        
+          ```
+          >>> chapter = chapters_data.next()
+          >>> print(chapter)
+          {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
+          >>> type(chapter)
+          <type 'dict'>
+          ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Dictionaries
+
+        This time, when we printed the values from the CSV file, instead of getting comma-separated values, we got a `dict`ionary representing each row in the file.
+
+        Instead of having to remember which *column* represents city, we can access it with a keyword:
+
+        ```python
+        >>> chapter = {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
+        >>> print(chapter['City'])
+        Vancouver
+        >>> print(chapter['Province'])
+        BC
+        >>> print(chapter['Chapter Lead(s)'])
+        Meghan
+        ```
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!-- Begin final exercises -->
+<!-- -------------------- --> 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Exercise 
       </script>
     </section>
 
@@ -912,20 +926,14 @@
       </script>
     </section>
 
-<!-- ==================== -->
-<!-- Afternoon Content-->
-<!-- ==================== -->
-    
-    
-    
 <!-- Last slide -->
 
     <section class="slide last">
       <h2>Thank you!</h2>
 
       <h2 class="heading-bg">
-        <span>Title of Workshop</span><br>
-        <span>Second line</span>
+        <span>Fundamentals of Programming:</span><br>
+        <span>Intro to Python</span>
       </h2>
       <h3><span>with</span> Instructor Name</h3>
 
