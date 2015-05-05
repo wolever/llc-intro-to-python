@@ -97,7 +97,7 @@
       <script type="text/template">
         ## Today's project
 
-        [[ small detail but should we take out the year so it can be reused next year? Or just update the CSV file and this slide? ]]
+        [[ small detail but should we take out the year so it can be reused next year? Or just update the CSV file and this slide?  - add graphics of cities ]]
 
         Imagine you're organizing **National Learn to Code Day 2015**. 
 
@@ -143,8 +143,8 @@
         * We use a programming language to give the computer instructions in a form that it can understand
         * Programming languages have syntax, just like human languages do
 
-        <div class="delayed">
-          <h3>Why Python Is Awesome</h3>
+     
+          <h2>Why Python Is Awesome</h2>
           <ul>
             <li>Free</li>
             <li>Open source</li>
@@ -152,7 +152,7 @@
             <li>Great community</li>
             <li>The syntax looks like English</li>
           </ul>
-        </div>
+        
       </script>
     </section>
 
@@ -255,77 +255,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Printing
-
-        [[ added some basic info about functions and syntax]]
-
-        The `print()` **function** outputs values to the screen. Functions at its most basic definition holds a set of instructions. More on functions later. Also, note the usage of quotes. 
-
-        ```
-        >>> print("Hello World!")
-        Hello World!
-        ```
-
-        ```
-        >>> print(2 + 2)
-        4
-        ```
-
-        ```
-        >>> print("Hello " + "World!")
-        Hello World!
-        ```
-
-        ```python
-        >>> print(2 + "2")
-        Traceback (most recent call last):
-        File "<input>", line 1, in <module>
-        TypeError: unsupported operand type(s) for +: 'int' and 'str'
-        ```
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Why did that error happen?
-
-        [[ repeated examples from previous screen to compare and added the hello + world example to explain concatenation]]
-
-        Python needs to know what **type** something is to figure out how to work with it.  Let&#39;s look at the examples again.
-
-        ```python
-        >>> print(2 + "2")
-        Traceback (most recent call last):
-        File "<input>", line 1, in <module>
-        TypeError: unsupported operand type(s) for +: 'int' and 'str'
-        ```
-
-
-        * The first 2 is an integer.
-        * `"2"` enclosed in the quotes, is a **string** type, or "literal text".
-        * Python can&#39;t figure out how to add a number and string, so it spits out an error.
-
-
-        ```
-        >>> print("Hello " + "World!")
-        Hello World!
-        ```
-
-        The above example doesn&#39;t output an error because both `"Hello "` and `"World!"` are both strings.  "Adding" strings together is called **concatenation** and it simply joins the strings.
-
-      </script>
-    </section>
-
-<!-- -------------------- -->
-<!--Types-->
-<!-- -------------------- -->
-
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
         ## Types
-
-        [[ split up numbers into integers and floats. double check? Also, add link to resource ]]
 
         * Integer (`int`, whole numbers)
         * Float (numbers containing decimals)
@@ -350,6 +280,79 @@
         ```
       </script>
     </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Printing
+
+        The `print()` **function** outputs values to the screen. Functions at its most basic definition holds a set of instructions. More on functions later. Also, note the usage of quotes. 
+
+        ```
+        >>> print("Hello World!")
+        Hello World!
+        ```
+
+        ```
+        >>> print(2 + 2)
+        4
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Concatenation
+
+
+        ```
+        >>> print("Hello " + "World!")
+        Hello World!
+        ```
+
+        The above example doesn&#39;t output an error because both `"Hello "` and `"World!"` are both strings.  "Adding" strings together is called **concatenation** and it simply joins the strings.
+
+        ```python
+        >>> print(2 + "2")
+        Traceback (most recent call last):
+        File "<input>", line 1, in <module>
+        TypeError: unsupported operand type(s) for +: 'int' and 'str'
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Why did that error happen?
+
+        Python needs to know what **type** something is to figure out how to work with it.  Let&#39;s look at the examples again.
+
+        ```python
+        >>> print(2 + "2")
+        Traceback (most recent call last):
+        File "<input>", line 1, in <module>
+        TypeError: unsupported operand type(s) for +: 'int' and 'str'
+        ```
+
+
+        * The first 2 is an integer.
+        * `"2"` enclosed in the quotes, is a **string** type, or "literal text".
+        * Python can&#39;t figure out how to add a number and string, so it spits out an error.
+
+
+        ```
+        >>> print("Hello " + "World!")
+        Hello World!
+        ```
+
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!--Types-->
+<!-- -------------------- -->
+
+    
+    
     
     <section class="slide" data-markdown>
       <script type="text/template">
