@@ -299,13 +299,12 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Concatenation
-
+         You can "add" strings together, and that&#39;s called **concatenation**. It  joins multiple strings into one.
         ```
         >>> print("Hello " + "World!")
         Hello World!
         ```
-
-        The above example doesn&#39;t output an error because both `"Hello "` and `"World!"` are both strings.  "Adding" strings together is called **concatenation** and it simply joins the strings.
+        But what if we try to join a string and a number?
 
         ```python
         >>> print(2 + "2")
@@ -320,12 +319,9 @@
       <script type="text/template">
         ## Why did that error happen?
 
-        Python needs to know what **type** something is to figure out how to work with it.  Let&#39;s look at the examples again.
+        Python needs to know what **type** something is to figure out how to work with it.  Let&#39;s look at that error again.
 
         ```python
-        >>> print(2 + "2")
-        Traceback (most recent call last):
-        File "<input>", line 1, in <module>
         TypeError: unsupported operand type(s) for +: 'int' and 'str'
         ```
 
@@ -333,27 +329,47 @@
         * `"2"` enclosed in the quotes, is a **string** type, or "literal text".
         * Python can&#39;t figure out how to add a number and string, so it spits out an error.
 
-        ```
-        >>> print("Hello " + "World!")
-        Hello World!
-        ```
-
       </script>
     </section>
 
 <!-- -------------------- -->
-<!--Types-->
+<!--Typecasting-->
 <!-- -------------------- -->
 
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Typecasting
 
-        We can tell Python how to convert that `"2"` into a number and change the **type**. Try it in your console.
+        We can tell Python how to convert that `"2"` into a number and **change the type**. Try it in your console.
 
         ```
         >>> print(2 + int("2"))
         4
+        ```
+
+        And we can fix that problem from before where python thought that `1/2 = 0`. 
+        </br> That happened because when python divides two integers, it doesn&#39;t know that the answer isn&#39;t an integer. 
+        </br> Integer types don&#39;t have decimal parts, so we have to convert to a more precise type.
+        ```
+        >>> print(float(1) / float(2))
+        0.5
+        ```
+        
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Typecasting
+
+        We can also tell python to convert numbers to strings.
+
+        ```
+        >>> print(99 + " bottles of beer on the wall")
+        Traceback (most recent call last):
+        File "<input>", line 1, in <module>
+        TypeError: cannot concatenate 'str' and 'int' objects
+        
         ```
 
         And we can fix that problem from before where `1/2 = 0`
@@ -362,7 +378,7 @@
         0.5
         ```
         <br>
-        The ability to tell Python to change the "type" will come in handy later.
+        The ability to tell Python to change the type will come in handy later.
       </script>
     </section>
 
@@ -374,7 +390,7 @@
       <script type="text/template">
         ## Variables
         * We usually want to store a value to use later
-        * Variables store data in your computer&#39;s memory (like a book in a giant bookcase)
+        * Variables store data in your computer&#39;s memory and you use a **variable name** to fetch their value (kind of like a bookmark in a book)
         * Use the equal (`=`) symbol to assign a value to a variable
 
         ```python
@@ -389,6 +405,7 @@
         >>> print("Today is " + today)
         Today is Saturday
         ```
+        You can store almost anything in a variable. 
       </script>
     </section>
 
@@ -401,15 +418,18 @@
         Variables can be changed after you have assigned the value by "reassigning" them.
 
         ```python
-        >>> x = 5
-        >>> y = 4
-        >>> x = 10
+        >>> y = 10
         >>> x * y
         ```
 
         What do you think the value of `x * y` will be?
 
-        40 <!-- .element: class="delayed" -->
+        50 <!-- .element: class="delayed" -->
+        <p>Why?
+        </br> You changed y, but the old value of x is still in memory. 
+        </br> Python will remember variable names until you close pycharm or [clear them manually.](https://docs.python.org/2/tutorial/datastructures.html#the-del-statement)
+        </p> <!-- .element: class="delayed" -->
+
       </script>
     </section>
 
@@ -491,7 +511,7 @@
         ## Conditionals &amp; Logic
         * The program we just wrote ran straight from top to bottom
         * What if the program could act differently and decide what to do?
-        * Use conidtionals like and `if` statement
+        * Use conditionals like and `if` statement
         * Each `if` statement contains a test, and the indented block is the code that will run if the test is `True` but not if it is `False` and looks something like this:
 
         ```python
@@ -542,13 +562,35 @@
       </script>
     </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Indentation
+
+        Python uses indentation to figure out which 'block' of code belongs inside the `if` or `else`.
+
+        Whitespace is very important in Python!
+
+        ```python
+        >>> weather = "cold"
+        >>> if weather == "cold":
+        ...     print("Wear a sweater!")
+        ... else:
+        ... print("Dress normally :)")
+        File "<input>", line 5
+            print("Dress normally :)")
+                ^
+        IndentationError: expected an indented block
+        ```
+      </script>
+    </section>
+
 <!-- -------------------- -->
-<!-- Exercise 2: Weather advice -->
+<!-- Exercise 2: Weather  -->
 <!-- -------------------- -->
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 2: Weather advice (10 mins)
+        ## Exercise 2: Weather (15 mins)
 
         [[ added 10mins note to make this an independant excercise - give learners a chance to work through it themselves - added bonus for those who may finish early.  encourage them to look at the syntax and try to type it out rather than copy & paste.  - also are all these new files to be saved in the exercises folder? ]]
 
@@ -574,29 +616,6 @@
       </script>
     </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Hint: Indentation
-
-        [[ Not sure what the  ... in the code samples mean? ]]
-
-        Python uses indentation to figure out which 'block' of code belongs inside the `if` or `else`.
-
-        Whitespace is very important in Python!
-
-        ```python
-        >>> x = 6
-        >>> if x > 5:
-        ...     print("x is greater than 5!")
-        ... else:
-        ... print("x is something else!")
-        File "<input>", line 5
-            print("x is something else!")
-                ^
-        IndentationError: expected an indented block
-        ```
-      </script>
-    </section>
 
 <!-- -------------------- -->
 <!-- More conditions -->
