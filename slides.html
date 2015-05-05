@@ -101,11 +101,11 @@
         Imagine you're organizing **National Learn to Code Day 2015**. 
 
         You want it to be an *even bigger success* than last year, so not only do you need to know how many people attended (so you can beat that target), but you also want to pull other salient stats to put in a press release – news outlets *love* stats. 
-        
+
         Computers are very good at repetitive tasks, but they require *precise instructions*. 
 
         Today, you'll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2014.
-        
+
         Whether you take these tools and apply them to your own data or keep using the tools you know, by the end of the day, you'll hopefully have greater confidence in leveraging computers to do your work faster and focus on what matters to you.
       </script>
     </section>
@@ -142,7 +142,6 @@
         * We use a programming language to give the computer instructions in a form that it can understand
         * Programming languages have syntax, just like human languages do
 
-     
           <h2>Why Python Is Awesome</h2>
           <ul>
             <li>Free</li>
@@ -151,7 +150,7 @@
             <li>Great community</li>
             <li>The syntax looks like English</li>
           </ul>
-        
+
       </script>
     </section>
 
@@ -171,7 +170,6 @@
 
       </script>
     </section>
-
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -267,13 +265,13 @@
         ```
         >>> type("hello")
         <type 'str'>
-        
+
         >>> type(42)
         <type 'int'>
-        
+
         >>> type(3.14159)
         <type 'float'>
-        
+
         >>> type([1, 2, 3, 4])
         <type 'list'>
         ```
@@ -297,11 +295,10 @@
         ```
       </script>
     </section>
-    
+
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Concatenation
-
 
         ```
         >>> print("Hello " + "World!")
@@ -332,11 +329,9 @@
         TypeError: unsupported operand type(s) for +: 'int' and 'str'
         ```
 
-
         * The first 2 is an integer.
         * `"2"` enclosed in the quotes, is a **string** type, or "literal text".
         * Python can&#39;t figure out how to add a number and string, so it spits out an error.
-
 
         ```
         >>> print("Hello " + "World!")
@@ -350,9 +345,6 @@
 <!--Types-->
 <!-- -------------------- -->
 
-    
-    
-    
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Typecasting
@@ -428,7 +420,7 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Create your first program
-        
+
         [[ expanded description for step one ]]
 
         1.  Open the today&#39;s project files in PyCharm using **File** > **Open…** and navigating to your `llc-intro-to-python-master` folder.  It should now show in your sidebar.
@@ -468,13 +460,13 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Class Exercise 1: Hello World
-        
+
         Now that you know how to use variables, we&#39;ll use a built-in function of Python `raw_input` to capture whatever you type and store it for you.  
-        
+
         ```
         # raw_input takes whatever you pass it and puts it in a variable (remember, this is a comment)
         name = raw_input("Please enter your name so we can greet you: ")
-        
+
         print("Hello " + name)
         ```
 
@@ -490,7 +482,6 @@
       </script>
     </section>
 
-
 <!-- -------------------- -->
 <!-- Conditionals & Booleans -->
 <!-- -------------------- -->
@@ -502,7 +493,7 @@
         * What if the program could act differently and decide what to do?
         * Use conidtionals like and `if` statement
         * Each `if` statement contains a test, and the indented block is the code that will run if the test is `True` but not if it is `False` and looks something like this:
-        
+
         ```python
         # Not real code
         if it is cold outside:
@@ -510,7 +501,7 @@
         else:
             dress normally :)
         ```
-        
+
         You can also have more than one condition.
 
         ```python
@@ -530,7 +521,7 @@
         ## Boolean values
 
         [[ expanded definition of = and ==   double check? ]]
-        
+
         How does `if` know what&#39;s `True` or `False`? We use 'Boolean' statements to test against values.
 
         Reminder, one equals symbol only *assigns* a value to the variable.
@@ -538,7 +529,7 @@
         ```python
         >>> weather = "raining"
         ```
-        
+
         Test the values. The double equals symbol (`==`) will evaluate if the value on the right matches the assigned value.
         ```
         >>> weather == "cold"
@@ -558,16 +549,16 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Exercise 2: Weather advice (10 mins)
-        
+
         [[ added 10mins note to make this an independant excercise - give learners a chance to work through it themselves - added bonus for those who may finish early.  encourage them to look at the syntax and try to type it out rather than copy & paste.  - also are all these new files to be saved in the exercises folder? ]]
 
         Create a new file `ex2_weather_advice.py` and add the below code snippet.   
         Note the syntax and try to type in one line at a time.
-        
+
         ```python
         # file: ex2_weather_advice.py
         weather = raw_input("What is the weather? (cold, raining, etc.)")
-        
+
         if weather == "cold":
             print("Wear a sweater!")
         elif weather == "raining":
@@ -575,14 +566,14 @@
         else:
             print("Dress normally :)")
         ```
-        
+
         Try running your file a few times to get different advice (the weather is so unpredictable!)
 
         **Bonus: ** Update the conditions or add more conditions.
 
       </script>
     </section>
-    
+
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Hint: Indentation
@@ -593,7 +584,6 @@
 
         Whitespace is very important in Python!
 
-        
         ```python
         >>> x = 6
         >>> if x > 5:
@@ -611,13 +601,13 @@
 <!-- -------------------- -->
 <!-- More conditions -->
 <!-- -------------------- -->
-    
+
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Testing numbers with Math Comparison Operators  
-        
+
         Just as you could check the exact value of a string or number you can use typical math operators to check relative numeric values
-        
+
         `>`: Greater than  
         `<`: Less than  
         `>=`: Greater than or equal to  
@@ -629,7 +619,7 @@
         False
         >>> print(x >= 5)
         True
-        
+
         >>> if x >= 5:
         ...     print(x + " is greater than or equal to 5")
         ... else:
@@ -648,15 +638,15 @@
 
         `and`: both things must be true  
         `or`: Either one, or both things must be true.
-        
+
         ```python
         weather = "cold"
         snowing = True
-        
+
         >>> if weather == "cold" and snowing == True:
         ...     print("wear a winter jacket")
         ... 
-        
+
         wear a winter jacket
         >>> if weather == "raining" or snowing == True:
         ...     print("bring a change of socks")
@@ -669,7 +659,7 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Examples with and/or
-        
+
         [[ turn this into an independant exercise?]]
 
         ```python
@@ -679,21 +669,21 @@
         ...
         x is between 0 and 6.
         ```
-        
+
         ```python
         >>> if type(x) == float or type(x) == int:
         ...     print("x is a numeric value")
         ... 
         x is a numeric value
         ```
-        
+
         ```python
         >>> if x > 10 and x < 0:
         ...     print("x could never be greater than 10 AND less than 0")
         ... 
         # Nothing prints here
         ```
-        
+
       </script>
     </section>
 
