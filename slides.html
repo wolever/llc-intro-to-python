@@ -72,9 +72,9 @@
 
     <section class="slide project" data-markdown>
       <script type="text/template">
-        # Today's project
+        # Today&rsquo;s project
 
-        Imagine you're organizing **National Learn to Code Day 2015**. 
+        Imagine you&rsquo;re organizing **National Learn to Code Day 2015**. 
 
         ![](framework/img/workshop/learn-to-code-day.jpg) <!-- .element: class="col-2" -->
 
@@ -449,8 +449,8 @@
         ## Pro Tip! Use Comments
 
         * Programmers use *comments* to leave notes for themselves (and other people reading their code in the future)
-        * Good comments add information that isn't immediately obvious
-        * You'll see more comments throughout the exercises
+        * Good comments add information that isn&rsquo;t immediately obvious
+        * You&rsquo;ll see more comments throughout the exercises
         * Feel free to add your own!
 
         ```
@@ -471,7 +471,7 @@
         
         Python has a `raw_input()` function that gets data typed by a user and **returns** that value to you.
         
-        1. You give `raw_input()` a message to let your user know what you're looking for
+        1. You give `raw_input()` a message to let your user know what you&rsquo;re looking for
         1. The user types something and hits the **enter** key
         1. Whatever the user types is **returned** to you.
         
@@ -495,7 +495,7 @@
         Python can run your code from a file with a `.py` **extension**  
         *(<!-- .element: class="footnote" -->the letters after `.` in a filename tell your computer which program can run it)*
         
-        Let's create our first Python file!
+        Let&rsquo;s create our first Python file!
 
         1. Right-click on the **exercises** folder to create a new file.   
           Then select **New > Python File**
@@ -744,7 +744,7 @@
       </script>
     </section>
     
-    
+    <!-- TODO: If we have time, create an example using a numeric temperature value to decide what's cold, normal or too hot to handle -->
 
 <!-- -------------------- -->
 <!-- Opening a file -->
@@ -761,9 +761,9 @@
       <script type="text/template">
         ## Opening a file
 
-        We typically store computer data in files. The data in some files is human-readable text (while in others, like images, it's in a format that's only readable by programs with specific code to interpret the data).
+        We typically store computer data in files. The data in some files is human-readable text (while in others, like images, it&rsquo;s in a format that&rsquo;s only readable by programs with specific code to interpret the data).
 
-        It's fairly easy in Python to open a human-readable file and print the contents to the screen.
+        It&rsquo;s fairly easy in Python to open a human-readable file and print the contents to the screen.
 
         ```python
         >>> chapters = open('./exercises/llc-chapters.csv')
@@ -783,7 +783,7 @@
 
         In the `llc-chapters.csv` file, each line of the file represents a Ladies Learning Code Chapter
 
-        Let's print out a few individual lines
+        Let&rsquo;s print out a few individual lines
 
         ```python
         >>> chapters = open('./exercises/llc-chapters.csv')
@@ -815,13 +815,13 @@
 
         Notice that all three lines have exactly three values, separated by a comma (`,`)
 
-        The first line doesn't tell us about a chapter, it has headings than describe the data in the next lines
+        The first line doesn&rsquo;t tell us about a chapter, it has headings than describe the data in the next lines
 
         The second and third line each represent one of the LLC chapters.
 
         This is a specific *file format* called **CSV** (short for *comma-separated values*) that is used to represent spreadsheet-like data
 
-        This is a widely used file-format because it's such a simple representation of rows and columns of data. It doesn't matter whether you're on a Mac, Windows, Linux or even on a web app like Google Docs – everyone can use this data.
+        This is a widely used file-format because it&rsquo;s such a simple representation of rows and columns of data. It doesn&rsquo;t matter whether you&rsquo;re on a Mac, Windows, Linux or even on a web app like Google Docs – everyone can use this data.
         </script>
     </section>
 
@@ -829,7 +829,7 @@
       <script type="text/template">
         ## Reading all the lines in a file
 
-        It's all well and good to print out the lines in a file one-at-a-time while you're learning, but surely, there's a better way to read *all* the lines in a file.
+        It&rsquo;s all well and good to print out the lines in a file one-at-a-time while you&rsquo;re learning, but surely, there&rsquo;s a better way to read *all* the lines in a file.
 
         In programming, when you want to perform the same action many times in a row, we use **loops**. In Python, the main kind of loop is the `for` loop.
 
@@ -854,9 +854,9 @@
 
         If you play around with the `chapters` variable in your console, you might notice that it has a `.next()` function which does the same thing as `.readline()`
 
-        `for` can work with many different collections of data, all it's looking for is that `.next()` function.
+        `for` can work with many different collections of data, all it&rsquo;s looking for is that `.next()` function.
 
-        Behind the scenes, it's doing something roughly like
+        Behind the scenes, it&rsquo;s doing something roughly like
 
         ```python
         line = chapters.next()
@@ -865,7 +865,7 @@
         # Go back to get the next value and repeat until there are no more values
         ```
 
-        We'll use the for loop for our final exercise after lunch.
+        We&rsquo;ll use the `for` loop in our future exercises to work with a larger file.
       </script>
     </section>
 
@@ -883,7 +883,7 @@
       <script type="text/template">
         ## Libraries
 
-        Python has wonderful built in **libraries** which are collections of code that other people have written. Today we'll use the **csv** library. It contains instructions that tell python how to work with CSV files.
+        Python has wonderful built in **libraries** which are collections of code that other people have written. Today we&rsquo;ll use the **csv** library. It contains instructions that tell python how to work with CSV files.
 
         This library will help us makes sense of the data contained in a CSV file to learn more about LLC activities in 2014.
 
@@ -903,7 +903,7 @@
 
         Whereas before we were looking at the whole line, with the CSV library we can get individual pieces of data (like the cells of a spreadsheet)
 
-        Today we'll mostly be using the `DictReader` tool because it makes it easier to understand the data in each row (without remembering anything about the headings)
+        Today we&rsquo;ll mostly be using the `DictReader` tool because it makes it easier to understand the data in each row (without remembering anything about the headings)
         
         * First we open the file  
           
@@ -993,7 +993,7 @@
         <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
       </ul>
 
-      <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+      <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou&rsquo;s CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
     </section>
 
   </main><!-- cls main section -->
