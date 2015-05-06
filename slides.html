@@ -953,7 +953,7 @@
       <script type="text/template">
         ## Exercise 3: Find your chapter lead (15 mins)
 
-        You already have the tools you need to find your chapter lead in the `llc-chapters.csv`.
+        You already have the tools you need to find your chapter lead(s) in the `llc-chapters.csv`.
 
         You'll find the file **ex3_chapter_lead_finder.py** in the **exercises** folder filled with comments. Apply what we've learned so far, as suggested by the comments.
 
@@ -974,6 +974,87 @@
       </script>
     </section>
 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Counting loops
+
+        Sometimes you want to keep track of the number of times something happened. 
+
+        We can add `1` to the current value of a variable, and assign it back to the same variable. Python processes everything to the right of the `=` before assignining the result.
+
+        ```python
+        >>> count = 0
+        >>> count = count + 1
+        >>> print(count)
+        1
+        ```
+        We can count the number of chapters in **llc-chapters.csv** if we increase by one each time it loops.
+
+        ```python
+        # file: exercises/demo_loop_count.py
+        import csv
+
+        csv_file = open('../exercises/llc-chapters.csv')
+        csv_data = csv.DictReader(csv_file)
+
+        count = 0
+        for row in csv_data:
+            count += 1
+
+        print("There are " + str(count) + " chapters")
+        ```
+
+        There are 16 chapters <!-- .element: class="delayed" -->
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Finding a word in a string
+
+        So far, we've compared entire strings to each other `"Python" == "Python"`.
+
+        But what if you want to find a word inside an existing string?
+
+        Python has a `.find()` function available on `str` types that tells you where another string appears – its **index**.
+
+        ```python
+        >>> "Ladies Learning Code".find("Code")
+        16
+        >>> title = "National Learn to Code Day"
+        >>> title.find("Code")
+        18
+        >>> title.find("code")
+        -1
+        ```
+
+        The `.find()` function is case-sensitive – it will only match the *exact* string you pass it, even if the only difference is `C` vs `c`.  
+        *<!-- .element: class="footnote" --> When we said computers require **exact** instructions, we meant it!*
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Exercise 4: Find chapters with co-leads (10 mins)
+
+        Now that you know how to find a string within a string, we can figure out which cities have co-leads.
+
+        If you open the **llc-chapters.csv** file you can see that we *always* use the `&` character to separate co-lead names.
+
+        Remember, `.find()` returns the index of the search string in the other string **or** `-1` to signal nothing was found. We can use the `>=` symbol to determine if the string was found.
+
+        ```python
+        >>> leads = "Nancy & Cassie"
+        >>> if leads.find("&") >= 0:
+        ...     print(leads + " are co-leads")
+        ... 
+        Nancy & Cassie are co-leads
+        ```
+
+        Use this pattern to print a list of cities with co-leads and count how many there are.
+      </script>
+    </section>
 <!-- -------------------- -->
 <!-- Begin final exercises -->
 <!-- -------------------- --> 
@@ -999,6 +1080,15 @@
         Hello Pythonistas
         ```
       </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Resources
+
+        * [The (Official) Python Tutorial](https://docs.python.org/2.7/tutorial/)
+        ```
+      </script>
     </section>
 
 <!-- Last slide -->
@@ -1008,7 +1098,7 @@
 
       <h2 class="heading-bg">
         <span>Fundamentals of Programming:</span><br>
-        <span>Intro to Python</span>
+        <span>Introduction to Python</span>
       </h2>
       <h3><span>with</span> Instructor Name</h3>
 
