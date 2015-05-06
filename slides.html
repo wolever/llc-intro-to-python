@@ -85,7 +85,7 @@
         <!-- Computers are very good at repetitive tasks, but they require *precise instructions*. -->
 
         Today, you&rsquo;ll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2014.
-        
+
         <div class="presenter-notes">
           Whether you take these tools and apply them to your own data or keep using the tools you know, by the end of the day, you&rsquo;ll hopefully have greater confidence in leveraging computers to do your work faster and focus on what matters to you.
         </div> 
@@ -212,7 +212,7 @@
         The console is an interactive tool used to test and debug code and it&rsquo;s included in PyCharm!
 
         Let&rsquo;s open the console: 
-        
+
         ![Tools &gt; Python Console&hellip;](./framework/img/workshop/open-console1.png)
 
         The console will pop up at the bottom of the application. Python is now ready to do your bidding...
@@ -330,7 +330,7 @@
 
         Python needs to know what **type** something is to figure out how to work with it.  Let&rsquo;s look at that error again.
 
-        
+
         ```python
         >>> print(2 + "2")
         Traceback (most recent call last):
@@ -363,13 +363,13 @@
         <br>
         We can also fix the `1/2 = 0` error in the previous example.  
         When Python divides two integers, it doesn&rsquo;t know that the answer isn&rsquo;t an integer so it gets confused. 
-        
+
         Integer **types** don&rsquo;t have decimal parts, so we have to convert to a more precise type, in this case **floats** since this number **type** can handle decimals.
         ```
         >>> print(float(1) / float(2))
         0.5
         ```
-        
+
       </script>
     </section>
 
@@ -384,7 +384,7 @@
         Traceback (most recent call last):
         File "<input>", line 1, in <module>
         TypeError: cannot concatenate 'str' and 'int' objects
-        
+
         ```
 
         And we can fix that problem from before where `1/2 = 0`
@@ -437,7 +437,7 @@
         ```
 
         What do you think the value of `x * y` will be? <span class="delayed">50</span>
-        
+
         Why?  
         You changed <!-- .element: class="delayed" -->`y`, but the old value of `x` is still in memory.   
         Python will remember variable names until you close pycharm or [clear them manually.](https://docs.python.org/2/tutorial/datastructures.html#the-del-statement)
@@ -466,22 +466,22 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Class Exercise 1: Hello World
-        
+
         We&rsquo;ve already used the console to put a 'Hello World' message on the screen, so why not take it one step further and have Python say hello to anyone?
-        
+
         Python has a `raw_input()` function that gets data typed by a user and **returns** that value to you.
-        
+
         1. You give `raw_input()` a message to let your user know what you&rsquo;re looking for
         1. The user types something and hits the **enter** key
         1. Whatever the user types is **returned** to you.
-        
+
         Let&rsquo;s try it in your console:
-        
+
         ```python
         >>> raw_input("What's your name?")
         ```
         It outputs `What's your name?`
-        
+
         You type in your name, press **enter**, and it will print it out on the next line.
       </script>
     </section>
@@ -491,10 +491,10 @@
         ## Class Exercise 1: Hello World (part 2)
 
         Typing into the console is fine to start, but do you really want to type your program every time you run it?
-        
+
         Python can run your code from a file with a `.py` **extension**  
         *(<!-- .element: class="footnote" -->the letters after `.` in a filename tell your computer which program can run it)*
-        
+
         Let&rsquo;s create our first Python file!
 
         1. Right-click on the **exercises** folder to create a new file.   
@@ -505,14 +505,14 @@
         1. Enter the name `ex1_hello_world.py` in the popup box.
 
           ![new python file name](framework/img/workshop/new-python-file.png)
-        
+
         1. Now we can add our simple program to the file
-        
+
           ```python
           # Assign the raw_input value to a variable
           # Your program waits for the user to hit enter
           name = raw_input("Please enter your name: ")
-          
+
           # … then continues to this line
           print("Hello " + name)
           ```
@@ -520,26 +520,26 @@
         Now how do we get PyCharm to run this file?
       </script>
     </section>
-    
+
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Class Exercise 1: Hello World (part 3)
-        
+
         Code in a file is just text until you **run** it through the Python program.
-        
+
         1. To run the code saved in your file, select **Run > Run&hellip;**  
-        
+
           ![](framework/img/workshop/pycharm-run.png)  
         *<!-- .element: class="footnote" -->Note: PyCharm automatically saves your file before you run it.*
-        
+
         1. Click on `ex1_hello_world` (again) in the menu popup that appears in the middle of the screen.  
-        
+
           ![Click to run your program](./framework/img/workshop/run-mini-menu.png)
-        
+
         1. Now click into the console window that opened, type your name and press the **Enter** key. You should see your name repeated back at you.
-        
+
           ![Demo of hello_world example](./framework/img/workshop/ex1-hello-world.png)
-        
+
         1. You can run your program as many times as you like by repeating the steps above.
       </script>
     </section>
@@ -743,7 +743,7 @@
 
       </script>
     </section>
-    
+
     <!-- TODO: If we have time, create an example using a numeric temperature value to decide what's cold, normal or too hot to handle -->
 
 <!-- -------------------- -->
@@ -904,20 +904,20 @@
         Whereas before we were looking at the whole line, with the CSV library we can get individual pieces of data (like the cells of a spreadsheet)
 
         Today we&rsquo;ll mostly be using the `DictReader` tool because it makes it easier to understand the data in each row (without remembering anything about the headings)
-        
+
         * First we open the file  
-          
+
           ```
           >>> chapters_file = open('llc-chapters.csv')
           ```
         * Then, we import the `csv` library and pass it a reference to our file  
-        
+
           ```
           >>> import csv
           >>> chapters_data = csv.DictReader(chapters_file)
           ```
         * Now, we can pull out one row at a time  
-        
+
           ```
           >>> chapter = chapters_data.next()
           >>> print(chapter)
