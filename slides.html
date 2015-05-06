@@ -56,7 +56,7 @@
       <div class="info">
         <h1 class="heading-bg">
           <span>Fundamentals of Programming:</span><br>
-          <span>Intro to Python</span>
+          <span>Introduction to Python</span>
         </h1>
         <!-- TODO: Fill in instructor details -->
         <h2><span>with</span> Instructor Name</h2>
@@ -70,14 +70,37 @@
       </div>
     </section>
 
-    <section class="slide" data-markdown>
+    <section class="slide project" data-markdown>
+      <script type="text/template">
+        # Today's project
+
+        Imagine you're organizing **National Learn to Code Day 2015**. 
+
+        ![](framework/img/workshop/learn-to-code-day.jpg) <!-- .element: class="col-2" -->
+
+        You want it to be an *even bigger success* than last year, so not only do you need to know how many people attended (so you can beat that target), but you also want to pull other salient stats to put in a press release.
+
+        News outlets *love* stats. 
+
+        <!-- Computers are very good at repetitive tasks, but they require *precise instructions*. -->
+
+        Today, you&#39;ll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2014.
+        
+        <div class="presenter-notes">
+          Whether you take these tools and apply them to your own data or keep using the tools you know, by the end of the day, you&#39;ll hopefully have greater confidence in leveraging computers to do your work faster and focus on what matters to you.
+        </div> 
+      </script>
+    </section>
+
+    <section class="slide agenda" data-markdown>
+      <script type="text/template">
       ## Agenda
 
-      [[will this need to be amended?]] <!-- .element: class="footnote" -->
+      [[To be amended at the end]]
 
       ###Morning
 
-      * Types
+      * Types 
       * Variables
       * Conditionals &amp; Logic
       * Reading a file
@@ -89,47 +112,6 @@
       * Dictionaries
       * 
       * Final Project
-
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Today's project
-
-        [[ small detail but should we take out the year so it can be reused next year? Or just update the CSV file and this slide?  - add graphics of cities ]]
-
-        Imagine you're organizing **National Learn to Code Day 2015**. 
-
-        You want it to be an *even bigger success* than last year, so not only do you need to know how many people attended (so you can beat that target), but you also want to pull other salient stats to put in a press release – news outlets *love* stats. 
-
-        Computers are very good at repetitive tasks, but they require *precise instructions*. 
-
-        Today, you'll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2014.
-
-        Whether you take these tools and apply them to your own data or keep using the tools you know, by the end of the day, you'll hopefully have greater confidence in leveraging computers to do your work faster and focus on what matters to you.
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      ## Getting Started
-
-      You will need:
-
-      [[ Added links to mac & windows version, though they should already come with python installed.  Should we say something about it being pre-installed on macs? Also, should we say to download the "latest" version and just note that syntax we're using is compatible in 2 & 3? ]]
-
-      1. **Python 2.7.x installed** ( [Mac](https://www.python.org/downloads/), [Windows](https://www.python.org/downloads/windows/) )
-      1. **[Pycharm Educational Edition](https://www.jetbrains.com/pycharm-educational/)**
-
-      1. **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). 
-
-        (Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.) 
-
-      1. Learner files from LLC (containing the csv files), located in the **exercises** folder.
-    </section>
-
-    <section class="slide title" data-markdown>
-      <script type="text/template">
-        # Let&#39;s get started
       </script>
     </section>
 
@@ -142,58 +124,84 @@
         * We use a programming language to give the computer instructions in a form that it can understand
         * Programming languages have syntax, just like human languages do
 
-          <h2>Why Python Is Awesome</h2>
-          <ul>
-            <li>Free</li>
-            <li>Open source</li>
-            <li>Write once, run anywhere</li>
-            <li>Great community</li>
-            <li>The syntax looks like English</li>
-          </ul>
+        <br>
+        ## Why Python Is Awesome
+
+        *   Free
+        *   Open source
+        *   Write once, run anywhere
+        *   Great community
+        *   The syntax looks like English
 
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section class="slide who-uses" data-markdown>
       <script type="text/template">
-        ## Who uses python?
+        ## Who uses Python?
 
         * Data Analysis
         * Scientific Computing
         * Scripting
         * Testing
         * Web Applications (Django, Flask)
-        * Youtube, Reddit, Pinterest, Instagram, Dropbox, The Onion
-        <!--* Add pictures to this slide?-->
+        * and some of your favorite websites!
+        <!-- * Youtube, Reddit, Pinterest, Instagram, Dropbox, The Onion -->
 
-        [[ maybe add the logos of the companies who use it?  but not high priority.  Though gifs & pictures are a nice way to break up the content with some humor.]]
+        ![](framework/img/workshop/logo-dropbox.png)
+        ![](framework/img/workshop/logo-instagram.png)
+        ![](framework/img/workshop/logo-pinterest.png)
+        ![](framework/img/workshop/logo-youtube.png)
+        ![](framework/img/workshop/logo-theonion.png)
 
       </script>
     </section>
 
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Let&#39;s get started!
+      </script>
+    </section>
+
     <section class="slide" data-markdown>
+      ## Development Environment
+
+      You will need:
+
+      1. **Python 2.7.x installed** ( [Mac](https://www.python.org/downloads/), [Windows](https://www.python.org/downloads/windows/) )
+      1. **[Pycharm Educational Edition](https://www.jetbrains.com/pycharm-educational/)**
+
+      1. **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). 
+
+        (Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.) 
+
+      1. Learner files from LLC (containing the exercise and reference files).
+    </section>
+
+    <section class="slide centered" data-markdown>
       <script type="text/template">
         ## PyCharm IDE
 
-        * IDE (Integrated Development Environment)
-        * IDEs help us write code faster with fewer mistakes
+        IDEs (Integrated Development Environment) help us write code faster with fewer mistakes.
 
-        ![Yes! That is awesome!](http://33.media.tumblr.com/01744bb3d8772b180de821b6cb9e31f1/tumblr_mormzpYsBZ1s410g9o2_400.gif) <!-- .element: class="delayed" style="width: 75%" -->
+        ![Yes! That is awesome!](http://33.media.tumblr.com/01744bb3d8772b180de821b6cb9e31f1/tumblr_mormzpYsBZ1s410g9o2_400.gif) <!-- .element: style="width: 90%" -->
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        ## open/setting up PyCharm?
+        ## Setting up your project files
 
-        [[ When I opened the IDE for the first time, I got these quickstart options.  Maybe go through this and possible add the toolbar?  I took some screenshots just in case. ]]
+        Open PyCharm and select **Open**. Then navigate to the **llc-intro-to-python-master** folder & select **Choose**.
 
-        ![](framework/img/workshop/pycharm-ide1.png)
-        ![](framework/img/workshop/pycharm-ide2.png)
-        ![](framework/img/workshop/pycharm-ide3.png)
+        ![](framework/img/workshop/pycharm-project1.png)
+        ![](framework/img/workshop/pycharm-project2.png)
 
-        ![](framework/img/workshop/view-toolbar1.png)
-        ![](framework/img/workshop/view-toolbar2.png)
+        The project files contained within the folder will now appear in your sidebar.  Select the arrows to open the folders within. Today, you will be working from the **exercises** folder.  The **reference** folder contains today&#39;s project files for reference as an answer key.
+
+        The other folders & files are needed to make this slide presentation work so avoid making edits to them! 
+
+        ![](framework/img/workshop/pycharm-project3.png)
       </script>
     </section>
 
@@ -201,21 +209,17 @@
       <script type="text/template">
         ## Running Python in PyCharm
 
-        [[ Opening the console looked different for me, not sure it's b/c I have the education version or b/c I'm on a mac.  Added a screenshot and a explantion of >>> at the bottom .]]
+        The console is an interactive tool used to test and debug code and it&#39;s included in PyCharm!
 
-        1. Open the console  
+        Let&#39;s open the console: 
+        
+        ![Tools &gt; Python Console&hellip;](./framework/img/workshop/open-console1.png)
 
-          ![Tools &gt; Python Console&hellip;](./framework/img/workshop/tool-open-console.png)
+        The console will pop up at the bottom of the application. Python is now ready to do your bidding...
 
-          [[mine]]   
-          ![Tools &gt; Python Console&hellip;](./framework/img/workshop/tool-open-console-mac.png)
+        ![Python Console in PyCharm](./framework/img/workshop/open-console2.png)
 
-        2. Python is ready to do your bidding…  [[ my console is white - not a huge deal but just wanted to check if screenshot is of a theme. ]]
-
-          ![Python Console in PyCharm](./framework/img/workshop/python-console.png)
-
-         Note the `>>>` symbol. It is used by the console to represent a space for you to enter your input but you don&#39;t have to actually type it.
-
+        Now you can type code after the green `>>>` symbol. It is used by the console to represent a space for you to enter your input but you don&#39;t have to actually type it.  You can also open and close the console by selecting the icon in the lower right of PyCharm.
       </script>
     </section>
 
@@ -227,9 +231,9 @@
       <script type="text/template">
         ## Python can do math
 
-        [[ added some extra info about >>>]]
+        In the console, after the `>>>`, try out these examples.  
 
-        Open up the console in PyCharm (see previous slide) and try out these examples. The command you input into the console after the `>>>` gets *evaluated* and a value is returned back to you.
+        The command you input after the `>>>` gets *evaluated* and a value is returned back to you.
 
         ```
         >>> 2 + 2
@@ -252,15 +256,16 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Types
+        ## Data Types
+
+        We just used the *integer* number **type** but there are many more.
 
         * Integer (`int`, whole numbers)
         * Float (numbers containing decimals)
         * String (`str`, words, sentences, literal text)
         * Boolean (true, false)
-        * list
-        * and more! [TODO: ADD LINK TO RESOURCE]
-        * Use `type()` to figure out what type something is.
+        * list and more! [TODO: ADD LINK TO RESOURCE]
+        * Use `type()` and a data value inside the parentheses to figure out the type.
 
         ```
         >>> type("hello")
@@ -282,7 +287,11 @@
       <script type="text/template">
         ## Printing
 
-        The `print()` **function** outputs values to the screen. Functions at its most basic definition holds a set of instructions. More on functions later. Also, note the usage of quotes. 
+        The `print()` **function** outputs values to the screen. 
+
+        Functions at its most basic definition holds a set of instructions. More on functions later. 
+
+        Also, note the usage of quotes. 
 
         ```
         >>> print("Hello World!")
@@ -321,11 +330,15 @@
 
         Python needs to know what **type** something is to figure out how to work with it.  Let&#39;s look at that error again.
 
+        
         ```python
+        >>> print(2 + "2")
+        Traceback (most recent call last):
+        File "<input>", line 1, in <module>
         TypeError: unsupported operand type(s) for +: 'int' and 'str'
         ```
 
-        * The first 2 is an integer.
+        * The first `2`, inside of `print(2 + "2")` is an integer.
         * `"2"` enclosed in the quotes, is a **string** type, or "literal text".
         * Python can&#39;t figure out how to add a number and string, so it spits out an error.
 
@@ -340,16 +353,18 @@
       <script type="text/template">
         ## Typecasting
 
-        We can tell Python how to convert that `"2"` into a number and **change the type**. Try it in your console.
+        We can tell Python how to convert that `"2"` into a number and **change the type**. In this case, change the string to an integer (whole number) using the `int()` function.  Try it in your console.
 
         ```
         >>> print(2 + int("2"))
         4
         ```
 
-        And we can fix that problem from before where python thought that `1/2 = 0`. 
-        </br> That happened because when python divides two integers, it doesn&#39;t know that the answer isn&#39;t an integer. 
-        </br> Integer types don&#39;t have decimal parts, so we have to convert to a more precise type.
+        <br>
+        We can also fix the `1/2 = 0` error in the previous example.  
+        When Python divides two integers, it doesn&#39;t know that the answer isn&#39;t an integer so it gets confused. 
+        
+        Integer **types** don&#39;t have decimal parts, so we have to convert to a more precise type, in this case **floats** since this number **type** can handle decimals.
         ```
         >>> print(float(1) / float(2))
         0.5
@@ -360,9 +375,9 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Typecasting
+        ## Typecasting (Continued)
 
-        We can also tell python to convert numbers to strings.
+        Python can also be used to convert numbers to strings.
 
         ```
         >>> print(99 + " bottles of beer on the wall")
@@ -389,7 +404,7 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Variables
-        * We usually want to store a value to use later
+        * In programming, we usually want to store a value to use later
         * Variables store data in your computer&#39;s memory and you use a **variable name** to fetch their value (kind of like a bookmark in a book)
         * Use the equal (`=`) symbol to assign a value to a variable
 
@@ -417,55 +432,34 @@
 
         Variables can be changed after you have assigned the value by "reassigning" them.
 
+        Previous code block:
+
+        ```python
+        >>> x = 5
+        >>> y = 4
+        >>> x * y
+        20
+        ```
+
+        New code block: 
+
         ```python
         >>> y = 10
         >>> x * y
         ```
 
-        What do you think the value of `x * y` will be?
-
-        50 <!-- .element: class="delayed" -->
-        <p>Why?
-        </br> You changed y, but the old value of x is still in memory. 
-        </br> Python will remember variable names until you close pycharm or [clear them manually.](https://docs.python.org/2/tutorial/datastructures.html#the-del-statement)
-        </p> <!-- .element: class="delayed" -->
-
-      </script>
-    </section>
-
-<!-- -------------------- -->
-<!-- Exercise 1: Hello World -->
-<!-- -------------------- -->
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Create your first program
-
-        [[ expanded description for step one ]]
-
-        1.  Open the today&#39;s project files in PyCharm using **File** > **Open…** and navigating to your `llc-intro-to-python-master` folder.  It should now show in your sidebar.
-
-          ![](framework/img/workshop/open-options.png)
-
-        1. Right click or two-finger tap on the **exercises** folder to create a new file and select **New > Python File**
-
-          [[add two-finger tap for macs. also my screenshot is white.  also assuming this is just a default theme? ]]
-
-          ![Create a new Python File](./framework/img/workshop/new-file.png)
-          ![Create a new Python File](./framework/img/workshop/new-file-mac.png)
-
-        1. Enter the name `ex1_hello_world.py`
-
-          ![new python file name](framework/img/workshop/new-python-file.png)
-
-          [[ when I create a new file, it opened in a new tab with the `__author__ = 'yourusername'` - what is this, can it be erased? Should we provide explanation? ]]
-
+        What do you think the value of `x * y` will be? <span class="delayed">50</span>
+        
+        Why?  
+        You changed <!-- .element: class="delayed" -->`y`, but the old value of `x` is still in memory.   
+        Python will remember variable names until you close pycharm or [clear them manually.](https://docs.python.org/2/tutorial/datastructures.html#the-del-statement)
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Hint: Comments
+        ## Pro Tip! Use Comments
+
         * Programmers use *comments* to leave notes for themselves (and other people reading their code in the future)
         * Good comments add information that isn't immediately obvious
         * You'll see more comments throughout the exercises
@@ -477,22 +471,53 @@
       </script>
     </section>
 
+<!-- -------------------- -->
+<!-- Exercise 1: Hello World -->
+<!-- -------------------- -->
+
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Class Exercise 1: Hello World
 
-        Now that you know how to use variables, we&#39;ll use a built-in function of Python `raw_input` to capture whatever you type and store it for you.  
+        Let&#39;s create your first Python program! First, make a new file.
 
-        ```
-        # raw_input takes whatever you pass it and puts it in a variable (remember, this is a comment)
-        name = raw_input("Please enter your name so we can greet you: ")
+        1. Right click or two-finger tap on the **exercises** folder (in the left sidebar) to create a new file.   
+          Then select **New > Python File**
 
-        print("Hello " + name)
-        ```
+          ![Create a new Python File](./framework/img/workshop/new-file-mac.png)
+
+        1. Enter the name `ex1_hello_world.py` in the popup box. 
+
+          (<!-- .element: class="footnote" -->**.py** is the Python file extension. Just like **.pdf** for PDFs) 
+
+          ![new python file name](framework/img/workshop/new-python-file.png)
+      </script>
+    </section>
+
+    
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Class Exercise 1: Hello World
+
+        So far, we've been assigning values to variables but we can a Python function, `raw_input()`, to capture user input and store it in the variable.  
+
+        1. Assign the `raw_input()` function, with a message, to a `name` variable.
+          ```
+          # raw_input takes whatever you pass it and puts it in a variable
+          name = raw_input("Please enter your name so we can greet you: ")
+          ```
+          
+          In the next line, print out "Hello" and the user's name.  We can *concatenate* a string and a variable.
+
+          ```
+          print("Hello " + name)
+          ```
 
         1. Save it, then run it by selecting **File > Save All** and **Run > Run… ** 
 
-          ![Run your program](./framework/img/workshop/run-file.png)
+          ![](framework/img/workshop/pycharm-save.png)<!-- .element: width="390" --> ![](framework/img/workshop/pycharm-run.png)
+
         1. Click on `ex1_hello_world` (again) in the menu popup that appears in the middle of the screen. 
 
           ![Click to run your program](./framework/img/workshop/run-mini-menu.png)
@@ -511,7 +536,7 @@
         ## Conditionals &amp; Logic
         * The program we just wrote ran straight from top to bottom
         * What if the program could act differently and decide what to do?
-        * Use conditionals like and `if` statement
+        * Use conditionals like an `if` statement
         * Each `if` statement contains a test, and the indented block is the code that will run if the test is `True` but not if it is `False` and looks something like this:
 
         ```python
@@ -714,12 +739,12 @@
       <!-- Mandatory Monty Python reference -->
       <h1 class="heading-bg"><span>And now for something completely different</span></h1>
 
-      <aside style="position: absolute; bottom: 20px; right: 20px;">Source: <a href="https://www.flickr.com/photos/nerdcoreblog/13995269592/">flickr.com/photos/nerdcoreblog</a></aside>
+      <aside>Source: <a href="https://www.flickr.com/photos/nerdcoreblog/13995269592/">flickr.com/photos/nerdcoreblog</a></aside>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Opening a file
+        ## Opening a file
 
         We typically store computer data in files. The data in some files is human-readable text (while in others, like images, it's in a format that's only readable by programs with specific code to interpret the data).
 
@@ -737,7 +762,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        # One line at a time
+        ## One line at a time
 
         In order to make use of the data in a file, we need to make sense of small portions at a time.
 
