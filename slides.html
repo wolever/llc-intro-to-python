@@ -428,22 +428,10 @@
       <script type="text/template">
         ## Reassigning Variables
 
-        [[ does this make sense? separated it from the previous example ]]
-
-        Variables can be changed after you have assigned the value by "reassigning" them.
-
-        Previous code block:
+        Variables can be changed after you&rsquo;ve assigned the value by "reassigning" them.
 
         ```python
-        >>> x = 5
-        >>> y = 4
-        >>> x * y
-        20
-        ```
-
-        New code block: 
-
-        ```python
+        # Remember, we've already set x = 5 and y = 4
         >>> y = 10
         >>> x * y
         ```
@@ -478,52 +466,81 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Class Exercise 1: Hello World
+        
+        We&rsquo;ve already used the console to put a 'Hello World' message on the screen, so why not take it one step further and have Python say hello to anyone?
+        
+        Python has a `raw_input()` function that gets data typed by a user and **returns** that value to you.
+        
+        1. You give `raw_input()` a message to let your user know what you're looking for
+        1. The user types something and hits the **enter** key
+        1. Whatever the user types is **returned** to you.
+        
+        Let&rsquo;s try it in your console:
+        
+        ```python
+        >>> raw_input("What's your name?")
+        ```
+        It outputs `What's your name?`
+        
+        You type in your name, press **enter**, and it will print it out on the next line.
+      </script>
+    </section>
 
-        Let&#39;s create your first Python program! First, make a new file.
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Class Exercise 1: Hello World (part 2)
 
-        1. Right click or two-finger tap on the **exercises** folder (in the left sidebar) to create a new file.   
+        Typing into the console is fine to start, but do you really want to type your program every time you run it?
+        
+        Python can run your code from a file with a `.py` **extension**  
+        *(<!-- .element: class="footnote" -->the letters after `.` in a filename tell your computer which program can run it)*
+        
+        Let's create our first Python file!
+
+        1. Right-click on the **exercises** folder to create a new file.   
           Then select **New > Python File**
 
           ![Create a new Python File](./framework/img/workshop/new-file-mac.png)
 
-        1. Enter the name `ex1_hello_world.py` in the popup box. 
-
-          (<!-- .element: class="footnote" -->**.py** is the Python file extension. Just like **.pdf** for PDFs) 
+        1. Enter the name `ex1_hello_world.py` in the popup box.
 
           ![new python file name](framework/img/workshop/new-python-file.png)
-      </script>
-    </section>
-
-    
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Class Exercise 1: Hello World
-
-        So far, we've been assigning values to variables but we can a Python function, `raw_input()`, to capture user input and store it in the variable.  
-
-        1. Assign the `raw_input()` function, with a message, to a `name` variable.
-          ```
-          # raw_input takes whatever you pass it and puts it in a variable
-          name = raw_input("Please enter your name so we can greet you: ")
-          ```
+        
+        1. Now we can add our simple program to the file
+        
+          ```python
+          # Assign the raw_input value to a variable
+          # Your program waits for the user to hit enter
+          name = raw_input("Please enter your name: ")
           
-          In the next line, print out "Hello" and the user's name.  We can *concatenate* a string and a variable.
-
-          ```
+          # … then continues to this line
           print("Hello " + name)
           ```
 
-        1. Save it, then run it by selecting **File > Save All** and **Run > Run… ** 
-
-          ![](framework/img/workshop/pycharm-save.png)<!-- .element: width="390" --> ![](framework/img/workshop/pycharm-run.png)
-
-        1. Click on `ex1_hello_world` (again) in the menu popup that appears in the middle of the screen. 
-
+        Now how do we get PyCharm to run this file?
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Class Exercise 1: Hello World (part 3)
+        
+        Code in a file is just text until you **run** it through the Python program.
+        
+        1. To run the code saved in your file, select **Run > Run&hellip;**  
+        
+          ![](framework/img/workshop/pycharm-run.png)  
+        *<!-- .element: class="footnote" -->Note: PyCharm automatically saves your file before you run it.*
+        
+        1. Click on `ex1_hello_world` (again) in the menu popup that appears in the middle of the screen.  
+        
           ![Click to run your program](./framework/img/workshop/run-mini-menu.png)
-        1. Now click into the console window that opened, type your name and press the **Enter** key. You should see your name repeated back at you. 
-
+        
+        1. Now click into the console window that opened, type your name and press the **Enter** key. You should see your name repeated back at you.
+        
           ![Demo of hello_world example](./framework/img/workshop/ex1-hello-world.png)
+        
+        1. You can run your program as many times as you like by repeating the steps above.
       </script>
     </section>
 
@@ -702,8 +719,6 @@
       <script type="text/template">
         ## Examples with and/or
 
-        [[ turn this into an independant exercise?]]
-
         ```python
         >>> x = 5
         >>> if x > 0 and x < 6:
@@ -728,6 +743,8 @@
 
       </script>
     </section>
+    
+    
 
 <!-- -------------------- -->
 <!-- Opening a file -->
