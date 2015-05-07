@@ -928,29 +928,46 @@
       </script>
     </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Using a library
+
+        So far, we've been writing all our code in the console or in one file. When you use a library, you don't want to copy all that code into your file, otherwise it would become huge!
+
+        In Python, you can **import** the functions and other structures from a **module** so you can use the code without having it in your file. Then you can use functions (and other structures) from that **module** to do your bidding!
+
+        In your console, import the `csv` library as follows. 
+
+        ```python
+        >>> import csv
+        ```
+
+        If you then type `csv.` and wait, it will show you a list of everything in that module.
+
+        ![Console with functions available in the csv module](framework/img/workshop/import-list.png)
+
+        More info:<!-- .element: class="footnote" --> https://docs.python.org/2/tutorial/modules.html
+      </script>
+    </section>
+
 <!-- -------------------- -->
 <!-- Reading a CSV -->
 <!-- -------------------- -->
-
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Reading data from a CSV file
 
-        The CSV libary has a number of different tools for extracting actual data from a CSV file.
+        The CSV libary has a number of different tools for extracting actual data from a CSV file. Instead of a line of comma-separated values, we can access individual values easily (like the cells of a spreadsheet).
 
-        Whereas before we were looking at the whole line, with the CSV library we can get individual pieces of data (like the cells of a spreadsheet)
+        Today we&rsquo;ll mostly use the `DictReader` tool because it's easier to understand the data in each row (without remembering anything about the headings)
 
-        Today we&rsquo;ll mostly be using the `DictReader` tool because it makes it easier to understand the data in each row (without remembering anything about the headings)
-
-        * First we open the file  
-
-          ```
-          >>> chapters_file = open('llc-chapters.csv')
-          ```
-        * Then, we import the `csv` library and pass it a reference to our file  
+        * First we open the file
+        * Then, we import the `csv` library
+        * Then we pass the file into `DictReader` to make sense of it 
 
           ```
           >>> import csv
+          >>> chapters_file = open('llc-chapters.csv')
           >>> chapters_data = csv.DictReader(chapters_file)
           ```
         * Now, we can pull out one row at a time  
