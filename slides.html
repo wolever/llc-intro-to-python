@@ -988,7 +988,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 3: Find your chapter lead (15 mins)
+        ## Exercise 4: Find your chapter lead (15 mins)
 
         You already have the tools you need to find your chapter lead(s) in the `llc-chapters.csv`.
 
@@ -1073,13 +1073,13 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 4: Find chapters with co-leads (10 mins)
+        ## Exercise 5: Find chapters with co-leads (15 mins)
 
         Now that you know how to find a string within a string, we can figure out which cities have co-leads.
 
         If you open the **llc-chapters.csv** file you can see that we *always* use the `&` character to separate co-lead names.
 
-        Remember, `.find()` returns the index of the search string in the other string **or** `-1` to signal nothing was found. We can use the `>=` symbol to determine if the string was found.
+        Remember, `.find()` returns the index of the search string in the other string **or** `-1` to signal nothing was found. We can use the `>=` operator to determine if the string was found as shown below:
 
         ```python
         >>> leads = "Nancy & Cassie"
@@ -1089,7 +1089,10 @@
         Nancy & Cassie are co-leads
         ```
 
-        Use this pattern to print a list of cities with co-leads and count how many there are.
+        Create a new file **ex5_coleaders.py** and use what you've learned to find co-leaders.
+        
+        * Print a list of cities with co-leads 
+        * Count how many chapters have co-leads
       </script>
     </section>
     
@@ -1126,7 +1129,7 @@
         In order to promote **National Learn to Code Day 2015**, and measure its success relative to 2014, we'll need some stats:
         
         * Number of people signed up for "National Learn to Code Day"
-        * Total number people registered for "Kids Learning Code" or "Girls Leaning Code" events throughout the year
+        * Total number people registered for "Kids Learning Code" or "Girls Learning Code" events throughout the year
         * Total number people involved in youth-oriented "National Learn to Code Day"
         
       </script>
