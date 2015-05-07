@@ -155,6 +155,14 @@
       </script>
     </section>
 
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+      </br></br> </br>
+        ![Kind of a big deal](http://31.media.tumblr.com/97e5702f9946a834c6288de14d080024/tumblr_miinvvJM9j1s410g9o1_500.gif) <!-- .element: style="width: 50%" -->
+      </script>
+    </section>
+
+
     <section class="slide title" data-markdown>
       <script type="text/template">
         # Let&rsquo;s get started!
@@ -180,9 +188,9 @@
       <script type="text/template">
         ## PyCharm IDE
 
-        IDEs (Integrated Development Environment) help us write code faster with fewer mistakes.
-
-        ![Yes! That is awesome!](http://33.media.tumblr.com/01744bb3d8772b180de821b6cb9e31f1/tumblr_mormzpYsBZ1s410g9o2_400.gif) <!-- .element: style="width: 90%" -->
+        IDEs (Integrated Development Environments) help us write code faster with fewer mistakes.
+        </br></br></br>
+        ![Yes! That is awesome!](http://33.media.tumblr.com/01744bb3d8772b180de821b6cb9e31f1/tumblr_mormzpYsBZ1s410g9o2_400.gif) <!-- .element: style="width: 60%" -->
       </script>
     </section>
 
@@ -262,7 +270,7 @@
         * Float (numbers containing decimals)
         * String (`str`, words, sentences, literal text)
         * Boolean (true, false)
-        * list and more! [TODO: ADD LINK TO RESOURCE]
+        * list [and more!](http://www.diveintopython3.net/native-datatypes.html) 
         * Use `type()` and a data value inside the parentheses to figure out the type.
 
         ```
@@ -384,16 +392,18 @@
         TypeError: cannot concatenate 'str' and 'int' objects
 
         ```
+        Use the `str()` function to convert a number to a string.
 
-        And we can fix that problem from before where `1/2 = 0`
         ```
-        >>> print(float(1) / float(2))
-        0.5
+        >>> print(str(99) + " bottles of beer on the wall")
+
         ```
-        <br>
+
         The ability to tell Python to change the type will come in handy later.
+
       </script>
     </section>
+
 
 <!-- -------------------- -->
 <!--Variables-->
@@ -600,30 +610,6 @@
       </script>
     </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Indentation
-
-        Python uses indentation to figure out which 'block' of code belongs inside the `if` or `else`.
-
-        Whitespace is very important in Python!
-
-        Also note the `...` symbols.  Just like the `>>>`, you don't actually type it.
-
-        ```python
-        >>> weather = "cold"
-        >>> if weather == "cold":
-        ...     print("Wear a sweater!")
-        ... else:
-        ... print("Dress normally :)")
-        File "<input>", line 5
-            print("Dress normally :)")
-                ^
-        IndentationError: expected an indented block
-        ```
-      </script>
-    </section>
-
 <!-- -------------------- -->
 <!-- Exercise 2: Weather  -->
 <!-- -------------------- -->
@@ -632,8 +618,9 @@
       <script type="text/template">
         ## Class Exercise 2: Weather
 
-        Create a new file `ex2_weather_advice.py` and add the below code snippet.   
-        Note the syntax and try to type in one line at a time.
+        Create a new file `ex2_weather_advice.py` and write out the code snippet below (avoid the temptation of copy-paste).
+
+        Note the syntax and **indentation** (whitespace is very important in Python). Try to understand each line as you type it.
 
         ```python
         # file: ex2_weather_advice.py
@@ -654,6 +641,34 @@
       </script>
     </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Indentation
+
+        Python uses indentation to figure out which 'block' of code belongs inside the `if` or `else`.
+
+        When you're typing out examples that use an `if` or `else` in the console, you'll see this:
+
+        ```python
+        >>> if weather == "cold":
+        ... ̺̺̺̺
+        ```
+
+        The `...` and auto-indentation is the console signalling that it expects the nested block code.  
+        When you're done, press enter twice (or backspace and type `else:` and you'll get your next indented block).
+
+        ```python
+        >>> if weather == "cold":
+        ...     print("Wear a sweater!")
+        ... else:
+        ... print("Dress normally :)")
+        File "<input>", line 5
+            print("Dress normally :)")
+                ^
+        IndentationError: expected an indented block
+        ```
+      </script>
+    </section>
 
 <!-- -------------------- -->
 <!-- More conditions -->
@@ -746,17 +761,21 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 2: Weather (Part 2) (10mins)
+        ## Exercise 3: Smarter Weather (15mins)
 
-        Go back to your original weather program and update it (or create a new one) using math comparison operators as well as and/or.  Try this:
+        Instead of telling your program if it's cold, you can input the temperature and let it decide what to do.
+        
+        Open the **ex3_smarter_weather.py** and use math comparison operators as well as `and`/`or` to follow the instructions.
         
         ```
-        if the weather is greater than or equal to 25 degrees
-          Go to the beach!
-        else if the weather is less than 25 degrees AND greater than 15 degrees
-          Still warm enough for ice cream!
-        else
-          Wear a sweater and dream of beaches.
+        # if the weather is greater than or equal to 25 degrees
+        if "replace this with the right condition":
+            print("Go to the beach!")
+        # the weather is less than 25 degrees AND greater than 15 degrees
+        elif "replace this with the right conditions":
+            # Still warm enough for ice cream!
+        else:
+            # Wear a sweater and dream of beaches.
         ```
 
         Feel free to choose your own temperatures and messages :)
@@ -972,7 +991,7 @@
 
         You already have the tools you need to find your chapter lead(s) in the `llc-chapters.csv`.
 
-        You'll find the file **ex3_chapter_lead_finder.py** in the **exercises** folder filled with comments. Apply what we've learned so far, as suggested by the comments.
+        You'll find the file **ex4_chapter_lead_finder.py** in the **exercises** folder filled with comments. Apply what we've learned so far, as suggested by the comments.
 
         ```python
         # Import the csv library
@@ -1087,7 +1106,13 @@
         
         In 2014, Ladies Learning Code had nearly 6500 participants and volunteers involved in events (not accounting for people who attended multiple events).
         
-        Hand-counting the data we're looking for would de a drag, but computers will churn through repetitive tasks according to your instructions without stopping for coffee.
+          Do you want to count those?
+
+          ![Nope, not doing that.](http://33.media.tumblr.com/11c6f192a380836be3282b4777addc32/tumblr_mumzzcS9Ug1s410g9o1_500.gif) 
+
+        Computers will churn through repetitive tasks according to your instructions without stopping for coffee.
+
+
       </script>
     </section>
 <!-- -------------------- -->
@@ -1130,9 +1155,25 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Resources
+        Tutorials/Courses: </br>
+        [The (Official) Python Tutorial](http://docs.python.org/2.7/tutorial/) </br>
+        [Full Stack Python](http://www.fullstackpython.com) </br>
+        [Udacity - Learn Object Oriented Python](http://www.udacity.com/course/programming-foundations-with-python--ud036)  </br>
 
-        * [The (Official) Python Tutorial](https://docs.python.org/2.7/tutorial/)
+        Web Development with Python: </br>
+        [Django](https://www.djangoproject.com/) </br>
+        [Hello Web App](https://www.hellowebapp.com/ ) </br>
         
+        Other: </br>
+        [Raspberry pi](https://www.raspberrypi.org/) </br>
+        [mySQL connector](http://dev.mysql.com/doc/connector-python/en/) </br>
+      </script>
+    </section>
+
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+      </br></br> </br>
+        ![Good luck](http://38.media.tumblr.com/ef58a0f8420d96d9e12c73bff83de50a/tumblr_mh0d0koXHX1s410g9o1_500.gif) <!-- .element: style="width: 50%" -->
       </script>
     </section>
 
