@@ -602,30 +602,6 @@
       </script>
     </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Indentation
-
-        Python uses indentation to figure out which 'block' of code belongs inside the `if` or `else`.
-
-        Whitespace is very important in Python!
-
-        Also note the `...` symbols.  Just like the `>>>`, you don't actually type it.
-
-        ```python
-        >>> weather = "cold"
-        >>> if weather == "cold":
-        ...     print("Wear a sweater!")
-        ... else:
-        ... print("Dress normally :)")
-        File "<input>", line 5
-            print("Dress normally :)")
-                ^
-        IndentationError: expected an indented block
-        ```
-      </script>
-    </section>
-
 <!-- -------------------- -->
 <!-- Exercise 2: Weather  -->
 <!-- -------------------- -->
@@ -634,8 +610,9 @@
       <script type="text/template">
         ## Class Exercise 2: Weather
 
-        Create a new file `ex2_weather_advice.py` and add the below code snippet.   
-        Note the syntax and try to type in one line at a time.
+        Create a new file `ex2_weather_advice.py` and write out the code snippet below (avoid the temptation of copy-paste).
+
+        Note the syntax and **indentation** (whitespace is very important in Python). Try to understand each line as you type it.
 
         ```python
         # file: ex2_weather_advice.py
@@ -656,6 +633,34 @@
       </script>
     </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Indentation
+
+        Python uses indentation to figure out which 'block' of code belongs inside the `if` or `else`.
+
+        When you're typing out examples that use an `if` or `else` in the console, you'll see this:
+
+        ```python
+        >>> if weather == "cold":
+        ... ̺̺̺̺
+        ```
+
+        The `...` and auto-indentation is the console signalling that it expects the nested block code.  
+        When you're done, press enter twice (or backspace and type `else:` and you'll get your next indented block).
+
+        ```python
+        >>> if weather == "cold":
+        ...     print("Wear a sweater!")
+        ... else:
+        ... print("Dress normally :)")
+        File "<input>", line 5
+            print("Dress normally :)")
+                ^
+        IndentationError: expected an indented block
+        ```
+      </script>
+    </section>
 
 <!-- -------------------- -->
 <!-- More conditions -->
