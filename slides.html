@@ -263,10 +263,10 @@
         We just used the *integer* number **type** but there are many more.
 
         * Integer (`int`, whole numbers)
-        * Float (numbers containing decimals)
+        * Float (`float`, numbers containing decimals)
         * String (`str`, words, sentences, literal text)
-        * Boolean (True, False)
-        * list [and more!](http://www.diveintopython3.net/native-datatypes.html) 
+        * Boolean (`True`, `False`)
+        * [and many more!](http://www.diveintopython3.net/native-datatypes.html)
         * Use `type()` and a data value inside the parentheses to figure out the type.
 
         ```
@@ -278,10 +278,29 @@
 
         >>> type(3.14159)
         <type 'float'>
-
-        >>> type([1, 2, 3, 4])
-        <type 'list'>
         ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Functions
+
+        * Functions are bundles of instructions that can be re-used
+        * Function can take **arguments** and can **return** values
+        * Ex. the `add` function takes `a` and `b` as arguments and will **return** the result
+
+        ```python
+        >>> def add(a, b):
+        ...     return a + b
+        ...
+        >>> add(1, 2)
+        3
+        >>> add(3, 4)
+        7
+        ```
+
+        We won't need to make many of our own functions in today's exercises, but we'll be using those provided by Python and its libraries.
       </script>
     </section>
 
@@ -445,6 +464,17 @@
         Why?  
         You changed <!-- .element: class="delayed" -->`y`, but the old value of `x` is still in memory.   
         Python will remember variable names until you close PyCharm or [clear them manually](https://docs.python.org/2/tutorial/datastructures.html#the-del-statement).
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## What's in a name?
+
+        * Variable names can only use letters, numbers and the underscore (`_`); no spaces
+        * In Python, you separate words with the `_`; ex. `ladies_learning_code`
+        * They cannot begin with a number; `1day` gives you an error while `day1` is fine
+        * The names we'll use today are descriptive, but otherwise have no special meaning to Python
       </script>
     </section>
 
