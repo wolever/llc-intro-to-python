@@ -300,7 +300,7 @@
         7
         ```
 
-        We won't need to make many of our own functions in today's exercises, but we'll be using those provided by Python and its libraries.
+        We won't create our own functions in today's exercises, but we'll use those provided by Python and its libraries.
       </script>
     </section>
 
@@ -312,7 +312,7 @@
 
         Functions at its most basic definition holds a set of instructions. More on functions later. 
 
-        Also, note the usage of quotes. 
+        Also, note the use of quotes.
 
         ```
         >>> print("Hello World!")
@@ -758,6 +758,8 @@
       <script type="text/template">
         ## Examples with and/or
 
+        Take note! Whereas in math notation you can write `0 < x < 6`, in Python you need to split these into separate comparisons
+
         ```python
         >>> x = 5
         >>> if x > 0 and x < 6:
@@ -931,11 +933,11 @@
       </script>
     </section>
 
-   <!--  <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown>
       <script type="text/template">
         # Lunch! 
       </script>
-    </section> -->
+    </section>
 
 <!-- ==================== -->
 <!-- Afternoon Content-->
@@ -1074,7 +1076,7 @@
         # file: exercises/demo_loop_count.py
         import csv
 
-        csv_file = open('../exercises/llc-chapters.csv')
+        csv_file = open('llc-chapters.csv')
         csv_data = csv.DictReader(csv_file)
 
         count = 0
