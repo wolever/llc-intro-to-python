@@ -1029,6 +1029,32 @@
       </script>
     </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Working in a `for` loop
+
+        Before lunch, we learned how the `for` loops can repeat the same set of intructions on a collection of things - like our CSV rows.
+
+        * The `for` loop assigns *each row* in turn to the `chapter` variable
+        * We group instructions together with the same indentation
+        * All the instructions in the indented block, are run for each `chapter`
+
+        ```python
+        >>> import csv
+        >>> chapters_file = open('./exercises/llc-chapters.csv')
+        >>> chapters = csv.DictReader(chapters_file)
+        >>> for chapter in chapters:
+        ...     print(chapter['City'] + ', ' + chapter['Province'])
+        ...     print('    ' + chapter['Chapter Lead(s)'])
+        ...
+        Vancouver, BC
+            Meghan
+        Calgary, AB
+            Darcie
+        # ... Continues for the other chapters
+        ```
+      </script>
+    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
