@@ -263,10 +263,10 @@
         We just used the *integer* number **type** but there are many more.
 
         * Integer (`int`, whole numbers)
-        * Float (numbers containing decimals)
+        * Float (`float`, numbers containing decimals)
         * String (`str`, words, sentences, literal text)
-        * Boolean (True, False)
-        * list [and more!](http://www.diveintopython3.net/native-datatypes.html) 
+        * Boolean (`True`, `False`)
+        * [and many more!](http://www.diveintopython3.net/native-datatypes.html)
         * Use `type()` and a data value inside the parentheses to figure out the type.
 
         ```
@@ -278,10 +278,29 @@
 
         >>> type(3.14159)
         <type 'float'>
-
-        >>> type([1, 2, 3, 4])
-        <type 'list'>
         ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Functions
+
+        * Functions are bundles of instructions that can be re-used
+        * Function can take **arguments** and can **return** values
+        * Ex. the `add` function takes `a` and `b` as arguments and will **return** the result
+
+        ```python
+        >>> def add(a, b):
+        ...     return a + b
+        ...
+        >>> add(1, 2)
+        3
+        >>> add(3, 4)
+        7
+        ```
+
+        We won't create our own functions in today's exercises, but we'll use those provided by Python and its libraries.
       </script>
     </section>
 
@@ -293,7 +312,7 @@
 
         Functions at its most basic definition holds a set of instructions. More on functions later. 
 
-        Also, note the usage of quotes. 
+        Also, note the use of quotes.
 
         ```
         >>> print("Hello World!")
@@ -445,6 +464,17 @@
         Why?  
         You changed <!-- .element: class="delayed" -->`y`, but the old value of `x` is still in memory.   
         Python will remember variable names until you close PyCharm or [clear them manually](https://docs.python.org/2/tutorial/datastructures.html#the-del-statement).
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## What's in a name?
+
+        * Variable names can only use letters, numbers and the underscore (`_`); no spaces
+        * In Python, you separate words with the `_`; ex. `ladies_learning_code`
+        * They cannot begin with a number; `1day` gives you an error while `day1` is fine
+        * The names we'll use today are descriptive, but otherwise have no special meaning to Python
       </script>
     </section>
 
@@ -728,6 +758,8 @@
       <script type="text/template">
         ## Examples with and/or
 
+        Take note! Whereas in math notation you can write `0 < x < 6`, in Python you need to split these into separate comparisons
+
         ```python
         >>> x = 5
         >>> if x > 0 and x < 6:
@@ -901,11 +933,11 @@
       </script>
     </section>
 
-   <!--  <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown>
       <script type="text/template">
         # Lunch! 
       </script>
-    </section> -->
+    </section>
 
 <!-- ==================== -->
 <!-- Afternoon Content-->
@@ -997,6 +1029,32 @@
       </script>
     </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Working in a `for` loop
+
+        Before lunch, we learned how the `for` loops can repeat the same set of intructions on a collection of things - like our CSV rows.
+
+        * The `for` loop assigns *each row* in turn to the `chapter` variable
+        * We group instructions together with the same indentation
+        * All the instructions in the indented block, are run for each `chapter`
+
+        ```python
+        >>> import csv
+        >>> chapters_file = open('./exercises/llc-chapters.csv')
+        >>> chapters = csv.DictReader(chapters_file)
+        >>> for chapter in chapters:
+        ...     print(chapter['City'] + ', ' + chapter['Province'])
+        ...     print('    ' + chapter['Chapter Lead(s)'])
+        ...
+        Vancouver, BC
+            Meghan
+        Calgary, AB
+            Darcie
+        # ... Continues for the other chapters
+        ```
+      </script>
+    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1044,7 +1102,7 @@
         # file: exercises/demo_loop_count.py
         import csv
 
-        csv_file = open('../exercises/llc-chapters.csv')
+        csv_file = open('llc-chapters.csv')
         csv_data = csv.DictReader(csv_file)
 
         count = 0

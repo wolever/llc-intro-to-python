@@ -1,6 +1,6 @@
 import csv
 
-csv_file = open('../exercises/llc-chapters.csv')
+csv_file = open('llc-chapters.csv')
 csv_data = csv.DictReader(csv_file)
 
 count = 0
