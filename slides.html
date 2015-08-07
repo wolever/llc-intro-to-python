@@ -1202,6 +1202,25 @@
         * Total number people registered for "Kids Learning Code" or "Girls Learning Code" events throughout the year
         * Total number people involved in youth-oriented "National Learn to Code Day"
         
+        ## Alternative: Open Data Hackathon
+        
+        If you're feeling more adventurous and want to work through more challenging problems with real data the 
+        Government of Canada has many data sets available for general public use. Here are a few [suggested data sets](https://docs.google.com/spreadsheets/d/14fFZPKrb0RrKpjiAQYshwT3iYkTRGKeeFcpz3r8m8Qg) 
+        including registered charities, population estimates, consumer price data, and more.
+        
+        It's a good idea to open the data in program like Excel or [LibreOffice Spreadsheet](https://www.libreoffice.org/) 
+        so you can get a sense of what the columns and rows contain. 
+        
+        * Can you identify any interesting patterns?
+        * What are you interested in learning from the data?
+        * What do you want the output to be?
+        
+        So far we've seen examples where the output goes to the screen, but you might simply want to filter out a smaller
+        set of results and write them back to a new CSV (see `reference/writing_csv.py` for an example).
+        
+        Take the consumer vehicle [Fuel Consumption Ratings](http://open.canada.ca/data/en/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64)
+        you could filter out all the vehicles that require less than 10l per 100km (cheaper and greener cars).
+        
       </script>
     </section>
 
@@ -1214,7 +1233,7 @@
         * Just like `DictReader` there's a `DictWriter` in the csv package
         * Gather data then write out the headers and data to a file
         * Useful for filtering a big set of data down to something you can analyse in a spreadsheet program
-        * See `reference/bonus_writing_csv.py`
+        * See `reference/writing_csv.py`
         
         ### Reading files in other languages (like French)
         
