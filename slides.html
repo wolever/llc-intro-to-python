@@ -706,14 +706,14 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Testing with Math Comparison Operators
+        ## Vérification avec des opérateurs de comparaison mathématiques
 
-        Math operators can also be used to test numeric values. Here are a few we will use today.
+        Les opérateurs mathématique peuvent être utilisés pour tester des valeurs numériques. En voici quelques-uns que nous utiliserons aujourd'hui
 
-        `>` greater than
-        `<` less than
-        `>=` greater than or equal to
-        `<=` less than or equal to
+        * `>` Plus grand que ...
+        * `<` Plus petit que ...
+        * `>=` Plus grand ou égale à ...
+        * `<=` Plus petit ou égale à ...
 
         ```python
         >>> x = 5
@@ -734,12 +734,12 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## And / Or
+        ## Et / Ou logique
 
-        Sometimes, you can&rsquo;t neatly capture your conditions with one expression. You may need to combine multiple expressions to determine what to do next.
+        Parfois nous ne pouvons pas vérifier plusieurs conditions avec une seule expression. Nous devons alors combiner plusieurs expressions pour déterminer la suite des choses.
 
-        `and`: both things must be true
-        `or`: either one, or both things must be true
+        * `and`: Les expressions avant et après ce mot clés doivent être *vrai*
+        * `or`: Une des expressions avant et après ce mot clé doit être *vrai*
 
         ```python
         weather = "cold"
@@ -760,9 +760,9 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Examples with and/or
+        ## Exemples d'utilisation du *Et* et du *Ou* logique
 
-        In math notation you can write `0 < x < 6`, but in Python, you need to split these into separate comparisons.
+        Avec la notation mathématique, nous pouvons utiliser `0 < x < 6`. En python, nous devons séparer ces comparaisons.
 
         ```python
         >>> x = 5
@@ -791,14 +791,14 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 3: Smarter Weather (15mins)
+        ## Exercise 3: Un détecteur de température plus intelligent ! (15 minutes)
 
-        Instead of telling your program if it's cold, you can input the temperature and let it decide what to do.
+        Au lieu de dire au programme qu'il fait froid, nous pouvons lui fournir une température et le laisser nous dire quoi faire selon cette dernière
 
-        * Open **ex3_smarter_weather.py**
-        * use math comparison operators, `and`/`or`
-        * follow the instructions below
-        * feel free to choose your own temperatures and messages :)
+        * Ouvrez le fichier **ex3_smarter_weather.py**
+        * Utilisez les opérateurs de comparaison mathématique, `and`/`or`
+        * Suivez les instructions plus bas
+        * Sentez-vous bien à l'aise de modifier les températures proposées et leurs messages respectifs :)
 
         ```
         # if the weather is greater than or equal to 25 degrees
@@ -821,26 +821,26 @@
 
     <section class="slide title full-monty">
       <!-- Mandatory Monty Python reference -->
-      <h1 class="heading-bg"><span>And now for something completely different</span></h1>
+      <h1 class="heading-bg"><span>Et maintenant, pour changer le mal de place !</span></h1>
 
       <aside>Source: <a href="https://www.flickr.com/photos/nerdcoreblog/13995269592/">flickr.com/photos/nerdcoreblog</a></aside>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Opening a file
+        ## Ouverture d'un fichier
 
-        Computer data is often stored in files such **.csv** (comma-separated values) files.
-        These file types are used to represent spreadsheet-like data.
+        Des données dans un ordinateur sont souvent sauvegardés dans des fichiers comme les fichiers **.csv**.
+        Ces fichiers sont utilisés pour des données tabulaires.
 
-        Let's look at the example below to see how to open these files in Python and print the contents to the screen.
+        Regardons l'exemple ci-dessous pour connaître comment ouvrir un fichier en Python et afficher son contenu dans votre écran.
 
         ```python
         >>> chapters = open('./exercises/llc-chapters.csv')
         >>> print(chapters.read())
-        # … lots of file data …
+        # … Une grande quantité de données …
         >>> chapters.close()
-        # When you're done with a file it's a good idea to close it
+        # Lorsque vous en avez terminé avec le fichier, c'est une bonne idée de le fermer
         ```
       </script>
     </section>
