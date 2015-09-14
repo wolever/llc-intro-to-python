@@ -24,9 +24,14 @@
     margin: 25px;
   }
 }
-
-
 .slide {
+  &.project {
+    img {
+      width: 48%;
+      float: left;
+      margin-right: 2%;
+    }
+  }
   &.full-monty {
     background: url(../img/workshop/monty-python.jpg) no-repeat;
     background-size: cover;
