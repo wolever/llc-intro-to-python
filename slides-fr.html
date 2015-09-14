@@ -873,10 +873,10 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## One line at a time
+        ## Une ligne à la fois
 
-        In the previous slide we printed out three lines in the file, one at a time.
-        Notice that all three lines have exactly three values, separated by a comma.
+        Dans la diapositive précédente, nous affichions 3 lignes du fichier une à la fois.
+        Remarquez comment ces 3 lignes ont exactement 3 valeurs séparées par une virgule.
 
         ```
         City,Province,Chapter Lead(s)
@@ -884,23 +884,24 @@
         Calgary,AB,Darcie
         ```
 
-        * the first line shows the headings that describe the data in the next lines
-        * the second and third line each represent one of the LLC chapter cities & the name of the chapter lead
+        * La première ligne est l'en-tête et décrit les données de chacune des lignes suivantes
+        * La 2e et la 3e ligne représente les villes des chapitres LLC & le nom de la personne responsable
 
-        That's because it's pulling the data from the rows & columns of the CSV file.
+        C'est parce que le programme obtient ces données des lignes et des colonnes du fichier CSV.
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Loops: Reading all the lines in a file
+        ## Les boucles: lire toutes les lignes d'un fichier
 
-        We've just seen how to print out one line of a time but what if you need to read all the lines in the file?
+        Nous avons vu comment imprimer une ligne d'un fichier à la fois, mais que faire si nous devons lire toutes les lignes ?
 
-        In programming, to perform the same action many times in a row, **loops** are used.
-        In Python, try using the `for` loop to print each of the rows in the file.
+        En programmation, répéter une action plusieurs fois se fait avec des **boucles**.
 
-        Here's some sample code:
+        En Python, essayez d'utilser la boucle `for` pour imprimer chacune des lignes du fichier.
+
+        Voici un petit extrait de code:
 
         ```python
         >>> chapters = open('./exercises/llc-chapters.csv')
@@ -910,7 +911,7 @@
         >>> chapters.close()
         ```
 
-        More info: https://docs.python.org/2/tutorial/controlflow.html#for-statements
+        Informations supplémentaires: https://docs.python.org/2/tutorial/controlflow.html#for-statements
       </script>
     </section>
 
