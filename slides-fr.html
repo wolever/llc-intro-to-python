@@ -917,28 +917,28 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## `for` loop behind the scenes
+        ## L'arrière-scène des boucles `for`
 
-        If you play around with the `chapters` variable in your console, you might notice that it has a `.next()` function which does the same thing as `.readline()`
+        Si vous explorez la variable `chapters` dans votre ligne de commande, vous remarquerez peut-être qu'elle possède une méthode nommé `.next()`. Elle effectue la même chose que la méthode `.readline()`. 
 
-        `for` can work with many different collections of data, all it&rsquo;s looking for is that `.next()` function.
+        La boucle `for` fonctionne avec différents regroupements de données; la seule chose qu'elle demande en retour est la présence de la méthode `.next()`.
 
-        Behind the scenes, it&rsquo;s doing something roughly like
+        En dessous des couvertes, elle effectue quelque chose de similaire à:
 
         ```python
         line = chapters.next()
-        # Execute your code block
+        # éxécution de votre code dans la boucle
         # …
-        # Go back to get the next value and repeat until there are no more values
+        # traitement de la donnée suivante jusqu'à ce qu'il n'y ait plus de valeur
         ```
 
-        We&rsquo;ll use the `for` loop in our future exercises to work with a larger file.
+        Nous utiliserons la boucle `for` dans les exercices qui suivent pour travailler avec des fichiers plus volumineux.
       </script>
     </section>
 
     <section class="slide title" data-markdown>
       <script type="text/template">
-        # Lunch!
+        # Dîner !
       </script>
     </section>
 
@@ -948,13 +948,13 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Libraries
+        ## Les modules
 
-        Python has many useful built in **libraries** &mdash; collections of pre-written code.
+        Python possède plusieurs modules de base utiles &mdash; c'est du code déjà écrit qui ne demande qu'à être utilisé.
 
-        Today we&rsquo;ll use the **csv** library to help us make more sense of the data contained in a CSV file and learn more about the LLC activities in 2014.
+        Aujourd'hui, nuis utiliserons le module **csv** pour nous faciliter la vie avec les fichies CSV and en apprendre d'avantage sur les activités de LLC en 2014.
 
-        More info: https://docs.python.org/2/library/csv.html
+        Informations supplémentaires: https://docs.python.org/2/library/csv.html
 
         ![](framework/img/workshop/genius-glee.gif)
       </script>
@@ -962,23 +962,25 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Using a library
+        ## L'utilisation d'un module
 
-        So far, we've been writing all our code in the console or in one file. When you use a library, you don't want to copy all that code into your file, otherwise it would become huge!
+        Jusqu'içi, nous avons rédigé notre code dans une console ou dans un fichier.
+        
+        Quand nous utilisons un module, nous ne voulons pas copier tout son code dans notre fichier; il serait énorme !
 
-        Instead, **import** the functions and other structures from a **module** to use the code without actually adding all of the code into your file.
+        Au lieu de cela, nous devons **importer** les fonctions et les autres structures de données d'un module que nous voulons utiliser.
 
-        In your console, import the `csv` library as follows:
+        Dans votre ligne de commande, importez le module `csv` de la manière suivante:
 
         ```python
         >>> import csv
         ```
 
-        Then type `csv.` and wait. It will show a list of everything in that module.
+        Tapez ensuite `csv.` and attendez que l'autocomplétion fasse son travail pour vous montrer ce qui est disponible dans le module.
 
         ![Console with functions available in the csv module](framework/img/workshop/import-list.png)
 
-        More info: https://docs.python.org/2/tutorial/modules.html
+        Informations supplémentaires: https://docs.python.org/2/tutorial/modules.html
       </script>
     </section>
 
