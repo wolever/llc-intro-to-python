@@ -989,15 +989,17 @@
 <!-- -------------------- -->
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Reading data from a CSV file
+        ## Lire les données d'un fichier CSV
 
-        The CSV library has a number of different tools for extracting data from a CSV file. Instead of a line of comma-separated values like in the previous example, we can access individual values (like the cells of a spreadsheet).
+        Le module CSV possède une certaine quantité d'outils pour extraire des données d'un fichier CSV.
 
-        Today we&rsquo;ll mostly use the `DictReader` tool to access the values.
+        Au lieu d'obtenir une ligne séparé par des virgules comme dans un example précédent, nous pourrons accéder à ces valeurs plus facilement.
 
-        1. import the `csv` library
-        1. open the file
-        1. pass the file into `DictReader`
+        Aujourd'hui, nous utiliserons principalement l'outil `DictReader` pour accéder aux valeurs dans le fichier.
+
+        1. Importons le module `csv`
+        1. Ouvrons le fichier 
+        1. Passons le fichier dans la moulinette du `DictReader`
 
         ```
         >>> import csv
@@ -1005,7 +1007,7 @@
         >>> chapters_data = csv.DictReader(chapters_file)
         ```
 
-        Now, we can pull out one row at a time.
+        Nous pouvons maintenant obtenir une ligne à la fois:
 
         ```
         >>> chapter = chapters_data.next()
@@ -1019,11 +1021,11 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Dictionaries
+        ## Les dictionnaires de données
 
-        Using `DictReader` to print the values from the CSV file, outputs a `dict`ionary representing each row in the file, instead of comma-separated values.
+        Lorsque nous utilisons le `DictReader` pour afficher les lignes du fichier CSV, nous obtenons un `dict`ionnaire qui représentent chacune des lignes au lieu des valeurs séparées par des virgules.
 
-        Columns representing each city, can now be accessed with a keyword:
+        Les colonnes représentants chaque ville peuvent être accéder avec un mot-clé:
 
         ```python
         >>> chapter = {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
@@ -1039,13 +1041,13 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Working in a `for` loop
+        ## Comment travailler avec la boucle `for`
 
-        Earlier, we learned how `for` loops can repeat the same set of instructions. Let's take a look at this example below.
+        Précédemment, nous apprenions que la boucle `for` peut répéter une série d'instructions. Regardons l'exemple ci-dessous ensemble.
 
-        * the `for` loop assigns *each row* to the `chapter` variable
-        * group instructions together with the same indentation
-        * all the instructions in the indented block are run for each `chapter`
+        * La boucle `for` assigne *chacune des lignes* à la variable `chapter`
+        * Rassemblons les instructions dans la boucle avec la même indentation
+        * toutes les instructions dans la section indentée est éxécuté pour chacun des `chapter`
 
         ```python
         >>> import csv
@@ -1066,11 +1068,13 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 4: Find your chapter lead (15 mins)
+        ## Exercise 4: Trouvez la personne responsable de votre chapitre (15 minutes)
 
-        You already have the tools you need to find your chapter lead(s) in `llc-chapters.csv`.
+        Vous possédez maintenant tous les outils nécessaires pour trouver le ou les responsables dans le fichier `llc-chapters.csv`.
 
-        In the **exercises** folder, open **ex4_chapter_lead_finder.py** and follow the instructions listed in the comments. Try applying the concepts covered so far.
+        Dans le dossier **exercices**, ouvrez **ex4_chapter_lead_finder.py** and suivez les instructions qui s'y trouvent en commentaire.
+
+        Essayez d'appliquer ce que vous avez appris jusqu'ici.
 
         ```python
         # Import the csv library
