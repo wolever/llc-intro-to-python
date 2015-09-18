@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Ladies Learning Code</title>
+  <!-- Don't alter slideshow.css, CSSS slide deck needs it to work
+  https://github.com/LeaVerou/csss -->
+  <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
+
+  <!-- Theme-specific styles -->
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CQuicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="framework/css/highlightjs-themes/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/theme-llc.css" data-noprefix>
+  <link rel="shortcut icon" href="framework/img/favicon.ico">
+
+  <!-- Workshop-specific styles -->
+  <link rel="stylesheet" href="framework/css/workshop.css" data-noprefix>
+
+  <!-- Takes care of CSS3 prefixes! -->
+  <script src="framework/scripts/prefixfree.min.js"></script>
+
+  <!-- opens all links in a new window -->
+  <base target="_blank">
+</head>
+
+<!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
+<body data-duration="360">
+
+  <!-- Welcome slide -->
+  <header class="slide">
+    <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
+    <h1>Welcome to Ladies Learning Code!</h1>
+
+    <div class="instructions">
+      <!-- <h2>Get Connected</h2>
+      <p>Network: <br>
+      Password: </p> -->
+
+      <h2>Download</h2>
+      <p>Learner files: <a href="http://bitly.com/llc-python">http://bitly.com/llc-python</a> (zip file)</p>
+      <ul>
+        <li>unzip the learner file download (<em>extract all</em> if you’re on a PC)</li>
+        <li>open <strong>slides.html</strong> in your browser to view the presentation</li>
+      </ul>
+      <p>Install Python 2.7.x</p>
+      <ul>
+        <li>Windows - <a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></li>
+        <li>Mac - pre-installed. Go to <strong>Applications &gt; Utilities &gt; Terminal</strong><br>
+          In the terminal window type "python" to confirm installation.</li>
+      </ul>
+      <p>PyCharm Educational Edition<br>
+        <a href="https://www.jetbrains.com/pycharm-educational">https://www.jetbrains.com/pycharm-educational</a>
+      </p>
+    </div>
+    <div class="sponsor">
+      <p>In partnership with
+      <img src="framework/img/telus-logo-white.svg" alt="Telus logo"></p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Instructor info -->
+    <section class="slide intro">
+      <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
+      <div class="info">
+        <h1 class="heading-bg">
+          <span>Data Insights with Python for Beginners</span>
+        </h1>
+        <!-- TODO: Fill in instructor details -->
+      <!--   <h2><span>with</span> Instructor Name</h2>
+
+      <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <ul>
+        <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
+        <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
+        <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
+      </ul> -->
+        <div class="sponsor">
+          <p>In partnership with</p>
+          <img src="framework/img/telus-logo-white.svg" alt="Telus logo">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide project" data-markdown>
+      <script type="text/template">
+        # Today&rsquo;s project
+
+        Imagine you&rsquo;re organizing **National Learn to Code Day 2015**.
+
+        ![](framework/img/workshop/learn-to-code-day.jpg)
+        You want it to be an *even bigger success* than last year, so not only do you need to know how many people attended (so you can beat that target), but you also want to pull other interesting stats to put in a press release.
+
+        Today, you&rsquo;ll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2014.
+      </script>
+    </section>
+
+    <section class="slide agenda" data-markdown>
+      <script type="text/template">
+      ## Agenda
+
+      ###Morning
+
+      * Types
+      * Variables
+      * Conditionals &amp; Logic
+      * Reading a file
+      * For loops
+
+      ###Afternoon
+
+      * Libraries
+      * Dictionaries
+      * Finding &amp; counting patterns
+      * Final Project
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## What is programming?
+
+        * Programming is basically giving instructions to your computer in a form that it can understand
+        * Computers need *very specific* instructions
+        * Programming languages have syntax, just like human languages have grammar rules
+
+        <br>
+        ### Why Python Is Awesome
+
+        *   Free!
+        *   Open source
+        *   Write once, run anywhere
+        *   Great community
+        *   The syntax looks similar to English
+
+      </script>
+    </section>
+
+    <section class="slide who-uses" data-markdown>
+      <script type="text/template">
+        ## Who uses Python?
+
+        * Data Analysis
+        * Scientific Computing
+        * Scripting
+        * Testing
+        * Web Applications (Django, Flask)
+        * and some of your favorite websites!
+        <!-- * Youtube, Reddit, Pinterest, Instagram, Dropbox, The Onion -->
+
+        ![](framework/img/workshop/logo-dropbox.png)
+        ![](framework/img/workshop/logo-instagram.png)
+        ![](framework/img/workshop/logo-pinterest.png)
+        ![](framework/img/workshop/logo-youtube.png)
+        ![](framework/img/workshop/logo-theonion.png)
+
+      </script>
+    </section>
+
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+        ![Kind of a big deal](http://www.quickmeme.com/img/21/216c493407af61fa8dcc6a57876e280819842d334ea5b7c8b95feba8bb565848.jpg) <!-- .element: style="width: 40%" -->
+      </script>
+    </section>
+
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Let&rsquo;s get started!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      ## Development Environment
+
+      You will need:
+
+      1. **Python 2.7.x installed** ( [Mac](https://www.python.org/downloads/), [Windows](https://www.python.org/downloads/windows/) )
+      1. **[PyCharm Educational Edition](https://www.jetbrains.com/pycharm-educational/)**
+      1. [Learner files from LLC (containing the exercise and reference files)](https://github.com/ladieslearningcode/llc-intro-to-python/archive/master.zip).
+    </section>
+
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+        ## PyCharm IDE <br>(Integrated Development Environments)
+
+        Use IDEs to write code faster with fewer mistakes.
+        <br><br>
+        ![That is awesome!](http://www.reactiongifs.us/wp-content/uploads/2013/05/awesome_i_hear_that_psych.gif) <!-- .element: style="width: 60%" -->
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        ## Setting up your project files
+
+        Open PyCharm and select **Open**.
+        Navigate to the **llc-intro-to-python-master** folder & select **Choose**.
+
+        ![](framework/img/workshop/pycharm-project1.png)
+        ![](framework/img/workshop/pycharm-project2.png)
+
+        The project files contained within the folder will now appear in your sidebar.
+        Select the arrows to open the folders within.
+
+        Today, you will be working from the **exercises** folder.  The **reference** folder contains the answer key for reference.
+
+        The other folders & files are needed to make this slide presentation work, so avoid making edits to them!
+
+        ![](framework/img/workshop/pycharm-project3.png)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Running Python in PyCharm
+
+        The console is an interactive tool used to test and debug code and is included in PyCharm! Let&rsquo;s open the console:
+
+        ![Tools &gt; Python Console&hellip;](./framework/img/workshop/open-console1.png)
+
+        The console will pop up at the bottom of the application. Type code (instructions) after the green `>>>` symbol. This symbol is used to represent a space to enter your input but you don&rsquo;t have to actually type it.
+
+        ![Python Console in PyCharm](./framework/img/workshop/open-console2.png)
+
+        **Pro tip!** You can also open and close the console by selecting the icon in the lower right of PyCharm.
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!-- First Steps -->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Python can do math
+
+        In the console, after the `>>>`, try out these examples.
+
+        The command you input after the `>>>` gets *evaluated* and a value is returned back to you.
+
+        ```
+        >>> 2 + 2
+        4
+        ```
+
+        ```
+        >>> 2 * 15
+        30
+        ```
+
+        ```
+        >>> 1 / 2
+        0
+        ```
+        Why is `1 / 2 = 0`? We&rsquo;ll come back to that.
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Data Types
+
+        The previous example used the *integer* number **type** but there are many more.
+
+        * Integer (`int`, whole numbers)
+        * Float (`float`, numbers containing decimals)
+        * String (`str`, words, sentences, literal text)
+        * Boolean (`True`, `False`)
+        * [and many more!](http://www.diveintopython3.net/native-datatypes.html)
+
+        To display the type, use `type()` and a data value inside the parentheses.
+
+        ```
+        >>> type("hello")
+        <type 'str'>
+
+        >>> type(42)
+        <type 'int'>
+
+        >>> type(3.14159)
+        <type 'float'>
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Functions
+
+        * Functions are bundles of instructions that can be re-used
+        * Reusing functions helps to reduce redundancy
+        * Function can take **arguments** and can **return** values
+
+        e.g. the `add` function takes `a` and `b` as arguments and will **return** the result
+
+        ```python
+        >>> def add(a, b):
+        ...     return a + b
+        ...
+        >>> add(1, 2)
+        3
+        >>> add(3, 4)
+        7
+        ```
+
+        It is possible to create your own but today's exercises will use functions provided by Python and its libraries.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Printing
+
+        The `print()` **function** outputs values to the screen.
+
+        Note the syntax in the examples. Quotes should be included when using a *string* data type.
+
+        ```
+        >>> print("Hello World!")
+        Hello World!
+        ```
+
+        ```
+        >>> print(2 + 2)
+        4
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Concatenation
+        **Concatenation** is used to "add" strings together by joining multiple strings into one.
+        ```
+        >>> print("Hello " + "World!")
+        Hello World!
+        ```
+
+        <br>
+        But what if we try to join a string and a number?
+
+        ```python
+        >>> print(2 + "2")
+        Traceback (most recent call last):
+        File "<input>", line 1, in <module>
+        TypeError: unsupported operand type(s) for +: 'int' and 'str'
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Why did that error happen?
+
+        Python needs to know the data **type** to work with it.
+
+        Let&rsquo;s look at that error again.
+
+        ```python
+        >>> print(2 + "2")
+        Traceback (most recent call last):
+        File "<input>", line 1, in <module>
+        TypeError: unsupported operand type(s) for +: 'int' and 'str'
+        ```
+
+        <br>
+        The first `2` is an integer and the second `"2"`is a **string** type.
+
+        Python can&rsquo;t figure out how to add a number and string, so it spits out an error.
+
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!--Typecasting-->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Typecasting
+
+        In Python, you can *change the type*.
+
+        In this example, the `int()` function can be used to convert the `"2"` string into a number.
+
+        ```
+        >>> print(2 + int("2"))
+        4
+        ```
+
+        <br>
+        Remember the `1/2 = 0` example? When Python divides two integers, it rounds the result down to the nearest integer (in this case 0).
+
+        Integer **types** are whole numbers (no decimals), so to be more precise, `floats()` can be used to include decimals.
+        ```
+        >>> print(float(1) / float(2))
+        0.5
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Typecasting (Continued)
+
+        Python can also be used to convert numbers to strings. This example below will return an error.  Why?
+
+        ```
+        >>> print(99 + " bottles of beer on the wall")
+        Traceback (most recent call last):
+        File "<input>", line 1, in <module>
+        TypeError: cannot concatenate 'str' and 'int' objects
+        ```
+
+        <br>
+        Use the `str()` function to convert a number to a string.
+
+        ```
+        >>> print(str(99) + " bottles of beer on the wall")
+
+        ```
+
+        <br>
+        The ability to tell Python to change the type will come in handy later.
+
+      </script>
+    </section>
+
+
+<!-- -------------------- -->
+<!--Variables-->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Variables
+        * Used to store a value to use whenever you need it
+        * Variables store data in the computer&rsquo;s memory and a **variable name** is used to fetch their value (kind of like a bookmark in a book)
+        * Use the equal (`=`) symbol to *assign* a value to a variable
+
+        ```python
+        >>> x = 5
+        >>> y = 4
+        >>> x * y
+        20
+        ```
+
+        ```python
+        >>> today = "Saturday"
+        >>> print("Today is " + today)
+        Today is Saturday
+        ```
+        You can store almost anything in a variable.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Reassigning Variables
+
+        Variables can be changed after the initial declaration by "reassigning" them.
+
+        ```python
+        # Remember, we've already set x = 5 and y = 4
+        >>> y = 10
+        >>> x * y
+        ```
+
+        What do you think the value of `x * y` will be? <span class="delayed">50</span>
+
+        Why?<!-- .element: class="delayed" -->
+
+        You changed <!-- .element: class="delayed" -->`y`, but the old value of `x` is still in memory.
+        Python will remember variable names until you close PyCharm or [clear them manually](https://docs.python.org/2/tutorial/datastructures.html#the-del-statement).
+      </script>
+    </section>
+
+    <section class="slide list-font-default" data-markdown>
+      <script type="text/template">
+        ## What's in a name?
+
+        Here are some tips & best practices for creating variable names:
+
+        * variable names can only use letters, numbers and the underscore (`_`)<br> - no spaces!
+        * separate words with the underscore `_` symbol
+           * e.g `ladies_learning_code`
+        * they cannot begin with a number
+          * `1day` gives you an error, `day1` will work.
+        * use descriptive names
+          * e.g. `first_name` is more descriptive than `fn`
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Pro Tip! Use Comments
+
+        Programmers use *comments* to leave notes for themselves (and other people reading their code in the future)
+
+        Good comments add information that isn&rsquo;t immediately obvious.
+
+        You can also use comments to organize your code or to "hide" chunks of code you don't want to delete but are not ready to use yet. Feel free to add your own throughout the exercises!
+
+        Note the syntax below:
+
+        ```
+        # Python will ignore anything after the # symbol
+        ```
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!-- Exercise 1: Hello World -->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Class Exercise 1: Hello World
+
+        Instead of just a 'Hello World' message on the screen, take it one step further and have Python say hello to anyone!
+
+        Try using the `raw_input()` function. This will get the data inputed by a user and **returns** that value back to you.
+
+        1. Give `raw_input()` a message to let the user know what information is beingn requested
+        1. The user types something and hits the **enter** key
+        1. Whatever the user types is **returned** to you.
+
+        Try it in your console:
+
+        ```python
+        >>> raw_input("What's your name?")
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Class Exercise 1: Hello World (part 2)
+
+        Using the console is great for testing smaller chunks of code but there is a better way. Python can run code from a file with a `.py` file **extension**. Let&rsquo;s create a Python file!
+
+        1. Right-click on the **exercises** folder to create a new file. Then select **New > Python File**
+
+          ![Create a new Python File](./framework/img/workshop/new-file-mac.png)
+
+        1. Enter the name `ex1_hello_world.py` in the popup box.
+
+          ![new python file name](framework/img/workshop/new-python-file.png)
+
+        1. Add to program/code snippet to the file.
+
+          ```python
+          # Assign the raw_input value to a variable
+          # Your program waits for the user to hit enter
+          name = raw_input("Please enter your name: ")
+
+          # … then continues to this line
+          print("Hello " + name)
+          ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Class Exercise 1: Hello World (part 3)
+
+        Code in a **.py** file is just text until you **run** it through the Python program.
+
+        1. To run the code, select **Run > Run&hellip;**
+        PyCharm automatically saves your file before you run it
+
+          ![](framework/img/workshop/pycharm-run.png)
+
+        1. Click on `ex1_hello_world` (again) in the menu popup.
+
+          ![Click to run your program](./framework/img/workshop/run-mini-menu.png)
+
+        1. Click into the console window that opened, type your name and press the **Enter** key. You should see your name repeated back at you.
+
+          ![Demo of hello_world example](./framework/img/workshop/ex1-hello-world.png)
+
+        <br>
+        You can run your program as many times as you like by repeating the steps above.
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!-- Conditionals & Booleans -->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Conditionals &amp; Logic
+        The program we just wrote ran straight from top to bottom. What if the program could decide what to do instead?  `if` statements can be used to execute different sets of instructions based on specific conditions.
+
+        Each `if` statement contains a test. The indented block is the code that will run if the test is `True` and looks something like this:
+
+        ```python
+        # Not real code
+        if it is cold outside:
+            wear a sweater
+        else:
+            dress normally :)
+        ```
+
+        You can also have more than one condition.
+
+        ```python
+        # Still not real code
+        if it is cold outside:
+            wear a sweater
+        elif it is raining:
+            bring an umbrella
+        else:
+            dress normally :)
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Boolean values
+
+        How does `if` know what&rsquo;s `True` or `False`? Use 'Boolean' statements to test against the values.
+
+        Reminder, one equals symbol only *assigns* a value to the variable.
+
+        ```python
+        >>> weather = "raining"
+        ```
+
+        The double equals symbol (`==`) will evaluate if the value on the right matches the *assigned* value and can be used to test the values.
+        ```
+        >>> weather == "cold"
+        False
+        >>> weather == "raining"
+        True
+        ```
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!-- Exercise 2: Weather  -->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Exercise 2: Weather (10 mins)
+
+        Create a new file name it `ex2_weather_advice.py`.
+
+        Use the code snippet below as a reference but try to type it out rather than copy-paste to get used to the syntax.
+
+        Note the whitespace. Python uses indentation to signify which block of code belongs inside the `if` or `else`.
+
+        ```python
+        # file: ex2_weather_advice.py
+        weather = raw_input("What is the weather? (cold, raining, etc.)")
+
+        if weather == "cold":
+            print("Wear a sweater!")
+        elif weather == "raining":
+            print("Bring an umbrella")
+        else:
+            print("Dress normally :)")
+        ```
+        **Bonus: ** Try running your file a few times to get different advice and/or update the conditions or add more conditions.
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Indentation
+
+        Lorsque l'on tape `if` ou `else` dans la ligne de commande (au lieu d'un fichier *.py), vous apercevrez ceci:
+
+        ```python
+        >>> if weather == "cold":
+        ...
+        ```
+
+        Les `...` and l'indentation automatisé vous signale que la ligne de commande s'attends à du code indenté. Appuyez sur `enter` deux foix de suite lorsque vous avez terminé. (Ou appuyez sur `backspace` puis taper `else:` pour obtenir un autre bloque indenté)
+
+        ```python
+        >>> if weather == "cold":
+        ...     print("Wear a sweater!")
+        ... else:
+        ... print("Dress normally :)")
+        File "<input>", line 5
+            print("Dress normally :)")
+                ^
+        IndentationError: expected an indented block
+        ```
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!-- More conditions -->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Vérification avec des opérateurs de comparaison mathématiques
+
+        Les opérateurs mathématique peuvent être utilisés pour tester des valeurs numériques. En voici quelques-uns que nous utiliserons aujourd'hui
+
+        * `>` Plus grand que ...
+        * `<` Plus petit que ...
+        * `>=` Plus grand ou égale à ...
+        * `<=` Plus petit ou égale à ...
+
+        ```python
+        >>> x = 5
+        >>> print(x > 5)
+        False
+        >>> print(x >= 5)
+        True
+
+        >>> if x >= 5:
+        ...     print("x is greater than or equal to 5")
+        ... else:
+        ...     print("x is less than 5")
+        ...
+        x is greater than or equal to 5
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Et / Ou logique
+
+        Parfois nous ne pouvons pas vérifier plusieurs conditions avec une seule expression. Nous devons alors combiner plusieurs expressions pour déterminer la suite des choses.
+
+        * `and`: Les expressions avant et après ce mot clés doivent être *vrai*
+        * `or`: Une des expressions avant et après ce mot clé doit être *vrai*
+
+        ```python
+        weather = "cold"
+        snowing = True
+
+        >>> if weather == "cold" and snowing == True:
+        ...     print("wear a winter jacket")
+        ...
+
+        wear a winter jacket
+        >>> if weather == "raining" or snowing == True:
+        ...     print("bring a change of socks")
+        ...
+        bring a change of socks
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Exemples d'utilisation du *Et* et du *Ou* logique
+
+        Avec la notation mathématique, nous pouvons utiliser `0 < x < 6`. En python, nous devons séparer ces comparaisons.
+
+        ```python
+        >>> x = 5
+        >>> if x > 0 and x < 6:
+        ...     print("x is between 0 and 6.")
+        ...
+        x is between 0 and 6.
+        ```
+
+        ```python
+        >>> if type(x) == float or type(x) == int:
+        ...     print("x is a numeric value")
+        ...
+        x is a numeric value
+        ```
+
+        ```python
+        >>> if x > 10 and x < 0:
+        ...     print("x could never be greater than 10 AND less than 0")
+        ...
+        # Nothing prints here
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Exercise 3: Un détecteur de température plus intelligent ! (15 minutes)
+
+        Au lieu de dire au programme qu'il fait froid, nous pouvons lui fournir une température et le laisser nous dire quoi faire selon cette dernière
+
+        * Ouvrez le fichier **ex3_smarter_weather.py**
+        * Utilisez les opérateurs de comparaison mathématique, `and`/`or`
+        * Suivez les instructions plus bas
+        * Sentez-vous bien à l'aise de modifier les températures proposées et leurs messages respectifs :)
+
+        ```
+        # if the weather is greater than or equal to 25 degrees
+        if "replace this with the right condition":
+            print("Go to the beach!")
+        # the weather is less than 25 degrees AND greater than 15 degrees
+        elif "replace this with the right conditions":
+            # Still warm enough for ice cream!
+        else:
+            # Wear a sweater and dream of beaches.
+        ```
+
+
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!-- Opening a file -->
+<!-- -------------------- -->
+
+    <section class="slide title full-monty">
+      <!-- Mandatory Monty Python reference -->
+      <h1 class="heading-bg"><span>Et maintenant, pour changer le mal de place !</span></h1>
+
+      <aside>Source: <a href="https://www.flickr.com/photos/nerdcoreblog/13995269592/">flickr.com/photos/nerdcoreblog</a></aside>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Ouverture d'un fichier
+
+        Des données dans un ordinateur sont souvent sauvegardés dans des fichiers comme les fichiers **.csv**.
+        Ces fichiers sont utilisés pour des données tabulaires.
+
+        Regardons l'exemple ci-dessous pour connaître comment ouvrir un fichier en Python et afficher son contenu dans votre écran.
+
+        ```python
+        >>> chapters = open('./exercises/llc-chapters.csv')
+        >>> print(chapters.read())
+        # … Une grande quantité de données …
+        >>> chapters.close()
+        # Lorsque vous en avez terminé avec le fichier, c'est une bonne idée de le fermer
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Les fichiers CSV (avec des valeurs séparés par des virgules)
+
+        Pour utiliser les données d'un fichier ***.csv**, nous devons en traiter une petite quantité à la fois.
+
+        Dans le fichier `llc-chapters.csv`, chaque ligne représente un chapitre de Ladies Learning Code
+
+        Essayons d'en imprimer quelques-unes sur une ligne individuelle
+
+        ```python
+        >>> chapters = open('./exercises/llc-chapters.csv')
+        >>> print(chapters.readline())
+        City,Province,Chapter Lead(s)
+
+        >>> print(chapters.readline())
+        Vancouver,BC,Meghan
+
+        >>> print(chapters.readline())
+        Calgary,AB,Darcie
+
+        >>> chapters.close()
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Une ligne à la fois
+
+        Dans la diapositive précédente, nous affichions 3 lignes du fichier une à la fois.
+        Remarquez comment ces 3 lignes ont exactement 3 valeurs séparées par une virgule.
+
+        ```
+        City,Province,Chapter Lead(s)
+        Vancouver,BC,Meghan
+        Calgary,AB,Darcie
+        ```
+
+        * La première ligne est l'en-tête et décrit les données de chacune des lignes suivantes
+        * La 2e et la 3e ligne représente les villes des chapitres LLC & le nom de la personne responsable
+
+        C'est parce que le programme obtient ces données des lignes et des colonnes du fichier CSV.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Les boucles: lire toutes les lignes d'un fichier
+
+        Nous avons vu comment imprimer une ligne d'un fichier à la fois, mais que faire si nous devons lire toutes les lignes ?
+
+        En programmation, répéter une action plusieurs fois se fait avec des **boucles**.
+
+        En Python, essayez d'utiliser la boucle `for` pour imprimer chacune des lignes du fichier.
+
+        Voici un petit extrait de code:
+
+        ```python
+        >>> chapters = open('./exercises/llc-chapters.csv')
+        >>> for line in chapters:
+        ...     print(line)
+        ...
+        >>> chapters.close()
+        ```
+
+        Informations supplémentaires: https://docs.python.org/2/tutorial/controlflow.html#for-statements
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## L'arrière-scène des boucles `for`
+
+        Si vous explorez la variable `chapters` dans votre ligne de commande, vous remarquerez peut-être qu'elle possède une méthode nommé `.next()`. Elle effectue la même chose que la méthode `.readline()`. 
+
+        La boucle `for` fonctionne avec différents regroupements de données; la seule chose qu'elle demande en retour est la présence de la méthode `.next()`.
+
+        En dessous des couvertes, elle effectue quelque chose de similaire à:
+
+        ```python
+        line = chapters.next()
+        # éxécution de votre code dans la boucle
+        # …
+        # traitement de la donnée suivante jusqu'à ce qu'il n'y ait plus de valeur
+        ```
+
+        Nous utiliserons la boucle `for` dans les exercices qui suivent pour travailler avec des fichiers plus volumineux.
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Dîner !
+      </script>
+    </section>
+
+<!-- ==================== -->
+<!-- Afternoon Content-->
+<!-- ==================== -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Les modules
+
+        Python possède plusieurs modules de base utiles &mdash; c'est du code déjà écrit qui ne demande qu'à être utilisé.
+
+        Aujourd'hui, nuis utiliserons le module **csv** pour nous faciliter la vie avec les fichies CSV and en apprendre d'avantage sur les activités de LLC en 2014.
+
+        Informations supplémentaires: https://docs.python.org/2/library/csv.html
+
+        ![](framework/img/workshop/genius-glee.gif)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## L'utilisation d'un module
+
+        Jusqu'içi, nous avons rédigé notre code dans une console ou dans un fichier.
+        
+        Quand nous utilisons un module, nous ne voulons pas copier tout son code dans notre fichier; il serait énorme !
+
+        Au lieu de cela, nous devons **importer** les fonctions et les autres structures de données d'un module que nous voulons utiliser.
+
+        Dans votre ligne de commande, importez le module `csv` de la manière suivante:
+
+        ```python
+        >>> import csv
+        ```
+
+        Tapez ensuite `csv.` and attendez que l'autocomplétion fasse son travail pour vous montrer ce qui est disponible dans le module.
+
+        ![Console with functions available in the csv module](framework/img/workshop/import-list.png)
+
+        Informations supplémentaires: https://docs.python.org/2/tutorial/modules.html
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!-- Reading a CSV -->
+<!-- -------------------- -->
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Lire les données d'un fichier CSV
+
+        Le module CSV possède une certaine quantité d'outils pour extraire des données d'un fichier CSV.
+
+        Au lieu d'obtenir une ligne séparé par des virgules comme dans un example précédent, nous pourrons accéder à ces valeurs plus facilement.
+
+        Aujourd'hui, nous utiliserons principalement l'outil `DictReader` pour accéder aux valeurs dans le fichier.
+
+        1. Importons le module `csv`
+        1. Ouvrons le fichier 
+        1. Passons le fichier dans la moulinette du `DictReader`
+
+        ```
+        >>> import csv
+        >>> chapters_file = open('./exercises/llc-chapters.csv')
+        >>> chapters_data = csv.DictReader(chapters_file)
+        ```
+
+        Nous pouvons maintenant obtenir une ligne à la fois:
+
+        ```
+        >>> chapter = chapters_data.next()
+        >>> print(chapter)
+        {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
+        >>> type(chapter)
+        <type 'dict'>
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Les dictionnaires de données
+
+        Lorsque nous utilisons le `DictReader` pour afficher les lignes du fichier CSV, nous obtenons un `dict`ionnaire qui représentent chacune des lignes au lieu des valeurs séparées par des virgules.
+
+        Les colonnes représentants chaque ville peuvent être accéder avec un mot-clé:
+
+        ```python
+        >>> chapter = {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
+        >>> print(chapter['City'])
+        Vancouver
+        >>> print(chapter['Province'])
+        BC
+        >>> print(chapter['Chapter Lead(s)'])
+        Meghan
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Comment travailler avec la boucle `for`
+
+        Précédemment, nous apprenions que la boucle `for` peut répéter une série d'instructions. Regardons l'exemple ci-dessous ensemble.
+
+        * La boucle `for` assigne *chacune des lignes* à la variable `chapter`
+        * Rassemblons les instructions dans la boucle avec la même indentation
+        * toutes les instructions dans la section indentée est éxécuté pour chacun des `chapter`
+
+        ```python
+        >>> import csv
+        >>> chapters_file = open('./exercises/llc-chapters.csv')
+        >>> chapters = csv.DictReader(chapters_file)
+        >>> for chapter in chapters:
+        ...     print(chapter['City'] + ', ' + chapter['Province'])
+        ...     print('    ' + chapter['Chapter Lead(s)'])
+        ...
+        Vancouver, BC
+            Meghan
+        Calgary, AB
+            Darcie
+        # ... Continues for the other chapters
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Exercise 4: Trouvez la personne responsable de votre chapitre (15 minutes)
+
+        Vous possédez maintenant tous les outils nécessaires pour trouver le ou les responsables dans le fichier `llc-chapters.csv`.
+
+        Dans le dossier **exercices**, ouvrez **ex4_chapter_lead_finder.py** and suivez les instructions qui s'y trouvent en commentaire.
+
+        Essayez d'appliquer ce que vous avez appris jusqu'ici.
+
+        ```python
+        # Import the csv library
+        import csv
+
+        # Open the 'llc-chapters.csv' file
+
+        # Convert it to a csv_data structure
+
+        # Loop through each of the rows
+
+            # Compare the 'City' in the row with your city
+
+                # Print "Thank you [[Chapter Lead(s)]]!"
+        ```
+      </script>
+    </section>
+
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Compter compter dans une boucle
+
+        Nous désirons parfois conserver le nombre de fois qu'une boucle éxécute une certaine séquence.
+
+        Nous pouvons additionner la valeur  `1` et ré-assigner la nouvelle valeur dans la même variable.
+        Python éxécute tout ce qui se trouve à la droite du `=` avant d'assigner son résultat.
+
+        ```python
+        >>> count = 0
+        >>> count = count + 1
+        >>> print(count)
+        1
+        ```
+
+        Voici comment compter le nombre de chapitre existant dans **llc-chapters.csv** en additionnant la valeur `1` dans chaque itération de la boucle.
+
+        ```python
+        # file: exercises/demo_loop_count.py
+        import csv
+
+        csv_file = open('llc-chapters.csv')
+        csv_data = csv.DictReader(csv_file)
+
+        count = 0
+        for row in csv_data:
+            count += 1
+
+        print("There are " + str(count) + " chapters")
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Comment trouver un mot dans une chaîne de caractère
+
+        Nous avons pu voir comment comparer des chaînes de caractère `"Python" == "Python"`. Comment doit-on s'y prendre si nous désirons trouver un mot spécifique dans une chaîne de caractère ?
+
+        La méthode `.find()` peut être utiliser avec une chaîne de caractère pour trouver **l'index** d'une sous-chaîne de caractère (a.k.a. un mot !).
+
+        **L'index** est la position numérique à laquelle un mot apparaît. **Important**: l'index commence à la position 0.
+
+        Dans l'exemple ci-dessous, le mode "Code" a un index de 16 au lieu de 17. Pourquoi ? <span class="delayed">l'index commence à 0</span>
+
+        ```python
+        >>> "Ladies Learning Code".find("Code")
+        16
+        >>> title = "National Learn to Code Day"
+        >>> title.find("Code")
+        18
+        >>> title.find("code")
+        -1
+        ```
+
+        La méthode `.find()` est sensible à la cassei; elle ne cherchera que la chaîne de caractère que vous avez saisi; rien de plus, rien de moins. 
+
+        *<!-- .element: class="footnote" --> Quand nous disions que les ordinateurs avaient besoin d'instructions précises, et bien cela est un bon exemple !*
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Exercise 5: Trouver les chapitres ayant un ou une co-responsable (15 minutes)
+
+        Dans le fichier **llc-chapters.csv**, le caratère `&` est utilisé pour séparer les noms des co-responsables.
+
+        Vous pouvez utiliser la méthode `.find()` pour trouver ce caractère et déterminer quelles villes possèdent un ou une co-responsable.
+
+        N'oubliez pas que la méthode `.find()` retourne l'index de la position dans la chaîne de caractère dans laquelle vous faites la recherche. Elle retournera `-1` si elle ne trouve rien.
+        
+        Essayez d'utiliser l'opérateur de comparaison `>=` pour savoir si la chaîne de caractère recherchée a été trouvée.
+
+        ```python
+        >>> leads = "Nancy & Cassie"
+        >>> if leads.find("&") >= 0:
+        ...     print(leads + " are co-leads")
+        ...
+        Nancy & Cassie are co-leads
+        ```
+
+        Créez un nouveau fichier (**ex5_coleaders.py**) and utilisez vos nouvelles connaissances pour compléter cet exercice.
+
+        * Afficher la liste des villes avec co-responsable
+        * Compter le nombre de chapitre ayant des co-responsables
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Tu me niaises ? Je peux compter le nombre de chapitre à la main !
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Visez haut
+
+        So far, we've used small examples to practice using CSV files and recognizing patterns.
+        Jusqu'içi, nous avons utiliser de petits exemples pour pratiquer ce que vous avez appris.
+
+        En 2014, les événements de Ladies Learning Code ont attirés presque 6500 participants et bénévoles. (sans compter les participants de plusieurs événements).
+
+        Désirez-vous vraiment compter ces derniers ?
+
+          ![oh no - laverne cox](framework/img/workshop/oh-no-laverne.gif) <!-- .element: width="45%" -->
+
+        Les ordinateurs sont très performants pour éxécuter des tâches répétitives et ce, sans injection intraveineuse de café.
+
+      </script>
+    </section>
+<!-- -------------------- -->
+<!-- Begin final exercises -->
+<!-- -------------------- -->
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Dernier exercice !
+
+        Dans le but de promouvoir **National Learn to Code Day 2015**, ainsi que mesurer son succès par rapport à 2014, nous aurons besoin de quelques statistiques:
+
+        * Le nombre de gens qui se sont inscrits à "La journée national d'apprentissage de la programmation"
+        * le nombre total de gens inscrits à "Kids Learning Code" ou
+        * le nombre total de gens inscrits à "Girls Learning Code"
+        * le nombre total de gens impliqués dans le "National Learn to Code day" pour les jeunes
+
+        **Si c'est trop facile pour vous, allez à la page suivante pour un exercice en bonus.**
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Exercise bonus: un hackaton de données ouvertes
+
+        Si vous désirez utiliser une autre source de données, il en existent des publiques !
+        
+        Le gouvernement du Canada en publie plusieurs. En [voici quelques uns](https://docs.google.com/spreadsheets/d/14fFZPKrb0RrKpjiAQYshwT3iYkTRGKeeFcpz3r8m8Qg) (la quantité d'oeuvre de charité au pays, des estimés de population, un index du prix des propriétés et plus...)
+
+        **Un conseil de pro !** Ouvrez ces données avec Excel ou [LibreOfffice](https://www.libreoffice.org/) pour consultez les données plus aisément.
+
+        * Pouvez-vous identifier des tendances intéressantes ?
+        * Que voudriez-vous apprendre de ces données ?
+        * Comment voyez-vous le résultat de votre analyse ?
+
+        Jusqu'içi, nous avons vu des exemples où nous affichions des résultats directement dans l'écran, mais un façon plus simple de procéder serait de produire un autre fichier CSV contenant vos données filtrer.
+        Lisez le fichier `reference/writing_csv.py` pour un exemple.
+
+        Prenez les données des [cotes de consommation de carburant](http://ouvert.canada.ca/data/fr/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64).
+        Essayez de trouver tous les véhicules qui nécessites moins de 10 litres d'essences au 100 km (automobile verte et/ou moins dispendieux).
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Les sujets que nous n'avons pas couvert
+
+        ### Écrire des données dans un fichier CSV
+
+        * Comme la classe `DictReader`, il existe la classe `DictWriter` dans le module `csv` pour permettre l'écriture dans un fichier csv.
+        * Obtenir des données, écrire l'en-tête du fichier csv et ses données
+        * très pratique pour filtrer une grande quantité de données à analyser et consulter dans un logiciel comme Excel.
+        * Consultez le fichier `reference/writing_csv.py` pour un exemple.
+
+        ### Lire des fichiers dans une autre langue (comme le chinois)
+
+        * Python 2.x defaults to ASCII (very basic letters and numbers)
+        * L'encodage par défaut en Python 2.7 est le ASCII (Lettres et caractères de base)
+        * La plupart des textes sur internet avec des accents ou des caractères étrangés (Arabe, chinois, etc.) sont representés en [unicode](http://www.w3.org/International/questions/qa-what-is-encoding.en)
+        * Vous pouvez installer le module [unicodecsv](https://pypi.python.org/pypi/unicodecsv/0.13.0) avec [pip](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/) pour lire et écrire des accents et des caractères spéciaux dans des fichiers CSV.
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Ressources supplémentaires
+
+        ### Tutoriels/Cours en ligne:
+
+        * [Le tutoriel (officiel) de Python](http://docs.python.org/2.7/tutorial/)
+        * [Full Stack Python](http://www.fullstackpython.com)
+        * [Udacity - Learn Object Oriented Python](http://www.udacity.com/course/programming-foundations-with-python--ud036)
+
+        ### Développement web avec Python:
+
+        * [Django](https://www.djangoproject.com/)
+        * [Hello Web App](https://www.hellowebapp.com/)
+
+        ### Autres:
+
+        * [Raspberry pi](https://www.raspberrypi.org/)
+        * [Connecteur de base de données mySQL](http://dev.mysql.com/doc/connector-python/en/)
+      </script>
+    </section>
+
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+      </br></br> </br>
+        ![Bonne chance et bon succès !](http://38.media.tumblr.com/ef58a0f8420d96d9e12c73bff83de50a/tumblr_mh0d0koXHX1s410g9o1_500.gif) <!-- .element: style="width: 50%" -->
+      </script>
+    </section>
+
+<!-- Last slide -->
+
+    <section class="slide last">
+      <h2>Merci !</h2>
+
+      <h2 class="heading-bg">
+        <span>Data Insights with Python</span><br>
+        <span>for Beginners</span>
+      </h2>
+      <!-- <h3><span>with</span> Instructor Name</h3>
+
+       <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <ul>
+        <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
+        <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
+        <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
+      </ul>
+ -->
+      <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou&rsquo;s CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </section>
+
+  </main><!-- cls main section -->
+
+  <footer>
+    <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+    <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
+  </footer>
+
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="framework/scripts/slideshow.js"></script>
+
+  <!-- Uncomment the plugins you need -->
+  <script src="framework/scripts/plugins/css-edit.js"></script>
+  <script src="framework/scripts/plugins/css-snippets.js"></script>
+  <script src="framework/scripts/plugins/css-controls.js"></script>
+  <!-- <script src="plugins/code-highlight.js"></script>-->
+
+  <script src="framework/scripts/plugins/markdown/marked.js"></script>
+  <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+  <!-- <script src="framework/scripts/plugins/highlight/highlight.js"></script> -->
+  <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script>
+    var slideshow = new SlideShow();
+
+    // Grabs all the .snippet elements
+    var snippets = document.querySelectorAll('.snippet');
+    for(var i=0; i<snippets.length; i++) {
+      new CSSSnippet(snippets[i]);
+    }
+
+    // Adds "edit me" note to editable code areas
+    jQuery(document).ready(function(){
+      jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
+    });
+  </script>
+</body>
+</html>
