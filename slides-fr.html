@@ -1096,11 +1096,12 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Counting loops
+        ## Compter compter dans une boucle
 
-        Sometimes you want to keep track of the number of times something happened.
+        Nous désirons parfois conserver le nombre de fois qu'une boucle éxécute une certaine séquence.
 
-        We can add `1` to the current value of a variable, and assign it back to the same variable. Python processes everything to the right of the `=` before assigning the result.
+        Nous pouvons additionner la valeur  `1` et ré-assigner la nouvelle valeur dans la même variable.
+        Python éxécute tout ce qui se trouve à la droite du `=` avant d'assigner son résultat.
 
         ```python
         >>> count = 0
@@ -1109,7 +1110,7 @@
         1
         ```
 
-        Count the number of chapters in **llc-chapters.csv** by adding one each time it loops.
+        Voici comment compter le nombre de chapitre existant dans **llc-chapters.csv** en additionnant la valeur `1` dans chaque itération de la boucle.
 
         ```python
         # file: exercises/demo_loop_count.py
@@ -1129,13 +1130,15 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Finding a word in a string
+        ## Comment trouver un mot dans une chaîne de caractère
 
-        So far, we've compared entire strings to each other `"Python" == "Python"`. But what if you want to find a word inside an existing string?
+        Nous avons pu voir comment comparer des chaînes de caractère `"Python" == "Python"`. Comment doit-on s'y prendre si nous désirons trouver un mot spécifique dans une chaîne de caractère ?
 
-        The `.find()` function can be used with `str` types to tell you where the specific string appears according to its **index**.  The index is the numbered position in which it appears.  **Important**: the index starts at 0.
+        La méthode `.find()` peut être utiliser avec une chaîne de caractère pour trouver **l'index** d'une sous-chaîne de caractère (a.k.a. un mot !).
 
-        In the first example below, "Code" has an index of 16 instead of 17.  Why? <span class="delayed">index starts at 0</span>
+        **L'index** est la position numérique à laquelle un mot apparaît. **Important**: l'index commence à la position 0.
+
+        Dans l'exemple ci-dessous, le mode "Code" a un index de 16 au lieu de 17. Pourquoi ? <span class="delayed">l'index commence à 0</span>
 
         ```python
         >>> "Ladies Learning Code".find("Code")
@@ -1147,20 +1150,23 @@
         -1
         ```
 
-        The `.find()` function is case-sensitive – it will only match the *exact* string you pass to  it.
-        *<!-- .element: class="footnote" --> When we said computers require **exact** instructions, we meant it!*
+        La méthode `.find()` est sensible à la cassei; elle ne cherchera que la chaîne de caractère que vous avez saisi; rien de plus, rien de moins. 
+
+        *<!-- .element: class="footnote" --> Quand nous disions que les ordinateurs avaient besoin d'instructions précises, et bien cela est un bon exemple !*
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 5: Find chapters with co-leads (15 mins)
+        ## Exercise 5: Trouver les chapitres ayant un ou une co-responsable (15 minutes)
 
-        In the **llc-chapters.csv** file, the `&` character is used to separate the co-lead names.
+        Dans le fichier **llc-chapters.csv**, le caratère `&` est utilisé pour séparer les noms des co-responsables.
 
-        You can use `.find()` to look for a string within a string, to figure out which cities have co-leads.
+        Vous pouvez utiliser la méthode `.find()` pour trouver ce caractère et déterminer quelles villes possèdent un ou une co-responsable.
 
-        Remember, `.find()` returns the index of the search string in the other string **or** `-1` to signal nothing was found. Try using the `>=` operator to determine if the string was found.
+        N'oubliez pas que la méthode `.find()` retourne l'index de la position dans la chaîne de caractère dans laquelle vous faites la recherche. Elle retournera `-1` si elle ne trouve rien.
+        
+        Essayez d'utiliser l'opérateur de comparaison `>=` pour savoir si la chaîne de caractère recherchée a été trouvée.
 
         ```python
         >>> leads = "Nancy & Cassie"
@@ -1170,31 +1176,33 @@
         Nancy & Cassie are co-leads
         ```
 
-        Create a new file, **ex5_coleaders.py**, and use what you've learned so far to find which chapter cities have co-leads.
+        Créez un nouveau fichier (**ex5_coleaders.py**) and utilisez vos nouvelles connaissances pour compléter cet exercice.
 
-        * Print a list of cities with co-leads
-        * Count how many chapters have co-leads
+        * Afficher la liste des villes avec co-responsable
+        * Compter le nombre de chapitre ayant des co-responsables
       </script>
     </section>
 
     <section class="slide title" data-markdown>
       <script type="text/template">
-        # So what? I can count all this stuff myself!
+        # Tu me niaises ? Je peux compter le nombre de chapitre à la main !
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Going bigger
+        ## Visez haut
 
         So far, we've used small examples to practice using CSV files and recognizing patterns.
+        Jusqu'içi, nous avons utiliser de petits exemples pour pratiquer ce que vous avez appris.
 
-        In 2014, Ladies Learning Code had nearly 6500 participants and volunteers involved in events (and not accounting for people who attended multiple events). Do you want to count those?
+        En 2014, les événements de Ladies Learning Code ont attirés presque 6500 participants et bénévoles. (sans compter les participants de plusieurs événements).
+
+        Désirez-vous vraiment compter ces derniers ?
 
           ![oh no - laverne cox](framework/img/workshop/oh-no-laverne.gif) <!-- .element: width="45%" -->
 
-        Computers can churn through repetitive tasks, without stopping for coffee.
-
+        Les ordinateurs sont très performants pour éxécuter des tâches répétitives et ce, sans injection intraveineuse de café.
 
       </script>
     </section>
@@ -1203,94 +1211,96 @@
 <!-- -------------------- -->
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Final Exercise!
+        ## Dernier exercice !
 
-        In order to promote **National Learn to Code Day 2015**, and measure its success relative to 2014, we'll need some stats:
+        Dans le but de promouvoir **National Learn to Code Day 2015**, ainsi que mesurer son succès par rapport à 2014, nous aurons besoin de quelques statistiques:
 
-        * number of people signed up for "National Learn to Code Day"
-        * total number of people registered for "Kids Learning Code" events or
-        * total number of people registered for "Girls Learning Code" events
-        * total number people involved in youth-oriented "National Learn to Code Day"
+        * Le nombre de gens qui se sont inscrits à "La journée national d'apprentissage de la programmation"
+        * le nombre total de gens inscrits à "Kids Learning Code" ou
+        * le nombre total de gens inscrits à "Girls Learning Code"
+        * le nombre total de gens impliqués dans le "National Learn to Code day" pour les jeunes
 
-        **See the next slide for a bonus alternative option.**
+        **Si c'est trop facile pour vous, allez à la page suivante pour un exercice en bonus.**
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Bonus Exercise: Open Data Hackathon
+        ## Exercise bonus: un hackaton de données ouvertes
 
-        If you want to use different data, there are lots available for public use. The Government of Canada has many data sets available. Here are a few [suggested data sets](https://docs.google.com/spreadsheets/d/14fFZPKrb0RrKpjiAQYshwT3iYkTRGKeeFcpz3r8m8Qg)
-        including registered charities, population estimates, consumer price data, and more.
+        Si vous désirez utiliser une autre source de données, il en existent des publiques !
+        
+        Le gouvernement du Canada en publie plusieurs. En [voici quelques uns](https://docs.google.com/spreadsheets/d/14fFZPKrb0RrKpjiAQYshwT3iYkTRGKeeFcpz3r8m8Qg) (la quantité d'oeuvre de charité au pays, des estimés de population, un index du prix des propriétés et plus...)
 
-        **Pro tip!** Open the data in program like Excel or [LibreOffice Spreadsheet](https://www.libreoffice.org/) to see the data.
+        **Un conseil de pro !** Ouvrez ces données avec Excel ou [LibreOfffice](https://www.libreoffice.org/) pour consultez les données plus aisément.
 
-        * Can you identify any interesting patterns?
-        * What are you interested in learning from the data?
-        * What do you want the output to be?
+        * Pouvez-vous identifier des tendances intéressantes ?
+        * Que voudriez-vous apprendre de ces données ?
+        * Comment voyez-vous le résultat de votre analyse ?
 
-        So far we've seen examples where the output goes to the screen, but you might simply want to filter out a smaller
-        set of results and write them back to a new CSV (see `reference/writing_csv.py` for an example).
+        Jusqu'içi, nous avons vu des exemples où nous affichions des résultats directement dans l'écran, mais un façon plus simple de procéder serait de produire un autre fichier CSV contenant vos données filtrer.
+        Lisez le fichier `reference/writing_csv.py` pour un exemple.
 
-        Take the consumer vehicle [Fuel Consumption Ratings](http://open.canada.ca/data/en/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64).
-        You could filter out all the vehicles that require less than 10l per 100km (cheaper and greener cars).
+        Prenez les données des [cotes de consommation de carburant](http://ouvert.canada.ca/data/fr/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64).
+        Essayez de trouver tous les véhicules qui nécessites moins de 10 litres d'essences au 100 km (automobile verte et/ou moins dispendieux).
 
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Things we didn't cover
+        ## Les sujets que nous n'avons pas couvert
 
-        ### Writing results to a CSV file
+        ### Écrire des données dans un fichier CSV
 
-        * Just like `DictReader` there's a `DictWriter` in the csv package
-        * Gather data then write out the headers and data to a file
-        * Useful for filtering a big set of data down to something you can analyse in a spreadsheet program
-        * See `reference/writing_csv.py`
+        * Comme la classe `DictReader`, il existe la classe `DictWriter` dans le module `csv` pour permettre l'écriture dans un fichier csv.
+        * Obtenir des données, écrire l'en-tête du fichier csv et ses données
+        * très pratique pour filtrer une grande quantité de données à analyser et consulter dans un logiciel comme Excel.
+        * Consultez le fichier `reference/writing_csv.py` pour un exemple.
 
-        ### Reading files in other languages (like French)
+        ### Lire des fichiers dans une autre langue (comme le chinois)
 
         * Python 2.x defaults to ASCII (very basic letters and numbers)
-        * Most text on the internet with accents or foreign characters (Arabic, Chinese, etc.) are represented in [unicode](http://www.w3.org/International/questions/qa-what-is-encoding.en)
-        * You can install the [unicodecsv](https://pypi.python.org/pypi/unicodecsv/0.13.0) package with [pip](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/) and it will read and write CSV files containing accents and other characters
+        * L'encodage par défaut en Python 2.7 est le ASCII (Lettres et caractères de base)
+        * La plupart des textes sur internet avec des accents ou des caractères étrangés (Arabe, chinois, etc.) sont representés en [unicode](http://www.w3.org/International/questions/qa-what-is-encoding.en)
+        * Vous pouvez installer le module [unicodecsv](https://pypi.python.org/pypi/unicodecsv/0.13.0) avec [pip](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/) pour lire et écrire des accents et des caractères spéciaux dans des fichiers CSV.
 
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Resources
+        ## Ressources supplémentaires
 
-        ### Tutorials/Courses:
+        ### Tutoriels/Cours en ligne:
 
-        * [The (Official) Python Tutorial](http://docs.python.org/2.7/tutorial/)
+        * [Le tutoriel (officiel) de Python](http://docs.python.org/2.7/tutorial/)
         * [Full Stack Python](http://www.fullstackpython.com)
         * [Udacity - Learn Object Oriented Python](http://www.udacity.com/course/programming-foundations-with-python--ud036)
 
-        ### Web Development with Python:
+        ### Développement web avec Python:
 
         * [Django](https://www.djangoproject.com/)
         * [Hello Web App](https://www.hellowebapp.com/)
 
-        ### Other:
+        ### Autres:
 
         * [Raspberry pi](https://www.raspberrypi.org/)
-        * [mySQL connector](http://dev.mysql.com/doc/connector-python/en/)
+        * [Connecteur de base de données mySQL](http://dev.mysql.com/doc/connector-python/en/)
       </script>
     </section>
 
     <section class="slide centered" data-markdown>
       <script type="text/template">
       </br></br> </br>
-        ![Good luck](http://38.media.tumblr.com/ef58a0f8420d96d9e12c73bff83de50a/tumblr_mh0d0koXHX1s410g9o1_500.gif) <!-- .element: style="width: 50%" -->
+        ![Bonne chance et bon succès !](http://38.media.tumblr.com/ef58a0f8420d96d9e12c73bff83de50a/tumblr_mh0d0koXHX1s410g9o1_500.gif) <!-- .element: style="width: 50%" -->
       </script>
     </section>
 
 <!-- Last slide -->
 
     <section class="slide last">
-      <h2>Thank you!</h2>
+      <h2>Merci !</h2>
 
       <h2 class="heading-bg">
         <span>Data Insights with Python</span><br>
