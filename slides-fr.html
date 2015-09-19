@@ -41,8 +41,8 @@
       <h2>Télécharger</h2>
       <p>Fichier des apprenti(e)s: <a href="http://bitly.com/llc-python">http://bitly.com/llc-python</a> (fichier zip)</p>
       <ul>
-        <li><em>unzip</em> les fichier de l'apprentis téléchargés (<em>extraire tous</em> si vous êtes sur PC)</li>
-        <li>ouvrez <strong>slides.html</strong> dans votre navigateur pour suivre les diapos</li>
+        <li><em>unzip</em> les fichiers de l'apprenti.e préalablement t&eacute;l&eacute;charg&eacute;s (<em>extraire tous</em> si vous êtes sur PC)</li>
+        <li>ouvrez <strong>slides-fr.html</strong> dans votre navigateur pour suivre les diapos</li>
       </ul>
       <p>Installez Python 2.7.x</p>
       <ul>
@@ -88,12 +88,13 @@
       <script type="text/template">
         # Projet d'aujourd'hui
 
-        Imaginez que vous deviez organiser **la Journée nationale de l'apprentissage du code de 2015**. 
+        Imaginez que vous devez organiser **la Journée nationale de l'apprentissage du code de 2015**. 
 
         ![](framework/img/workshop/learn-to-code-day.jpg)
-        Vous souhaitez qu'elle soit un aussi gros succès que l'année précédente. Vous aurez besoin de savoir combien de gens seront présents (pour battre ce record) et vous souhaiterez aussi recueillir d'intéressantes statistiques afin d'étayer votre communiqué de presse.
+        Vous souhaitez que ce soit un aussi gros succès que l'année précédente. 
+        Non seulement vous aurez besoin de savoir combien de personnes seront présentes (pour battre ce record) mais vous souhaitez aussi recueillir d'intéressantes statistiques afin d'étayer votre communiqué de presse.
         
-          Aujourd'hui, vous apprendrez comment «réfléchir» comme un ordinateur tout en receuillant de précieuses information au sujets des apprenties de l'événement de Ladies Learning Code en 2014. 
+          Aujourd'hui, vous apprendrez comment «réfléchir» comme un ordinateur tout en recueillant de précieuses informations au sujet des apprenti(e)s de l'événement de Ladies Learning Code en 2014. 
     
       </script>
     </section>
@@ -104,17 +105,17 @@
 
       ###Ce matin
 
-      * Les Types 
-      * Les Variables
-      * Les Conditionalles &amp; Logique
+      * Les types (et on ne parle pas de mecs)
+      * Les variables
+      * Les conditions &amp; la logique
       * Lire un fichier
-      * Les Boucles «for»
+      * Les boucles «for»
 
       ###Cet après-midi
 
-      * Les Libraries
-      * Les «Dictionairies» (tableaux)
-      * Les Finding &amp; counting patterns
+      * Les libraries
+      * Les dictionnaires
+      * La recherche de mots
       * Notre projet final
       </script>
     </section>
@@ -123,12 +124,12 @@
       <script type="text/template">
         ## Qu'est-ce que la programmation ?
 
-        * Simplement: la programmation consiste à donner des instructions un ordinateur dans un format qu'il peut comprendre. 
+        * Simplement: la programmation consiste à donner des instructions à un ordinateur dans un format qu'il peut comprendre. 
         * Les ordinateurs ont besoin d'instructions *très précises*
-        * Les langages de programmation ont des syntaxes comme les langues humaines ont des règles de grammaires. 
+        * Les langages de programmation ont des syntaxes comme les langues humaines ont des règles de grammaire. 
 
         <br>
-        ### Pourquoi Python est fantastique 
+        ### Pourquoi Python est-il fantastique ?
 
         *   Gratuit!
         *   « Open source » (logiciel libre)
@@ -143,7 +144,7 @@
       <script type="text/template">
         ## Qui utilise Python?
 
-        * Analystes de données
+        * Analyse de données
         * Programmation scientifique
         * Scripting
         * Testing
@@ -162,7 +163,8 @@
 
     <section class="slide centered" data-markdown>
       <script type="text/template">
-        ![Kind of a big deal](http://www.quickmeme.com/img/21/216c493407af61fa8dcc6a57876e280819842d334ea5b7c8b95feba8bb565848.jpg) <!-- .element: style="width: 40%" -->
+        <img src="framework/img/green-tree-python.png">
+        <!--![Kind of a big deal](http://www.quickmeme.com/img/21/216c493407af61fa8dcc6a57876e280819842d334ea5b7c8b95feba8bb565848.jpg)--> <!-- .element: style="width: 40%" -->
       </script>
     </section>
 
@@ -180,7 +182,7 @@
 
       1. **Python 2.7.x installé** ( [Mac](https://www.python.org/downloads/), [Windows](https://www.python.org/downloads/windows/) )
       1. **[PyCharm Educational Edition](https://www.jetbrains.com/pycharm-educational/)**
-      1. [Les fichiers de l'apprenti(e) LLC (qui contiennent les exercices et les fichiers de références)](https://github.com/ladieslearningcode/llc-intro-to-python/archive/master.zip).
+      1. [Les fichiers de l'apprenti(e) LLC (qui contiennent les exercices et les fichiers de référence)](https://github.com/ladieslearningcode/llc-intro-to-python/archive/master.zip).
     </section>
 
     <section class="slide centered" data-markdown>
@@ -189,7 +191,7 @@
 
         On utilise un IDE pour écrire du code plus rapidement et faire moins d'erreurs.
         <br><br>
-        ![That is awesome!](http://www.reactiongifs.us/wp-content/uploads/2013/05/awesome_i_hear_that_psych.gif) <!-- .element: style="width: 60%" -->
+        <span class="delayed">![That is awesome!](http://www.reactiongifs.us/wp-content/uploads/2013/05/awesome_i_hear_that_psych.gif) <!-- .element: style="width: 60%" --></span>
       </script>
     </section>
 
@@ -203,11 +205,11 @@
         ![](framework/img/workshop/pycharm-project1.png)
         ![](framework/img/workshop/pycharm-project2.png)
 
-        Les fichiers du projet contenus dans le dossier vont apparaître dans l'espace gauche. Utilisez les flèches pour ouvrir les dossiers.
+        Les fichiers du projet contenus dans le dossier vont apparaître dans l'espace à gauche. Utilisez les flèches pour ouvrir les dossiers.
 
-        Aujourd'hui, vous travaillerez dans le dossier **exercices**. Le dossier **références** contiens les réponses à titre de régérence.        
+        Aujourd'hui, vous travaillerez dans le dossier **exercices**. Le dossier **reference** contient les réponses à titre de référence.        
        
-       Les autres dossiers & fichiers vous servirons à faire fonctionner cette présentation. Évitez de les modifier !
+       Les autres dossiers & fichiers vous serviront à faire fonctionner cette présentation. Évitez de les modifier !
         
 
         ![](framework/img/workshop/pycharm-project3.png)
