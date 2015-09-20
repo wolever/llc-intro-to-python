@@ -365,6 +365,9 @@ e.g.
 		background: rgba($llc-pink, 0.8);
 		border-radius: 5px;
 		padding: 0 10px 0 6px;
+		box-decoration-break: clone;
+		-webkit-box-decoration-break: clone;
+		-o-box-decoration-break: clone;
 
 		&.light {
 			background: rgba($white, 0.6);
