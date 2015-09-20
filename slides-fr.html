@@ -267,7 +267,7 @@
       <script type="text/template">
         ## Les types de données
         
-        Dans l'exemple précédent utilisait des nombres de type entiers (<em>integers</em>), mais il y a plusieurs autres types de données.
+        Dans l'exemple précédent on utilisait des nombres de type entiers (<em>integers</em>), mais il y a plusieurs autres types de données.
 
         * Integer (`int`, nombre entier)
         * Float (`float`, nombre contenant des décimales)
@@ -275,7 +275,7 @@
         * Boolean (`True`, `False`, vrai ou faux)
         * [Et plus encore!](http://www.diveintopython3.net/native-datatypes.html)
         
-        Pour afficher le type, utilisez `type()` et mettez une valeur entre les parenthses.
+        Pour afficher le type, utilisez `type()` et mettez une valeur entre les parenthèses.
 
         ```
         >>> type("hello")
@@ -309,7 +309,7 @@
         >>> add(3, 4)
         7
         ```
-        Il est possible de créer le votre mais l'exercice d'aujourd'hui utilise les fonctions fournies par Python et ses librairies.
+        Il est possible de créer le vôtre mais l'exercice d'aujourd'hui utilise les fonctions fournies par Python et ses librairies.
       </script>
     </section>
 
@@ -358,7 +358,7 @@
       <script type="text/template">
         ## Pourquoi cette erreur est apparue?
 
-        Python a besoin de savoir le type de données avec lesquelles il doit travailler.
+        Python a besoin de savoir le type des données avec lesquelles il doit travailler.
         
         Regardons cette erreur de plus près.
 
@@ -370,7 +370,7 @@
         ```
         
         <br>
-        Le premier `2` est une valeur de type **integer** (nombre entier), et le second `"2"`est une valeur de type **string**.
+        Le premier `2` est une valeur de type **integer** (nombre entier), et le second `"2"` est une valeur de type **string**.
         
         Python ne sait pas comment additionner un nombre et une string: il renvoie donc une erreur.
 
@@ -395,9 +395,9 @@
         ```
         
         <br>
-        Vous vous souvenez de l'exemple `1/2 = 0` ? quand Python divise deux **integers**, il arrondi le résultat au plus petit nombre (dans ce cas 0).
+        Vous vous souvenez de l'exemple `1/2 = 0` ? quand Python divise deux **integers**, il arrondit le résultat au plus petit nombre entier (dans ce cas 0).
 
-        Les **types** «integer» sont des nombres entiers (sans décimales), donc si vous voulez être plus précis, `floats()` peut être utilisé pour inclure des décimales.
+        Les **types** «integer» sont des nombres entiers (sans décimales), donc si vous voulez être plus précis, `float()` peut être utilisé pour inclure des décimales.
         ```
         >>> print(float(1) / float(2))
         0.5
@@ -413,7 +413,7 @@
         Python peut aussi être utilisé pour convertir des nombres en «strings». L'exemple suivant retourne une erreur. Pourquoi ?
 
         ```
-        >>> print(99 + " bottles of beer on the wall")
+        >>> print(1 + " km à pied, ça use, ça use")
         Traceback (most recent call last):
         File "<input>", line 1, in <module>
         TypeError: cannot concatenate 'str' and 'int' objects
@@ -423,7 +423,7 @@
         Utilisez la fonction `str()` pour convertir un nombre en «string».
 
         ```
-        >>> print(str(99) + " bottles of beer on the wall")
+        >>> print(str(1) + " km à pied, ça use les souliers")
 
         ```
         
@@ -440,9 +440,9 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Variables
-        * Utilisées pour stocker une valeur pour toutes les fois où elle va être utilisée
-        * Les variables stockent des données dans la mémoire de l'ordinateur, et **variable name** est utilisé pour aller chercher leur valeur (comme un marque-page dans un livre).
+        ## Les variables
+        * Elles sont utilisées pour stocker une valeur pour toutes les fois où elle va être utilisée
+        * Les variables stockent des données dans la mémoire de l'ordinateur, et le nom de la variable est utilisé pour aller chercher leur valeur (comme un marque-page dans un livre).
         
         Utilisez le symbole (`=`) pour *assigner* une valeur à une variable.
 
@@ -454,9 +454,9 @@
         ```
 
         ```python
-        >>> today = "Saturday"
-        >>> print("Today is " + today)
-        Today is Saturday
+        >>> aujourdhui = "samedi"
+        >>> print("Aujourdhui, nous sommes " + today)
+        Aujourdhui, nous sommes samedi
         ```
         Vous pouvez stocker à peu près n'importe quoi dans une variable. 
       </script>
@@ -491,13 +491,13 @@
         
         Voici quelques trucs et bonnes pratiques pour composer des noms de variables:
 
-        * Les noms de variables ne peuvent contenir que des lettres, des nombres et des barres de soulignement (<em>underscore</em> `_`) ou des tirets `-` mais pas d'espace !
+        * Les noms de variables ne peuvent contenir que des lettres, des nombres et des barres de soulignement (<em>underscore</em> `_`) ou des tirets `-` mais pas d'espace ni d'accent!
 
         * Séparez les mots avec des barres de soulignement `_`
           * ex: `ladies_learning_code` 
         
         * Ils ne peuvent débuter avec des nombres. 
-          * ex: `1jour` vous donnera une erreur `jour1` sera ok.
+          * ex: `1jour` vous donnera une erreur; `jour1` sera ok.
 
         * Utilisez de vraies descriptions
           * ex: `first_name` est plus clair que `fn`
@@ -512,7 +512,7 @@
         
         De bons commentaires clarifieront du code plus complexe, des trucs moins évidents.
 
-        Vous pouvez aussi utiliser les commentaires pour organiser votre code ou pour "cacher" des partie de code que vous ne souhaitez pas utiliser ni effacer. Ajoutez-en dans l'exercice !
+        Vous pouvez aussi utiliser les commentaires pour organiser votre code ou pour "cacher" des parties de code que vous ne souhaitez pas utiliser ni effacer. Ajoutez-en dans l'exercice !
       
         
         Jetez un oeil à la syntaxe ci-dessous:
@@ -533,10 +533,11 @@
         
         À la place d'afficher simplement 'Hello World' sur l'écran, allons un peu plus loin et utilisons Python pour saluer tout le monde!
       
-        Essyez d'utiliser la fonction `raw_input()`. De cette façon les données entrées par un utilisateur vous seront **retournées**.
-        1. Donnez à `raw_input()` un message demander une information précise à l'utilisateur
-        1. L'utilisateur entre quelque chose and pèse sur **entré**
-        1. Peu importe ce que l'usager entre, le contenu vous est **retourné**.
+        Essayez d'utiliser la fonction `raw_input()`. De cette façon, les données entrées par un utilisateur vous seront **retournées**.
+        
+        1. Donnez à `raw_input()` un message demandant une information précise à l'utilisateur
+        1. L'utilisateur entre quelque chose and pèse sur **entrée** 
+        1. Peu importe ce que l'usager entre, cette information vous est **retournée**.
   
         Essayez-le dans la console:
 
@@ -550,11 +551,9 @@
       <script type="text/template">
         ## Exercice 1: Hello World (partie 2)
         
-        Utiliser la console est pratique pour tester des petites partie de code. Python peut rouler du code depuis un fichier qui possède l'**extension** `.py`. Créons un ensemble un premier fichier Python !
+        Utiliser la console est pratique pour tester des petites parties de code mais on peut faire encore bien mieux. Python peut rouler du code depuis un fichier qui possède l'**extension** `.py`. Créons ensemble un premier fichier Python !
 
-        Using the console is great for testing smaller chunks of code but there is a better way. Python can run code from a file with a `.py` file **extension**. Let&rsquo;s create a Python file!
-
-        1. Faires un clique-droit sur le dossier **exercices** pour créer un nouveau fichier. sélectionnez **New > Python File**
+        1. Faites un clique-droit sur le dossier **exercices** pour créer un nouveau fichier. Sélectionnez **New > Python File**
 
           ![Create a new Python File](./framework/img/workshop/new-file-mac.png)
 
@@ -565,12 +564,12 @@
         1. Ajoutez ce petit programme/code à votre ficher.
 
           ```python
-          # Assignez la valeur de raw_input à la variable
+          # Assignez la valeur de raw_input a la variable
           # Your program waits for the user to hit enter
-          name = raw_input("S.V.P entrez votre nom: ")
+          nom = raw_input("S.V.P entrez votre nom: ")
 
-          # … Puis continuez sur cette ligne
-          print("Hello " + name)
+          # ... Puis continuez sur cette ligne
+          print("Bonjour " + nom)
           ```
       </script>
     </section>
@@ -579,10 +578,10 @@
       <script type="text/template">
         ## Exercice 1: Hello World (partie 3)
 
-        Coder dans un fichier **.py**  consiste à écrire du texte jusqu'à ce que vous devrez **rouler** le programme en python.
+        Coder dans un fichier **.py**  consiste à écrire du texte jusqu'à ce que vous soyez prêt(e) à **rouler** le programme en Python.
 
         1. Pour rouler le code, selectionnez **Run > Run&hellip;**   
-        PyCharm  sauvegarde automatiquemeent votre fichier avant de le rouler
+        PyCharm sauvegarde automatiquemeent votre fichier avant de le rouler
 
           ![](framework/img/workshop/pycharm-run.png)  
 
@@ -595,7 +594,7 @@
           ![Demo of hello_world example](./framework/img/workshop/ex1-hello-world.png)
         
         <br>
-        Vous pouvez roulez votre programme aussi souvent que vous le voulez en répétant les étapes ci-dessus.
+        Vous pouvez rouler votre programme aussi souvent que vous le voulez en répétant les étapes ci-dessus.
       </script>
     </section>
 
@@ -606,28 +605,28 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Conditionelles &amp; Logique
-        Le programme que vous venez d'écrire vient de s'executer de haut en bas. Que se passerait-il si le programme pouvait décider quoi faire à la place ? Les déclarations `if` peuvent exécuter différents séries d'instructions basées sur des conditions spécifiques.
+        Le programme que vous venez d'écrire vient de s'exécuter de haut en bas. Que se passerait-il si le programme pouvait décider quoi faire à la place ? Les déclarations `if` peuvent exécuter différentes séries d'instructions basées sur des conditions spécifiques.
         
         Chaque déclaration `if` contient un test. Le bloc indenté est le code qui sera exécuté *si* le test s'avère `vrai` et ressemble à ceci:
       
         ```python
-        # Not real code
-        if it is cold outside:
-            wear a sweater
+        # Ceci n'est pas du vrai code
+        if il fait froid dehors:
+            mets un chandail
         else:
-            dress normally :)
+            habille-toi comme tu veux :)
         ```
 
         Vous pouvez aussi avoir plus qu'une seule condition.
 
         ```python
-        # Still not real code
-        if it is cold outside:
-            wear a sweater
-        elif it is raining:
-            bring an umbrella
+        # Toujours pas du vrai code
+        if il fait froid dehors:
+            mets un chandail
+        elif il pleut:
+            prends un parapluie
         else:
-            dress normally :)
+            habille-toi comme tu veux :)
         ```
       </script>
     </section>
@@ -638,13 +637,13 @@
 
         Comment  `if` peut savoir ce qui est `vrai` ou `faux` ? Utilisez les valeurs `Booléennes` (<em>Boolean</em>) pour tester vos valeurs !
 
-        Rappel: un seul symbole égal *assigne* une valeur à une variable, il ne l'évalue pas.
+        Rappel: un seul symbole égal (`=`) *assigne* une valeur à une variable, il ne le teste pas.
 
         ```python
         >>> weather = "raining"
         ```
 
-        Le symbole égal doublé (`==`) va évaluer si la valeur de droite correspond à la valeur *assignée* et peut servire à tester la valeur. 
+        Le symbole égal doublé (`==`) va évaluer si la valeur de droite correspond à la valeur *assignée* et peut servir à tester la valeur. 
         ```
         >>> weather == "cold"
         False
@@ -662,11 +661,11 @@
       <script type="text/template">
         ## Exercise 2: Vérificateur de température (10 mins)
 
-        Créez un nouveau fichier et appelez le `ex2_weather_advice.py`.
+        Créez un nouveau fichier et appelez-le `ex2_weather_advice.py`.
         
         Utilisez l'extrait de code plus bas comme référence, mais essayez d'écrire votre code au lieu de faire un copier-coller; c'est dans le but d'apprendre la syntaxe.
         
-        Remarquez l'indentation. Python les utilises pour séparer les blocs de code qui appartient à la clause `if` our `else`.
+        Remarquez l'indentation. Python l'utilise pour séparer les blocs de code qui appartiennent à la clause `if` ou `else`.
 
         ```python
         # file: ex2_weather_advice.py
@@ -679,7 +678,7 @@
         else:
             print("Dress normally :)")
         ```
-        **Bonus: ** Essayez d'éxécuter le fichier quelques fois pour tester vos conditions et les conseils de ce dernier. Tentez également de modifier les conditions ou d'en ajouter d'autres.
+        **Bonus: ** Essayez d'exécuter le fichier quelques fois pour tester vos conditions et les conseils de ce dernier. Tentez également de modifier les conditions ou d'en ajouter d'autres.
 
       </script>
     </section>
@@ -688,14 +687,14 @@
       <script type="text/template">
         ## L'indentation
         
-        Lorsque vous tapez `if` ou `else` dans une ligne de commande au lieu d'un fichier *.py, vous verrez quelque chose comme ceci:
+        Lorsque vous tapez `if` ou `else` dans la console au lieu d'un fichier *.py, vous verrez quelque chose comme ceci:
 
         ```python
         >>> if weather == "cold":
         ...
         ```
 
-        Les `...` représente l'indentation automatisé vous signale que la ligne de commande s'attends à du code indenté. 
+        Les `...` représentent l'indentation automatisée et vous signalent que la ligne de commande s'attend à du code indenté. 
         
         ```python
         >>> if weather == "cold":
@@ -716,14 +715,14 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Vérification avec des opérateurs de comparaison mathématiques
+        ## Vérification avec des opérateurs de comparaison mathématique
 
-        Les opérateurs mathématique peuvent être utilisés pour tester des valeurs numériques. En voici quelques-uns que nous utiliserons aujourd'hui
+        Les opérateurs mathématiques peuvent être utilisés pour tester des valeurs numériques. En voici quelques-uns que nous utiliserons aujourd'hui
 
         * `>` Plus grand que ...
         * `<` Plus petit que ...
-        * `>=` Plus grand ou égale à ...
-        * `<=` Plus petit ou égale à ...
+        * `>=` Plus grand ou égal à ...
+        * `<=` Plus petit ou égal à ...
 
         ```python
         >>> x = 5
@@ -748,8 +747,8 @@
 
         Parfois nous ne pouvons pas vérifier plusieurs conditions avec une seule expression. Nous devons alors combiner plusieurs expressions pour déterminer la suite des choses.
 
-        * `and`: Les expressions avant et après ce mot clés doivent être *vrai*
-        * `or`: Une des expressions avant et après ce mot clé doit être *vrai*
+        * `and`: Les expressions avant et après ce mot clé doivent être *vrai*
+        * `or`: Une des expressions avant ou après ce mot clé doit être *vrai*
 
         ```python
         weather = "cold"
@@ -801,7 +800,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 3: Un détecteur de température plus intelligent ! (15 minutes)
+        ## Exercice 3: Un détecteur de température plus intelligent! (15 minutes)
 
         Au lieu de dire au programme qu'il fait froid, nous pouvons lui fournir une température et le laisser nous dire quoi faire selon cette dernière
 
@@ -857,7 +856,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Les fichiers CSV (avec des valeurs séparés par des virgules)
+        ## Les fichiers CSV (avec des valeurs séparées par des virgules)
 
         Pour utiliser les données d'un fichier ***.csv**, nous devons en traiter une petite quantité à la fois.
 
@@ -895,7 +894,7 @@
         ```
 
         * La première ligne est l'en-tête et décrit les données de chacune des lignes suivantes
-        * La 2e et la 3e ligne représente les villes des chapitres LLC & le nom de la personne responsable
+        * La 2e et la 3e ligne représentent les villes des chapitres LLC & le nom de la personne responsable
 
         C'est parce que le programme obtient ces données des lignes et des colonnes du fichier CSV.
       </script>
@@ -929,7 +928,7 @@
       <script type="text/template">
         ## L'arrière-scène des boucles `for`
 
-        Si vous explorez la variable `chapters` dans votre ligne de commande, vous remarquerez peut-être qu'elle possède une méthode nommé `.next()`. Elle effectue la même chose que la méthode `.readline()`. 
+        Si vous explorez la variable `chapters` dans votre console, vous remarquerez peut-être qu'elle possède une méthode nommée `.next()`. Elle effectue la même chose que la méthode `.readline()`. 
 
         La boucle `for` fonctionne avec différents regroupements de données; la seule chose qu'elle demande en retour est la présence de la méthode `.next()`.
 
@@ -937,7 +936,7 @@
 
         ```python
         line = chapters.next()
-        # éxécution de votre code dans la boucle
+        # exécution de votre code dans la boucle
         # …
         # traitement de la donnée suivante jusqu'à ce qu'il n'y ait plus de valeur
         ```
@@ -962,7 +961,7 @@
 
         Python possède plusieurs modules de base utiles &mdash; c'est du code déjà écrit qui ne demande qu'à être utilisé.
 
-        Aujourd'hui, nuis utiliserons le module **csv** pour nous faciliter la vie avec les fichies CSV and en apprendre d'avantage sur les activités de LLC en 2014.
+        Aujourd'hui, nous utiliserons le module **csv** pour nous faciliter la vie avec les fichiers CSV et en apprendre d'avantage sur les activités de LLC en 2014.
 
         Informations supplémentaires: https://docs.python.org/2/library/csv.html
 
@@ -974,13 +973,13 @@
       <script type="text/template">
         ## L'utilisation d'un module
 
-        Jusqu'içi, nous avons rédigé notre code dans une console ou dans un fichier.
+        Jusqu'ici, nous avons rédigé notre code dans une console ou dans un fichier.
         
         Quand nous utilisons un module, nous ne voulons pas copier tout son code dans notre fichier; il serait énorme !
 
         Au lieu de cela, nous devons **importer** les fonctions et les autres structures de données d'un module que nous voulons utiliser.
 
-        Dans votre ligne de commande, importez le module `csv` de la manière suivante:
+        Dans la console, importez le module `csv` de la manière suivante:
 
         ```python
         >>> import csv
@@ -1003,7 +1002,7 @@
 
         Le module CSV possède une certaine quantité d'outils pour extraire des données d'un fichier CSV.
 
-        Au lieu d'obtenir une ligne séparé par des virgules comme dans un example précédent, nous pourrons accéder à ces valeurs plus facilement.
+        Au lieu d'obtenir une ligne séparée par des virgules comme dans un exemple précédent, nous pourrons accéder à ces valeurs plus facilement.
 
         Aujourd'hui, nous utiliserons principalement l'outil `DictReader` pour accéder aux valeurs dans le fichier.
 
@@ -1033,9 +1032,9 @@
       <script type="text/template">
         ## Les dictionnaires de données
 
-        Lorsque nous utilisons le `DictReader` pour afficher les lignes du fichier CSV, nous obtenons un `dict`ionnaire qui représentent chacune des lignes au lieu des valeurs séparées par des virgules.
+        Lorsque nous utilisons le `DictReader` pour afficher les lignes du fichier CSV, nous obtenons un `dict`ionnaire qui représente chacune des lignes au lieu des valeurs séparées par des virgules.
 
-        Les colonnes représentants chaque ville peuvent être accéder avec un mot-clé:
+        Les colonnes représentant chaque ville peuvent être accéder avec un mot-clé:
 
         ```python
         >>> chapter = {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
@@ -1057,7 +1056,7 @@
 
         * La boucle `for` assigne *chacune des lignes* à la variable `chapter`
         * Rassemblons les instructions dans la boucle avec la même indentation
-        * toutes les instructions dans la section indentée est éxécuté pour chacun des `chapter`
+        * toutes les instructions dans la section indentée sont exécutées pour chacun des `chapter`
 
         ```python
         >>> import csv
