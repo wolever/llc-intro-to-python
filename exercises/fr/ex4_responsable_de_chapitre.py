@@ -1,4 +1,5 @@
-# Importez le module csv
+# -*- coding: utf-8 -*-
+#  Importez le module csv
 import csv
 
 # Ouvrez le fichier '../llc-chapters.csv'

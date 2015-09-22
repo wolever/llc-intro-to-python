@@ -40,19 +40,19 @@
       <p>Network: <br>
       Password: </p> -->
 
-      <h2>Télécharger</h2>
-      <p>Fichier des apprenti(e)s: <a href="http://bitly.com/llc-python">http://bitly.com/llc-python</a> (fichier zip)</p>
+      <h2>À télécharger:</h2>
+      <p>1. Fichier des apprenti(e)s: <a href="http://bitly.com/llc-python">http://bitly.com/llc-python</a> (fichier zip)</p>
       <ul>
         <li><em>unzip</em> les fichiers de l'apprenti(e) préalablement t&eacute;l&eacute;charg&eacute;s (<em>extraire tous</em> si vous êtes sur PC)</li>
         <li>ouvrez <strong>slides-fr.html</strong> dans votre navigateur pour suivre les diapos</li>
       </ul>
-      <p>Installez Python 2.7.x</p>
+      <p>2. Python 2.7.x</p>
       <ul>
         <li>Windows - <a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></li>
         <li>Mac - pré-installé. Allez dans <strong>Applications &gt; Utilities &gt; Terminal</strong><br>
           Dans la fenêtre de terminal tapez «python» pour confirmer l'installation.</li>
       </ul>
-      <p>PyCharm Educational Edition<br>
+      <p>3. PyCharm Educational Edition<br>
         <a href="https://www.jetbrains.com/pycharm-educational">https://www.jetbrains.com/pycharm-educational</a>
       </p>
     </div>
@@ -114,7 +114,7 @@
 
       ###Cet après-midi
 
-      * Les libraries
+      * Les librairies
       * Les dictionnaires
       * La recherche de mots
       * Notre projet final
@@ -187,7 +187,7 @@
 
     <section class="slide centered" data-markdown>
       <script type="text/template">
-        ## PyCharm IDE (Integrated Development Environments) éditeur de code.
+        ## PyCharm IDE (Integrated Development Environment ou éditeur de code).
 
         On utilise un IDE pour écrire du code plus rapidement et faire moins d'erreurs.
         <br><br>
@@ -205,11 +205,12 @@
         ![](framework/img/workshop/pycharm-project1.png)
         ![](framework/img/workshop/pycharm-project2.png)
 
-        Les fichiers du projet contenus dans le dossier vont apparaître dans l'espace à gauche. Utilisez les flèches pour ouvrir les dossiers.
+        Les fichiers contenus dans le dossier vont apparaître dans l'espace à gauche. Utilisez les flèches pour ouvrir les dossiers.
 
         Aujourd'hui, vous travaillerez dans le dossier **exercices**. Le dossier **reference** contient les réponses à titre de &laquo;référence&raquo;.        
        
-       Les autres dossiers & fichiers vous serviront à faire fonctionner cette présentation. Évitez de les modifier !
+       Les autres dossiers & fichiers vous serviront à faire fonctionner cette présentation. 
+       Évitez de les modifier !
         
 
         ![](framework/img/workshop/pycharm-project3.png)
@@ -258,7 +259,7 @@
         >>> 1 / 2
         0
         ```
-        Pourquoi `1 / 2 = 0`? Nous y reviendrons
+        Pourquoi `1 / 2 = 0`? Nous y reviendrons...
 
       </script>
     </section>
@@ -267,7 +268,7 @@
       <script type="text/template">
         ## Les types de données
         
-        Dans l'exemple précédent on utilisait des nombres de type entiers (<em>integers</em>), mais il y a plusieurs autres types de données.
+        Dans l'exemple précédent, on utilisait des nombres de type **entier** (<em>integers</em>), mais il y a plusieurs autres types de données.
 
         * Integer (`int`, nombre entier)
         * Float (`float`, nombre contenant des décimales)
@@ -301,12 +302,12 @@
         ex: la fonction `add` prend `a` et `b` comme arguments et **retournera** le résultat.
 
         ```python
-        >>> def add(a, b):
+        >>> def ajout(a, b):
         ...     return a + b
         ...
-        >>> add(1, 2)
+        >>> ajout(1, 2)
         3
-        >>> add(3, 4)
+        >>> ajout(3, 4)
         7
         ```
         Il est possible de créer le vôtre mais l'exercice d'aujourd'hui utilise les fonctions fournies par Python et ses librairies.
@@ -336,7 +337,7 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Concaténation
-        **La concaténation** (ou enchaînement) est utilisée pour «additionner» des séquences de caractères **(strings)** ensemble pour n'en faire qu'une seule.
+        **La concaténation** (ou enchaînement) est utilisée pour «additionner» des chaînes de caractères **(strings)** ensemble pour n'en faire qu'une seule.
         ```
         >>> print("Hello " + "World!")
         Hello World!
@@ -413,23 +414,20 @@
         Python peut aussi être utilisé pour convertir des nombres en «strings». L'exemple suivant retourne une erreur. Pourquoi ?
 
         ```
-        >>> print(1 + " km à pied, ça use, ça use")
+        >>> print("les élections" + 2015)
         Traceback (most recent call last):
         File "<input>", line 1, in <module>
         TypeError: cannot concatenate 'str' and 'int' objects
         ```
         
-        <br>
         Utilisez la fonction `str()` pour convertir un nombre en «string».
 
         ```
-        >>> print(str(1) + " km à pied, ça use les souliers")
+        >>> print("les élections" + str(2015))
 
         ```
         
-        <br>
         Savoir comment convertir des types avec Python vous sera très pratique plus tard !
-
       </script>
     </section>
 
@@ -496,11 +494,11 @@
         * Séparez les mots avec des barres de soulignement `_`
           * ex: `ladies_learning_code` 
         
-        * Ils ne peuvent débuter avec des nombres. 
-          * ex: `1jour` vous donnera une erreur; `jour1` sera ok.
+        * Ils ne peuvent débuter avec des nombres
+          * ex: `1jour` vous donnera une erreur; `jour1` sera ok
 
         * Utilisez de vraies descriptions
-          * ex: `first_name` est plus clair que `fn`
+          * ex: `prenom` est plus clair que `pr`
       </script>
     </section>
 
@@ -508,7 +506,7 @@
       <script type="text/template">
         ## Truc de pro: Écrivez des commentaires!
 
-        Les programmeurs utilisent des *commentaires* pour laisser des notes pour eux-mêmes (et tous ceux qui liront leur code dans le futur).
+        Les programmeurs utilisent des *commentaires* pour laisser des notes (pour eux-mêmes et tous ceux qui liront leur code dans le futur).
         
         De bons commentaires clarifieront du code plus complexe, des trucs moins évidents.
 
@@ -536,8 +534,8 @@
         Essayez d'utiliser la fonction `raw_input()`. De cette façon, les données entrées par un utilisateur vous seront **retournées**.
         
         1. Donnez à `raw_input()` un message demandant une information précise à l'utilisateur
-        1. L'utilisateur entre quelque chose et appuie sur **entrée** 
-        1. Peu importe ce que l'usager entre, cette information vous est **retournée**.
+        1. L'utilisateur entre quelque chose et appuie sur la touche **entrée** 
+        1. Peu importe ce que l'utilisateur entre, cette information vous est **retournée**.
   
         Essayez-le dans la console:
 
@@ -553,7 +551,7 @@
         
         Utiliser la console est pratique pour tester des petites parties de code mais on peut faire encore bien mieux. Python peut rouler du code depuis un fichier qui possède l'**extension** `.py`. Créons ensemble un premier fichier Python !
 
-        1. Faites un clique-droit sur le dossier **exercices** pour créer un nouveau fichier. Sélectionnez **New > Python File**
+        1. Faites un clique à droite sur le dossier **"exercises"** pour créer un nouveau fichier. Sélectionnez **New > Python File**
 
           ![Create a new Python File](./framework/img/workshop/new-file-mac.png)
 
@@ -580,12 +578,12 @@
 
         Coder dans un fichier **.py**  consiste à écrire du texte jusqu'à ce que vous soyez prêt(e) à **rouler** le programme en Python.
 
-        1. Pour rouler le code, selectionnez **Run > Run&hellip;**   
+        1. Pour rouler le code, sélectionnez **Run > Run&hellip;**   
         PyCharm sauvegarde automatiquement votre fichier avant de le rouler
 
           ![](framework/img/workshop/pycharm-run.png)  
 
-        1. Cliquez sur `ex1_hello_world` (again) dans le menu.
+        1. Cliquez sur `ex1_hello_world` (une autre fois) dans le menu.
 
           ![Click to run your program](./framework/img/workshop/run-mini-menu.png)
 
