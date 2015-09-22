@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
 
   <!-- Theme-specific styles -->
-  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CQuicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CQuicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix> -->
+  <link rel="stylesheet" href="framework/css/font-awesome.min.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/highlightjs-themes/github.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/theme-llc.css" data-noprefix>
   <link rel="shortcut icon" href="framework/img/favicon.ico">
@@ -26,7 +27,7 @@
 </head>
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
-<body data-duration="360">
+<body class="en" data-duration="360">
 
   <!-- Welcome slide -->
   <header class="slide">
@@ -34,12 +35,14 @@
     <h1>Welcome to Ladies Learning Code!</h1>
       
     <div class="instructions">
+      <!-- Add wifi info here -->
       <!-- <h2>Get Connected</h2>
       <p>Network: <br>
-      Password: </p> -->
+      Password: </p>  -->
+    
 
       <h2>Download</h2>
-      <p>Learner files: <a href="http://bitly.com/llc-python">http://bitly.com/llc-python</a> (zip file)</p>
+      <p>Learner files: <a href="https://github.com/ladieslearningcode/llc-intro-to-python/archive/master.zip">http://bitly.com/llc-python</a> (zip file)</p>
       <ul>
         <li>unzip the learner file download (<em>extract all</em> if you’re on a PC)</li>
         <li>open <strong>slides.html</strong> in your browser to view the presentation</li>
@@ -161,7 +164,7 @@
 
     <section class="slide centered" data-markdown>
       <script type="text/template">
-        ![Kind of a big deal](http://www.quickmeme.com/img/21/216c493407af61fa8dcc6a57876e280819842d334ea5b7c8b95feba8bb565848.jpg) <!-- .element: style="width: 40%" -->
+        ![Kind of a big deal](framework/img/workshop/kind-of-a-big-deal.jpg) <!-- .element: style="width: 40%" -->
       </script>
     </section>
 
@@ -180,6 +183,7 @@
       1. **Python 2.7.x installed** ( [Mac](https://www.python.org/downloads/), [Windows](https://www.python.org/downloads/windows/) )
       1. **[PyCharm Educational Edition](https://www.jetbrains.com/pycharm-educational/)**
       1. [Learner files from LLC (containing the exercise and reference files)](https://github.com/ladieslearningcode/llc-intro-to-python/archive/master.zip).
+        * make sure the **llc-intro-to-python-master.zip** file has been unzipped (and extracted for PC users) so you can access the contents of the folder
     </section>
 
     <section class="slide centered" data-markdown>
@@ -188,7 +192,7 @@
 
         Use IDEs to write code faster with fewer mistakes.
         <br><br>
-        ![That is awesome!](http://www.reactiongifs.us/wp-content/uploads/2013/05/awesome_i_hear_that_psych.gif) <!-- .element: style="width: 60%" -->
+        ![That is awesome!](framework/img/workshop/awesome_i_hear_that_psych.gif) <!-- .element: style="width: 60%" -->
       </script>
     </section>
 
@@ -201,17 +205,17 @@
 
         ![](framework/img/workshop/pycharm-project1.png)
         ![](framework/img/workshop/pycharm-project2.png)
-
-        The project files contained within the folder will now appear in your sidebar.  
-        Select the arrows to open the folders within. 
         
-        Today, you will be working from the **exercises** folder.  The **reference** folder contains the answer key for reference.
+        The project files contained within the folder will now appear in your sidebar. Select the arrows to open the folders within. Today, you will be working from the **exercises** folder (**exercises > fr** for French).  
+        
+        The **reference** folder contains the answer keys.
 
         The other folders & files are needed to make this slide presentation work, so avoid making edits to them!
 
         ![](framework/img/workshop/pycharm-project3.png)
       </script>
     </section>
+    
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -526,15 +530,18 @@
 
         Try using the `raw_input()` function. This will get the data inputed by a user and **returns** that value back to you.
 
-        1. Give `raw_input()` a message to let the user know what information is beingn requested
-        1. The user types something and hits the **enter** key
+        1. Give `raw_input()` a message to let the user know what information is being requested using this syntax (note the quotes):
+          ```python
+          >>> raw_input("What's your name?")
+          ``` 
+        1. The user types a response and hits the **enter** key
         1. Whatever the user types is **returned** to you.
 
-        Try it in your console:
+        Try it in your console. It will look something like this:
+        
+        ![](framework/img/workshop/raw_input.gif)
 
-        ```python
-        >>> raw_input("What's your name?")
-        ```
+        
       </script>
     </section>
 
@@ -544,7 +551,7 @@
 
         Using the console is great for testing smaller chunks of code but there is a better way. Python can run code from a file with a `.py` file **extension**. Let&rsquo;s create a Python file!
 
-        1. Right-click on the **exercises** folder to create a new file. Then select **New > Python File**
+        1. Right-click (or two-finger tap) on the **exercises** folder to create a new file. Then select **New > Python File**
 
           ![Create a new Python File](./framework/img/workshop/new-file-mac.png)
 
@@ -552,7 +559,9 @@
 
           ![new python file name](framework/img/workshop/new-python-file.png)
 
-        1. Add to program/code snippet to the file.
+        1. Add the below program/code snippet to the file. Try to practice typing it out to get used to the syntax. Use this example as a reference rather than copy-paste.
+        
+          Reminder, anything after the `#` symbol is just a comment.
 
           ```python
           # Assign the raw_input value to a variable
@@ -571,16 +580,13 @@
 
         Code in a **.py** file is just text until you **run** it through the Python program.
 
-        1. To run the code, select **Run > Run&hellip;**   
-        PyCharm automatically saves your file before you run it 
+        1. To run the code, select the green arrow symbol. PyCharm automatically saves your file before you run it. 
 
           ![](framework/img/workshop/pycharm-run.png)  
+          
+          You can also find it in the menu under **View > Tool Windows > Run**
 
-        1. Click on `ex1_hello_world` (again) in the menu popup.
-
-          ![Click to run your program](./framework/img/workshop/run-mini-menu.png)
-
-        1. Click into the console window that opened, type your name and press the **Enter** key. You should see your name repeated back at you.
+        1. The code will run in your console window. Type your name and press the **Enter** key to see your response repeated back at you.
 
           ![Demo of hello_world example](./framework/img/workshop/ex1-hello-world.png)
         
@@ -795,9 +801,9 @@
 
         Instead of telling your program if it's cold, you can input the temperature and let it decide what to do.
         
-        * Open **ex3_smarter_weather.py**
-        * use math comparison operators, `and`/`or`
-        * follow the instructions below
+        * open the existing **ex3_smarter_weather.py** file
+        * use math comparison operators, `and`/`or` to complete the exercise
+        * follow the instructions in the comments
         * feel free to choose your own temperatures and messages :)
         
         ```
@@ -833,7 +839,9 @@
         Computer data is often stored in files such **.csv** (comma-separated values) files.  
         These file types are used to represent spreadsheet-like data.
         
-        Let's look at the example below to see how to open these files in Python and print the contents to the screen.
+        Let's look at the example below to see how to open these files in Python and print the contents to the screen. 
+        
+        Back in the console, try adding the below commands.
 
         ```python
         >>> chapters = open('./exercises/llc-chapters.csv')
@@ -850,10 +858,9 @@
         ## Comma-Separated Values (CSV) Files
 
         To make use of the data in a file, we need to make sense of small portions at a time.
-
         In the `llc-chapters.csv` file, each line of the file represents a Ladies Learning Code Chapter.
 
-        Let&rsquo;s try printing out a few individual lines.
+        Let&rsquo;s try printing out a few individual lines using the example below. Remember, only add the code after the `>>>` symbol.
 
         ```python
         >>> chapters = open('./exercises/llc-chapters.csv')
@@ -909,7 +916,9 @@
         ... 
         >>> chapters.close()
         ```
-
+        
+        **Pro tip!** After adding `print(line)` & enter, press enter again to execute the loop.
+        
         More info: https://docs.python.org/2/tutorial/controlflow.html#for-statements
       </script>
     </section>
@@ -1018,9 +1027,9 @@
       <script type="text/template">
         ## Dictionaries
         
-        Using `DictReader` to print the values from the CSV file, outputs a `dict`ionary representing each row in the file, instead of comma-separated values.
+        Using `DictReader` to print the values from the CSV file, outputs a `dict`ionary representing each row in the file, in *key: value pairs*, instead of comma-separated values.
 
-        Columns representing each city, can now be accessed with a keyword:
+        Columns representing each city, can now be accessed with a keyword and the same for chapter leads and province.
 
         ```python
         >>> chapter = {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
@@ -1043,6 +1052,7 @@
         * the `for` loop assigns *each row* to the `chapter` variable
         * group instructions together with the same indentation
         * all the instructions in the indented block are run for each `chapter`
+        * remember to press enter again after the last instruction in the for loop to execute it
 
         ```python
         >>> import csv
@@ -1276,7 +1286,7 @@
     <section class="slide centered" data-markdown>
       <script type="text/template">
       </br></br> </br>
-        ![Good luck](http://38.media.tumblr.com/ef58a0f8420d96d9e12c73bff83de50a/tumblr_mh0d0koXHX1s410g9o1_500.gif) <!-- .element: style="width: 50%" -->
+        ![Good luck](framework/img/workshop/good-luck.gif) <!-- .element: style="width: 50%" -->
       </script>
     </section>
 

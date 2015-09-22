@@ -6,18 +6,14 @@
 .intro h1 {
   font-size: 65px;
 }
-.project {
+.en .project {
   h1, p:first-of-type {
     text-align: center;
   }
   p:first-of-type {
     margin: 35px 0;
   }
-  p:nth-of-type(3){
-    padding-top: 20px;
-  }
 }
-
 .who-uses {
   img {
     max-height: 125px;
