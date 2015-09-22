@@ -587,7 +587,7 @@
 
           ![Click to run your program](./framework/img/workshop/run-mini-menu.png)
 
-        1. Cliquez dans la fenêtre de la console, tapez votre nom et pressez **Entrée**. Vous devriez voir votre nom vous être retourné.
+        1. Cliquez dans la fenêtre de la console, tapez votre nom et pressez **Entrée**. Vous devriez voir votre nom.
 
           ![Demo of hello_world example](./framework/img/workshop/ex1-hello-world.png)
         
@@ -641,7 +641,7 @@
         >>> weather = "raining"
         ```
 
-        Le symbole égal doublé (`==`) va évaluer si la valeur de droite correspond à la valeur *assignée* et peut servir à tester la valeur. 
+        Le symbole égal double (`==`) va évaluer si la valeur de droite correspond à la valeur *assignée* et peut servir à tester la valeur. 
         ```
         >>> weather == "cold"
         False
@@ -659,22 +659,23 @@
       <script type="text/template">
         ## Exercise 2: Vérificateur de température (10 mins)
 
-        Créez un nouveau fichier et appelez-le `ex2_weather_advice.py`.
+        Créez un nouveau fichier et appelez-le `ex2_conseil_meteo.py`.
         
         Utilisez l'extrait de code plus bas comme référence, mais essayez d'écrire votre code au lieu de faire un copier-coller; c'est dans le but d'apprendre la syntaxe.
         
         Remarquez l'indentation. Python l'utilise pour séparer les blocs de code qui appartiennent à la clause `if` ou `else`.
 
         ```python
-        # file: ex2_weather_advice.py
-        weather = raw_input("What is the weather? (cold, raining, etc.)")
+        # file: ex2_conseil_meteo.py
+        # -*- coding: utf-8 -*-
+        meteo = raw_input("Quel temps fait-il? (froid, pluvieux, etc.)>")
 
-        if weather == "cold":
-            print("Wear a sweater!")
-        elif weather == "raining":
-            print("Bring an umbrella")
+        if meteo == "froid":
+            print("Mets un chandail!")
+        elif meteo == "pluvieux":
+            print("Amène ton parapluie!")
         else:
-            print("Dress normally :)")
+            print("Fais comme tu veux :)")
         ```
         **Bonus: ** Essayez d'exécuter le fichier quelques fois pour tester vos conditions et les conseils de ce dernier. Tentez également de modifier les conditions ou d'en ajouter d'autres.
 
@@ -688,19 +689,19 @@
         Lorsque vous tapez `if` ou `else` dans la console au lieu d'un fichier *.py, vous verrez quelque chose comme ceci:
 
         ```python
-        >>> if weather == "cold":
+        >>> if meteo == "froid":
         ...
         ```
 
         Les `...` représentent l'indentation automatisée et vous signalent que la ligne de commande s'attend à du code indenté. 
         
         ```python
-        >>> if weather == "cold":
-        ...     print("Wear a sweater!")
+        >>> if meteo == "froid":
+        ...     print("Mets un chandail!")
         ... else:
-        ... print("Dress normally :)")
+        ... print("Fais ce que tu veux :)")
         File "<input>", line 5
-            print("Dress normally :)")
+            print("Fais ce que tu veux :)")
                 ^
         IndentationError: expected an indented block
         ```
@@ -730,11 +731,11 @@
         True
 
         >>> if x >= 5:
-        ...     print("x is greater than or equal to 5")
+        ...     print("x est plus grand ou égal à 5")
         ... else:
-        ...     print("x is less than 5")
+        ...     print("x est plus petit que 5")
         ...
-        x is greater than or equal to 5
+        x est plus grand ou égal à 5
         ```
       </script>
     </section>
@@ -749,18 +750,18 @@
         * `or`: Une des expressions avant ou après ce mot clé doit être *vrai*
 
         ```python
-        weather = "cold"
-        snowing = True
+        meteo = "froid"
+        neige = True
 
-        >>> if weather == "cold" and snowing == True:
-        ...     print("wear a winter jacket")
+        >>> if meteo == "froid" and neige == True:
+        ...     print("mets un foulard et un manteau d'hiver")
         ...
 
-        wear a winter jacket
-        >>> if weather == "raining" or snowing == True:
-        ...     print("bring a change of socks")
+        mets un foulard et un manteau d'hiver
+        >>> if meteo == "pluvieux" or neige == True:
+        ...     print("apporte une deuxième paire de bas")
         ...
-        bring a change of socks
+        apporte une deuxième paire de bas
         ```
       </script>
     </section>
@@ -769,28 +770,28 @@
       <script type="text/template">
         ## Exemples d'utilisation du *Et* et du *Ou* logique
 
-        Avec la notation mathématique, nous pouvons utiliser `0 < x < 6`. En python, nous devons séparer ces comparaisons.
+        Avec la notation mathématique, nous pouvons utiliser `0 < x < 6`. En Python, nous devons séparer ces comparaisons.
 
         ```python
         >>> x = 5
         >>> if x > 0 and x < 6:
-        ...     print("x is between 0 and 6.")
+        ...     print("x est entre 0 et 6.")
         ...
-        x is between 0 and 6.
+        x est entre 0 et 6.
         ```
 
         ```python
         >>> if type(x) == float or type(x) == int:
-        ...     print("x is a numeric value")
+        ...     print("x est une valeur numérique")
         ...
-        x is a numeric value
+        x est une valeur numérique
         ```
 
         ```python
         >>> if x > 10 and x < 0:
-        ...     print("x could never be greater than 10 AND less than 0")
+        ...     print("x ne pourra jamais être plus grand que 10 et plus petit que 0")
         ...
-        # Nothing prints here
+        # Rien ne sera affiché
         ```
 
       </script>
@@ -802,20 +803,22 @@
 
         Au lieu de dire au programme qu'il fait froid, nous pouvons lui fournir une température et le laisser nous dire quoi faire selon cette dernière
 
-        * Ouvrez le fichier **ex3_smarter_weather.py**
+        * Ouvrez le fichier **ex3_meteorologie_intelligente.py** dans le répertoire **exercises/fr**
         * Utilisez les opérateurs de comparaison mathématique, `and`/`or`
         * Suivez les instructions plus bas
         * Sentez-vous bien à l'aise de modifier les températures proposées et leurs messages respectifs :)
 
         ```
-        # if the weather is greater than or equal to 25 degrees
-        if "replace this with the right condition":
-            print("Go to the beach!")
-        # the weather is less than 25 degrees AND greater than 15 degrees
-        elif "replace this with the right conditions":
-            # Still warm enough for ice cream!
+        # si la température est plus grande ou égale à 25 degrés
+        if "remplacez ceci par la bonne condition":
+            print("Allons à la plage !")
+        # la température est plus petite que 25 degrés MAIS plus grande que 15 degrés
+        elif "remplacez ceci par la bonne condition":
+            # Allons prendre une bonne crème glacée !
+            pass
         else:
-            # Wear a sweater and dream of beaches.
+            # Portez votre gilet chaud préféré et révez à la plage
+            pass
         ```
 
 
