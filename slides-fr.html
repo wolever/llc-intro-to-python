@@ -40,19 +40,19 @@
       <p>Network: <br>
       Password: </p> -->
 
-      <h2>Télécharger</h2>
-      <p>Fichier des apprenti(e)s: <a href="http://bitly.com/llc-python">http://bitly.com/llc-python</a> (fichier zip)</p>
+      <h2>À télécharger:</h2>
+      <p>1. Fichier des apprenti(e)s: <a href="http://bitly.com/llc-python">http://bitly.com/llc-python</a> (fichier zip)</p>
       <ul>
         <li><em>unzip</em> les fichiers de l'apprenti(e) préalablement t&eacute;l&eacute;charg&eacute;s (<em>extraire tous</em> si vous êtes sur PC)</li>
         <li>ouvrez <strong>slides-fr.html</strong> dans votre navigateur pour suivre les diapos</li>
       </ul>
-      <p>Installez Python 2.7.x</p>
+      <p>2. Python 2.7.x</p>
       <ul>
         <li>Windows - <a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></li>
         <li>Mac - pré-installé. Allez dans <strong>Applications &gt; Utilities &gt; Terminal</strong><br>
           Dans la fenêtre de terminal tapez «python» pour confirmer l'installation.</li>
       </ul>
-      <p>PyCharm Educational Edition<br>
+      <p>3. PyCharm Educational Edition<br>
         <a href="https://www.jetbrains.com/pycharm-educational">https://www.jetbrains.com/pycharm-educational</a>
       </p>
     </div>
@@ -114,7 +114,7 @@
 
       ###Cet après-midi
 
-      * Les libraries
+      * Les librairies
       * Les dictionnaires
       * La recherche de mots
       * Notre projet final
@@ -187,7 +187,7 @@
 
     <section class="slide centered" data-markdown>
       <script type="text/template">
-        ## PyCharm IDE (Integrated Development Environments) éditeur de code.
+        ## PyCharm IDE (Integrated Development Environment ou éditeur de code).
 
         On utilise un IDE pour écrire du code plus rapidement et faire moins d'erreurs.
         <br><br>
@@ -205,11 +205,12 @@
         ![](framework/img/workshop/pycharm-project1.png)
         ![](framework/img/workshop/pycharm-project2.png)
 
-        Les fichiers du projet contenus dans le dossier vont apparaître dans l'espace à gauche. Utilisez les flèches pour ouvrir les dossiers.
+        Les fichiers contenus dans le dossier vont apparaître dans l'espace à gauche. Utilisez les flèches pour ouvrir les dossiers.
 
         Aujourd'hui, vous travaillerez dans le dossier **exercices**. Le dossier **reference** contient les réponses à titre de &laquo;référence&raquo;.        
        
-       Les autres dossiers & fichiers vous serviront à faire fonctionner cette présentation. Évitez de les modifier !
+       Les autres dossiers & fichiers vous serviront à faire fonctionner cette présentation. 
+       Évitez de les modifier !
         
 
         ![](framework/img/workshop/pycharm-project3.png)
@@ -258,7 +259,7 @@
         >>> 1 / 2
         0
         ```
-        Pourquoi `1 / 2 = 0`? Nous y reviendrons
+        Pourquoi `1 / 2 = 0`? Nous y reviendrons...
 
       </script>
     </section>
@@ -267,7 +268,7 @@
       <script type="text/template">
         ## Les types de données
         
-        Dans l'exemple précédent on utilisait des nombres de type entiers (<em>integers</em>), mais il y a plusieurs autres types de données.
+        Dans l'exemple précédent, on utilisait des nombres de type **entier** (<em>integers</em>), mais il y a plusieurs autres types de données.
 
         * Integer (`int`, nombre entier)
         * Float (`float`, nombre contenant des décimales)
@@ -301,12 +302,12 @@
         ex: la fonction `add` prend `a` et `b` comme arguments et **retournera** le résultat.
 
         ```python
-        >>> def add(a, b):
+        >>> def ajout(a, b):
         ...     return a + b
         ...
-        >>> add(1, 2)
+        >>> ajout(1, 2)
         3
-        >>> add(3, 4)
+        >>> ajout(3, 4)
         7
         ```
         Il est possible de créer le vôtre mais l'exercice d'aujourd'hui utilise les fonctions fournies par Python et ses librairies.
@@ -336,7 +337,7 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Concaténation
-        **La concaténation** (ou enchaînement) est utilisée pour «additionner» des séquences de caractères **(strings)** ensemble pour n'en faire qu'une seule.
+        **La concaténation** (ou enchaînement) est utilisée pour «additionner» des chaînes de caractères **(strings)** ensemble pour n'en faire qu'une seule.
         ```
         >>> print("Hello " + "World!")
         Hello World!
@@ -413,23 +414,20 @@
         Python peut aussi être utilisé pour convertir des nombres en «strings». L'exemple suivant retourne une erreur. Pourquoi ?
 
         ```
-        >>> print(1 + " km à pied, ça use, ça use")
+        >>> print("les élections" + 2015)
         Traceback (most recent call last):
         File "<input>", line 1, in <module>
         TypeError: cannot concatenate 'str' and 'int' objects
         ```
         
-        <br>
         Utilisez la fonction `str()` pour convertir un nombre en «string».
 
         ```
-        >>> print(str(1) + " km à pied, ça use les souliers")
+        >>> print("les élections" + str(2015))
 
         ```
         
-        <br>
         Savoir comment convertir des types avec Python vous sera très pratique plus tard !
-
       </script>
     </section>
 
@@ -496,11 +494,11 @@
         * Séparez les mots avec des barres de soulignement `_`
           * ex: `ladies_learning_code` 
         
-        * Ils ne peuvent débuter avec des nombres. 
-          * ex: `1jour` vous donnera une erreur; `jour1` sera ok.
+        * Ils ne peuvent débuter avec des nombres
+          * ex: `1jour` vous donnera une erreur; `jour1` sera ok
 
         * Utilisez de vraies descriptions
-          * ex: `first_name` est plus clair que `fn`
+          * ex: `prenom` est plus clair que `pr`
       </script>
     </section>
 
@@ -508,7 +506,7 @@
       <script type="text/template">
         ## Truc de pro: Écrivez des commentaires!
 
-        Les programmeurs utilisent des *commentaires* pour laisser des notes pour eux-mêmes (et tous ceux qui liront leur code dans le futur).
+        Les programmeurs utilisent des *commentaires* pour laisser des notes (pour eux-mêmes et tous ceux qui liront leur code dans le futur).
         
         De bons commentaires clarifieront du code plus complexe, des trucs moins évidents.
 
@@ -536,8 +534,8 @@
         Essayez d'utiliser la fonction `raw_input()`. De cette façon, les données entrées par un utilisateur vous seront **retournées**.
         
         1. Donnez à `raw_input()` un message demandant une information précise à l'utilisateur
-        1. L'utilisateur entre quelque chose et appuie sur **entrée** 
-        1. Peu importe ce que l'usager entre, cette information vous est **retournée**.
+        1. L'utilisateur entre quelque chose et appuie sur la touche **entrée** 
+        1. Peu importe ce que l'utilisateur entre, cette information vous est **retournée**.
   
         Essayez-le dans la console:
 
@@ -553,7 +551,7 @@
         
         Utiliser la console est pratique pour tester des petites parties de code mais on peut faire encore bien mieux. Python peut rouler du code depuis un fichier qui possède l'**extension** `.py`. Créons ensemble un premier fichier Python !
 
-        1. Faites un clique-droit sur le dossier **exercices** pour créer un nouveau fichier. Sélectionnez **New > Python File**
+        1. Faites un clique à droite sur le dossier **"exercises"** pour créer un nouveau fichier. Sélectionnez **New > Python File**
 
           ![Create a new Python File](./framework/img/workshop/new-file-mac.png)
 
@@ -580,16 +578,16 @@
 
         Coder dans un fichier **.py**  consiste à écrire du texte jusqu'à ce que vous soyez prêt(e) à **rouler** le programme en Python.
 
-        1. Pour rouler le code, selectionnez **Run > Run&hellip;**   
+        1. Pour rouler le code, sélectionnez **Run > Run&hellip;**   
         PyCharm sauvegarde automatiquement votre fichier avant de le rouler
 
           ![](framework/img/workshop/pycharm-run.png)  
 
-        1. Cliquez sur `ex1_hello_world` (again) dans le menu.
+        1. Cliquez sur `ex1_hello_world` (une autre fois) dans le menu.
 
           ![Click to run your program](./framework/img/workshop/run-mini-menu.png)
 
-        1. Cliquez dans la fenêtre de la console, tapez votre nom et pressez **Entrée**. Vous devriez voir votre nom vous être retourné.
+        1. Cliquez dans la fenêtre de la console, tapez votre nom et pressez **Entrée**. Vous devriez voir votre nom.
 
           ![Demo of hello_world example](./framework/img/workshop/ex1-hello-world.png)
         
@@ -643,7 +641,7 @@
         >>> weather = "raining"
         ```
 
-        Le symbole égal doublé (`==`) va évaluer si la valeur de droite correspond à la valeur *assignée* et peut servir à tester la valeur. 
+        Le symbole égal double (`==`) va évaluer si la valeur de droite correspond à la valeur *assignée* et peut servir à tester la valeur. 
         ```
         >>> weather == "cold"
         False
@@ -661,22 +659,23 @@
       <script type="text/template">
         ## Exercise 2: Vérificateur de température (10 mins)
 
-        Créez un nouveau fichier et appelez-le `ex2_weather_advice.py`.
+        Créez un nouveau fichier et appelez-le `ex2_conseil_meteo.py`.
         
         Utilisez l'extrait de code plus bas comme référence, mais essayez d'écrire votre code au lieu de faire un copier-coller; c'est dans le but d'apprendre la syntaxe.
         
         Remarquez l'indentation. Python l'utilise pour séparer les blocs de code qui appartiennent à la clause `if` ou `else`.
 
         ```python
-        # file: ex2_weather_advice.py
-        weather = raw_input("What is the weather? (cold, raining, etc.)")
+        # file: ex2_conseil_meteo.py
+        # -*- coding: utf-8 -*-
+        meteo = raw_input("Quel temps fait-il? (froid, pluvieux, etc.)>")
 
-        if weather == "cold":
-            print("Wear a sweater!")
-        elif weather == "raining":
-            print("Bring an umbrella")
+        if meteo == "froid":
+            print("Mets un chandail!")
+        elif meteo == "pluvieux":
+            print("Amène ton parapluie!")
         else:
-            print("Dress normally :)")
+            print("Fais comme tu veux :)")
         ```
         **Bonus: ** Essayez d'exécuter le fichier quelques fois pour tester vos conditions et les conseils de ce dernier. Tentez également de modifier les conditions ou d'en ajouter d'autres.
 
@@ -690,19 +689,19 @@
         Lorsque vous tapez `if` ou `else` dans la console au lieu d'un fichier *.py, vous verrez quelque chose comme ceci:
 
         ```python
-        >>> if weather == "cold":
+        >>> if meteo == "froid":
         ...
         ```
 
         Les `...` représentent l'indentation automatisée et vous signalent que la ligne de commande s'attend à du code indenté. 
         
         ```python
-        >>> if weather == "cold":
-        ...     print("Wear a sweater!")
+        >>> if meteo == "froid":
+        ...     print("Mets un chandail!")
         ... else:
-        ... print("Dress normally :)")
+        ... print("Fais ce que tu veux :)")
         File "<input>", line 5
-            print("Dress normally :)")
+            print("Fais ce que tu veux :)")
                 ^
         IndentationError: expected an indented block
         ```
@@ -732,11 +731,11 @@
         True
 
         >>> if x >= 5:
-        ...     print("x is greater than or equal to 5")
+        ...     print("x est plus grand ou égal à 5")
         ... else:
-        ...     print("x is less than 5")
+        ...     print("x est plus petit que 5")
         ...
-        x is greater than or equal to 5
+        x est plus grand ou égal à 5
         ```
       </script>
     </section>
@@ -751,18 +750,18 @@
         * `or`: Une des expressions avant ou après ce mot clé doit être *vrai*
 
         ```python
-        weather = "cold"
-        snowing = True
+        meteo = "froid"
+        neige = True
 
-        >>> if weather == "cold" and snowing == True:
-        ...     print("wear a winter jacket")
+        >>> if meteo == "froid" and neige == True:
+        ...     print("mets un foulard et un manteau d'hiver")
         ...
 
-        wear a winter jacket
-        >>> if weather == "raining" or snowing == True:
-        ...     print("bring a change of socks")
+        mets un foulard et un manteau d'hiver
+        >>> if meteo == "pluvieux" or neige == True:
+        ...     print("apporte une deuxième paire de bas")
         ...
-        bring a change of socks
+        apporte une deuxième paire de bas
         ```
       </script>
     </section>
@@ -771,28 +770,28 @@
       <script type="text/template">
         ## Exemples d'utilisation du *Et* et du *Ou* logique
 
-        Avec la notation mathématique, nous pouvons utiliser `0 < x < 6`. En python, nous devons séparer ces comparaisons.
+        Avec la notation mathématique, nous pouvons utiliser `0 < x < 6`. En Python, nous devons séparer ces comparaisons.
 
         ```python
         >>> x = 5
         >>> if x > 0 and x < 6:
-        ...     print("x is between 0 and 6.")
+        ...     print("x est entre 0 et 6.")
         ...
-        x is between 0 and 6.
+        x est entre 0 et 6.
         ```
 
         ```python
         >>> if type(x) == float or type(x) == int:
-        ...     print("x is a numeric value")
+        ...     print("x est une valeur numérique")
         ...
-        x is a numeric value
+        x est une valeur numérique
         ```
 
         ```python
         >>> if x > 10 and x < 0:
-        ...     print("x could never be greater than 10 AND less than 0")
+        ...     print("x ne pourra jamais être plus grand que 10 et plus petit que 0")
         ...
-        # Nothing prints here
+        # Rien ne sera affiché
         ```
 
       </script>
@@ -804,20 +803,22 @@
 
         Au lieu de dire au programme qu'il fait froid, nous pouvons lui fournir une température et le laisser nous dire quoi faire selon cette dernière
 
-        * Ouvrez le fichier **ex3_smarter_weather.py**
+        * Ouvrez le fichier **ex3_meteorologie_intelligente.py** dans le répertoire **exercises/fr**
         * Utilisez les opérateurs de comparaison mathématique, `and`/`or`
         * Suivez les instructions plus bas
         * Sentez-vous bien à l'aise de modifier les températures proposées et leurs messages respectifs :)
 
         ```
-        # if the weather is greater than or equal to 25 degrees
-        if "replace this with the right condition":
-            print("Go to the beach!")
-        # the weather is less than 25 degrees AND greater than 15 degrees
-        elif "replace this with the right conditions":
-            # Still warm enough for ice cream!
+        # si la température est plus grande ou égale à 25 degrés
+        if "remplacez ceci par la bonne condition":
+            print("Allons à la plage !")
+        # la température est plus petite que 25 degrés MAIS plus grande que 15 degrés
+        elif "remplacez ceci par la bonne condition":
+            # Allons prendre une bonne crème glacée !
+            pass
         else:
-            # Wear a sweater and dream of beaches.
+            # Portez votre gilet chaud préféré et révez à la plage
+            pass
         ```
 
 
@@ -862,7 +863,7 @@
 
         Dans le fichier `llc-chapters.csv`, chaque ligne représente un chapitre de Ladies Learning Code
 
-        Essayons d'en imprimer quelques-unes sur une ligne individuelle
+        Essayons d'en imprimer quelques lignes, une à la fois 
 
         ```python
         >>> chapters = open('./exercises/llc-chapters.csv')
@@ -884,7 +885,7 @@
       <script type="text/template">
         ## Une ligne à la fois
 
-        Dans la diapositive précédente, nous affichions 3 lignes du fichier une à la fois.
+        Dans la diapositive précédente, nous affichions 3 lignes du fichier, une par une.
         Remarquez comment ces 3 lignes ont exactement 3 valeurs séparées par une virgule.
 
         ```
@@ -1034,7 +1035,7 @@
 
         Lorsque nous utilisons le `DictReader` pour afficher les lignes du fichier CSV, nous obtenons un `dict`ionnaire qui représente chacune des lignes au lieu des valeurs séparées par des virgules.
 
-        Les colonnes représentant chaque ville peuvent être accéder avec un mot-clé:
+        Les colonnes représentant chaque ville peuvent être accédées avec un mot-clé:
 
         ```python
         >>> chapter = {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
@@ -1070,7 +1071,7 @@
             Meghan
         Calgary, AB
             Darcie
-        # ... Continues for the other chapters
+        # ... et ça continue pour les autres chapitres
         ```
       </script>
     </section>
@@ -1081,23 +1082,24 @@
 
         Vous possédez maintenant tous les outils nécessaires pour trouver le ou les responsables dans le fichier `llc-chapters.csv`.
 
-        Dans le dossier **exercices**, ouvrez **ex4_chapter_lead_finder.py** and suivez les instructions qui s'y trouvent en commentaire.
+        Dans le dossier **exercices**, ouvrez **fr/ex4_responsable_de_chapitre.py** and suivez les instructions qui s'y trouvent en commentaire.
 
         Essayez d'appliquer ce que vous avez appris jusqu'ici.
 
         ```python
-        # Import the csv library
+        # -*- coding: utf-8 -*-
+        #  Importez le module csv
         import csv
 
-        # Open the 'llc-chapters.csv' file
+        # Ouvrez le fichier '../llc-chapters.csv'
 
-        # Convert it to a csv_data structure
+        # Convertissez-le en une structure de données csv
 
-        # Loop through each of the rows
+        # bouclez dans chacune des lignes
 
-            # Compare the 'City' in the row with your city
+            # comparez le champ 'City' à votre ville
 
-                # Print "Thank you [[Chapter Lead(s)]]!"
+                # Imprimez "Merci [[les responsables du chapitre]]! dans la console"
         ```
       </script>
     </section>
@@ -1105,7 +1107,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Compter compter dans une boucle
+        ## Compter dans une boucle
 
         Nous désirons parfois conserver le nombre de fois qu'une boucle exécute une certaine séquence.
 
@@ -1141,13 +1143,13 @@
       <script type="text/template">
         ## Comment trouver un mot dans une chaîne de caractères
 
-        Nous avons pu voir comment comparer des chaînes de caractère `"Python" == "Python"`. Comment doit-on s'y prendre si nous désirons trouver un mot spécifique dans une chaîne de caractère ?
+        Nous avons pu voir comment comparer des chaînes de caractères `"Python" == "Python"`. Comment doit-on s'y prendre si nous désirons trouver un mot spécifique dans une chaîne de caractères ?
 
         La méthode `.find()` peut être utilisée avec une chaîne de caractères pour trouver **l'index** d'une sous-chaîne de caractères (a.k.a. un mot !).
 
         **L'index** est la position numérique à laquelle un mot apparaît. **Important**: l'index commence à la position 0.
 
-        Dans l'exemple ci-dessous, le mode "Code" a un index de 16 au lieu de 17. Pourquoi ? <span class="delayed">l'index commence à 0</span>
+        Dans l'exemple ci-dessous, le mode "Code" a un index de 16 au lieu de 17. Pourquoi ? <span class="delayed">L'index commence à 0</span>
 
         ```python
         >>> "Ladies Learning Code".find("Code")
@@ -1185,9 +1187,9 @@
         Nancy & Cassie are co-leads
         ```
 
-        Créez un nouveau fichier (**ex5_coleaders.py**) and utilisez vos nouvelles connaissances pour compléter cet exercice.
+        Créez un nouveau fichier (**ex5_coresponsables.py**) and utilisez vos nouvelles connaissances pour compléter cet exercice.
 
-        * Afficher la liste des villes avec co-responsable
+        * Afficher la liste des villes avec co-responsables
         * Compter le nombre de chapitres ayant des co-responsables
       </script>
     </section>
@@ -1225,8 +1227,7 @@
         Dans le but de promouvoir **National Learn to Code Day 2015**, ainsi que mesurer son succès par rapport à 2014, nous aurons besoin de quelques statistiques:
 
         * Le nombre de gens qui se sont inscrits à "La journée nationale d'apprentissage de la programmation"
-        * le nombre total de gens inscrits à "Kids Learning Code" ou
-        * le nombre total de gens inscrits à "Girls Learning Code"
+        * le nombre total de gens inscrits à "Kids Learning Code" et/ou à "Girls Learning Code"
         * le nombre total de gens impliqués dans le "National Learn to Code day" pour les jeunes
 
         **Si c'est trop facile pour vous, allez à la page suivante pour un exercice en bonus.**
@@ -1241,7 +1242,7 @@
         
         Le gouvernement du Canada en publie plusieurs. En [voici quelques uns](https://docs.google.com/spreadsheets/d/14fFZPKrb0RrKpjiAQYshwT3iYkTRGKeeFcpz3r8m8Qg) (la quantité d'oeuvre de charité au pays, des estimés de population, un index du prix des propriétés et plus...)
 
-        **Un conseil de pro !** Ouvrez ces données avec Excel ou [LibreOfffice](https://www.libreoffice.org/) pour consulter les données plus aisément.
+        **Un conseil de pro !** Ouvrez ces données avec Excel ou [LibreOffice](https://www.libreoffice.org/) pour consulter les données plus aisément.
 
         * Pouvez-vous identifier des tendances intéressantes ?
         * Que voudriez-vous apprendre de ces données ?
@@ -1258,7 +1259,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Les sujets que nous n'avons pas couvert
+        ## Les sujets que nous n'avons pas couverts
 
         ### Écrire des données dans un fichier CSV
 
