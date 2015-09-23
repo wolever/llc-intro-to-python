@@ -59,4 +59,5 @@ target/
 # PyCharm files
 .idea/
 
-
+# Vim
+*.sw?

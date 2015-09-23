@@ -391,9 +391,9 @@
         ```
         
         <br>
-        The first `2` is an integer and the second `"2"` is a **string** type.
+        The first `2` is an `int` and the second `"2"` is a `str`.
         
-        Python can&rsquo;t figure out how to add a number and string, so it spits out an error.
+        Python doesn&rsquo;t know whether you wanted to *add two numbers* or *concatenate two strings*. Instead of guessing, it forces you to be **explicit**.
 
       </script>
     </section>
@@ -463,7 +463,7 @@
       <script type="text/template">
         ## Variables
         * Used to store a value to use whenever you need it
-        * Variables store data in the computer&rsquo;s memory and a **variable name** is used to fetch their value (kind of like a bookmark in a book)
+        * Variables store data in the computer&rsquo;s memory and a **variable name** is used to fetch their value (kind of like a label on a filing cabinet)
         * Use the equal (`=`) symbol to *assign* a value to a variable
 
         ```python
@@ -499,7 +499,7 @@
         Why?<!-- .element: class="delayed" -->
         
         You changed <!-- .element: class="delayed" -->`y`, but the old value of `x` is still in memory.   
-        Python will remember variable names until you close PyCharm or [clear them manually](https://docs.python.org/2/tutorial/datastructures.html#the-del-statement).
+        Python will remember variable names until you close PyCharm.
       </script>
     </section>
 
@@ -509,21 +509,26 @@
         
         Here are some tips & best practices for creating variable names:
         
-        * variable names can only use letters, numbers and the underscore (`_`)<br> - no spaces!
+        * variable names can only use letters, numbers and the underscore (`_`)
+          * no spaces!
         * separate words with the underscore `_` symbol
-           * e.g `ladies_learning_code`
+          * e.g. `ladies_learning_code`
         * they cannot begin with a number
           * `1day` gives you an error, `day1` will work.
-        * use descriptive names
+        * descriptive names will make future you happier
           * e.g. `first_name` is more descriptive than `fn`
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Pro Tip! Use Comments
+        ## Pro Tip: Use Comments!
 
-        Programmers use *comments* to leave notes for themselves (and other people reading their code in the future)
+        Programmers use *comments* to leave notes for themselves (and other people reading their code in the future):
+
+        ```
+        # This is a comment!
+        ```
         
         Good comments add information that isn&rsquo;t immediately obvious.
         
@@ -547,14 +552,13 @@
 
         Instead of just a 'Hello World' message on the screen, take it one step further and have Python say hello to anyone!
 
-        Try using the `raw_input()` function. This will get the data inputed by a user and **returns** that value back to you.
+        Try out the `raw_input()` function. It reads a line of text and returns that text as a string.
 
-        1. Give `raw_input()` a message to let the user know what information is being requested using this syntax (note the quotes):
-          ```python
-          >>> raw_input("What's your name?")
+        You can also give `raw_input()` a message to let the user know what you're asking for, like this:
+
+          ```
+          >>> raw_input("What's your name? ")
           ``` 
-        1. The user types a response and hits the **enter** key
-        1. Whatever the user types is **returned** to you.
 
         Try it in your console. It will look something like this:
         
@@ -568,7 +572,11 @@
       <script type="text/template">
         ## Class Exercise 1: Hello World (part 2)
 
-        Using the console is great for testing smaller chunks of code but there is a better way. Python can run code from a file with a `.py` file **extension**. Let&rsquo;s create a Python file!
+        The console is great for playing with small bits of code, but not much fun for writing full programs.
+        
+        When we write larger programs, we save the code in files with the `.py` file **extension**.
+        
+        Let&rsquo;s create a Python file!
 
         1. Right-click (or two-finger tap) on the **exercises** folder to create a new file. Then select **New > Python File**
 
@@ -578,9 +586,7 @@
 
           ![new python file name](framework/img/workshop/new-python-file.png)
 
-        1. Add the below program/code snippet to the file. Try to practice typing it out to get used to the syntax. Use this example as a reference rather than copy-paste.
-        
-          Reminder, anything after the `#` symbol is just a comment.
+        1. Type the code below into the new file. *Don't copy+paste it!* Type it out so your fingers get used to the strange characters.
 
           ```python
           # Assign the raw_input value to a variable
@@ -597,13 +603,13 @@
       <script type="text/template">
         ## Class Exercise 1: Hello World (part 3)
 
-        Code in a **.py** file is just text until you **run** it through the Python program.
+        Code in a **.py** file is just plain text! The Python interpriter reads and runs it as if you were typing it into the console.
 
-        1. To run the code, select the green arrow symbol. PyCharm automatically saves your file before you run it. 
+        1. Click the green arrow to run the code. PyCharm automatically saves your file before you run it.
 
           ![](framework/img/workshop/pycharm-run.png)  
           
-          You can also find it in the menu under **View > Tool Windows > Run**
+          You can also press shift + F10 (Windows) or fn + shift + F10 (Mac) to run your code.
 
         1. The code will run in your console window. Type your name and press the **Enter** key to see your response repeated back at you.
 
