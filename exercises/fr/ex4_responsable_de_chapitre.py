@@ -4,7 +4,7 @@ import csv
 
 # Ouvrez le fichier '../llc-chapters.csv'
 
-# Convertissez le en une structure de données csv
+# Convertissez-le en une structure de données csv
 
 # bouclez dans chacune des lignes
 

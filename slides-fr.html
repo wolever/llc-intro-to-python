@@ -863,7 +863,7 @@
 
         Dans le fichier `llc-chapters.csv`, chaque ligne représente un chapitre de Ladies Learning Code
 
-        Essayons d'en imprimer quelques-unes sur une ligne individuelle
+        Essayons d'en imprimer quelques lignes, une à la fois 
 
         ```python
         >>> chapters = open('./exercises/llc-chapters.csv')
@@ -885,7 +885,7 @@
       <script type="text/template">
         ## Une ligne à la fois
 
-        Dans la diapositive précédente, nous affichions 3 lignes du fichier une à la fois.
+        Dans la diapositive précédente, nous affichions 3 lignes du fichier, une par une.
         Remarquez comment ces 3 lignes ont exactement 3 valeurs séparées par une virgule.
 
         ```
@@ -1035,7 +1035,7 @@
 
         Lorsque nous utilisons le `DictReader` pour afficher les lignes du fichier CSV, nous obtenons un `dict`ionnaire qui représente chacune des lignes au lieu des valeurs séparées par des virgules.
 
-        Les colonnes représentant chaque ville peuvent être accéder avec un mot-clé:
+        Les colonnes représentant chaque ville peuvent être accédées avec un mot-clé:
 
         ```python
         >>> chapter = {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
@@ -1071,7 +1071,7 @@
             Meghan
         Calgary, AB
             Darcie
-        # ... Continues for the other chapters
+        # ... et ça continue pour les autres chapitres
         ```
       </script>
     </section>
@@ -1082,23 +1082,24 @@
 
         Vous possédez maintenant tous les outils nécessaires pour trouver le ou les responsables dans le fichier `llc-chapters.csv`.
 
-        Dans le dossier **exercices**, ouvrez **ex4_chapter_lead_finder.py** and suivez les instructions qui s'y trouvent en commentaire.
+        Dans le dossier **exercices**, ouvrez **fr/ex4_responsable_de_chapitre.py** and suivez les instructions qui s'y trouvent en commentaire.
 
         Essayez d'appliquer ce que vous avez appris jusqu'ici.
 
         ```python
-        # Import the csv library
+        # -*- coding: utf-8 -*-
+        #  Importez le module csv
         import csv
 
-        # Open the 'llc-chapters.csv' file
+        # Ouvrez le fichier '../llc-chapters.csv'
 
-        # Convert it to a csv_data structure
+        # Convertissez-le en une structure de données csv
 
-        # Loop through each of the rows
+        # bouclez dans chacune des lignes
 
-            # Compare the 'City' in the row with your city
+            # comparez le champ 'City' à votre ville
 
-                # Print "Thank you [[Chapter Lead(s)]]!"
+                # Imprimez "Merci [[les responsables du chapitre]]! dans la console"
         ```
       </script>
     </section>
@@ -1106,7 +1107,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Compter compter dans une boucle
+        ## Compter dans une boucle
 
         Nous désirons parfois conserver le nombre de fois qu'une boucle exécute une certaine séquence.
 
@@ -1142,13 +1143,13 @@
       <script type="text/template">
         ## Comment trouver un mot dans une chaîne de caractères
 
-        Nous avons pu voir comment comparer des chaînes de caractère `"Python" == "Python"`. Comment doit-on s'y prendre si nous désirons trouver un mot spécifique dans une chaîne de caractère ?
+        Nous avons pu voir comment comparer des chaînes de caractères `"Python" == "Python"`. Comment doit-on s'y prendre si nous désirons trouver un mot spécifique dans une chaîne de caractères ?
 
         La méthode `.find()` peut être utilisée avec une chaîne de caractères pour trouver **l'index** d'une sous-chaîne de caractères (a.k.a. un mot !).
 
         **L'index** est la position numérique à laquelle un mot apparaît. **Important**: l'index commence à la position 0.
 
-        Dans l'exemple ci-dessous, le mode "Code" a un index de 16 au lieu de 17. Pourquoi ? <span class="delayed">l'index commence à 0</span>
+        Dans l'exemple ci-dessous, le mode "Code" a un index de 16 au lieu de 17. Pourquoi ? <span class="delayed">L'index commence à 0</span>
 
         ```python
         >>> "Ladies Learning Code".find("Code")
@@ -1186,9 +1187,9 @@
         Nancy & Cassie are co-leads
         ```
 
-        Créez un nouveau fichier (**ex5_coleaders.py**) and utilisez vos nouvelles connaissances pour compléter cet exercice.
+        Créez un nouveau fichier (**ex5_coresponsables.py**) and utilisez vos nouvelles connaissances pour compléter cet exercice.
 
-        * Afficher la liste des villes avec co-responsable
+        * Afficher la liste des villes avec co-responsables
         * Compter le nombre de chapitres ayant des co-responsables
       </script>
     </section>
@@ -1226,8 +1227,7 @@
         Dans le but de promouvoir **National Learn to Code Day 2015**, ainsi que mesurer son succès par rapport à 2014, nous aurons besoin de quelques statistiques:
 
         * Le nombre de gens qui se sont inscrits à "La journée nationale d'apprentissage de la programmation"
-        * le nombre total de gens inscrits à "Kids Learning Code" ou
-        * le nombre total de gens inscrits à "Girls Learning Code"
+        * le nombre total de gens inscrits à "Kids Learning Code" et/ou à "Girls Learning Code"
         * le nombre total de gens impliqués dans le "National Learn to Code day" pour les jeunes
 
         **Si c'est trop facile pour vous, allez à la page suivante pour un exercice en bonus.**
@@ -1242,7 +1242,7 @@
         
         Le gouvernement du Canada en publie plusieurs. En [voici quelques uns](https://docs.google.com/spreadsheets/d/14fFZPKrb0RrKpjiAQYshwT3iYkTRGKeeFcpz3r8m8Qg) (la quantité d'oeuvre de charité au pays, des estimés de population, un index du prix des propriétés et plus...)
 
-        **Un conseil de pro !** Ouvrez ces données avec Excel ou [LibreOfffice](https://www.libreoffice.org/) pour consulter les données plus aisément.
+        **Un conseil de pro !** Ouvrez ces données avec Excel ou [LibreOffice](https://www.libreoffice.org/) pour consulter les données plus aisément.
 
         * Pouvez-vous identifier des tendances intéressantes ?
         * Que voudriez-vous apprendre de ces données ?
@@ -1259,7 +1259,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Les sujets que nous n'avons pas couvert
+        ## Les sujets que nous n'avons pas couverts
 
         ### Écrire des données dans un fichier CSV
 
