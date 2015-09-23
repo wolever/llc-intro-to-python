@@ -2,7 +2,7 @@
 
 # Rappelez-vous, nous avons besoin d'une chaîne de caractère pour la fonction
 # raw_input, mais vous devez le convertir en integer pour la comparaison mathématique
-weather = int(raw_input("Quel est la température en ce moment même ? (saisissez un chiffre svp): "))
+weather = int(raw_input("Quelle est la température en ce moment-même ? (saisissez un chiffre svp): "))
 
 # si la température est plus grande ou égale à 25 degrés
 if "remplacez ceci par la bonne condition":
