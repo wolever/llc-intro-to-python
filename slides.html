@@ -627,51 +627,109 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Conditionals &amp; Logic
-        The program we just wrote ran straight from top to bottom. What if the program could decide what to do instead?  `if` statements can be used to execute different sets of instructions based on specific conditions.
+
+        The program we just wrote ran straight from top to bottom. What if the program could decide what to do instead?
         
-        Each `if` statement contains a test. The indented block is the code that will run if the test is `True` and looks something like this:
+        `if` statements can be used to execute different sets of instructions based on specific conditions.
+        
+        Each `if` statement contains a test. The indented block of code will run if the test is `True`:
 
         ```python
-        # Not real code
-        if it is cold outside:
-            wear a sweater
-        else:
-            dress normally :)
+        if weather == "cold":
+            print("Wear a sweater!")
         ```
 
-        You can also have more than one condition.
+        `elif` statemens can be added after an `if` statement to test for other things:
 
         ```python
-        # Still not real code
-        if it is cold outside:
-            wear a sweater
-        elif it is raining:
-            bring an umbrella
+        if weather == "cold":
+            print("Wear a sweater!")
+        elif weather == "raining":
+            print("Bring an umbrella")
+        ```
+
+        And a final `else` statement can be added, which run if none of the `if` or `elif` tests before it passed:
+
+        ```python
+        if weather == "cold":
+            print("Wear a sweater!")
+        elif weather == "raining":
+            print("Bring an umbrella")
         else:
-            dress normally :)
+            print("Dress normally :)")
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Indentation at the Console
+        
+        When typing `if` or `else` in the console (instead of a .py file), you'll see something like this:
+
+        ```python
+        >>> if weather == "cold":
+        ...
+        ```
+        
+        The `...` and auto-indentation is the console signalling that it expects the nested block code.
+        
+        When you're done, press enter twice (or backspace and type `else:` and you'll get your next indented block).
+
+        Python gets a little bit upset when it doesn't get the indentation it expects:
+
+        ```python
+        >>> if weather == "cold":
+        ...     print("Wear a sweater!")
+        ... else:
+        ... print("Dress normally :)")
+        File "<input>", line 5
+            print("Dress normally :)")
+                ^
+        IndentationError: expected an indented block
         ```
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Boolean values
+        ## Equality
 
-        How does `if` know what&rsquo;s `True` or `False`? Use 'Boolean' statements to test against the values.
+        What's that `==` doing? It's the *equality operator*, read "equals".
 
-        Reminder, one equals symbol only *assigns* a value to the variable.
+        It evalutes to `True` if the left hand side is equal to the right hand side:
 
-        ```python
-        >>> weather = "raining"
-        ```
-
-        The double equals symbol (`==`) will evaluate if the value on the right matches the *assigned* value and can be used to test the values.
         ```
         >>> weather == "cold"
         False
         >>> weather == "raining"
         True
         ```
+
+        The `!=` operator — read "not equals" — does the opposite:
+
+        ```
+        >>> 4 != 3
+        True
+        >>> 4 != 4
+        False
+        ```
+
+        Reminder: one equals sign is used for *assignment*, two for *equality*:
+
+        ```python
+        >>> weather = "raining"
+        >>> weather == "raining"
+        True
+        ```
+
+        Make a guess at each of these questions then try it to see if you're right:
+
+        * Does case matter? (does `"david" == "David"`?)
+        * What happens when numbers and strings are compared? (does `4 == "4"`?)
+        * What happens when `float`s and `int`s are compared? (does `float(4) == int(4)`)?
+
       </script>
     </section>
 
@@ -691,7 +749,7 @@
 
         ```python
         # file: ex2_weather_advice.py
-        weather = raw_input("What is the weather? (cold, raining, etc.)")
+        weather = raw_input("What is the weather? (cold, raining, etc.) ")
 
         if weather == "cold":
             print("Wear a sweater!")
@@ -700,34 +758,8 @@
         else:
             print("Dress normally :)")
         ```
-        **Bonus: ** Try running your file a few times to get different advice and/or update the conditions or add more conditions.
+        **Bonus:** Try running your file a few times to get different advice, then add a couple more conditions.
 
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Indentation
-        
-        When typing `if` or `else` in the console (instead of a .py file), you'll see something like this:
-
-        ```python
-        >>> if weather == "cold":
-        ...
-        ```
-        
-        The `...` and auto-indentation is the console signalling that it expects the nested block code.  When you're done, press enter twice (or backspace and type `else:` and you'll get your next indented block).
-
-        ```python
-        >>> if weather == "cold":
-        ...     print("Wear a sweater!")
-        ... else:
-        ... print("Dress normally :)")
-        File "<input>", line 5
-            print("Dress normally :)")
-                ^
-        IndentationError: expected an indented block
-        ```
       </script>
     </section>
 
@@ -737,29 +769,31 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Testing with Math Comparison Operators  
+        ## Order comparison operators
 
-        Math operators can also be used to test numeric values. Here are a few we will use today.
+        We'll also be using the mathematical greater than and less than operators:
 
-        `>` greater than  
-        `<` less than  
-        `>=` greater than or equal to  
-        `<=` less than or equal to  
+        `>`, `>=`: greater than, greater than or equal to<br />
+        `<`, `<=`: less than, less than or equal to
 
         ```python
-        >>> x = 5
-        >>> print(x > 5)
+        >>> 5 > 4
+        True
+        >>> 5 > 5
         False
-        >>> print(x >= 5)
+        >>> 5 >= 5
         True
 
+        >>> x = 4
         >>> if x >= 5:
         ...     print("x is greater than or equal to 5")
         ... else:
         ...     print("x is less than 5")
         ... 
-        x is greater than or equal to 5
+        x is less than 5
         ```
+
+        **Hint:** if you're like me you can *never* remember which arrow is which. My trick is to look at the number of point: `>` has two points on the left but only one on the right, and 2 is greater than 1, so it's "greater".
       </script>
     </section>
     
