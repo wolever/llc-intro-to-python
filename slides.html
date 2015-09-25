@@ -1150,7 +1150,7 @@
         Earlier, we learned how `for` loops can repeat the same set of instructions. Let's take a look at this example below.
 
         * the `for` loop assigns *each row* to the `chapter` variable
-        * group instructions together with the same indentation
+        * instructions are grouped together by giving them the same indentation
         * all the instructions in the indented block are run for each `chapter`
         * remember to press enter again after the last instruction in the for loop to execute it
 
@@ -1185,7 +1185,7 @@
         
         # Open the 'llc-chapters.csv' file
         
-        # Convert it to a csv_data structure
+        # Use the CSV module to turn lines into dictionary rows
         
         # Loop through each of the rows
         
@@ -1221,11 +1221,11 @@
         csv_file = open('llc-chapters.csv')
         csv_data = csv.DictReader(csv_file)
 
-        count = 0
+        chapter_count = 0
         for row in csv_data:
-            count += 1
+            chapter_count += 1
 
-        print("There are " + str(count) + " chapters")
+        print("There are " + str(chapter_count) + " chapters")
         ```
       </script>
     </section>
@@ -1236,22 +1236,26 @@
 
         So far, we've compared entire strings to each other `"Python" == "Python"`. But what if you want to find a word inside an existing string?
 
-        The `.find()` function can be used with `str` types to tell you where the specific string appears according to its **index**.  The index is the numbered position in which it appears.  **Important**: the index starts at 0.  
-        
-        In the first example below, "Code" has an index of 16 instead of 17.  Why? <span class="delayed">index starts at 0</span>
+        The `haystack.find(needle)` method can be used with strings to tell you where the string `needle` starts in the `haystack`:
 
         ```python
-        >>> "Ladies Learning Code".find("Code")
-        16
-        >>> title = "National Learn to Code Day"
-        >>> title.find("Code")
-        18
-        >>> title.find("code")
+        >>> "abcd".find("b")
+        1
+        >>> hello = "Hello, world!"
+        >>> hello.find("Hello")
+        0
+        >>> hello.find("Python")
         -1
         ```
 
-        The `.find()` function is case-sensitive – it will only match the *exact* string you pass to  it.  
-        *<!-- .element: class="footnote" --> When we said computers require **exact** instructions, we meant it!*
+        Notice that the first starting position is `0`, not `1` like you might expect!
+
+        Make a guess at each of these questions then try it to see if you're right:
+
+        * Is `.find(…)` case sensitive?
+        * What happens if some of the `needle` appears in the haystack but not all of it?
+        * What happens if you try to `.find(…)` a number?
+
       </script>
     </section>
 
@@ -1261,9 +1265,9 @@
 
         In the **llc-chapters.csv** file, the `&` character is used to separate the co-lead names.
         
-        You can use `.find()` to look for a string within a string, to figure out which cities have co-leads.
+        You can use `.find(…)` to look for a string within a string, to figure out which cities have co-leads.
 
-        Remember, `.find()` returns the index of the search string in the other string **or** `-1` to signal nothing was found. Try using the `>=` operator to determine if the string was found.
+        Remember, `.find(…)` returns the index of the search string in the other string **or** `-1` to signal nothing was found. Try using the `>=` operator to determine if the string was found.
 
         ```python
         >>> leads = "Nancy & Cassie"
@@ -1277,6 +1281,59 @@
         
         * Print a list of cities with co-leads 
         * Count how many chapters have co-leads
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## More on Dictionaries
+        
+        In addition to reading values from dictionaries you can also assign to them, just like you would with variables:
+
+        ```python
+        >>> counts = {}
+        >>> counts['a'] = 0
+        {'a': 0}
+        >>> counts['a'] += 1
+        >>> counts
+        {'a': 1}
+        ```
+
+        And you can use the `in` operator to see if a particular key is `in` the dictionary:
+
+        ```python
+        >>> 'a' in counts
+        True
+        >>> 'b' in counts
+        False
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Counting things you don't expect!
+
+        So far we have had to define one variable for each "thing" we wanted to count… but what happens when we can't do that ahead of time?
+
+        For example, what happens if we want to count the number of chapters in each province?
+        
+        We can use dictionaries!
+
+        ```python
+        >>> province_counts = {}
+        >>> for chapter in csv.DictReader(open('./exercises/llc-chapters.csv'))
+        ...     province = chapter['Province']
+        ...     if province in province_counts:
+        ...         province_counts[province] += 1
+        ...     else:
+        ...         province_counts[province] = 1
+        ...
+        >>> print province_counts
+        {'ON': 6, 'AB': 2, 'BC': 2, 'QC': 2, 'NL': 1, 'MB': 1, 'NB': 1, 'SK': 1, 'NS': 1}
+        ```
+
       </script>
     </section>
     
