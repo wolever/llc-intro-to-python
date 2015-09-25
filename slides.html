@@ -57,16 +57,16 @@
 
       <h2>Download</h2>
       <p>WiFi network: <strong>The Learning Labs</strong>, password: <strong>Helloworld</strong></p>
+      <p>Hashtag: <a href="https://twitter.com/hashtag/llcCodeDay">#llcCodeDay</a></p>
       <p>Learner files: <a href="http://bit.ly/code-day-toronto-2015">bit.ly/code-day-toronto-2015</a> (zip file)</p>
       <ul>
         <li>unzip the learner file download (<em>extract all</em> if you’re on a PC)</li>
         <li>open <strong>slides.html</strong> in your browser to view the presentation</li>
       </ul>
-      <p>Install Python 2.7.x</p>
+      <p>Install Python 2.7.x (Windows only)</p>
       <ul>
-        <li>Windows - <a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></li>
-        <li>Mac - pre-installed. Go to <strong>Applications &gt; Utilities &gt; Terminal</strong><br>
-          In the terminal window type "python" to confirm installation.</li>
+        <li><a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></li>
+        <li>Click "Latest Python 2 Release"</li>
       </ul>
       <p>PyCharm Educational Edition<br>
         <a href="https://www.jetbrains.com/pycharm-educational">https://www.jetbrains.com/pycharm-educational</a>
@@ -799,7 +799,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## And / Or
+        ## And / Or Operators
 
         Sometimes, you can&rsquo;t neatly capture your conditions with one expression. You may need to combine multiple expressions to determine what to do next.
 
@@ -807,15 +807,13 @@
         `or`: either one, or both things must be true
 
         ```python
-        weather = "cold"
-        snowing = True
-
-        >>> if weather == "cold" and snowing == True:
-        ...     print("wear a winter jacket")
-        ... 
-
-        wear a winter jacket
-        >>> if weather == "raining" or snowing == True:
+        >>> weather = "cold"
+        >>> snowing = True
+        >>> weather == "cold" and snowing
+        True
+        >>> weather == "raining" and showing
+        False
+        >>> if weather == "raining" or snowing:
         ...     print("bring a change of socks")
         ... 
         bring a change of socks
@@ -826,8 +824,6 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Examples with and/or
-
-        In math notation you can write `0 < x < 6`, but in Python, you need to split these into separate comparisons.
 
         ```python
         >>> x = 5
@@ -919,17 +915,17 @@
         To make use of the data in a file, we need to make sense of small portions at a time.
         In the `llc-chapters.csv` file, each line of the file represents a Ladies Learning Code Chapter.
 
-        Let&rsquo;s try printing out a few individual lines using the example below. Remember, only add the code after the `>>>` symbol.
+        Let&rsquo;s try printing out a few individual lines using the example below. Remember, only type the code after the `>>>` symbol.
 
         ```python
         >>> chapters = open('./exercises/llc-chapters.csv')
-        >>> print(chapters.readline())
+        >>> print(chapters.next())
         City,Province,Chapter Lead(s)
 
-        >>> print(chapters.readline())
+        >>> print(chapters.next())
         Vancouver,BC,Meghan
 
-        >>> print(chapters.readline())
+        >>> print(chapters.next())
         Calgary,AB,Darcie
 
         >>> chapters.close()
@@ -986,17 +982,32 @@
       <script type="text/template">
         ## `for` loop behind the scenes
 
-        If you play around with the `chapters` variable in your console, you might notice that it has a `.next()` function which does the same thing as `.readline()`
+        The `for` loop works by calling the `.next()` method over and over again.
 
-        `for` can work with many different collections of data, all it&rsquo;s looking for is that `.next()` function.
-
-        Behind the scenes, it&rsquo;s doing something roughly like
+        Behind the scenes, it&rsquo;s doing something roughly like:
 
         ```python
-        line = chapters.next()
-        # Execute your code block
-        # ...
-        # Go back to get the next value and repeat until there are no more values
+        while there are lines left:
+          line = chapters.next()
+          # Execute your code block
+        ```
+
+        Python calls anything with a `.next()` method an _iterator_, and it can _iterate_ over a whole bunch of different things!
+
+        ```python
+        >>> llc = iter("LLC")
+        >>> llc.next()
+        'L'
+        >>> llc.next()
+        'L'
+        >>> llc.next()
+        'C'
+        >>> for c in "LLC":
+        ...     print("Letter: " + c)
+        ...
+        Letter: L
+        Letter: L
+        Letter: C
         ```
 
         We&rsquo;ll use the `for` loop in our future exercises to work with a larger file.
@@ -1044,8 +1055,6 @@
         Then type `csv.` and wait. It will show a list of everything in that module.
 
         ![Console with functions available in the csv module](framework/img/workshop/import-list.png)
-
-        More info: https://docs.python.org/2/tutorial/modules.html
       </script>
     </section>
 
@@ -1086,12 +1095,42 @@
       <script type="text/template">
         ## Dictionaries
         
-        Using `DictReader` to print the values from the CSV file, outputs a `dict`ionary representing each row in the file, in *key: value pairs*, instead of comma-separated values.
+        Along with numbers and strings, dictionaries — `dict`s — are one of Python's fundamental types.
 
-        Columns representing each city, can now be accessed with a keyword and the same for chapter leads and province.
+        Dictionaries associate *keys* with *values*. For example:
 
         ```python
-        >>> chapter = {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
+        >>> person = {'name': 'David Wolever', 'twitter': '@wolever', 'following': 735}
+        >>> type(person)
+        <type 'dict'>
+        ```
+
+        And you use *square braces* to look up the value associated with a key:
+
+        ```python
+        >>> person['name']
+        'David Wolever'
+        >>> person['following']
+        735
+        ```
+
+        Dictionaries are a simple way to bundle up a bunch of information into one place.
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Using the DictReader
+        
+        The `csv.DictReader` returns a dictionary for each line in the CSV file, where the keys are the CSV headers and the values are the associated values in each line.
+
+        For example, as before:
+
+        ```python
+        >>> chapter = chapters_data.next()
+        >>> print(chapter)
+        {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
         >>> print(chapter['City'])
         Vancouver
         >>> print(chapter['Province'])
@@ -1099,6 +1138,8 @@
         >>> print(chapter['Chapter Lead(s)'])
         Meghan
         ```
+
+        Note: keys in a dictionary don't have a specific order. Yours may show up in a different order.
       </script>
     </section>
 
