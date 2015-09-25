@@ -1346,9 +1346,9 @@
         >>> for chapter in csv.DictReader(open('./exercises/llc-chapters.csv'))
         ...     province = chapter['Province']
         ...     if province in province_counts:
-        ...         province_counts[province] += 1
+        ...       province_counts[province] += 1
         ...     else:
-        ...         province_counts[province] = 1
+        ...       province_counts[province] = 1
         ...
         >>> print province_counts
         {'ON': 6, 'AB': 2, 'BC': 2, 'QC': 2, 'NL': 1, 'MB': 1, 'NB': 1, 'SK': 1, 'NS': 1}
@@ -1356,13 +1356,53 @@
 
       </script>
     </section>
-    
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## A Few Last String Examples
+
+        Before we move on to the project, there are a couple things you should know about strings:
+
+        The `.split(…)` method can be used to split strings in to parts:
+
+        ```python
+        >>> names = "Allegra & David"
+        >>> names.split("&")
+        ['Allegra ', ' David']
+        >>> for name in names.split("&"):
+        ...    print("Name: " + name)
+        ...
+        Name: Allegra 
+        Name:  David
+        ```
+
+        The `.strip()` method removes spaces from the beginning / end of strings:
+
+        ```python
+        >>> for name in names.split("&"):
+        ...    print("Name: " + name.strip())
+        ...
+        Name: Allegra 
+        Name: David
+        ```
+
+        The `.lower()` and `.upper()` methods make strings lower and upper case:
+
+        ```python
+        >>> print "Hello, " + name.lower()
+        Hello, david
+        >>> print "Hello, " + name.upper()
+        Hello, DAVID
+        ```
+      </script>
+    </section>
+
     <section class="slide title" data-markdown>
       <script type="text/template">
         # So what? I can count all this stuff myself!
       </script>
     </section>
-    
+
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Going bigger
@@ -1444,19 +1484,22 @@
         
         ### Tutorials/Courses:
         
-        * [The (Official) Python Tutorial](http://docs.python.org/2.7/tutorial/)
+        * [Learn Python the Hard Way](http://learnpythonthehardway.org/) - a free book which teaches Python in a well structured, systematic way. Also has a paid content available (videos, etc).
+        * [Invent with Python](http://inventwithpython.com/pygame/index.html) - a free book which teaches Python while writing games (with sound and pictures and everything)
+        * [Codeacademy's Python course](https://www.codecademy.com/tracks/python)
         * [Full Stack Python](http://www.fullstackpython.com)
-        * [Udacity - Learn Object Oriented Python](http://www.udacity.com/course/programming-foundations-with-python--ud036)
 
         ### Web Development with Python:
         
+        * [Hello Web App](https://www.hellowebapp.com/) by the fantastic @<a href="https://twitter.com/limedaring">limedaring</a>
         * [Django](https://www.djangoproject.com/)
-        * [Hello Web App](https://www.hellowebapp.com/)
         
         ### Other:
         
+        * [Python Visualizer](http://www.pythontutor.com/visualize.html)
+        * [Python Toronto's slack channel](http://python-toronto-slack.herokuapp.com/)
+        * @[wolever](https://twitter.com/wolever)
         * [Raspberry pi](https://www.raspberrypi.org/)
-        * [mySQL connector](http://dev.mysql.com/doc/connector-python/en/)
       </script>
     </section>
 
