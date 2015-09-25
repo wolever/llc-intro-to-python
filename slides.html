@@ -24,6 +24,7 @@
 
   <!-- @wolever's overrides -->
   <style>
+
     .intro ul {
       list-style: none;
     }
@@ -35,6 +36,25 @@
       min-width: 100px;
     }
   </style>
+
+  <script id="printStyle" type="text/css">
+    .slide {
+      display: block;
+      position: relative;
+    }
+    
+    footer {
+      display: none;
+    }
+  </script>
+
+  <script>
+    function onepage() {
+      var style = document.createElement("style");
+      style.textContent = document.getElementById("printStyle").textContent;
+      document.body.appendChild(style);
+    }
+  </script>
 
   <!-- opens all links in a new window -->
   <base target="_blank">
