@@ -1,0 +1,38 @@
+footer {
+    z-index: 10;
+}
+
+aside.notes {
+    display: none;
+    z-index: 1024;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    background-color: rgba(25, 25, 25, 0.9);
+
+    color: white;
+    font-size: 18px;
+}
+
+aside.notes.lowered {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 0;
+    padding-top: 28px;
+    left: initial;
+    width: 10px;
+    right: 0;
+    padding-left: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+aside.notes .show-hide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 10px;
+    cursor: pointer;
+}

@@ -23,6 +23,10 @@
   <script src="framework/scripts/prefixfree.min.js"></script>
 
   <!-- @wolever's overrides -->
+
+  <!-- todo: put these in the right place -->
+  <link rel="stylesheet" href="notes.css" data-noprefix />
+
   <style>
 
     .intro ul {
@@ -37,25 +41,6 @@
     }
   </style>
 
-  <script id="printStyle" type="text/css">
-    .slide {
-      display: block;
-      position: relative;
-    }
-    
-    footer {
-      display: none;
-    }
-  </script>
-
-  <script>
-    function onepage() {
-      var style = document.createElement("style");
-      style.textContent = document.getElementById("printStyle").textContent;
-      document.body.appendChild(style);
-    }
-  </script>
-
   <!-- opens all links in a new window -->
   <base target="_blank">
 </head>
@@ -69,11 +54,6 @@
     <h1>Welcome to Ladies Learning Code!</h1>
       
     <div class="instructions">
-      <!-- Add wifi info here -->
-      <!-- <h2>Get Connected</h2>
-      <p>Network: <br>
-      Password: </p>  -->
-    
 
       <h2>Download</h2>
       <p>WiFi network: <strong>The Learning Labs</strong>, password: <strong>Helloworld</strong></p>
@@ -92,10 +72,14 @@
         <a href="https://www.jetbrains.com/pycharm-educational">https://www.jetbrains.com/pycharm-educational</a>
       </p>
     </div>
+
     <div class="sponsor">
-      <p>In partnership with
-      <img src="framework/img/telus-logo-white.svg" alt="Telus logo"></p>
+      <p>
+        In partnership with
+        <img src="framework/img/telus-logo-white.svg" alt="Telus logo">
+      </p>
     </div>
+
   </header>
 
   <main>
@@ -115,11 +99,13 @@
         <li><i class="fa fa-fw fa-twitter"></i> <a href="https://twitter.com/wolever">@wolever</a></li>
         <li><i class="fa fa-fw fa-desktop"></i> <a href="http://wolever.net">wolever.net</a></li>
       </ul>
+      <div>
         <div class="sponsor">
           <p>In partnership with</p>
           <img src="framework/img/telus-logo-white.svg" alt="Telus logo">
         </div>
       </div>
+
     </section>
 
     <section class="slide who-am-i" data-markdown>
@@ -133,6 +119,11 @@
         * Goal in life: write *Programming Python for Puppies* (stay tuned for the Kickstarter)
 
         <img src="http://www.wallpaperfo.com/thumbnails/detail/20120429/computers%20dogs%20puppies%20husky%201280x800%20wallpaper_www.wallpaperfo.com_32.jpg" />
+
+        <aside class="notes">
+          These are some notes!
+        </aside>
+
       </script>
     </section>
 
@@ -1541,6 +1532,7 @@
 
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="framework/scripts/slideshow.js"></script>
+  <script src="notes.js"></script>
 
   <!-- Uncomment the plugins you need -->
   <script src="framework/scripts/plugins/css-edit.js"></script>
