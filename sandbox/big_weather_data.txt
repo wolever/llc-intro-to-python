@@ -1,3 +1,4 @@
+DayOfWeek,Month,DayOfMonth,Temp
 Friday,July,26,-4
 Tuesday,February,11,8
 Thursday,February,19,0

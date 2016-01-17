@@ -94,7 +94,7 @@ STRINGS AND OTHER TYPES
 In Python (and many other programming languages) a _string_ is data that represents a sequence of characters, or text. For example, 'Hello world!' and 'By 2016, I thought we would have time travel', are strings.
 
 There are other types too. The other ones we'll see today are:
-- ints and floats: represent numbers. Because of these different types (and other limitations of computers), math in Python might look a little different from what you're used to. (For example, try 7/3 and 7/3.0)
+- ints and floats: represent numbers. Because of these different types (and other limitations of computers), math in Python might look a little different from what you're used to. (For example, try printing 7/3 and 7/3.0)
 - bool (short for Boolean): we'll use these today. Basically a type for representing the answer to yes or no questions (in programming, we call this True or False).
 - lists and dicts: More on these later, but these are both ways of storing multiple pieces of information under one variable.
 
