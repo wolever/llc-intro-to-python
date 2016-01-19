@@ -1,47 +1,38 @@
-@import "variables";
-@import "mixins";
-
 /* Styles specific to this workshop
 ------------------------------------*/
+.slide.intro {
+  background: linear-gradient(rgba($black, 0.7),
+              rgba($black, 0.7)), 
+              url(../img/banner-home2.jpg) no-repeat;
+  background-size: cover;
+}
+
+
 .intro h1 {
   font-size: 65px;
 }
-.en .project {
-  h1, p:first-of-type {
-    text-align: center;
-  }
-  p:first-of-type {
-    margin: 35px 0;
-  }
-}
 .who-uses {
   img {
-    max-height: 125px;
-    margin: 25px;
+    width: 11%;
+    vertical-align: middle;
+    margin: 1%;
+    min-width: 100px;
   }
 }
 .slide {
-  &.project {
-    img {
-      width: 48%;
-      float: left;
-      margin-right: 2%;
-    }
-  }
   &.full-monty {
     background: url(../img/workshop/monty-python.jpg) no-repeat;
     background-size: cover;
 
     h1 {
       color: #fff;
-      position: absolute;
-      top: 60%;
+      margin-top: 20%;
+      line-height: 1.25;
     }
     aside {
       font-size: 60%;
       position: absolute;
-      display: inline-block;
-      background: rgba(255, 255, 255, .3);
+      background: rgba(255, 255, 255, .5);
       bottom: 20px;
       right: 20px;
       padding: 2px 4px;

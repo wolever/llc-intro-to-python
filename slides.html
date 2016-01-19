@@ -4,117 +4,90 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Ladies Learning Code</title>
-  <!-- Don't alter slideshow.css, CSSS slide deck needs it to work 
-  https://github.com/LeaVerou/csss -->
   <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
-
-  <!-- Theme-specific styles -->
-  <!-- <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CQuicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix> -->
-  <link rel="stylesheet" href="framework/css/font-awesome.min.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
-  <link rel="stylesheet" href="framework/css/highlightjs-themes/github.css" data-noprefix>
-  <link rel="stylesheet" href="framework/css/theme-llc.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
   <link rel="shortcut icon" href="framework/img/favicon.ico">
 
-  <!-- Workshop-specific styles -->
-  <link rel="stylesheet" href="framework/css/workshop.css" data-noprefix>
-
-  <!-- Takes care of CSS3 prefixes! -->
+  <!-- Takes care of CSS3 prefixes -->
   <script src="framework/scripts/prefixfree.min.js"></script>
-
-  <!-- @wolever's overrides -->
-
-  <!-- todo: put these in the right place -->
-  <link rel="stylesheet" href="notes.css" data-noprefix />
-
-  <style>
-
-    .intro ul {
-      list-style: none;
-    }
-
-    .who-uses img {
-      width: 11%;
-      vertical-align: middle;
-      margin: 1%;
-      min-width: 100px;
-    }
-  </style>
-
   <!-- opens all links in a new window -->
   <base target="_blank">
 </head>
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body class="en" data-duration="360">
-
-  <!-- Welcome slide -->
-  <header class="slide">
-    <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
-    <h1>Welcome to Ladies Learning Code!</h1>
-      
-    <div class="instructions">
-
-      <h2>Download</h2>
-      <p>WiFi network: <strong>The Learning Labs</strong>, password: <strong>Helloworld</strong></p>
-      <p>Hashtag: <a href="https://twitter.com/hashtag/llcCodeDay">#llcCodeDay</a></p>
-      <p>Learner files: <a href="http://bit.ly/code-day-toronto-2015">bit.ly/code-day-toronto-2015</a> (zip file)</p>
-      <ul>
-        <li>unzip the learner file download (<em>extract all</em> if you’re on a PC)</li>
-        <li>open <strong>slides.html</strong> in your browser to view the presentation</li>
-      </ul>
-      <p>Install Python 2.7.x (Windows only)</p>
-      <ul>
-        <li><a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></li>
-        <li>Click "Latest Python 2 Release"</li>
-      </ul>
-      <p>Wing 101<br>
-        <a href="http://wingware.com/downloads/wingide-101">http://wingware.com/downloads/wingide-101</a>
-      </p>
-    </div>
-
-    <div class="sponsor">
-      <p>
-        In partnership with
-        <img src="framework/img/telus-logo-white.svg" alt="Telus logo">
-      </p>
-    </div>
-
-    <aside class='notes'>
-      Using Wing101 instead of PyCharm because of simpler UI before customization.
-    </aside>
-
-  </header>
-
   <main>
-    <!-- Instructor info -->
-    <section class="slide intro">
-      <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
-      <div class="info">
-        <h1 class="heading-bg">
-          <span>Data Insights with Python for Beginners</span>
-        </h1>
-        <h2><span>with</span> David Wolever</h2>
-      </div>
+    
+    <section class="slide welcome">
+      <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
       
-      <img class="instructor-img" src="https://pbs.twimg.com/profile_images/3709733719/47ea51066dc3a4724fb91a2a7e74f90e_400x400.jpeg" alt="David Wolever">
-      <ul>
-        <li><i class="fa fa-fw fa-envelope"></i> <a href="mailto:">david@wolever.net</a></li>
-        <li><i class="fa fa-fw fa-twitter"></i> <a href="https://twitter.com/wolever">@wolever</a></li>
-        <li><i class="fa fa-fw fa-desktop"></i> <a href="http://wolever.net">wolever.net</a></li>
-      </ul>
-      <div>
-        <div class="sponsor">
-          <p>In partnership with</p>
-          <img src="framework/img/telus-logo-white.svg" alt="Telus logo">
-        </div>
+      <div class="instructions nested-list">
+        <!-- ADD WIFI INFO HERE -->
+        <h2>Get Connected</h2>
+        <ul class="connected">
+          <li>Network: wifi network / Password: wifi password</li>
+        </ul>
+        <hr>
+        
+        <h2>Download<br> & Install</h2>
+        <ul class="downloads">
+          <li>Learner files (zip file): <a href="#">http://bit.ly/...</a>
+            <ul>
+              <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
+              <li>open <strong>slides.html</strong> in the browser to view the slides</li>
+            </ul>
+          </li>
+          <li>Install Python 2.7.x (Windows only)
+            <ul>
+              <li><a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></li>
+              <li>Click "Latest Python 2 Release"</li>
+            </ul>
+          </li>
+          <li>
+            Wing 101
+            <ul>
+              <li><a href="http://wingware.com/downloads/wingide-101">http://wingware.com/downloads/wingide-101</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">by <a href="">Jacqueline Smith</a> and <a href="">David Wolever</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section>
+    
+    <section class="slide intro">
+      <img class="logo" src="framework/img/llc-logo-white.png" alt="Ladies Learning Code logo">
+      <h1 class="heading-bg">
+        <span>Data Insights with Python for Beginners</span>
+      </h1>
+      
+      <!-- FILL IN INSTRUCTOR DETAILS -->      
+      <img class="instructor" src="https://pbs.twimg.com/profile_images/3709733719/47ea51066dc3a4724fb91a2a7e74f90e_400x400.jpeg" alt="David Wolever">
+      <h2><span class="cursive">with</span> David Wolever</h2>
+      <ul>
+        <li><a href="mailto:">david@wolever.net</a></li>
+        <li><a href="https://twitter.com/wolever">@wolever</a></li>
+        <li><a href="http://wolever.net">wolever.net</a></li>
+      </ul>
+      
+      <div class="sponsor">
+        <p>In partnership with<br> <img src="framework/img/telus-logo-white.svg" alt="Telus"></p>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">by <a href="">Jacqueline Smith</a> and <a href="">David Wolever</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
     </section>
 
     <section class="slide who-am-i" data-markdown>
       <script type="text/template">
-        ## Who am I?
+        #Who am I?
 
         * Used Python for ~10 years
         * Founder of <a href="http://pycon.ca">PyCon Canada</a>, organizer of <a href="https://us.pycon.org/2016/">PyCon</a>
@@ -127,38 +100,34 @@
         <aside class="notes">
           These are some notes!
         </aside>
-
       </script>
     </section>
 
-    <section class="slide project" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
-        ## Today&rsquo;s goals
+        #Today&rsquo;s goals
 
         * Learn the basics of programming in Python. Many of the things we&rsquo;ll see today are general programming concepts that appear in other languages too.
-
         * Learn some basic features of Python that can be useful in working with data.
-
         * Write Python programs to answer questions about datasets.
 
-        ## NOT Today&rsquo;s goals
-
+        # NOT Today&rsquo;s goals
         * Math or statistical analysis (although there do exist Python libraries to help you do these things!)
       </script>
     </section>
 
     <section class="slide agenda" data-markdown>
       <script type="text/template">
-      ## Agenda 
+      #Agenda 
 
-      ###Morning
+      ##Morning
 
       * Your first program!
       * Storing data in your program (Variables &amp; Types)
       * Making decisions in your program (Conditionals &amp; Logic)
       * Reading files (Loops &amp; Lists)
 
-      ###Afternoon
+      ##Afternoon
 
       * Stats &amp; Counting (More Lists &amp; Dictionaries)
       * Writing to files
@@ -168,15 +137,19 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## What is programming?
+        #What is programming?
 
         * Programming is basically giving instructions to your computer in a form that it can understand
         * Computers need *very specific* instructions
         * Programming languages have syntax, just like human languages have grammar rules
         * One big difference: humans can pretty easily figure out meaning of sentences that don&rsquo;t quite follow the rules of the language... computers aren&rsquo;t that smart.
 
-        <br>
-        ### Why Python Is Awesome
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Why Python Is Awesome
 
         *   Free!
         *   Open source
@@ -189,7 +162,7 @@
 
     <section class="slide who-uses" data-markdown>
       <script type="text/template">
-        ## Who uses Python?
+        #Who uses Python?
 
         * Data Analysis
         * Scientific Computing
@@ -217,7 +190,8 @@
     </section>
 
     <section class="slide" data-markdown>
-      ## Development Environment
+      <script type="text/template">
+      #Development Environment
 
       You will need:
 
@@ -225,13 +199,14 @@
       1. **[Wing 101](http://wingware.com/downloads/wingide-101)**
       1. [Learner files from LLC (containing the exercise and reference files)](https://github.com/ladieslearningcode/llc-intro-to-python/archive/master.zip).
         * make sure the **llc-intro-to-python-master.zip** file has been unzipped (and extracted for PC users) so you can access the contents of the folder
+      </script>
     </section>
 
     <section class="slide centered" data-markdown>
       <script type="text/template">
-        ## Wing101 IDE <br>(Integrated Development Environments)
+        #Wing101 IDE
 
-        IDEs are programs we use to write programs. Use IDEs to write code faster with fewer mistakes.
+        IDEs (Integrated Development Environments) are programs we use to write programs. Use IDEs to write code faster with fewer mistakes.
         <br><br>
         ![That is awesome!](framework/img/workshop/awesome_i_hear_that_psych.gif) <!-- .element: style="width: 60%" -->
       </script>
@@ -239,7 +214,7 @@
 
     <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        ## Opening TODO some of this is useful, but dont need all this for Wing
+        #Opening TODO some of this is useful, but dont need all this for Wing
 
         TODO maybe add a sandbox.py file for them to open here and play around in
 
@@ -259,12 +234,14 @@
       </script>
     </section>
 
-      <section class="slide" data-markdown>
-      ## Writing Python Programs
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Writing Python Programs
 
       We will write our programs in .py files (or "modules", to Python programmers). 
 
       There are other ways to write and run Python code as well, but we are going to stick with .py files to make it easier to save and edit our code.
+      </script>
     </section>
   
 
@@ -274,7 +251,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Your first Python program!
+        #Your first Python program!
 
         Our first program is going to do three things: 
 
@@ -289,7 +266,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Class Exercise 1: Write your first Python program!
+        #Class Exercise 1: Write your first Python program!
 
         Here&rsquo;s what to do:
 
@@ -308,7 +285,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## How did that go??
+        #How did that go??
 
         First of all, you may have got some errors. This is a **PERFECTLY NORMAL** part of programming. Computers aren&rsquo;t as smart as you.
 
@@ -325,7 +302,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## What did we just do?
+        #What did we just do?
 
         You just wrote your first program!
 
@@ -340,7 +317,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Functions &amp; Variables
+        #Functions &amp; Variables
 
         In programming, we want to be able to take some of the work we&rsquo;ve done and store it somewhere for later. Functions are names we can use to refer to chunks of code that either we, or someone else, has written. There are LOTS of functions that already exist in Python, and we&rsquo;ll use some of them today.
 
@@ -351,7 +328,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## More on Functions
+        #More on Functions
 
         * Functions are bundles of instructions that can be re-used
         * Reusing functions helps to reduce redundancy
@@ -370,7 +347,7 @@
 
         <section class="slide" data-markdown>
       <script type="text/template">
-        ## Reassigning Variables
+        #Reassigning Variables
 
         Variables can be changed after the initial declaration by "reassigning" them.
 
@@ -389,9 +366,9 @@
       </script>
     </section>
 
-    <section class="slide list-font-default" data-markdown>
+    <section class="slide nested-list" data-markdown>
       <script type="text/template">
-        ## What&rsquo;s in a name?
+        #What&rsquo;s in a name?
         
         Here are some tips & best practices for creating variable names:
         
@@ -408,7 +385,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Data Types
+        #Data Types
 
         The previous example used the *string* **type** but there are many more.
 
@@ -425,7 +402,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Concatenation
+        #Concatenation
         **Concatenation** is used to "add" strings together by joining multiple strings into one.
         ```python
         print("Hello " + "World!")
@@ -452,7 +429,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Why did that error happen?
+        #Why did that error happen?
 
         Python needs to know the data **type** to work with it.  
         
@@ -478,7 +455,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Typecasting
+        #Typecasting
         
         In Python, you can *change the type*. 
         
@@ -498,7 +475,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Typecasting (Continued)
+        #Typecasting (Continued)
 
         Python can also be used to convert numbers to strings. This example...
 
@@ -529,7 +506,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Pro Tip: Use Comments!
+        #Pro Tip: Use Comments!
 
         Programmers use *comments* to leave notes for themselves (and other people reading their code in the future):
 
@@ -557,7 +534,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Conditionals &amp; Logic
+        #Conditionals &amp; Logic
 
         The program we just wrote ran straight from top to bottom. What if the program could decide what to do instead?
         
@@ -595,7 +572,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Indentation
+        #Indentation
         
         When writing `if` statements, Python needs you to be quite particular about indentation. 
 
@@ -619,7 +596,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Equality
+        #Equality
 
         What's that `==` doing? It's the *equality operator*, read "equals".
 
@@ -653,7 +630,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Equality continued...
+        #Equality continued...
 
         Reminder: one equals sign is used for *assignment*, two for *equality*.
 
@@ -681,7 +658,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 2: Weather (10 mins)
+        #Exercise 2: Weather (10 mins)
 
         Create a new file name it `ex2_weather_advice.py`.
         
@@ -711,7 +688,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Order comparison operators
+        #Order comparison operators
 
         We&rsquo;ll also be using the mathematical greater than and less than operators:
 
@@ -740,7 +717,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## And / Or Operators
+        #And / Or Operators
 
         Sometimes, you can&rsquo;t neatly capture your conditions with one expression. You may need to combine multiple expressions to determine what to do next.
 
@@ -765,7 +742,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Examples with and/or
+        #Examples with and/or
 
         Assume for each of these that `x = 5`.
 
@@ -792,7 +769,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 3: Smarter Weather (15mins)
+        #Exercise 3: Smarter Weather (15mins)
 
         Instead of telling your program if it&rsquo;s cold, you can input the temperature and let it decide what to do.
         
@@ -829,7 +806,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Getting MORE data into our programs
+        #Getting MORE data into our programs
 
         So far, we have provided all of the input to our program by typing it in when the `raw_input` function was called. 
 
@@ -842,7 +819,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Opening a file
+        #Opening a file
         
         Computer data is often stored in files such **.csv** (comma-separated values) files.  
         These file types are used to represent spreadsheet-like data.
@@ -864,7 +841,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Comma-Separated Values (CSV) Files
+        #Comma-Separated Values (CSV) Files
 
         To make use of the data in a file, we need to make sense of small portions at a time.
         In the `simple_weather.csv` file, each line of the file represents a day and its temperature.
@@ -883,7 +860,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## One line at a time
+        #One line at a time
 
         In the previous slide we printed out three lines in the file, one at a time.  
         Notice that all three lines have exactly three values, separated by a comma.
@@ -903,7 +880,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Loops: Reading all the lines in a file
+        #Loops: Reading all the lines in a file
         
         We&rsquo;ve just seen how to print out one line of a time but what if you need to read all the lines in the file?
 
@@ -926,7 +903,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## `for` loop behind the scenes
+        #`for` loop behind the scenes
 
         The `for` loop works by calling `.next()` over and over again.
 
@@ -963,7 +940,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Checking for text in a line
+        #Checking for text in a line
 
         One thing we might want to do is check if a line contains a certain piece of text.
 
@@ -980,7 +957,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Class Exercise 5: 
+        #Class Exercise 5: 
 
         Open `ex5_simple_weather.py` and modify it to print out all of the lines in the file that represent a warm month.
 
@@ -993,7 +970,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Breaking Lines into Pieces
+        #Breaking Lines into Pieces
 
         What if we only wanted to print part of a line?
 
@@ -1020,7 +997,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Accessing List Elements
+        #Accessing List Elements
 
         Once we have the list `["Feb", "cold", "sunny"], we can work with the individual elements.
 
@@ -1033,7 +1010,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Counting Like a Programmer...
+        #Counting Like a Programmer...
 
         So, programmers can be a little weird sometimes... and one thing we do is start counting at 0 instead of 1. 
 
@@ -1062,7 +1039,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Class Exercise 6: 
+        #Class Exercise 6: 
 
         Open `ex6_big_weather.py` and modify it print what to wear for each day.
 
@@ -1088,7 +1065,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Libraries
+        #Libraries
 
         Python has many useful built in **libraries** &mdash; collections of pre-written code. 
         
@@ -1102,7 +1079,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Using a library
+        #Using a library
 
         So far, we&rsquo;ve been writing all our code in the console or in one file. When you use a library, you don&rsquo;t want to copy all that code into your file, otherwise it would become huge!
 
@@ -1125,7 +1102,7 @@
 <!-- -------------------- -->
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Reading data from a CSV file
+        #Reading data from a CSV file
 
         The CSV library has a number of different tools for extracting data from a CSV file. Instead of a line of comma-separated values like in the previous example, we can access individual values (like the cells of a spreadsheet).
 
@@ -1155,7 +1132,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Dictionaries
+        #Dictionaries
         
         Along with numbers and strings, dictionaries — `dict`s — are one of Python&rsquo;s fundamental types.
 
@@ -1183,7 +1160,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Using the DictReader
+        #Using the DictReader
         
         The `csv.DictReader` returns a dictionary for each line in the CSV file, where the keys are the CSV headers and the values are the associated values in each line.
 
@@ -1207,7 +1184,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Working in a `for` loop
+        #Working in a `for` loop
       
         Earlier, we learned how `for` loops can repeat the same set of instructions. Let&rsquo;s take a look at this example below.
 
@@ -1235,7 +1212,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 4: Find your chapter lead (15 mins)
+        #Exercise 4: Find your chapter lead (15 mins)
 
         You already have the tools you need to find your chapter lead(s) in `llc-chapters.csv`.
         
@@ -1261,7 +1238,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Counting loops
+        #Counting loops
 
         Sometimes you want to keep track of the number of times something happened. 
 
@@ -1294,7 +1271,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Finding a word in a string
+        #Finding a word in a string
 
         So far, we&rsquo;ve compared entire strings to each other `"Python" == "Python"`. But what if you want to find a word inside an existing string?
 
@@ -1323,7 +1300,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 5: Find chapters with co-leads (15 mins)
+        #Exercise 5: Find chapters with co-leads (15 mins)
 
         In the **llc-chapters.csv** file, the `&` character is used to separate the co-lead names.
         
@@ -1348,7 +1325,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## More on Dictionaries
+        #More on Dictionaries
         
         In addition to reading values from dictionaries you can also assign to them, just like you would with variables:
 
@@ -1375,7 +1352,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Counting things you don&rsquo;t expect!
+        #Counting things you don&rsquo;t expect!
 
         So far we have had to define one variable for each "thing" we wanted to count… but what happens when we can&rsquo;t do that ahead of time?
 
@@ -1401,7 +1378,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## A Few Last String Examples
+        #A Few Last String Examples
 
         Before we move on to the project, there are a couple things you should know about strings:
 
@@ -1447,7 +1424,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Going bigger
+        #Going bigger
 
         So far, we&rsquo;ve used small examples to practice using CSV files and recognizing patterns.
         
@@ -1465,7 +1442,7 @@
 <!-- -------------------- --> 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Final Exercise!
+        #Final Exercise!
         
         In order to promote **National Learn to Code Day 2015**, and measure its success relative to 2014, we&rsquo;ll need some stats:
         
@@ -1482,7 +1459,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Bonus Exercise: Open Data Hackathon
+        #Bonus Exercise: Open Data Hackathon
         
         If you want to use different data, there are lots available for public use. The Government of Canada has many data sets available. Here are a few [suggested data sets](https://docs.google.com/spreadsheets/d/14fFZPKrb0RrKpjiAQYshwT3iYkTRGKeeFcpz3r8m8Qg) 
         including registered charities, population estimates, consumer price data, and more.
@@ -1504,16 +1481,16 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Things we didn't cover
+        #Things we didn't cover
         
-        ### Writing results to a CSV file
+        ##Writing results to a CSV file
         
         * Just like `DictReader` there's a `DictWriter` in the csv package
         * Gather data then write out the headers and data to a file
         * Useful for filtering a big set of data down to something you can analyse in a spreadsheet program
         * See `reference/writing_csv.py`
         
-        ### Reading files in other languages (like French)
+        ##Reading files in other languages (like French)
         
         * Python 2.x defaults to ASCII (very basic letters and numbers)
         * Most text on the internet with accents or foreign characters (Arabic, Chinese, etc.) are represented in [unicode](http://www.w3.org/International/questions/qa-what-is-encoding.en)
@@ -1524,22 +1501,22 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Resources
+        #Resources
         
-        ### Tutorials/Courses:
+        ##Tutorials/Courses:
         
         * [Learn Python the Hard Way](http://learnpythonthehardway.org/) - a free book which teaches Python in a well structured, systematic way. Also has a paid content available (videos, etc).
         * [Invent with Python](http://inventwithpython.com/pygame/index.html) - a free book which teaches Python while writing games (with sound and pictures and everything).
         * [Codeacademy&rsquo;s Python course](https://www.codecademy.com/tracks/python)
         * [Full Stack Python](http://www.fullstackpython.com)
 
-        ### Web Development with Python:
+        ##Web Development with Python:
         
         * [Hello Web App](https://www.hellowebapp.com/) by the fantastic @<a href="https://twitter.com/limedaring">limedaring</a>
           * (and the [Hello Web App: Intermediary Concepts kickstarter](https://www.hellowebapp.com/kickstartera)
         * [Django](https://www.djangoproject.com/)
         
-        ### Other:
+        ##Other:
         
         * [Python Visualizer](http://www.pythontutor.com/visualize.html)
         * [PyCon Canada 2015](http://pycon.ca)
@@ -1548,37 +1525,27 @@
       </script>
     </section>
 
-<!-- Last slide -->
-
+    <!-- Last slide -->
     <section class="slide last">
-      <h2>Thank you!</h2>
-
+      <h1>Thank you!</h1>
       <h2 class="heading-bg">
-        <span>Data Insights with Python</span><br>
-        <span>for Beginners</span>
-      </h2>
-      <!-- <h3><span>with</span> Instructor Name</h3>
+        <span>Data Insights with Python<br>for Beginners</span>
+      </h2>  
 
-       <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <h2><span class="cursive">with</span> Instructor Name</h2>
       <ul>
-        <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
-        <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
-        <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="#">mywebsite.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
       </ul>
- -->
-      <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou&rsquo;s CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
-    </section>
 
+      <p class="attribution">Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </section>
   </main><!-- cls main section -->
 
-  <footer>
-    <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
-    <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
-  </footer>
-
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="framework/scripts/jquery-1.11.0.min.js"></script>
   <script src="framework/scripts/slideshow.js"></script>
-  <script src="notes.js"></script>
 
   <!-- Uncomment the plugins you need -->
   <script src="framework/scripts/plugins/css-edit.js"></script>
@@ -1588,10 +1555,9 @@
 
   <script src="framework/scripts/plugins/markdown/marked.js"></script>
   <script src="framework/scripts/plugins/markdown/markdown.js"></script>
-  <!-- <script src="framework/scripts/plugins/highlight/highlight.js"></script> -->
   <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-
+  <script src="framework/scripts/llc.js"></script>
   <script>
     var slideshow = new SlideShow();
 
@@ -1600,11 +1566,6 @@
     for(var i=0; i<snippets.length; i++) {
       new CSSSnippet(snippets[i]);
     }
-
-    // Adds "edit me" note to editable code areas
-    jQuery(document).ready(function(){
-      jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
-    });
   </script>
 </body>
 </html>
