@@ -1065,68 +1065,61 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Libraries
+        # More with Lists!
 
-        Python has many useful built in **libraries** &mdash; collections of pre-written code. 
-        
-        Today we&rsquo;ll use the **csv** library to help us make more sense of the data contained in a CSV file and learn more about the LLC activities in 2014.
+        One thing we can do with lists is collect a bunch of datapoints, and then analyze them together. 
 
-        More info: https://docs.python.org/2/library/csv.html
+        We can create an empty list like so:
+        ```python
+        data_list = []
+        ```
+
+        And we can add to lists using a function called `append`:
+        ```python
+        data_list.append(4)
+        data_list.append(-2)
+        data_list.append(6)
+        ```
+
+        After these operations, `data_list` is `[4, -2, 6]`.
+
         
-        ![](framework/img/workshop/genius-glee.gif)
       </script>
     </section>
 
+
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Using a library
+        # Math on lists
 
-        So far, we&rsquo;ve been writing all our code in the console or in one file. When you use a library, you don&rsquo;t want to copy all that code into your file, otherwise it would become huge!
+        Python has some functions that do different operations on lists of numbers.
 
-        Instead, **import** the functions and other structures from a **module** to use the code without actually adding all of the code into your file. 
-
-        In your console, import the `csv` library as follows:
+        For example, we can use the functions `max`, `min`, and `sum` to find the maximum value, minimum value, and the sum of values in a list. 
 
         ```python
-        >>> import csv
+        data_list = [4, -2, 6]
+        max_value = max(data_list) # careful about naming variables 'max'
+        min_value = min(data_list) # same with 'min'
+        sum_of_values = sum(data_list)
+        print("Max:", max_value, "Min:", min_value, "Sum:", sum_of_values)
         ```
+        would output `Max: 6 Min: -2 Sum: 8`
 
-        Then type `csv.` and wait. It will show a list of everything in that module.
-
-        ![Console with functions available in the csv module](framework/img/workshop/import-list.png)
+        There is no function to find average, but there is one for length, so we could find the average of a list of numbers using `sum` and `len`, and dividing the results:
+        ```python
+        average = sum(data_list) / len(data_list)
+        ```
+        
       </script>
     </section>
 
-<!-- -------------------- -->
-<!-- Reading a CSV -->
-<!-- -------------------- -->
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Reading data from a CSV file
+        #Class Exercise 6 (continued): 
 
-        The CSV library has a number of different tools for extracting data from a CSV file. Instead of a line of comma-separated values like in the previous example, we can access individual values (like the cells of a spreadsheet).
+        Add to your code in `ex6_big_weather.py` to also find the average temperature over all days in the file.
 
-        Today we&rsquo;ll mostly use the `DictReader` tool to access the values.
         
-        1. import the `csv` library
-        1. open the file
-        1. pass the file into `DictReader`
-
-        ```
-        >>> import csv
-        >>> chapters_file = open('./exercises/llc-chapters.csv')
-        >>> chapters_data = csv.DictReader(chapters_file)
-        ```
-        
-        Now, we can pull out one row at a time.
-
-        ```
-        >>> chapter = chapters_data.next()
-        >>> print(chapter)
-        {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
-        >>> type(chapter)
-        <type 'dict'>
-        ```
       </script>
     </section>
 
@@ -1134,106 +1127,34 @@
       <script type="text/template">
         #Dictionaries
         
-        Along with numbers and strings, dictionaries — `dict`s — are one of Python&rsquo;s fundamental types.
+        Along with numbers, strings, and lists, dictionaries — `dict`s — are one of Python&rsquo;s fundamental types.
 
         Dictionaries associate *keys* with *values*. For example:
 
         ```python
-        >>> person = {'name': 'David Wolever', 'twitter': '@wolever', 'following': 735}
-        >>> type(person)
-        <type 'dict'>
+        person = {'name': 'David Wolever', 'twitter': '@wolever', 'following': 735}
         ```
 
         And you use *square braces* to look up the value associated with a key:
 
         ```python
-        >>> person['name']
+        print(person['name'])
+        print(person['following'])
+        ```
+
+        will output
+        ```python
         'David Wolever'
-        >>> person['following']
         735
         ```
-
-        Dictionaries are a simple way to bundle up a bunch of information into one place.
+        
+        You can think of the values as the data, and the keys as labels for each piece of data. 
 
       </script>
     </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Using the DictReader
-        
-        The `csv.DictReader` returns a dictionary for each line in the CSV file, where the keys are the CSV headers and the values are the associated values in each line.
 
-        For example, as before:
 
-        ```python
-        >>> chapter = chapters_data.next()
-        >>> print(chapter)
-        {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
-        >>> print(chapter['City'])
-        Vancouver
-        >>> print(chapter['Province'])
-        BC
-        >>> print(chapter['Chapter Lead(s)'])
-        Meghan
-        ```
-
-        Note: keys in a dictionary don&rsquo;t have a specific order. Yours may show up in a different order.
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Working in a `for` loop
-      
-        Earlier, we learned how `for` loops can repeat the same set of instructions. Let&rsquo;s take a look at this example below.
-
-        * the `for` loop assigns *each row* to the `chapter` variable
-        * instructions are grouped together by giving them the same indentation
-        * all the instructions in the indented block are run for each `chapter`
-        * remember to press enter again after the last instruction in the for loop to execute it
-
-        ```python
-        >>> import csv
-        >>> chapters_file = open('./exercises/llc-chapters.csv')
-        >>> chapters = csv.DictReader(chapters_file)
-        >>> for chapter in chapters:
-        ...     print(chapter['City'] + ', ' + chapter['Province'])
-        ...     print('    ' + chapter['Chapter Lead(s)'])
-        ...
-        Vancouver, BC
-            Meghan
-        Calgary, AB
-            Darcie
-        # ... Continues for the other chapters
-        ```
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Exercise 4: Find your chapter lead (15 mins)
-
-        You already have the tools you need to find your chapter lead(s) in `llc-chapters.csv`.
-        
-        In the **exercises** folder, open **ex4_chapter_lead_finder.py** and follow the instructions listed in the comments. Try applying the concepts covered so far.
-
-        ```python
-        # Import the csv library
-        import csv
-        
-        # Open the 'llc-chapters.csv' file
-        
-        # Use the CSV module to turn lines into dictionary rows
-        
-        # Loop through each of the rows
-        
-            # Compare the 'City' in the row with your city
-        
-                # Print "Thank you [[Chapter Lead(s)]]!"
-        ```
-      </script>
-    </section>
 
 
     <section class="slide" data-markdown>
@@ -1245,107 +1166,47 @@
         We can add `1` to the current value of a variable, and assign it back to the same variable. Python processes everything to the right of the `=` before assigning the result.
 
         ```python
-        >>> count = 0
-        >>> count = count + 1
-        >>> print(count)
-        1
+        count = 0
+        count = count + 1  # or, you can write count += 1
+        print(count)
         ```
+        outputs `1`.
         
-        Count the number of chapters in **llc-chapters.csv** by adding one each time it loops.
+        Count the number of lines in **big_weather.csv** by adding one each time it loops.
 
         ```python
         # file: exercises/demo_loop_count.py
         import csv
 
-        csv_file = open('llc-chapters.csv')
-        csv_data = csv.DictReader(csv_file)
+        weather_file = open('big_weather.csv')
 
-        chapter_count = 0
-        for row in csv_data:
-            chapter_count += 1
+        line_count = 0
+        for line in weather_file:
+            line_count += 1
 
-        print("There are " + str(chapter_count) + " chapters")
+        print("There are " + str(line_count) + " lines")
         ```
       </script>
     </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Finding a word in a string
-
-        So far, we&rsquo;ve compared entire strings to each other `"Python" == "Python"`. But what if you want to find a word inside an existing string?
-
-        The `haystack.find(needle)` method can be used with strings to tell you where the string `needle` starts in the `haystack`:
-
-        ```python
-        >>> "abcd".find("b")
-        1
-        >>> hello = "Hello, world!"
-        >>> hello.find("Hello")
-        0
-        >>> hello.find("Python")
-        -1
-        ```
-
-        Notice that the first starting position is `0`, not `1` like you might expect!
-
-        Make a guess at each of these questions then try it to see if you&rsquo;re right:
-
-        * Is `.find(…)` case sensitive?
-        * What happens if some of the `needle` appears in the haystack but not all of it?
-        * What happens if you try to `.find(…)` a number?
-
-      </script>
-    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise 5: Find chapters with co-leads (15 mins)
-
-        In the **llc-chapters.csv** file, the `&` character is used to separate the co-lead names.
-        
-        You can use `.find(…)` to look for a string within a string, to figure out which cities have co-leads.
-
-        Remember, `.find(…)` returns the index of the search string in the other string **or** `-1` to signal nothing was found. Try using the `>=` operator to determine if the string was found.
-
-        ```python
-        >>> leads = "Nancy & Cassie"
-        >>> if leads.find("&") >= 0:
-        ...     print(leads + " are co-leads")
-        ... 
-        Nancy & Cassie are co-leads
-        ```
-
-        Create a new file, **ex5_coleaders.py**, and use what you&rsquo;ve learned so far to find which chapter cities have co-leads.
-        
-        * Print a list of cities with co-leads 
-        * Count how many chapters have co-leads
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #More on Dictionaries
+        #Counting with Dictionaries
         
         In addition to reading values from dictionaries you can also assign to them, just like you would with variables:
 
         ```python
-        >>> counts = {}
-        >>> counts['a'] = 0
-        {'a': 0}
-        >>> counts['a'] += 1
-        >>> counts
-        {'a': 1}
+        counts = {}
+        counts['a'] = 0
+        counts['a'] += 1
+        print(counts)
         ```
 
-        And you can use the `in` operator to see if a particular key is `in` the dictionary:
+        outputs `{'a': 1}`
 
-        ```python
-        >>> 'a' in counts
-        True
-        >>> 'b' in counts
-        False
-        ```
+        And you can use the `in` operator to see if a particular key is `in` the dictionary. The statement `'a' in counts` is True, and the statement `'b' in counts` is False.
+
 
       </script>
     </section>
@@ -1356,65 +1217,22 @@
 
         So far we have had to define one variable for each "thing" we wanted to count… but what happens when we can&rsquo;t do that ahead of time?
 
-        For example, what happens if we want to count the number of chapters in each province?
+        For example, what happens if we want to count the number of weather records for each month?
         
         We can use dictionaries!
 
         ```python
-        >>> province_counts = {}
-        >>> for chapter in csv.DictReader(open('./exercises/llc-chapters.csv'))
-        ...     province = chapter['Province']
-        ...     if province in province_counts:
-        ...       province_counts[province] += 1
-        ...     else:
-        ...       province_counts[province] = 1
-        ...
-        >>> print province_counts
-        {'ON': 6, 'AB': 2, 'BC': 2, 'QC': 2, 'NL': 1, 'MB': 1, 'NB': 1, 'SK': 1, 'NS': 1}
+        month_counts = {}
+        for line in weather_file
+            month = line.strip().split()[1]
+            if month in month_counts:
+                month_counts += 1
+            else:
+                month_counts[month] = 1
         ```
 
       </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #A Few Last String Examples
-
-        Before we move on to the project, there are a couple things you should know about strings:
-
-        The `.split(…)` method can be used to split strings in to parts:
-
-        ```python
-        >>> names = "Allegra & David"
-        >>> names.split("&")
-        ['Allegra ', ' David']
-        >>> for name in names.split("&"):
-        ...    print("Name: " + name)
-        ...
-        Name: Allegra 
-        Name:  David
-        ```
-
-        The `.strip()` method removes spaces from the beginning / end of strings:
-
-        ```python
-        >>> for name in names.split("&"):
-        ...    print("Name: " + name.strip())
-        ...
-        Name: Allegra 
-        Name: David
-        ```
-
-        The `.lower()` and `.upper()` methods make strings lower and upper case:
-
-        ```python
-        >>> print "Hello, " + name.lower()
-        Hello, david
-        >>> print "Hello, " + name.upper()
-        Hello, DAVID
-        ```
-      </script>
-    </section>
+    </section>    
 
     <section class="slide title" data-markdown>
       <script type="text/template">
@@ -1427,8 +1245,8 @@
         #Going bigger
 
         So far, we&rsquo;ve used small examples to practice using CSV files and recognizing patterns.
-        
-        In 2014, Ladies Learning Code had nearly 6500 participants and volunteers involved in events (and not accounting for people who attended multiple events). Do you want to count those?
+
+        One of our datasets is the participants and volunteers in Ladies Learning Code events in 2014. Do you want to count those?
 
           ![oh no - laverne cox](framework/img/workshop/oh-no-laverne.gif) <!-- .element: width="45%" -->
 
@@ -1443,15 +1261,22 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         #Final Exercise!
-        
-        In order to promote **National Learn to Code Day 2015**, and measure its success relative to 2014, we&rsquo;ll need some stats:
-        
-        * number of people signed up for "National Learn to Code Day"
-        * total number of people registered for "Kids Learning Code" events or 
-        * total number of people registered for "Girls Learning Code" events
-        * total number people involved in youth-oriented "National Learn to Code Day"
 
-        Use the `exercises/llc-workshop-data.csv` file to find those numbers!
+        Your final project will be to learn something about a dataset. We have provided a few for you, and some questions to get you started, but feel free to try something else!
+
+        `datasets/llc-workshop-data.csv`: This dataset represents the people who participated in Ladies Learning Code events in 2014. Some things to find out:
+          * How many people signed up for "National Learn to Code Day"?
+          * Total number of people registerd in youth-oriented "National Learn to Code Day" (ie. "Kids" and "Girls")
+
+        `datasets/historic_sites.csv`: This dataset represents the names and locations of historic sites in Canada.
+          * How many are in each province? 
+          * What is the name of the northernmost historic site?
+
+        `datasets/dairy.csv`: This dataset represents some historic data about dairy production in Canada.
+          * Which decade produced the most butter?
+          * Anything else really...
+        
+        
         
         **See the next slide for a bonus alternative option.**
       </script>
@@ -1460,11 +1285,10 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         #Bonus Exercise: Open Data Hackathon
+
+        You can find a few more datasets in the `datasets` folder. Most of this data came from open.canada.ca, where you can find more data than you can handle!
         
-        If you want to use different data, there are lots available for public use. The Government of Canada has many data sets available. Here are a few [suggested data sets](https://docs.google.com/spreadsheets/d/14fFZPKrb0RrKpjiAQYshwT3iYkTRGKeeFcpz3r8m8Qg) 
-        including registered charities, population estimates, consumer price data, and more.
-        
-        **Pro tip!** Open the data in program like Excel or [LibreOffice Spreadsheet](https://www.libreoffice.org/) to see the data.
+        **Pro tip!** Open the .csv data in a program like Excel or [LibreOffice Spreadsheet](https://www.libreoffice.org/) to see the data.
         
         * Can you identify any interesting patterns?
         * What are you interested in learning from the data?
@@ -1481,14 +1305,30 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Things we didn't cover
+      #Writing to files
+
+      So far everything we did went to the screen. This might be enough for you, but you can also write your own files.
+
+      To write a file, use `"w"` instead of `"r"` (ie. "write" instead of "read") when you open the file.
+
+      Then, there is a function called `write` that will write whatever string you give it to a file. 
+
+      Here, you have to write your own end-of-line characters to the file, so after each line, you can use `new_file.write("\n")` to do that.
+
+      You also really need to close files (ie. `new_file.close()`) after you are completely finished writing to them. 
+
+      You can find an example of writing to a file in TODO.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Things we didn&rsquo;t cover
         
-        ##Writing results to a CSV file
+        ##Using Python libraries to help with our analysis
         
-        * Just like `DictReader` there's a `DictWriter` in the csv package
-        * Gather data then write out the headers and data to a file
-        * Useful for filtering a big set of data down to something you can analyse in a spreadsheet program
-        * See `reference/writing_csv.py`
+        * There is a LOT of code out there that people have written do to more complicated data analysis and file processing for you... and you can just use it!
+        * TODO
         
         ##Reading files in other languages (like French)
         

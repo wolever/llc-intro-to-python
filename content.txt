@@ -145,7 +145,7 @@ USING LISTS TO STORE DATA
 
 COUNTING WITH DICTIONARIES
 
-* exercise will be reading historic sites dataset and counting sites per province
+* exercise will be counting number of entries for each month... or if tired of weather, reading historic sites dataset and counting sites per province
 
 ---
 
