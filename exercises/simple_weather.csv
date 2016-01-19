@@ -1,0 +1,13 @@
+Month,temp,condition
+Jan,cold,snowing
+Feb,cold,sunny
+Mar,cold,raining
+Apr,cold,raining
+May,warm,raining
+Jun,warm,sunny
+Jul,hot,sunny
+Aug,hot,raining
+Sep,warm,sunny
+Oct,warm,raining
+Nov,cold,raining
+Dec,cold,snowing
