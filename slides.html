@@ -107,13 +107,19 @@
       <script type="text/template">
         #Today&rsquo;s goals
 
-        * Learn the basics of programming in Python. Many of the things we&rsquo;ll see today are general programming concepts that appear in other languages too.
+        * Learn the basics of programming in Python. 
         * Learn some basic features of Python that can be useful in working with data.
         * Write Python programs to answer questions about datasets.
 
         # NOT Today&rsquo;s goals
         * Math or statistical analysis (although there do exist Python libraries to help you do these things!)
+
+        <aside class="notes">
+          Many of the things we&rsquo;ll see today are general programming concepts that appear in other languages too.
+          For the less mathematically fearless: Most math we will do: largest, smallest value, averages and Python will do most of the work.
+        </aside>
       </script>
+
     </section>
 
     <section class="slide agenda" data-markdown>
@@ -141,11 +147,20 @@
 
         * Programming is basically giving instructions to your computer in a form that it can understand
         * Computers need *very specific* instructions
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Programming "Languages"
+
         * Programming languages have syntax, just like human languages have grammar rules
         * One big difference: humans can pretty easily figure out meaning of sentences that don&rsquo;t quite follow the rules of the language... computers aren&rsquo;t that smart.
 
       </script>
     </section>
+
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -241,6 +256,8 @@
       We will write our programs in .py files (or "modules", to Python programmers). 
 
       There are other ways to write and run Python code as well, but we are going to stick with .py files to make it easier to save and edit our code.
+
+      We will use our **sandbox.py** file for trying out bits of code, and we will use separate files for each main exercise. 
       </script>
     </section>
   
@@ -259,7 +276,7 @@
         2. Store the information the user gives in a **variable**.
         3. Output information so the user can see it.
 
-        We&rsquo;ll write our program in a file called **ex1.py**.
+        We&rsquo;ll write our program in a file called **ex1_hello.py**.
 
       </script>
     </section>
@@ -271,12 +288,12 @@
         Here&rsquo;s what to do:
 
         1. Go to File -> New to create a new .py file.
-        2. Go to File -> Save As... and save the file as **ex1.py** in the **exercises** folder.
+        2. Go to File -> Save As... and save the file as **ex1_hello.py** in the **exercises** folder.
         3. Type the following two lines of code **exactly** as written:
-        <pre>
+        ```python
     name = raw_input('What is your name? ')
     print('Hello', name)
-    </pre>
+    ```
         4. Click the green "Run" button.
         5. Type your name (or anything, really) at the prompt in the "Python Shell" part of the screen.
 
@@ -308,9 +325,9 @@
 
         It contains 2 lines of code, and a bunch of different programming concepts:
 
-        * functions: raw_input and print
-        * variables: name
-        * strings: 'What is your name?' and 'Hello'. Your name was stored as a string too.
+        * functions: `raw_input` and `print`
+        * variables: `name`
+        * strings: `'What is your name?'` and `'Hello'`. Your name was stored as a string too.
 
       </script>
     </section>
@@ -319,9 +336,15 @@
       <script type="text/template">
         #Functions &amp; Variables
 
-        In programming, we want to be able to take some of the work we&rsquo;ve done and store it somewhere for later. Functions are names we can use to refer to chunks of code that either we, or someone else, has written. There are LOTS of functions that already exist in Python, and we&rsquo;ll use some of them today.
+        In programming, we want to be able to take some of the work we&rsquo;ve done and store it somewhere for later, with a name or label to refer to it by. 
 
-        Variables are names we can use to refer to pieces of information that we want to work with. In this example, the variable name was used to refer to whatever you entered as your name. 
+        * Functions refer to chunks of code. There are LOTS of functions that already exist in Python, and we&rsquo;ll use some of them today.
+        * Variables refer to pieces of information that we want to work with. In this example, the variable `name` was used to refer to whatever you entered as your name. 
+
+
+        <aside class="notes">
+          You can also write your own functions, but we won&rsquo;t do that today
+        </aside>
 
       </script>
     </section>
@@ -336,11 +359,18 @@
         
         It is possible to create your own but today&rsquo;s exercises will use functions provided by Python and its libraries.
 
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Functions we just used
+
         We used two functions in our first program:
 
-        1. <code>print</code>: We&rsquo;ll use this one a lot today to see the result of whatever we just computed. Notice how we put quotes around "Hello " and not around <code>name</code> in our program. In general, put quotes around things you want to be printed exactly as is, and no quotes around variables.
+        1. `print`: We&rsquo;ll use this one a lot today to see the result of whatever we just computed. Notice how we put quotes around `"Hello "` and not around `name` in our program. In general, put quotes around things you want to be printed exactly as is, and no quotes around variables.
 
-        2. <code>raw_input</code>: This function pauses the program and waits for the user to type something. This is useful for now, but we will soon look at a better way to get information into our programs. 
+        2. `raw_input`: This function pauses the program and waits for the user to type something. This is useful for now, but we will soon look at a better way to get information into our programs. 
 
       </script>
     </section>
@@ -405,20 +435,15 @@
         #Concatenation
         **Concatenation** is used to "add" strings together by joining multiple strings into one.
         ```python
-        print("Hello " + "World!")
+        print("Hello " + "World!") # --> prints Hello World!
         ```
-        would output 
-        ```python
-        Hello World!
-        ```
-        
-        <br>
+
         But what if we try to join a string and a number?
 
         ```python
         print(2 + "2")
         ```
-        would produce something like
+        It would produce something like this: 
         ```
         Traceback (most recent call last):
         File "<input>", line 1, in <module>
@@ -441,7 +466,6 @@
         TypeError: unsupported operand type(s) for +: 'int' and 'str'
         ```
         
-        <br>
         The first `2` is an `int` and the second `"2"` is a `str`.
         
         Python doesn&rsquo;t know whether you wanted to *add two numbers* or *concatenate two strings*. Instead of guessing, it forces you to be **explicit**.
@@ -462,11 +486,7 @@
         In this example, the `int()` function can be used to convert the `"2"` string into a number.
 
         ```
-        print(2 + int("2"))
-        ```
-        would output
-        ```
-        4
+        print(2 + int("2")) # --> prints 4
         ```
         
 
@@ -489,14 +509,12 @@
         TypeError: unsupported operand type(s) for +: 'int' and 'str'
         ```
         
-        <br>
         Use the `str()` function to convert a number to a string.
 
         ```
         print(str(99) + " bottles of beer on the wall")
         ```
         
-        <br>
         The ability to tell Python to change the type will come in handy later.
 
       </script>
@@ -604,25 +622,15 @@
 
         ```
         weather = "raining"
-        print(weather == "cold")
-        print(weather == "raining")
-        ```
-        outputs
-        ```python
-        False
-        True
+        print(weather == "cold") # --> prints False
+        print(weather == "raining") # --> prints True
         ```
 
         The `!=` operator — read "not equals" — does the opposite:
 
         ```
-        print(4 != 3)
-        print(4 != 4)
-        ```
-        outputs
-        ```
-        True
-        False
+        print(4 != 3) # --> prints True
+        print(4 != 4) # --> prints False
         ```
 
       </script>
@@ -705,10 +713,7 @@
             print("x is greater than or equal to 5")
         else:
             print("x is less than 5")
-        ```
-        outputs
-        ``` 
-        x is less than 5
+        # --> prints x is less than 5
         ```
 
         **Hint:** if you&rsquo;re like me you can *never* remember which arrow is which. My trick is to look at the number of point: `>` has two points on the left but only one on the right, and 2 is greater than 1, so it&rsquo;s "greater".
@@ -732,10 +737,7 @@
 
         if weather == "raining" or snowing:
             print("bring a change of socks")
-        ```
-        outputs
-        ```python 
-        bring a change of socks
+        # --> prints bring a change of socks
         ```
       </script>
     </section>
@@ -749,20 +751,20 @@
         ```python
         if x > 0 and x < 6:
             print("x is between 0 and 6.")
+        # --> prints x is between 0 and 6.
         ```
-        outputs `x is between 0 and 6.`
 
         ```python
         if type(x) == float or type(x) == int:
             print("x is a numeric value")
+        # --> prints x is a numeric value
         ```
-        outputs `x is a numeric value`
 
         ```python
         if x > 10 and x < 0:
             print("x could never be greater than 10 AND less than 0")
+        # --> prints nothing, because the condition is False and there is no else
         ```
-        outputs nothing, because the condition is False and there is no `else`
 
       </script>
     </section>
@@ -917,20 +919,16 @@
 
         Python calls anything with a `.next()` method an _iterator_, and it can _iterate_ over a whole bunch of different things!
 
+        We can iterate over strings too.
+
         ```python
-        >>> llc = iter("LLC")
-        >>> llc.next()
-        'L'
-        >>> llc.next()
-        'L'
-        >>> llc.next()
-        'C'
-        >>> for c in "LLC":
-        ...     print("Letter: " + c)
-        ...
-        Letter: L
-        Letter: L
-        Letter: C
+        llc = "LLC"
+        for c in "LLC":
+            print("Letter: " + c)
+        # --> prints the following lines
+        # Letter: L
+        # Letter: L
+        # Letter: C
         ```
 
         `for` loops are very useful whenever we are working with large files!
@@ -980,16 +978,13 @@
 
         2. A new Python type called a *list*. Lists are ordered collections of stuff. We can access each piece on its own.
 
-        So, if we were to take the line `"Feb,cold,sunny"` and split it...
+        So, if we could take the line `"Feb,cold,sunny"` and split it at commas:
 
-        ```
-        data = "Feb,cold,sunny".split()
-        print(data)
-        ```
-        then our output would look like this:
         ```python
-        ["Feb", "cold", "sunny"]
+        data = "Feb,cold,sunny".split(',')
+        print(data) # --> prints ["Feb", "cold", "sunny"]
         ```
+        We are telling the `split` function to break the line up by commas, and what is printed is a list.
         
       </script>
     </section>
@@ -1018,19 +1013,12 @@
 
         ```python
         data = ["Feb", "cold", "sunny"]
-        print(data[0])
-        print(data[2])
-        ```
-
-        will output
-
-        ```python
-        Feb
-        sunny
+        print(data[0]) # --> prints Feb
+        print(data[2]) # --> prints sunny
         ```
 
         <aside class='notes'>
-          Talk a bit more here about 0 indexing, ie we have 5 fingers, numbered 0, 1, 2, 3, and 4.
+          Talk a bit more here about 0 indexing, ie we have 5 fingers, numbered 0, 1, 2, 3, and 4, or whatever examples you like.
         </aside>
         
       </script>
@@ -1043,7 +1031,7 @@
 
         Open `ex6_big_weather.py` and modify it print what to wear for each day.
 
-        Remember that we can convert between types! That is, we can use `int("4")` to get the number (int) 4 from the string "4".
+        Remember that we can convert between types! That is, we can use `int("4")` to get the number (int) 4 from the string `"4"`.
 
         Got it already? Try adding a modification to only print only certain days of the week.
 
@@ -1079,9 +1067,8 @@
         data_list.append(4)
         data_list.append(-2)
         data_list.append(6)
+        print(data_list) # --> prints [4, -2, 6]
         ```
-
-        After these operations, `data_list` is `[4, -2, 6]`.
 
         
       </script>
@@ -1101,9 +1088,9 @@
         max_value = max(data_list) # careful about naming variables 'max'
         min_value = min(data_list) # same with 'min'
         sum_of_values = sum(data_list)
-        print("Max:", max_value, "Min:", min_value, "Sum:", sum_of_values)
+        print("Max:", max_value, "Min:", min_value, "Sum:", sum_of_values) 
+            # --> prints Max: 6 Min: -2 Sum: 8
         ```
-        would output `Max: 6 Min: -2 Sum: 8`
 
         There is no function to find average, but there is one for length, so we could find the average of a list of numbers using `sum` and `len`, and dividing the results:
         ```python
@@ -1168,9 +1155,8 @@
         ```python
         count = 0
         count = count + 1  # or, you can write count += 1
-        print(count)
+        print(count) # --> prints 1
         ```
-        outputs `1`.
         
         Count the number of lines in **big_weather.csv** by adding one each time it loops.
 
@@ -1200,10 +1186,8 @@
         counts = {}
         counts['a'] = 0
         counts['a'] += 1
-        print(counts)
+        print(counts) # --> prints {'a': 1}
         ```
-
-        outputs `{'a': 1}`
 
         And you can use the `in` operator to see if a particular key is `in` the dictionary. The statement `'a' in counts` is True, and the statement `'b' in counts` is False.
 
@@ -1224,11 +1208,11 @@
         ```python
         month_counts = {}
         for line in weather_file
-            month = line.strip().split()[1]
-            if month in month_counts:
-                month_counts += 1
-            else:
-                month_counts[month] = 1
+          month = line.strip().split(',')[1]
+          if month in month_counts:
+            month_counts += 1
+          else:
+            month_counts[month] = 1
         ```
 
       </script>
@@ -1246,7 +1230,7 @@
 
         So far, we&rsquo;ve used small examples to practice using CSV files and recognizing patterns.
 
-        One of our datasets is the participants and volunteers in Ladies Learning Code events in 2014. Do you want to count those?
+        One of our datasets is the participants and volunteers in Ladies Learning Code events in 2015. Do you want to count those?
 
           ![oh no - laverne cox](framework/img/workshop/oh-no-laverne.gif) <!-- .element: width="45%" -->
 
@@ -1264,7 +1248,7 @@
 
         Your final project will be to learn something about a dataset. We have provided a few for you, and some questions to get you started, but feel free to try something else!
 
-        `datasets/llc-workshop-data.csv`: This dataset represents the people who participated in Ladies Learning Code events in 2014. Some things to find out:
+        `datasets/llc-workshop-data.csv`: This dataset represents the people who participated in Ladies Learning Code events in 2015. Some things to find out:
           * How many people signed up for "National Learn to Code Day"?
           * Total number of people registerd in youth-oriented "National Learn to Code Day" (ie. "Kids" and "Girls")
 
