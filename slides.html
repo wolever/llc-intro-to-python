@@ -67,12 +67,11 @@
       </h1>
       
       <!-- FILL IN INSTRUCTOR DETAILS -->      
-      <img class="instructor" src="https://pbs.twimg.com/profile_images/3709733719/47ea51066dc3a4724fb91a2a7e74f90e_400x400.jpeg" alt="David Wolever">
-      <h2><span class="cursive">with</span> David Wolever</h2>
+      <img class="instructor" src="http://www.cdf.toronto.edu/~csc108h/winter/img_web/jacqueline_pic_smaller.jpg" alt="Jacqueline Smith">
+      <h2><span class="cursive">with</span> Jacqueline Smith</h2>
       <ul>
-        <li><a href="mailto:">david@wolever.net</a></li>
-        <li><a href="https://twitter.com/wolever">@wolever</a></li>
-        <li><a href="http://wolever.net">wolever.net</a></li>
+        <li><a href="https://twitter.com/wolever">@jangle</a></li>
+        <li><a href="http://wolever.net">www.cs.toronto.edu/~jsmith</a></li>
       </ul>
       
       <div class="sponsor">
@@ -89,13 +88,11 @@
       <script type="text/template">
         #Who am I?
 
-        * Used Python for ~10 years
-        * Founder of <a href="http://pycon.ca">PyCon Canada</a>, organizer of <a href="https://us.pycon.org/2016/">PyCon</a>
-        * Spent my professional life in startups
-        * Co-founder of <a href="https://akindi.com/">Akindi</a> (like Scantron, but less terrible)
-        * Goal in life: write *Programming Python for Puppies* (stay tuned for the Kickstarter)
+        * Lecturer in Computer Science at University of Toronto
+        * Taught programming in a bunch of languages (Python is my favourite for beginners)
+        * Owner of world&rsquo;s most handsome cat
 
-        <img src="http://www.wallpaperfo.com/thumbnails/detail/20120429/computers%20dogs%20puppies%20husky%201280x800%20wallpaper_www.wallpaperfo.com_32.jpg" />
+        <img src="http://www.cs.toronto.edu/~jsmith/cat.jpg" width='400px'>
 
         <aside class="notes">
           These are some notes!
@@ -227,25 +224,26 @@
       </script>
     </section>
 
-    <section class="slide side-by-side" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
-        #Opening TODO some of this is useful, but dont need all this for Wing
+       # Getting ready
+        Open Wing101 and select **File > Open**.  
+        Navigate to the **llc-intro-to-python-master** folder, then **exercises**. Select **sandbox.py** and click **Open**.
 
-        TODO maybe add a sandbox.py file for them to open here and play around in
+        ![](framework/img/workshop/wing-1.png)
 
-        Open PyCharm and select **Open**.  
-        Navigate to the **llc-intro-to-python-master** folder & select **Choose**.
-
-        ![](framework/img/workshop/pycharm-project1.png)
-        ![](framework/img/workshop/pycharm-project2.png)
+        Then, click the green triangle (**Run**) button. 
+        ![](framework/img/workshop/wing-2.png)
         
-        The project files contained within the folder will now appear in your sidebar. Select the arrows to open the folders within. Today, you will be working from the **exercises** folder (**exercises > fr** for French).  
+        If you see this, you are good to go! If not, ask your mentor!  
         
         The **reference** folder contains the answer keys.
 
         The other folders & files are needed to make this slide presentation work, so avoid making edits to them!
 
-        ![](framework/img/workshop/pycharm-project3.png)
+      <aside class="notes">
+        We will use the sandbox to play around in.
+      </aside>
       </script>
     </section>
 
@@ -287,12 +285,12 @@
 
         Here&rsquo;s what to do:
 
-        1. Go to File -> New to create a new .py file.
-        2. Go to File -> Save As... and save the file as **ex1_hello.py** in the **exercises** folder.
+        1. Go to **File > New** to create a new .py file.
+        2. Go to **File > Save As...** and save the file as **ex1_hello.py** in the **exercises** folder.
         3. Type the following two lines of code **exactly** as written:
         ```python
     name = raw_input('What is your name? ')
-    print('Hello', name)
+    print('Hello ' + name)
     ```
         4. Click the green "Run" button.
         5. Type your name (or anything, really) at the prompt in the "Python Shell" part of the screen.
@@ -831,7 +829,7 @@
         In your `sandbox.py`, try adding the below commands.
 
         ```python
-        weather_file = open('./exercises/simple_weather.csv')
+        weather_file = open('./simple_weather.csv')
         print(weather_file.read())
         weather_file.close()
         # When you are done with a file it is a good idea to close it
@@ -851,7 +849,7 @@
         Let&rsquo;s try printing out a few individual lines using the example below.
 
         ```python
-        weather_file = open('./exercises/simple_weather.csv')
+        weather_file = open('./simple_weather.csv')
         print(weather_file.next())
         print(weather_file.next())
         print(weather_file.next())
@@ -892,7 +890,7 @@
         Here&rsquo;s some sample code:
 
         ```python
-        weather_file = open('./exercises/simple_weather.csv')
+        weather_file = open('./simple_weather.csv')
         for line in weather_file:
             print(line)
         weather_file.close()
@@ -955,9 +953,9 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Class Exercise 5: 
+        #Class Exercise 4: 
 
-        Open `ex5_simple_weather.py` and modify it to print out all of the lines in the file that represent a warm month.
+        Open `ex4_simple_weather.py` and modify it to print out all of the lines in the file that represent a warm month.
 
         Hint: use `in` to decide if a line in the file is a warm month.
 
@@ -996,7 +994,7 @@
 
         Once we have the list `["Feb", "cold", "sunny"], we can work with the individual elements.
 
-        For example, if we could update our program from Exercise 5 to only print out the months that are warm, rather than the whole row.
+        For example, if we could update our program from Exercise 4 to only print out the months that are warm, rather than the whole row.
 
         To do that, we can do what is called *indexing* into a list. We just say which position we want, inside of square brackets, ie. `data[1]`.
         
@@ -1027,9 +1025,9 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Class Exercise 6: 
+        #Class Exercise 5: 
 
-        Open `ex6_big_weather.py` and modify it print what to wear for each day.
+        Open `ex5_big_weather.py` and modify it print what to wear for each day, based on your recommendations from Exercise 3.
 
         Remember that we can convert between types! That is, we can use `int("4")` to get the number (int) 4 from the string `"4"`.
 
@@ -1088,7 +1086,7 @@
         max_value = max(data_list) # careful about naming variables 'max'
         min_value = min(data_list) # same with 'min'
         sum_of_values = sum(data_list)
-        print("Max:", max_value, "Min:", min_value, "Sum:", sum_of_values) 
+        print "Max:", max_value, "Min:", min_value, "Sum:", sum_of_values 
             # --> prints Max: 6 Min: -2 Sum: 8
         ```
 
@@ -1102,13 +1100,72 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Class Exercise 6 (continued): 
+        #Class Exercise 5 (continued): 
 
-        Add to your code in `ex6_big_weather.py` to also find the average temperature over all days in the file.
+        Add to your code in `ex5_big_weather.py` to also find the average temperature over all days in the file.
 
         
       </script>
     </section>
+
+        <section class="slide" data-markdown>
+      <script type="text/template">
+        #Counting loops
+
+        Sometimes you want to keep track of the number of times something happened. 
+
+        We can add `1` to the current value of a variable, and assign it back to the same variable. Python processes everything to the right of the `=` before assigning the result.
+
+        ```python
+        count = 0
+        count = count + 1  # or, you can write count += 1
+        print(count) # --> prints 1
+        ```
+        
+        Count the number of lines in **big_weather.csv** by adding one each time it loops.
+
+        ```python
+        weather_file = open('big_weather.csv')
+
+        line_count = 0
+        for line in weather_file:
+            line_count += 1
+
+        print("There are " + str(line_count) + " lines")
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      # Counting multiple things
+
+      What if there are multiple things we want to count?
+
+      Count the number of lines for each month in **big_weather.csv**.
+
+      ```python
+      jan_count = 0
+      feb_count = 0 
+      # ... and so on ...
+      for line in weather_file:
+        if "Jan" in line:
+          jan_count += 1
+        if "Feb" in line:
+          feb_count += 1
+        # ... and so on ... 
+      ```
+
+      Yuck.
+
+      <aside class='notes'>
+        Imagine if you were counting more than 12 different categories. What if there were hundreds and you wanted to know the most common? ie. most common word. How could you do that???
+        </aside>
+
+
+      </script>
+    </section>
+
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1144,36 +1201,7 @@
 
 
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Counting loops
 
-        Sometimes you want to keep track of the number of times something happened. 
-
-        We can add `1` to the current value of a variable, and assign it back to the same variable. Python processes everything to the right of the `=` before assigning the result.
-
-        ```python
-        count = 0
-        count = count + 1  # or, you can write count += 1
-        print(count) # --> prints 1
-        ```
-        
-        Count the number of lines in **big_weather.csv** by adding one each time it loops.
-
-        ```python
-        # file: exercises/demo_loop_count.py
-        import csv
-
-        weather_file = open('big_weather.csv')
-
-        line_count = 0
-        for line in weather_file:
-            line_count += 1
-
-        print("There are " + str(line_count) + " lines")
-        ```
-      </script>
-    </section>
 
 
     <section class="slide" data-markdown>
@@ -1216,6 +1244,27 @@
         ```
 
       </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Writing to files
+
+      So far everything we did went to the screen. This might be enough for you, but you can also write your own files.
+
+      To open a file to write to it, we have to add `"w"`:
+      ```python
+      new_file = open("my_new_file.csv", "w")
+      ```
+
+      Then, there is a function called `write` that will write whatever string you give it to a file. 
+
+      ```python
+      new_file.write(line_to_write + "\n") # "\n" is like hitting Enter after each line
+      ```
+
+      You also really need to close files (ie. `new_file.close()`) after you are completely finished writing to them. 
+      </script>
     </section>    
 
     <section class="slide title" data-markdown>
@@ -1239,6 +1288,9 @@
 
       </script>
     </section>
+
+
+
 <!-- -------------------- -->
 <!-- Begin final exercises -->
 <!-- -------------------- --> 
@@ -1248,15 +1300,18 @@
 
         Your final project will be to learn something about a dataset. We have provided a few for you, and some questions to get you started, but feel free to try something else!
 
-        `datasets/llc-workshop-data.csv`: This dataset represents the people who participated in Ladies Learning Code events in 2015. Some things to find out:
+        `../datasets/llc-workshop-data.csv`: This dataset represents the people who participated in Ladies Learning Code events in 2015. Some things to find out:
+
           * How many people signed up for "National Learn to Code Day"?
           * Total number of people registerd in youth-oriented "National Learn to Code Day" (ie. "Kids" and "Girls")
 
-        `datasets/historic_sites.csv`: This dataset represents the names and locations of historic sites in Canada.
-          * How many are in each province? 
+        `../datasets/historic_sites.csv`: This dataset represents the names and locations of historic sites in Canada.
+
+          * How many are in each province? (Watch for some bad data...)
           * What is the name of the northernmost historic site?
 
-        `datasets/dairy.csv`: This dataset represents some historic data about dairy production in Canada.
+        `../datasets/dairy.csv`: This dataset represents some historic data about dairy production in Canada.
+
           * Which decade produced the most butter?
           * Anything else really...
         
@@ -1278,32 +1333,13 @@
         * What are you interested in learning from the data?
         * What do you want the output to be?
         
-        So far we&rsquo;ve seen examples where the output goes to the screen, but you might simply want to filter out a smaller
-        set of results and write them back to a new CSV (see `reference/writing_csv.py` for an example).
-        
         Take the consumer vehicle [Fuel Consumption Ratings](http://open.canada.ca/data/en/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64). 
         You could filter out all the vehicles that require less than 10l per 100km (cheaper and greener cars).
         
       </script>
     </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-      #Writing to files
 
-      So far everything we did went to the screen. This might be enough for you, but you can also write your own files.
-
-      To write a file, use `"w"` instead of `"r"` (ie. "write" instead of "read") when you open the file.
-
-      Then, there is a function called `write` that will write whatever string you give it to a file. 
-
-      Here, you have to write your own end-of-line characters to the file, so after each line, you can use `new_file.write("\n")` to do that.
-
-      You also really need to close files (ie. `new_file.close()`) after you are completely finished writing to them. 
-
-      You can find an example of writing to a file in TODO.
-      </script>
-    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1312,7 +1348,6 @@
         ##Using Python libraries to help with our analysis
         
         * There is a LOT of code out there that people have written do to more complicated data analysis and file processing for you... and you can just use it!
-        * TODO
         
         ##Reading files in other languages (like French)
         
