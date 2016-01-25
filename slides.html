@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
+  <link rel="stylesheet" href="framework/notes/notes.css" data-noprefix>
   <link rel="shortcut icon" href="framework/img/favicon.ico">
 
   <!-- Takes care of CSS3 prefixes -->
@@ -90,7 +91,11 @@
         <img src="http://www.cs.toronto.edu/~jsmith/cat.jpg" width='400px'>
 
         <aside class="notes">
-          These are some notes!
+          <p>
+            These are presentor notes!
+          </p>
+
+          <p>Tip: add <tt>?notes=1</tt> to the URL to show them.</p>
         </aside>
       </script>
     </section>
@@ -107,8 +112,9 @@
         * Math or statistical analysis (although there do exist Python libraries to help you do these things!)
 
         <aside class="notes">
-          Many of the things we&rsquo;ll see today are general programming concepts that appear in other languages too.
-          For the less mathematically fearless: Most math we will do: largest, smallest value, averages and Python will do most of the work.
+          <p>Many of the things we&rsquo;ll see today are general programming concepts that appear in other languages too.</p>
+
+          <p>For the less mathematically fearless: Most math we will do: largest, smallest value, averages and Python will do most of the work.</p>
         </aside>
       </script>
 
@@ -202,10 +208,12 @@
 
       You will need:
 
-      1. **Python 2.7.x installed** ( [Mac](https://www.python.org/downloads/), [Windows](https://www.python.org/downloads/windows/) )
-      1. **[Wing 101](http://wingware.com/downloads/wingide-101)**
+      1. Python 2.7.x installed
+        * Windows: [Download Python for Windows](https://www.python.org/downloads/windows/)
+        * Mac: Python's already installed, you don't need to do anything!
+      1. [Wing 101](http://wingware.com/downloads/wingide-101)
       1. [Learner files from LLC (containing the exercise and reference files)](https://github.com/ladieslearningcode/llc-intro-to-python/archive/master.zip).
-        * make sure the **llc-intro-to-python-master.zip** file has been unzipped (and extracted for PC users) so you can access the contents of the folder
+        * Make sure the **llc-intro-to-python-master.zip** file has been unzipped (and extracted for PC users) so you can access the contents of the folder.
       </script>
     </section>
 
@@ -216,6 +224,13 @@
         IDEs (Integrated Development Environments) are programs we use to write programs. Use IDEs to write code faster with fewer mistakes.
         <br><br>
         ![That is awesome!](framework/img/workshop/awesome_i_hear_that_psych.gif) <!-- .element: style="width: 60%" -->
+        
+        <aside class="notes">
+          Mention that programmers often have Strong Feelings about their
+          favourite text editor, and if they express these Strong Feelings to
+          the learners, it's best to humor the programmer, then go back to using
+          whatever they're most comfortable with.
+        </aside>
       </script>
     </section>
 
@@ -236,9 +251,20 @@
 
         The other folders & files are needed to make this slide presentation work, so avoid making edits to them!
 
-      <aside class="notes">
-        We will use the sandbox to play around in.
-      </aside>
+        <aside class="notes">
+          <p>
+            We'll encourage learners to experiment with code in the
+            <tt>sandbox.py</tt> file.
+          </p>
+
+          <p>
+            Note that we are <strong><em>specifically avoiding the interactive
+            console</em></strong>. We've found that it takes some time to
+            teach learners the difference between "typing things at the
+            REPL" and "typing things into a file", so instead we're just going
+            to have them type everything into files.
+          </p>
+        </aside>
       </script>
     </section>
 
@@ -246,11 +272,11 @@
       <script type="text/template">
       #Writing Python Programs
 
-      We will write our programs in .py files (or "modules", to Python programmers). 
+      We will write our programs in .py files (Python programmers will sometimes call these "modules"). 
 
       There are other ways to write and run Python code as well, but we are going to stick with .py files to make it easier to save and edit our code.
 
-      We will use our **sandbox.py** file for trying out bits of code, and we will use separate files for each main exercise. 
+      We'll the **sandbox.py** file for trying out bits of code, then separate files for each exercise. 
       </script>
     </section>
   
@@ -283,12 +309,20 @@
         1. Go to **File > New** to create a new .py file.
         2. Go to **File > Save As...** and save the file as **ex1_hello.py** in the **exercises** folder.
         3. Type the following two lines of code **exactly** as written:
+
         ```python
-    name = raw_input('What is your name? ')
-    print('Hello ' + name)
-    ```
+        name = raw_input('What is your name? ')
+        print('Hello ' + name)
+        ```
+
         4. Click the green "Run" button.
         5. Type your name (or anything, really) at the prompt in the "Python Shell" part of the screen.
+
+        note:
+
+        Encourage learners to type out code in full instead of copy+pasting it
+        so their fingers get practice typing the programming-specific
+        characters.
 
       </script>
     </section>
@@ -299,13 +333,16 @@
 
         First of all, you may have got some errors. This is a **PERFECTLY NORMAL** part of programming. Computers aren&rsquo;t as smart as you.
 
-        Humans can read something that doesn&rsquo;t quite follow the rules of the language. Computers can&rsquo;t. Some typos in that code would cause it not to work (ie. missing a ")" or misspelling "print").
+        Humans can read something that doesn&rsquo;t quite follow the rules of the language. Computers can&rsquo;t. Some typos in that code would cause it not to work (e.g., missing a ")" or misspelling "print").
 
-        Luckily, Python tries to help us figure out what happened. Error messages contain information about where an error occurred, and what kind of error it was. With practice, you can learn to read them.
+        Luckily, Python tries to help us figure out what happened. Error messages contain information about where an error occurred, and what kind of error it was. With practice, you can learn to read them:
 
-        <aside class="notes">
-          Demo an error message here and how to read it.
-          </aside>
+        ```
+        Traceback (most recent call last):
+          File "/Users/wolever/scratch.py", line 3, in <module>
+            print('Hello, + name)
+        EOL while scanning string literal: <string>, line 3, pos 20
+        ```
 
       </script>
     </section>
@@ -320,7 +357,7 @@
 
         * functions: `raw_input` and `print`
         * variables: `name`
-        * strings: `'What is your name?'` and `'Hello'`. Your name was stored as a string too.
+        * strings: `'What is your name?'` and `'Hello'` (your name was stored as a string too)
 
       </script>
     </section>
@@ -331,13 +368,8 @@
 
         In programming, we want to be able to take some of the work we&rsquo;ve done and store it somewhere for later, with a name or label to refer to it by. 
 
-        * Functions refer to chunks of code. There are LOTS of functions that already exist in Python, and we&rsquo;ll use some of them today.
         * Variables refer to pieces of information that we want to work with. In this example, the variable `name` was used to refer to whatever you entered as your name. 
-
-
-        <aside class="notes">
-          You can also write your own functions, but we won&rsquo;t do that today
-        </aside>
+        * Functions refer to chunks of code. In this example, we used the `print` and `raw_input` functions. There are LOTS of functions that already exist in Python, and we&rsquo;ll use some of them today.
 
       </script>
     </section>
@@ -349,8 +381,19 @@
         * Functions are bundles of instructions that can be re-used
         * Reusing functions helps to reduce redundancy
         * Function can take **arguments** and can **return** values
+
+        ```
+        #      v--- function
+        name = raw_input('What is your name? ')
+        #    arguments --^
+        ```
         
-        It is possible to create your own but today&rsquo;s exercises will use functions provided by Python and its libraries.
+        It's possible to create your own, but today&rsquo;s exercises will use functions provided by Python and its libraries.
+
+        <aside class="notes">
+          Suggest that mentors can show curious learners how to write their own
+          functions later in the day.
+        </aside>
 
       </script>
     </section>
@@ -361,7 +404,7 @@
 
         We used two functions in our first program:
 
-        1. `print`: We&rsquo;ll use this one a lot today to see the result of whatever we just computed. Notice how we put quotes around `"Hello "` and not around `name` in our program. In general, put quotes around things you want to be printed exactly as is, and no quotes around variables.
+        1. `print`: We&rsquo;ll use this one a lot today to see the result of whatever we just computed. Notice how we put quotes around `'Hello '` and not around `name` in our program. In general, put quotes around things you want to be printed exactly as is, and no quotes around variables.
 
         2. `raw_input`: This function pauses the program and waits for the user to type something. This is useful for now, but we will soon look at a better way to get information into our programs. 
 
@@ -378,9 +421,9 @@
 
         ```python
         name = raw_input('What is your name? ')
-        print('I think', name, 'is not your real name...')
+        print('I think ' + name + ' is not your real name...')
         name = raw_input('What is your real name? ')
-        print('Hello', name)
+        print('Hello ' + name)
         ```
 
         We are using the same variable <code>name</code> to refer to the second thing entered as well. 
@@ -400,7 +443,7 @@
         * separate words with the underscore `_` symbol
           * e.g. `ladies_learning_code`
         * they cannot begin with a number
-          * `1day` gives you an error, `day1` will work.
+          * e.g. `1day` gives you an error, `day1` will work.
         * descriptive names will make future you happier
           * e.g. `first_name` is more descriptive than `fn`
       </script>
@@ -410,23 +453,23 @@
       <script type="text/template">
         #Data Types
 
-        The previous example used the *string* **type** but there are many more.
+        The previous example used the *string* (`str`) **type** but there are many more.
 
         * Integer (`int`, whole numbers)
         * Float (`float`, numbers containing decimals)
         * String (`str`, words, sentences, literal text)
-        * Boolean (`True`, `False`)
+        * Boolean (`True` and `False`)
         * [and many more!](http://www.diveintopython3.net/native-datatypes.html)
       
       </script>
     </section>
 
-
-
     <section class="slide" data-markdown>
       <script type="text/template">
         #Concatenation
-        **Concatenation** is used to "add" strings together by joining multiple strings into one.
+
+        **Concatenation** is a fancy word for "joining strings together".
+
         ```python
         print("Hello " + "World!") # --> prints Hello World!
         ```
@@ -436,12 +479,15 @@
         ```python
         print(2 + "2")
         ```
-        It would produce something like this: 
+
+        We'll get an error, something like this:
         ```
         Traceback (most recent call last):
-        File "<input>", line 1, in <module>
+          File ".../scratch.py", line 3, in <module>
+            print(2 + '2')
         TypeError: unsupported operand type(s) for +: 'int' and 'str'
         ```
+
       </script>
     </section>
 
@@ -455,13 +501,22 @@
 
         ```python
         Traceback (most recent call last):
-        File "<input>", line 1, in <module>
+          File ".../scratch.py", line 3, in <module>
+            print(2 + '2')
         TypeError: unsupported operand type(s) for +: 'int' and 'str'
         ```
         
-        The first `2` is an `int` and the second `"2"` is a `str`.
-        
-        Python doesn&rsquo;t know whether you wanted to *add two numbers* or *concatenate two strings*. Instead of guessing, it forces you to be **explicit**.
+        The first `2` is an `int` and the second `'2'` is a `str`.
+
+        Python doesn&rsquo;t know whether you wanted to *add two numbers* or
+        *concatenate two strings*. Instead of guessing, it forces you to be
+        **explicit**.
+
+        note:
+
+        You can use phone numbers as an example of example of something which
+        looks like a number, but it doesn't make sense to perform mathmatical
+        operations on.
 
       </script>
     </section>
@@ -474,14 +529,21 @@
       <script type="text/template">
         #Typecasting
         
-        In Python, you can *change the type*. 
-        
-        In this example, the `int()` function can be used to convert the `"2"` string into a number.
+        Sometimes we need to convert - or *cast* - a value from one type to another.
+
+        In this example, if we want to add two numbers, we can *cast* the
+        string `'2'` to an integer using the `int(…)` function:
 
         ```
-        print(2 + int("2")) # --> prints 4
+        print(2 + int('2')) # --> prints 4
         ```
-        
+
+        We could also concatenate two strings by casting the integer `2` to a
+        string with the `str(…)` function:
+
+        ```
+        print(str(2) + '2') # --> prints 22
+        ```
 
       </script>
     </section>
@@ -490,50 +552,43 @@
       <script type="text/template">
         #Typecasting (Continued)
 
-        Python can also be used to convert numbers to strings. This example...
+        We can use the same functions to change the types of variables:
 
+        ```python
+        first_number = raw_input('Enter a number: ')
+        second_number = raw_input('Enter another number: ')
+        product = int(first_number) * int(second_number)
+        print(first_number + ' times ' + second_number + ' is: ' + str(product))
         ```
-        print(99 + " bottles of beer on the wall")
-        ```
-        will produce (something like) this error...
-        ```
-        Traceback (most recent call last):
-          File "<input>", line 1, in <module>
-        TypeError: unsupported operand type(s) for +: 'int' and 'str'
-        ```
-        
-        Use the `str()` function to convert a number to a string.
 
-        ```
-        print(str(99) + " bottles of beer on the wall")
-        ```
-        
         The ability to tell Python to change the type will come in handy later.
 
       </script>
     </section>
 
-
-
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Pro Tip: Use Comments!
+        #Pro Tip: use `repr` to figure out a variable's type!
 
-        Programmers use *comments* to leave notes for themselves (and other people reading their code in the future):
+        Sometimes you may not be sure what type of value you have:
 
+        ```python
+        print(x) # prints 42
         ```
-        # This is a comment!
-        ```
-        
-        Good comments add information that isn&rsquo;t immediately obvious.
-        
-        You can also use comments to organize your code or to &rsquo;hide&rsquo; chunks of code you don&rsquo;t want to delete but are not ready to use yet. Feel free to add your own throughout the exercises!
-        
-        Note the syntax below:
 
+        Is `x` an integer or a string? Who knows!
+
+        Fortunately Python has a function called `repr` which will return a
+        string *representing* the value:
+
+        ```python
+        print(repr(42)) # prints 42
+        print(repr('42')) # prints '42'
+
+        a = 'hello'
+        print(repr(a)) # prints 'hello'
         ```
-        # Python will ignore anything after the # symbol
-        ```
+
       </script>
     </section>
 
@@ -547,35 +602,35 @@
       <script type="text/template">
         #Conditionals &amp; Logic
 
-        The program we just wrote ran straight from top to bottom. What if the program could decide what to do instead?
-        
+        So far our programs have run once, top to bottom. What if the program could decide what to do instead?
+
         `if` statements can be used to execute different sets of instructions based on specific conditions.
-        
-        Each `if` statement contains a test. The indented block of code will run if the test is `True`:
+
+        Each `if` statement contains a *test*. The indented block of code will run if the test is `True`:
 
         ```python
-        if weather == "cold":
-            print("Wear a sweater!")
+        if weather == 'cold':
+            print('Wear a sweater!')
         ```
 
         `elif` statemens can be added after an `if` statement to test for other things:
 
         ```python
-        if weather == "cold":
-            print("Wear a sweater!")
-        elif weather == "raining":
-            print("Bring an umbrella")
+        if weather == 'cold':
+            print('Wear a sweater!')
+        elif weather == 'raining':
+            print('Bring an umbrella')
         ```
 
         And a final `else` statement can be added, which run if none of the `if` or `elif` tests before it passed:
 
         ```python
-        if weather == "cold":
-            print("Wear a sweater!")
-        elif weather == "raining":
-            print("Bring an umbrella")
+        if weather == 'cold':
+            print('Wear a sweater!')
+        elif weather == 'raining':
+            print('Bring an umbrella')
         else:
-            print("Dress normally :)")
+            print('Dress normally :)')
         ```
 
       </script>
@@ -584,24 +639,44 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         #Indentation
-        
-        When writing `if` statements, Python needs you to be quite particular about indentation. 
 
-        Python gets a little bit upset when it doesn&rsquo;t get the indentation it expects:
+        Notice that we *indent* the instructions inside the body of the `if` statement.
+
+        Python gets *very* particular about this indentation. For example:
 
         ```python
-        if weather == "cold":
-            print("Wear a sweater!")
+        if weather == 'cold':
+            print('Wear a sweater!')
         else:
-        print("Dress normally :)")
+        print('Dress normally :)')
         ```
-        produces an error like 
+
+        Produces the error:
         ```python
-        File "<input>", line 5
-            print("Dress normally :)")
-                ^
-        IndentationError: expected an indented block
+        Traceback (most recent call last):
+          File ".../scratch.py", line 4, in <module>
+            print('Dress normally :)')
+        IndentationError: expected an indented block (2, line 4)
         ```
+
+        If the body of the statement contains multiple lines of code, they must
+        be indented to the same level. For example:
+
+        ```python
+        if weather == 'cold':
+            print('It will be cold today...')
+              print('Wear a sweater!')
+        ```
+
+        Will produce the error:
+
+        ```
+        Traceback (most recent call last):
+          File "/Users/wolever/scratch.py", line 3, in <module>
+            print('Wear a sweater!')
+        IndentationError: unexpected indent (2, line 3)
+        ```
+
       </script>
     </section>
 
@@ -635,12 +710,13 @@
 
         Reminder: one equals sign is used for *assignment*, two for *equality*.
 
-        This code creates a variable called `weather` that refers to the string `"raining"`:
+        This assigns the value `"raining"` to the variable `weather`:
         ```python
         weather = "raining"
         ```
-        and this code checks to see if the variable `weather` refers to the string `"raining"` or not. It is either True or False.
-        ```
+
+        This compares the variable `weather` to the string `"raining"`:
+        ```python
         weather == "raining"
         ```
 
@@ -663,9 +739,7 @@
 
         Create a new file name it `ex2_weather_advice.py`.
         
-        Use the code snippet below as a reference but try to type it out rather than copy-paste to get used to the syntax. 
-        
-        Note the whitespace. Python uses indentation to signify which block of code belongs inside the `if` or `else`.
+        Use the code snippet below as a reference but try to type it out rather than copy-paste to get your fingers accusomed to the syntax.
 
         ```python
         # file: ex2_weather_advice.py
@@ -678,10 +752,39 @@
         else:
             print("Dress normally :)")
         ```
+
         **Bonus:** Try running your file a few times to get different advice, then add a couple more conditions.
 
       </script>
     </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Pro Tip: Comments!
+
+        Programmers use *comments* to leave notes for themselves (and other people reading their code in the future):
+
+        ```
+        # This is a comment! Python will ignore everything after a #
+        ```
+        
+        Good comments add information that isn&rsquo;t immediately obvious:
+
+        ```python
+        # subtract 32 from f then multiply by 5/9 <--- not a helpful comment
+        c = (f - 32) * 5/9
+
+        # convert a temperature in ºF to ºC       <--- a helpful comment
+        c = (f - 32) * 5/9
+        ```
+        
+        You can also use comments to organize your code or to &rsquo;hide&rsquo; chunks of code you don&rsquo;t want to delete but are not ready to use yet.
+        
+        Feel free to add your own throughout the exercises!
+
+      </script>
+    </section>
+
 
 <!-- -------------------- -->
 <!-- More conditions -->
@@ -697,9 +800,9 @@
         `<`, `<=`: less than, less than or equal to
 
         ```python
-        5 > 4 # True
-        5 > 5 # False
-        5 >= 5 # True
+        print(5 > 4) # prints True
+        print(5 > 5) # prints False
+        print(5 >= 5) # prints True
 
         x = 4
         if x >= 5:
@@ -709,7 +812,10 @@
         # --> prints x is less than 5
         ```
 
-        **Hint:** if you&rsquo;re like me you can *never* remember which arrow is which. My trick is to look at the number of point: `>` has two points on the left but only one on the right, and 2 is greater than 1, so it&rsquo;s "greater".
+        **Hint:** if you&rsquo;re like me you can *never* remember which arrow is which.
+        My trick is to look at the number of points: the *greater than* symbol
+        — `>` — has *two* points on the left but only *one* on the right, and
+        two is *greater than* one.
       </script>
     </section>
     
@@ -719,14 +825,14 @@
 
         Sometimes, you can&rsquo;t neatly capture your conditions with one expression. You may need to combine multiple expressions to determine what to do next.
 
-        `and`: both things must be true  
-        `or`: either one, or both things must be true
+        `and`: both sides must be `True`
+        `or`: either or both sides can be `True`
 
         ```python
-        weather = "cold"    # assign the variable weather to the string "cold"
-        snowing = True     # assign the variable snowing to refer to True (a Boolean!)
-        weather == "cold" and snowing    # this is True
-        weather == "raining" and snowing   # this is False
+        weather = "cold"
+        snowing = True
+        print(weather == "cold" and snowing) # prints True
+        print(weather == "raining" and snowing) # prints False
 
         if weather == "raining" or snowing:
             print("bring a change of socks")
@@ -739,7 +845,7 @@
       <script type="text/template">
         #Examples with and/or
 
-        Assume for each of these that `x = 5`.
+        Assume for each of these that `x = 5`:
 
         ```python
         if x > 0 and x < 6:
@@ -756,7 +862,7 @@
         ```python
         if x > 10 and x < 0:
             print("x could never be greater than 10 AND less than 0")
-        # --> prints nothing, because the condition is False and there is no else
+        # --> prints nothing, because the condition is False
         ```
 
       </script>
@@ -769,22 +875,21 @@
         Instead of telling your program if it&rsquo;s cold, you can input the temperature and let it decide what to do.
         
         * open the existing **ex3_smarter_weather.py** file
-        * use math comparison operators, `and`/`or` to complete the exercise
+        * use math comparison operators, and the `and` and `or` operators to complete the exercise
         * follow the instructions in the comments
         * feel free to choose your own temperatures and messages :)
         
         ```
-        # if the weather is greater than or equal to 25 degrees
-        if "replace this with the right condition":
+        # Remember, we get a string from raw_input, but we need an int to compare it
+        weather = int(raw_input("What temperature is it now? (as a number, please): "))
+
+        if "the weather is greater than or equal to 25 degrees":
             print("Go to the beach!")
-        # the weather is less than 25 degrees AND greater than 15 degrees
-        elif "replace this with the right conditions":
+        elif "weather is less than 25 degrees AND greater than 15 degrees":
             # Still warm enough for ice cream!
         else:
             # Wear a sweater and dream of beaches.
         ```
-
-        
       </script>
     </section>
 
@@ -917,7 +1022,7 @@
         ```python
         llc = "LLC"
         for c in "LLC":
-            print("Letter: " + c)
+            print("Letter:", c)
         # --> prints the following lines
         # Letter: L
         # Letter: L
@@ -1412,6 +1517,8 @@
   <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <script src="framework/scripts/llc.js"></script>
+  <!-- Suffix the url with ?notes=1 to enable notes. Ex: slides.html?notes=1 -->
+  <script src="framework/notes/notes.js"></script>
   <script>
     var slideshow = new SlideShow();
 

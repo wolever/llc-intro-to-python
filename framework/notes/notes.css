@@ -36,3 +36,17 @@ aside.notes .show-hide {
     font-size: 10px;
     cursor: pointer;
 }
+
+aside.notes strong {
+    color: white;
+}
+
+/* poor man's font awesome */
+
+aside.notes .fa-arrow-down::before {
+    content: "▼";
+}
+
+aside.notes .fa-arrow-up::before {
+    content: "▲";
+}
