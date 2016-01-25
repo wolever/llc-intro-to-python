@@ -887,6 +887,8 @@
             print("Go to the beach!")
         elif "weather is less than 25 degrees AND greater than 15 degrees":
             # Still warm enough for ice cream!
+        elif "weather is less than 0 degrees":
+            # Better bundle up!
         else:
             # Wear a sweater and dream of beaches.
         ```
@@ -935,7 +937,16 @@
         # When you are done with a file it is a good idea to close it
         ```
 
-        When you run this, you should see a lot of stuff printed.
+        When you run this, you should see a lot of stuff printed:
+
+        ```
+        Month,temp,condition
+        Jan,cold,snowing
+        ...
+        ```
+
+        If you get a "No such file or directory" error, double check that you've
+        opened the `sandbox.py` file in the `exercises` folder.
       </script>
     </section>
 
@@ -943,27 +954,7 @@
       <script type="text/template">
         #Comma-Separated Values (CSV) Files
 
-        To make use of the data in a file, we need to make sense of small portions at a time.
-        In the `simple_weather.csv` file, each line of the file represents a day and its temperature.
-
-        Let&rsquo;s try printing out a few individual lines using the example below.
-
-        ```python
-        weather_file = open('./simple_weather.csv')
-        print(weather_file.next())
-        print(weather_file.next())
-        print(weather_file.next())
-        weather_file.close()
-        ```
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #One line at a time
-
-        In the previous slide we printed out three lines in the file, one at a time.  
-        Notice that all three lines have exactly three values, separated by a comma.
+        Notice that all three lines have exactly three values, separated by a comma:
 
         ```python
         Month,temp,condition
@@ -973,7 +964,7 @@
         
         * the first line shows the headings that describe the data in the next lines
         * the second and third line each represent one weather record
-        
+
         That&rsquo;s because it&rsquo;s pulling the data from the rows & columns of the CSV file.
       </script>
     </section>
@@ -982,12 +973,11 @@
       <script type="text/template">
         #Loops: Reading all the lines in a file
         
-        We&rsquo;ve just seen how to print out one line of a time but what if you need to read all the lines in the file?
+        We&rsquo;ve just seen how to print out the entire file, but what if we want to do something with each line?
 
-        In programming, to perform the same action many times in a row, **loops** are used.  
-        In Python, try using the `for` loop to print each of the rows in the file. 
-        
-        Here&rsquo;s some sample code:
+        In programming, we use *loops* to run the same instructions multiple times.
+
+        In Python, we can use a `for` loop to print each line of a file:
 
         ```python
         weather_file = open('./simple_weather.csv')
@@ -995,41 +985,10 @@
             print(line)
         weather_file.close()
         ```
-      
-        
-        More info: https://docs.python.org/2/tutorial/controlflow.html#for-statements
-      </script>
-    </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #`for` loop behind the scenes
+        Notice that the body of the `for` loop needs to be indented (just like
+        the body of an `if` statement).
 
-        The `for` loop works by calling `.next()` over and over again.
-
-        Behind the scenes, it&rsquo;s doing something roughly like:
-
-        ```python
-        while there are lines left:
-          line = weather_file.next()
-          # Execute your code block
-        ```
-
-        Python calls anything with a `.next()` method an _iterator_, and it can _iterate_ over a whole bunch of different things!
-
-        We can iterate over strings too.
-
-        ```python
-        llc = "LLC"
-        for c in "LLC":
-            print("Letter:", c)
-        # --> prints the following lines
-        # Letter: L
-        # Letter: L
-        # Letter: C
-        ```
-
-        `for` loops are very useful whenever we are working with large files!
       </script>
     </section>
 
@@ -1038,15 +997,24 @@
       <script type="text/template">
         #Checking for text in a line
 
-        One thing we might want to do is check if a line contains a certain piece of text.
+        It's often useful to check to see whether a string contains another string.
 
-        To do this, we can use the `in` operator to produce a True or False value.
+        To do this, we can use the `in` operator to produce a `True` or `False` value.
 
-        For example, the code `"sunny" in line` will be True if `"sunny"` is part of the text on `line`.
+        For example, the code `"sunny" in line` will be True if `"sunny"` is part of the text on `line`:
 
-        We can use this with an if statement to only do something in our program if a line contains particular text. 
-        
-        
+        ```python
+        line = "it is sunny today"
+        print("sunny" in line) # prints True
+        ```
+
+        We can use this with an if statement too:
+
+        ```python
+        if "sunny" in line:
+          print("It's sunny today!")
+        # prints It's sunny today!
+        ```
       </script>
     </section>
 
@@ -1057,9 +1025,16 @@
 
         Open `ex4_simple_weather.py` and modify it to print out all of the lines in the file that represent a warm month.
 
-        Hint: use `in` to decide if a line in the file is a warm month.
+        ```python
+        weather_file = open("simple_weather.csv")
 
-        
+        for line in weather_file:
+            # TODO: only print the line if it's a warm month
+            # (hint: use an if statement and the in operator)
+            print(line)
+            
+        weather_file.close()
+        ```
       </script>
     </section>
 
@@ -1070,19 +1045,27 @@
 
         What if we only wanted to print part of a line?
 
-        Here, we need a couple new things:
+        We're going to need a couple of new things:
 
-        1. A function called `split`, which splits a line (a string!) up into pieces, based on some separator. 
+        1. Some way to split a string into pieces. We're going to use Python's `split(…)` function.
 
-        2. A new Python type called a *list*. Lists are ordered collections of stuff. We can access each piece on its own.
+        2. A new type which can hold those pieces and let us access them individually. Python calls this a `list`.
 
-        So, if we could take the line `"Feb,cold,sunny"` and split it at commas:
+        Here's how we can split the string `"Feb,cold,sunny"` on the commas:
 
         ```python
-        data = "Feb,cold,sunny".split(',')
-        print(data) # --> prints ["Feb", "cold", "sunny"]
+        data = 'Feb,cold,sunny'.split(',')
+        print(data) # --> prints ['Feb', 'cold', 'sunny']
         ```
-        We are telling the `split` function to break the line up by commas, and what is printed is a list.
+
+        The `split(…)` function breaks up the string by its argument — in this
+        case a comma — and returns a `list` containing the parts.
+
+        note:
+
+        Mention that this kind of function is also called a method, and that
+        there are differences between the two, but for now we'll just call
+        them functions.
         
       </script>
     </section>
@@ -1092,12 +1075,15 @@
       <script type="text/template">
         #Accessing List Elements
 
-        Once we have the list `["Feb", "cold", "sunny"], we can work with the individual elements.
+        Once we have the list — `["Feb", "cold", "sunny"]` — we can access the individual elements.
 
-        For example, if we could update our program from Exercise 4 to only print out the months that are warm, rather than the whole row.
+        We do this by *indexing* into the list, putting the element *index* we want inside square braces:
 
-        To do that, we can do what is called *indexing* into a list. We just say which position we want, inside of square brackets, ie. `data[1]`.
-        
+        ```
+        data = ["Feb", "cold", "sunny"]
+        print(data[1]) # prints cold
+        ```
+
       </script>
     </section>
 
@@ -1125,17 +1111,37 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Class Exercise 5: 
+        #Class Exercise 5
 
-        Open `ex5_big_weather.py` and modify it print what to wear for each day, based on your recommendations from Exercise 3.
+        The file `big_weather.csv` contains the temperature for different days of different months:
 
-        Remember that we can convert between types! That is, we can use `int("4")` to get the number (int) 4 from the string `"4"`.
+        ```csv
+        Friday,July,26,-4
+        Tuesday,February,11,8
+        Thursday,February,19,0
+        ...
+        ```
 
-        Got it already? Try adding a modification to only print only certain days of the week.
+        Open `ex5_big_weather.py` and modify it to use your temperature-based
+        recommendation algorithm from exercise 3 to make a recommendation for
+        each day in `big_weather.csv`.
+
+        For example:
+
+        ```
+        Friday July 26 will be -4: better bundle up!
+        Tuesday February 11 will be 8: wear a sweater and dream of beaches
+        Thursday February 19 will be 0: better bundle up!
+        ...
+        ```
+
+        Remember that we can use `int("4")` to convert from a string to an
+        integer, and `str(6)` to convert from an integer to a string!
+
+        Got it already? Try modifying it so that it will only make
+        recommendations for weekends.
 
         ![](framework/img/workshop/pink.gif)
-
-        
       </script>
     </section>
 

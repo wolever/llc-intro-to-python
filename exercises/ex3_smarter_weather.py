@@ -5,5 +5,7 @@ if "the weather is greater than or equal to 25 degrees":
     print("Go to the beach!")
 elif "weather is less than 25 degrees AND greater than 15 degrees":
     # Still warm enough for ice cream!
+elif "weather is less than 0 degrees":
+    # Better bundle up!
 else:
     # Wear a sweater and dream of beaches.
