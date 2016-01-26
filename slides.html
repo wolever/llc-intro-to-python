@@ -933,8 +933,6 @@
         ```python
         weather_file = open('./simple_weather.csv')
         print(weather_file.read())
-        weather_file.close()
-        # When you are done with a file it is a good idea to close it
         ```
 
         When you run this, you should see a lot of stuff printed:
@@ -983,7 +981,6 @@
         weather_file = open('./simple_weather.csv')
         for line in weather_file:
             print(line)
-        weather_file.close()
         ```
 
         Notice that the body of the `for` loop needs to be indented (just like
@@ -1032,8 +1029,6 @@
             # TODO: only print the line if it's a warm month
             # (hint: use an if statement and the in operator)
             print(line)
-            
-        weather_file.close()
         ```
       </script>
     </section>
@@ -1270,12 +1265,12 @@
 
         Sometimes you want to keep track of the number of times something happened. 
 
-        We can add `1` to the current value of a variable, and assign it back to the same variable. Python processes everything to the right of the `=` before assigning the result.
+        We can do this by adding `1` to a variable, then assigning that back to the same variable:
 
         ```python
         count = 0
         count = count + 1  # or, you can write count += 1
-        print(count) # --> prints 1
+        print count # prints 1
         ```
         
         Count the number of lines in **big_weather.csv** by adding one each time it loops.
@@ -1285,9 +1280,37 @@
 
         line_count = 0
         for line in weather_file:
+            line_count = line_count + 1
+
+        print "There are", line_count, "lines!"
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Counting loops
+
+        In fact, adding a number to a variable and assigning the result back to
+        that variable is so common Python lets us take a little shortcut with
+        `+=`:
+
+        ```python
+        count = 0
+        count += 1 # exactly the same as count = count + 1
+        print count # prints 1
+        ```
+        
+        And we could re-write the line counting loop:
+
+        ```python
+        ...
+
+        line_count = 0
+        for line in weather_file:
             line_count += 1
 
-        print("There are " + str(line_count) + " lines")
+        ...
         ```
       </script>
     </section>
@@ -1305,23 +1328,23 @@
       feb_count = 0 
       # ... and so on ...
       for line in weather_file:
-        if "Jan" in line:
-          jan_count += 1
-        if "Feb" in line:
-          feb_count += 1
-        # ... and so on ... 
+          if "Jan" in line:
+              jan_count += 1
+          if "Feb" in line:
+              feb_count += 1
+          # ... and so on ... 
       ```
 
       Yuck.
 
       <aside class='notes'>
-        Imagine if you were counting more than 12 different categories. What if there were hundreds and you wanted to know the most common? ie. most common word. How could you do that???
-        </aside>
-
+        And what if you didn't even know what you were counting ahead of time -
+        for example, maybe you're trying to find the most common word. What
+        would you do then??
+      </aside>
 
       </script>
     </section>
-
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1329,52 +1352,44 @@
         
         Along with numbers, strings, and lists, dictionaries — `dict`s — are one of Python&rsquo;s fundamental types.
 
-        Dictionaries associate *keys* with *values*. For example:
+        Dictionaries associate *keys* with *values*:
 
         ```python
         person = {'name': 'David Wolever', 'twitter': '@wolever', 'following': 735}
         ```
 
-        And you use *square braces* to look up the value associated with a key:
+        And like lists, *square braces* to look up the value associated with a key:
 
         ```python
-        print(person['name'])
-        print(person['following'])
+        print person['name'] # prints David Wolever
+        print person['following'] # prints 735
         ```
-
-        will output
-        ```python
-        'David Wolever'
-        735
-        ```
-        
-        You can think of the values as the data, and the keys as labels for each piece of data. 
 
       </script>
     </section>
-
-
-
-
-
-
-
 
     <section class="slide" data-markdown>
       <script type="text/template">
         #Counting with Dictionaries
         
-        In addition to reading values from dictionaries you can also assign to them, just like you would with variables:
+        In addition to reading values from dictionaries you can also assign to
+        them, just like you would with variables:
 
         ```python
         counts = {}
         counts['a'] = 0
         counts['a'] += 1
-        print(counts) # --> prints {'a': 1}
+        print counts # prints {'a': 1}
         ```
 
-        And you can use the `in` operator to see if a particular key is `in` the dictionary. The statement `'a' in counts` is True, and the statement `'b' in counts` is False.
+        And you can use the `in` operator to see if a particular key is `in`
+        the dictionary:
 
+        ```
+        counts = {'a': 1}
+        print 'a' in counts # prints True
+        print 'b' in counts # prints False
+        ```
 
       </script>
     </section>
@@ -1390,15 +1405,17 @@
         We can use dictionaries!
 
         ```python
+        weather_file = open('big_weather.csv')
         month_counts = {}
-        for line in weather_file
-          month = line.strip().split(',')[1]
-          if month in month_counts:
-            month_counts += 1
-          else:
-            month_counts[month] = 1
+        for line in weather_file:
+            month = line.strip().split(',')[1]
+            if month in month_counts:
+                month_counts[month] += 1
+            else:
+                month_counts[month] = 1
+        print month_counts
+        # prints {'February': 28, 'October': 31, ...}
         ```
-
       </script>
     </section>
 
@@ -1408,24 +1425,31 @@
 
       So far everything we did went to the screen. This might be enough for you, but you can also write your own files.
 
-      To open a file to write to it, we have to add `"w"`:
+      To tell `open` that we intend to write to the file, we add a `"w"` argument:
+
       ```python
       new_file = open("my_new_file.csv", "w")
       ```
 
-      Then, there is a function called `write` that will write whatever string you give it to a file. 
+      (warning: `open` will clear the file when we open it for writing!)
+
+      Then we use the `.write(…)` function to write strings to the file:
 
       ```python
       new_file.write(line_to_write + "\n") # "\n" is like hitting Enter after each line
       ```
 
-      You also really need to close files (ie. `new_file.close()`) after you are completely finished writing to them. 
+      Finally, we need to `.close()` the file to signal that we're finished writing to it:
+
+      ```
+      new_file.close()
+      ```
       </script>
     </section>    
 
     <section class="slide title" data-markdown>
       <script type="text/template">
-        # So what? I can count all this stuff myself!
+        # Writing our own CSV files!
       </script>
     </section>
 
