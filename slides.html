@@ -261,7 +261,7 @@
             Note that we are <strong><em>specifically avoiding the interactive
             console</em></strong>. We've found that it takes some time to
             teach learners the difference between "typing things at the
-            REPL" and "typing things into a file", so instead we're just going
+            REPL" and "typing things into a file", so instead we're going
             to have them type everything into files.
           </p>
         </aside>
@@ -1162,7 +1162,7 @@
 
         ```
         weekend_days = ["Sat", "Sun"]
-        print weekend_days # prints ['Sat', 'Sun']
+        print(weekend_days) # prints ['Sat', 'Sun']
         ```
 
         But sometimes we want to start with an empty list:
@@ -1176,7 +1176,7 @@
         temperatures.append(4)
         temperatures.append(-2)
         temperatures.append(6)
-        print temperatures # prints [4, -2, 6]
+        print(temperatures) # prints [4, -2, 6]
         ```
 
       </script>
@@ -1206,6 +1206,19 @@
         average = sum(temperatures) / len(temperatures)
         print average # prints 2
         ```
+
+        note:
+
+        <p>
+          In the afternoon, we're going to drop the parens around print(…)
+          so we can print things without wrapping everything in str(…).
+        </p>
+
+        <p>
+          Make a note of this to the learners, and explain that "print is just
+          a little bit magic so uh don't worry about why you can give it
+          lots of arguments without the parens.
+        </p>
       </script>
     </section>
 
@@ -1292,8 +1305,7 @@
         #Counting loops
 
         In fact, adding a number to a variable and assigning the result back to
-        that variable is so common Python lets us take a little shortcut with
-        `+=`:
+        that variable is so common that we can use `+=`:
 
         ```python
         count = 0
@@ -1325,14 +1337,14 @@
 
       ```python
       jan_count = 0
-      feb_count = 0 
+      feb_count = 0
       # ... and so on ...
       for line in weather_file:
-          if "Jan" in line:
-              jan_count += 1
-          if "Feb" in line:
-              feb_count += 1
-          # ... and so on ... 
+        if "Jan" in line:
+          jan_count += 1
+        if "Feb" in line:
+          feb_count += 1
+        # ... and so on ...
       ```
 
       Yuck.
@@ -1358,7 +1370,7 @@
         person = {'name': 'David Wolever', 'twitter': '@wolever', 'following': 735}
         ```
 
-        And like lists, *square braces* to look up the value associated with a key:
+        And similar to lists, we use *square braces* to look up the value associated with a key:
 
         ```python
         print person['name'] # prints David Wolever
@@ -1378,6 +1390,7 @@
         ```python
         counts = {}
         counts['a'] = 0
+        print counts # prints {'a': 0}
         counts['a'] += 1
         print counts # prints {'a': 1}
         ```
@@ -1408,11 +1421,11 @@
         weather_file = open('big_weather.csv')
         month_counts = {}
         for line in weather_file:
-            month = line.strip().split(',')[1]
-            if month in month_counts:
-                month_counts[month] += 1
-            else:
-                month_counts[month] = 1
+          month = line.strip().split(',')[1]
+          if month in month_counts:
+            month_counts[month] += 1
+          else:
+            month_counts[month] = 1
         print month_counts
         # prints {'February': 28, 'October': 31, ...}
         ```
@@ -1447,28 +1460,71 @@
       </script>
     </section>    
 
-    <section class="slide title" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         # Writing our own CSV files!
+
+        Once we've got our data processed it's often useful load it into
+        another tool, and saving it to a CSV file is often the simplest way to
+        do that.
+
+        Python provides a `.join(…)` function which makes this easy:
+
+        ```
+        month = "January"
+        average_temp = 0.5
+        row = [month, str(average_temp)] # note: the float needs to become a string
+        print ",".join(row) # prints January,0.5
+        ```
+
+        And we can combine that with `.write(…)` like this:
+
+        ```
+        new_file = open("my_new_file.csv", "w")
+        new_file.write(",".join(row) + "\n")
+        new_file.close()
+        ```
+
+        (You may notice that you run into problems if you're saving data that
+        contains a comma - see the *Reference: the `csv` Library* slide for a more robust
+        way to read and write CSV files)
+
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Going bigger
+        # Exploring data with plot.ly
 
-        So far, we&rsquo;ve used small examples to practice using CSV files and recognizing patterns.
+        There are tons of fantastic tools for exploring data.
 
-        One of our datasets is the participants and volunteers in Ladies Learning Code events in 2015. Do you want to count those?
+        You've probably already used Excel or Google Spreadsheet!
 
-          ![oh no - laverne cox](framework/img/workshop/oh-no-laverne.gif) <!-- .element: width="45%" -->
+        I'm going to give you a *really, really* quick overview of <a href="http://plot.ly" target="_blank">plot.ly</a>
+        (I like plot.ly because it's really easy to get started, and they're
+        a Montréal-based company that uses Python).
 
-        Computers can churn through repetitive tasks, without stopping for coffee.
+        <img src="framework/img/workshop/plotly-important-options.png" alt="Plot.ly importtant options">
 
+        Suggested experiments:
+
+        * Use `datasets/monthly-average-temperatures.csv` and a line plot to compare the average temperatures in Toronto and Montreal
+        * Use `datasets/historic-sites.csv` and the "scatter map" plot type to show the locations of Canadian historical sites
+
+        note:
+
+        The important plot.ly options:
+
+        <ul>
+          <li>Add Data: upload your CSV here</li>
+          <li>Choose Plot Type: does what it says on the box</li>
+          <li>choose as x / y: pick how each column will be used</li>
+          <li>Options: add or remove optional data attributes (like, ex, text explaining data points)</li>
+          <li>Bar Chart: click here to get the chart</li>
+        </ul>
 
       </script>
     </section>
-
 
 
 <!-- -------------------- -->
@@ -1483,9 +1539,9 @@
         `../datasets/llc-workshop-data.csv`: This dataset represents the people who participated in Ladies Learning Code events in 2015. Some things to find out:
 
           * How many people signed up for "National Learn to Code Day"?
-          * Total number of people registerd in youth-oriented "National Learn to Code Day" (ie. "Kids" and "Girls")
+          * Total number of people registered in youth-oriented "National Learn to Code Day" (ie. "Kids" and "Girls")
 
-        `../datasets/historic_sites.csv`: This dataset represents the names and locations of historic sites in Canada.
+        `../datasets/historic-sites.csv`: This dataset represents the names and locations of historic sites in Canada.
 
           * How many are in each province? (Watch for some bad data...)
           * What is the name of the northernmost historic site?
@@ -1494,8 +1550,6 @@
 
           * Which decade produced the most butter?
           * Anything else really...
-        
-        
         
         **See the next slide for a bonus alternative option.**
       </script>
@@ -1507,7 +1561,7 @@
 
         You can find a few more datasets in the `datasets` folder. Most of this data came from open.canada.ca, where you can find more data than you can handle!
         
-        **Pro tip!** Open the .csv data in a program like Excel or [LibreOffice Spreadsheet](https://www.libreoffice.org/) to see the data.
+        **Pro tip!** Open the .csv data in a program like Excel, [LibreOffice](https://www.libreoffice.org/), Google Spreadsheet, or Plot.ly to see the data.
         
         * Can you identify any interesting patterns?
         * What are you interested in learning from the data?
@@ -1519,6 +1573,61 @@
       </script>
     </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Reference: the `csv` library
+
+        You may have noticed that reading and writing CSVs using `.split(…)`
+        and `.join(…)` breaks if the data contains a comma.
+
+        Python has a built-in library which can help with this!
+
+        The `csv.reader` function can be used to read from files:
+
+        ```python
+        import csv
+
+        weather_file = csv.reader(open('big_weather.csv'))
+        for row in weather_file:
+            print row # prints ['Thursday', 'January', '1', '-3.9']
+        ```
+
+        And if your CSV file has a header row:
+
+        ```
+        Month,temp,condition
+        Jan,cold,snowing
+        ...
+        ```
+
+        The `csv.DictReader` function will return dictionaries instead of lists:
+
+        ```python
+        import csv
+
+        weather_file = csv.DictReader(open('simple_weather.csv'))
+        for row in weather_file:
+          print row # prints {'Month': 'Jan', 'temp': 'cold', 'condition': 'snowing'}
+        ```
+
+        The `csv.writer` function can be used to write to them
+
+        ```python
+        import csv
+
+        new_file = open("my_new_file.csv", "w")
+        new_file_writer = csv.writer(new_file)
+        new_file_writer.writerow(["this,has,commas", "another,column"])
+        new_file.close()
+        ```
+
+        Will write:
+
+        ```
+        "this,has,commas","another,column"
+        ```
+      </script>
+    </section>
 
 
     <section class="slide" data-markdown>
@@ -1528,7 +1637,8 @@
         ##Using Python libraries to help with our analysis
         
         * There is a LOT of code out there that people have written do to more complicated data analysis and file processing for you... and you can just use it!
-        
+        * The most popular library is called Pandas: http://pandas.pydata.org/
+
         ##Reading files in other languages (like French)
         
         * Python 2.x defaults to ASCII (very basic letters and numbers)
@@ -1558,7 +1668,6 @@
         ##Other:
         
         * [Python Visualizer](http://www.pythontutor.com/visualize.html)
-        * [PyCon Canada 2015](http://pycon.ca)
         * [Python Toronto&rsquo;s slack channel](http://python-toronto-slack.herokuapp.com/)
         * @[wolever](https://twitter.com/wolever)
       </script>
