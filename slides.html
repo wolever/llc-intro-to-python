@@ -1047,7 +1047,7 @@
 
         We're going to need a couple of new things:
 
-        1. Some way to split a string into pieces. We're going to use Python's `split(…)` function.
+        1. Some way to split a string into pieces. We're going to use Python's `.split(…)` function.
 
         2. A new type which can hold those pieces and let us access them individually. Python calls this a `list`.
 
@@ -1058,7 +1058,7 @@
         print(data) # --> prints ['Feb', 'cold', 'sunny']
         ```
 
-        The `split(…)` function breaks up the string by its argument — in this
+        The `.split(…)` function breaks up the string by its argument — in this
         case a comma — and returns a `list` containing the parts.
 
         note:
@@ -1116,9 +1116,10 @@
         The file `big_weather.csv` contains the temperature for different days of different months:
 
         ```csv
-        Friday,July,26,-4
-        Tuesday,February,11,8
-        Thursday,February,19,0
+        Thursday,January,1,-3.9
+        Friday,January,2,-2.3
+        Saturday,January,3,-0.4
+        Sunday,January,4,0.2
         ...
         ```
 
@@ -1159,22 +1160,30 @@
       <script type="text/template">
         # More with Lists!
 
-        One thing we can do with lists is collect a bunch of datapoints, and then analyze them together. 
+        Lists are *super* useful, and it's worth getting to know them a bit
+        better.
 
-        We can create an empty list like so:
-        ```python
-        data_list = []
+        We've already seen examples of creating lists that already have some items:
+
+        ```
+        weekend_days = ["Sat", "Sun"]
+        print weekend_days # prints ['Sat', 'Sun']
         ```
 
-        And we can add to lists using a function called `append`:
+        But sometimes we want to start with an empty list:
+
         ```python
-        data_list.append(4)
-        data_list.append(-2)
-        data_list.append(6)
-        print(data_list) # --> prints [4, -2, 6]
+        temperatures = []
         ```
 
-        
+        Then add items to it later using the `.append(…)` function:
+        ```python
+        temperatures.append(4)
+        temperatures.append(-2)
+        temperatures.append(6)
+        print temperatures # prints [4, -2, 6]
+        ```
+
       </script>
     </section>
 
@@ -1188,19 +1197,56 @@
         For example, we can use the functions `max`, `min`, and `sum` to find the maximum value, minimum value, and the sum of values in a list. 
 
         ```python
-        data_list = [4, -2, 6]
-        max_value = max(data_list) # careful about naming variables 'max'
-        min_value = min(data_list) # same with 'min'
-        sum_of_values = sum(data_list)
-        print "Max:", max_value, "Min:", min_value, "Sum:", sum_of_values 
-            # --> prints Max: 6 Min: -2 Sum: 8
+        temperatures = [4, -2, 6]
+        max_temp = max(temperatures) # careful about naming variables 'max'
+        min_temp = min(temperatures) # same with 'min'
+        sum_temp = sum(temperatures)
+        print "Hottest:", max_value, "Coldest:", min_value
+        #  prints Hottest: 6 Coldest: -2
         ```
 
-        There is no function to find average, but there is one for length, so we could find the average of a list of numbers using `sum` and `len`, and dividing the results:
+        Python doesn't come with a function for finding the average (mean) value of a list, but we can use the `len` (length) function to do that ourselves:
+
         ```python
-        average = sum(data_list) / len(data_list)
+        average = sum(temperatures) / len(temperatures)
+        print average # prints 2
         ```
-        
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Floats and decimal numbers
+
+        The mathematically inclined among you might have noticed that the mean of 4, -2, and 6 is not 2, but 2⅔! What gives?
+
+        This is where the `float` — floating point number — type comes into play.
+
+        In Python, when you divide two integers (whole numbers) you always get a whole number back:
+
+        ```
+        print 2 / 3 # prints 0
+        ```
+
+        To get the decimal number you expect, at least one of the two numbers being divided must be a `float`:
+
+        ```
+        print 2 / float(3) # prints 0.6666666666666666
+        ```
+
+        You can also signal to Python that a number you've typed is a float by adding an explicit decimal place:
+
+        ```
+        print 1 / 2.0 # prints 0.5
+        ```
+
+        So to get the average as a decimal, we can use:
+
+        ```python
+        average = sum(temperatures) / float(len(temperatures))
+        print average # prints 2
+        ```
+
       </script>
     </section>
 
@@ -1210,11 +1256,15 @@
 
         Add to your code in `ex5_big_weather.py` to also find the average temperature over all days in the file.
 
-        
+        For example:
+
+        ```
+        Average temperature: 9.41
+        ```
       </script>
     </section>
 
-        <section class="slide" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         #Counting loops
 
