@@ -369,7 +369,7 @@
         In programming, we want to be able to take some of the work we&rsquo;ve done and store it somewhere for later, with a name or label to refer to it by. 
 
         * Variables refer to pieces of information that we want to work with. In this example, the variable `name` was used to refer to whatever you entered as your name. 
-        * Functions refer to chunks of code. In this example, we used the `print` and `raw_input` functions. There are LOTS of functions that already exist in Python, and we&rsquo;ll use some of them today.
+        * Functions refer to chunks of code. In this example, we used the `print` and `raw_input` functions. There are LOTS of functions that already exist in Python, and we'll use some of them today.
 
       </script>
     </section>
@@ -388,7 +388,7 @@
         #    arguments --^
         ```
         
-        It's possible to create your own, but today&rsquo;s exercises will use functions provided by Python and its libraries.
+        It&rsquo;s possible to create your own, but today&rsquo;s exercises will use functions provided by Python and its libraries.
 
         <aside class="notes">
           Suggest that mentors can show curious learners how to write their own
@@ -480,7 +480,7 @@
         print(2 + "2")
         ```
 
-        We'll get an error, something like this:
+        We&rsquo;ll get an error, something like this:
         ```
         Traceback (most recent call last):
           File ".../scratch.py", line 3, in <module>
@@ -515,7 +515,7 @@
         note:
 
         You can use phone numbers as an example of example of something which
-        looks like a number, but it doesn't make sense to perform mathmatical
+        looks like a number, but it doesn&rsquo;t make sense to perform mathmatical
         operations on.
 
       </script>
@@ -1452,7 +1452,7 @@
       new_file.write(line_to_write + "\n") # "\n" is like hitting Enter after each line
       ```
 
-      Finally, we need to `.close()` the file to signal that we're finished writing to it:
+      Finally, we need to `.close()` the file to signal that we&rsquo;re finished writing to it:
 
       ```
       new_file.close()
@@ -1464,7 +1464,7 @@
       <script type="text/template">
         # Writing our own CSV files!
 
-        Once we've got our data processed it's often useful load it into
+        Once we&rsquo;ve got our data processed it&rsquo;s often useful load it into
         another tool, and saving it to a CSV file is often the simplest way to
         do that.
 
@@ -1473,7 +1473,7 @@
         ```
         month = "January"
         average_temp = 0.5
-        row = [month, str(average_temp)] # note: the float needs to become a string
+        row = [month, str(average_temp)] # the float needs to become a string
         print ",".join(row) # prints January,0.5
         ```
 
@@ -1485,7 +1485,7 @@
         new_file.close()
         ```
 
-        (You may notice that you run into problems if you're saving data that
+        (You may notice that you run into problems if you&rsquo;re saving data that
         contains a comma - see the *Reference: the `csv` Library* slide for a more robust
         way to read and write CSV files)
 
@@ -1498,9 +1498,9 @@
 
         There are tons of fantastic tools for exploring data.
 
-        You've probably already used Excel or Google Spreadsheet!
+        You&rsquo;ve probably already used Excel or Google Spreadsheet!
 
-        I'm going to give you a *really, really* quick overview of <a href="http://plot.ly" target="_blank">plot.ly</a>
+        I&rsquo;m going to give you a *really, really* quick overview of <a href="http://plot.ly" target="_blank">plot.ly</a>
         (I like plot.ly because it's really easy to get started, and they're
         a Montréal-based company that uses Python).
 
@@ -1546,12 +1546,9 @@
           * How many are in each province? (Watch for some bad data...)
           * What is the name of the northernmost historic site?
 
-        `../datasets/dairy.csv`: This dataset represents some historic data about dairy production in Canada.
-
-          * Which decade produced the most butter?
-          * Anything else really...
+        You can find these and more datasets in the **datasets** folder. See **datasets/README.txt** for more information about each dataset.
         
-        **See the next slide for a bonus alternative option.**
+        **See the next slide for even more options.**
       </script>
     </section>
 
