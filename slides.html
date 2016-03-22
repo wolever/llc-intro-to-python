@@ -28,13 +28,13 @@
         <!-- ADD WIFI INFO HERE -->
         <h2>Get Connected</h2>
         <ul class="connected">
-          <li>Network: wifi network / Password: wifi password</li>
+          <li>Network: HackerYou / Password: Thisishackeryou</li>
         </ul>
         <hr>
         
         <h2>Download<br> & Install</h2>
         <ul class="downloads">
-          <li>Learner files (zip file): <a href="#">http://bit.ly/...</a>
+          <li>Learner files (zip file): <a href="http://bit.ly/llc-py-mar15">http://bit.ly/llc-py-mar15</a>
             <ul>
               <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
               <li>open <strong>slides.html</strong> in the browser to view the slides</li>
@@ -215,7 +215,7 @@
         * Windows: [Download Python for Windows](https://www.python.org/downloads/windows/)
         * Mac: Python's already installed, you don't need to do anything!
       1. [Wing 101](http://wingware.com/downloads/wingide-101)
-      1. [Learner files from LLC (containing the exercise and reference files)](https://github.com/ladieslearningcode/llc-intro-to-python/archive/master.zip)
+      1. [Learner files: bit.ly/llc-py-mar15](https://github.com/ladieslearningcode/llc-intro-to-python/archive/master.zip)
         * Make sure the **llc-intro-to-python-master.zip** file has been unzipped (and extracted for PC users) so you can access the contents of the folder.
       </script>
     </section>
@@ -830,6 +830,7 @@
         Sometimes, you can&rsquo;t neatly capture your conditions with one expression. You may need to combine multiple expressions to determine what to do next.
 
         `and`: both sides must be `True`
+
         `or`: either or both sides can be `True`
 
         ```python
@@ -1145,15 +1146,129 @@
       </script>
     </section>
 
-    <section class="slide title" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         # End of day 1! 
+
+        Email or tweet me with data and problem requests for next week:
+        
+        david@wolever.net
+
+        @wolever
+
       </script>
     </section>
 
 <!-- ==================== -->
 <!-- Afternoon Content-->
 <!-- ==================== -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Overview of Today
+
+        1. Review
+
+        2. More work with lists
+
+        3. Exercise 6: average temperature
+
+        4. Counting things
+
+        5. Exercise 7: counting warm days
+
+        6. Writing CSV files
+
+        7. Exploring data with plot.ly
+
+        8. Final exercise!
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Review: variables, loops, lists
+
+        We use *variables* to reference values:
+
+        ```python
+        name = "David"
+        weather = raw_input("What's the weather like? ")
+        ```
+
+        We use *loops* to run the same code multiple times:
+
+        ```python
+        weather_file = open("big_weather.csv")
+        for line in weather_file:
+            print line
+        ```
+
+        Which prints:
+
+        ```csv
+        Thursday,January,1,-3.9
+
+        Friday,January,2,-2.3
+
+        Saturday,January,3,-0.4
+
+        ...
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Review: variables, loops, lists
+
+        We use *lists* to store a bunch of values:
+
+        ```python
+        data = "Thursday,January,1,-3.9".split()
+        print(data) # --> prints ['Thursday', 'January', '1', '-3.9']
+        ```
+
+        Remember that we access individual elements of lists by *indexing into*
+        them using *square braces*:
+
+        ```
+        print("First item: " + data[0]) # --> prints First item: Thursday
+        print("The temperature on " + data[1] + " " + data[2] + " is " + data[3])
+        # prints The temperature on January 1 is -3.9
+        ```
+
+        And for [silly reasons](http://exple.tive.org/blarg/2013/10/22/citation-needed/) the first item in the list is at index `0`!
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Review: exercise 5
+
+        We use *lists* to store a bunch of values:
+
+        ```python
+        data = "Thursday,January,1,-3.9".split()
+        print(data) # --> prints ['Thursday', 'January', '1', '-3.9']
+        ```
+
+        Remember that we access individual elements of lists by *indexing into*
+        them using *square braces*:
+
+        ```
+        print("First item: " + data[0]) # --> prints First item: Thursday
+        print("The temperature on " + data[1] + " " + data[2] + " is " + data[3])
+        # prints The temperature on January 1 is -3.9
+        ```
+
+        And for [silly reasons](http://exple.tive.org/blarg/2013/10/22/citation-needed/) the first item in the list is at index `0`!
+
+      </script>
+    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1264,14 +1379,36 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Class Exercise 5 (continued): 
+        #Class Exercise 6: Finding the average temperature
 
-        Add to your code in `ex5_big_weather.py` to also find the average temperature over all days in the file.
+        Using the same `big_weather.csv` file from exercise 5, find the average
+        temperature over all the days of the year:
 
         For example:
 
         ```
-        Average temperature: 9.41
+        The average temperature is: 9.41
+        ```
+
+        Here's some code to start with:
+
+        ```python
+        weather_file = open("big_weather.csv")
+
+        for line in weather_file:
+            # Reminder: each line will be: Thursday,January,1,-3.9
+            line_data = line.split(",")
+            temperature = float(line_data[3])
+            print(line_data[1] + " " + line_data[2] + " is: " + str(temperature))
+            # TODO: add this day's temperature to a list of temperatures
+        # TODO: print the average of all the temperatures
+        ```
+
+        Bonus: also print the hottest and coldest days:
+
+        ```
+        The warmest day is: March 15 at 19.3 degrees
+        The coldest day is: January 3 at -4.3 degrees
         ```
       </script>
     </section>
@@ -1287,7 +1424,7 @@
         ```python
         count = 0
         count = count + 1  # or, you can write count += 1
-        print count # prints 1
+        print(count) # prints 1
         ```
         
         Count the number of lines in **big_weather.csv** by adding one each time it loops.
@@ -1299,7 +1436,7 @@
         for line in weather_file:
             line_count = line_count + 1
 
-        print "There are", line_count, "lines!"
+        print("There are" + str(line_count) + "lines!") # prints There are 360 lines!
         ```
       </script>
     </section>
@@ -1314,7 +1451,7 @@
         ```python
         count = 0
         count += 1 # exactly the same as count = count + 1
-        print count # prints 1
+        print(count) # prints 1
         ```
         
         And we could re-write the line counting loop:
@@ -1325,7 +1462,6 @@
         line_count = 0
         for line in weather_file:
             line_count += 1
-
         ...
         ```
       </script>
@@ -1377,8 +1513,8 @@
         And similar to lists, we use *square braces* to look up the value associated with a key:
 
         ```python
-        print person['name'] # prints David Wolever
-        print person['following'] # prints 735
+        print(person['name']) # prints David Wolever
+        print(person['following']) # prints 735
         ```
 
       </script>
@@ -1394,9 +1530,9 @@
         ```python
         counts = {}
         counts['a'] = 0
-        print counts # prints {'a': 0}
+        print(counts) # prints {'a': 0}
         counts['a'] += 1
-        print counts # prints {'a': 1}
+        print(counts) # prints {'a': 1}
         ```
 
         And you can use the `in` operator to see if a particular key is `in`
@@ -1404,8 +1540,8 @@
 
         ```
         counts = {'a': 1}
-        print 'a' in counts # prints True
-        print 'b' in counts # prints False
+        print('a' in counts) # prints True
+        print('b' in counts) # prints False
         ```
 
       </script>
@@ -1430,9 +1566,43 @@
             month_counts[month] += 1
           else:
             month_counts[month] = 1
-        print month_counts
+        print(month_counts)
         # prints {'February': 28, 'October': 31, ...}
         ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class Exercise 7: counting the number of warm days in each month
+
+        Using the same `big_weather.csv` file from exercise 5, find the number
+        of days which are above freezing in each month:
+
+        For example:
+
+        ```
+        Days above freezing:
+        {'February': 12, 'October': 29, ...}
+        ```
+
+        Here's some code to start with:
+
+        ```python
+        weather_file = open("big_weather.csv")
+
+        days_above_freezing = {}
+        for line in weather_file:
+            # Reminder: each line will be: Thursday,January,1,-3.9
+            line_data = line.split(",")
+            temperature = float(line_data[3])
+            # TODO: If this day is above freezing, add one to the month's
+            #       count in the days_above_freezing dict
+        # TODO: print the number of days with a temperature above freezing
+        ```
+
+        Hint: see the *Counting things you don't expect* slide.
+
       </script>
     </section>
 
@@ -1478,7 +1648,7 @@
         month = "January"
         average_temp = 0.5
         row = [month, str(average_temp)] # the float needs to become a string
-        print ",".join(row) # prints January,0.5
+        print(",".join(row)) # prints January,0.5
         ```
 
         And we can combine that with `.write(…)` like this:
@@ -1590,7 +1760,7 @@
 
         weather_file = csv.reader(open('big_weather.csv'))
         for row in weather_file:
-            print row # prints ['Thursday', 'January', '1', '-3.9']
+            print(row) # prints ['Thursday', 'January', '1', '-3.9']
         ```
 
         And if your CSV file has a header row:
@@ -1608,7 +1778,7 @@
 
         weather_file = csv.DictReader(open('simple_weather.csv'))
         for row in weather_file:
-          print row # prints {'Month': 'Jan', 'temp': 'cold', 'condition': 'snowing'}
+          print(row) # prints {'Month': 'Jan', 'temp': 'cold', 'condition': 'snowing'}
         ```
 
         The `csv.writer` function can be used to write to them
@@ -1659,6 +1829,7 @@
         * [Invent with Python](http://inventwithpython.com/pygame/index.html) - a free book which teaches Python while writing games (with sound and pictures and everything).
         * [Codeacademy&rsquo;s Python course](https://www.codecademy.com/tracks/python)
         * [Full Stack Python](http://www.fullstackpython.com)
+        * [OpenHatch](https://openhatch.org/) - gettting started with open source
 
         ##Web Development with Python:
         
