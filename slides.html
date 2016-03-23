@@ -1216,7 +1216,7 @@
         ```python
         weather_file = open("big_weather.csv")
         for line in weather_file:
-            print line
+            print(line)
         ```
 
         Which prints:
@@ -1329,7 +1329,7 @@
         max_temp = max(temperatures) # careful about naming variables 'max'
         min_temp = min(temperatures) # same with 'min'
         sum_temp = sum(temperatures)
-        print "Hottest:", max_value, "Coldest:", min_value
+        print("Hottest: " + str(max_value) + " Coldest: " + str(min_value))
         #  prints Hottest: 6 Coldest: -2
         ```
 
@@ -1337,7 +1337,7 @@
 
         ```python
         average = sum(temperatures) / len(temperatures)
-        print average # prints 2
+        print(average) # prints 2
         ```
 
         note:
@@ -1366,26 +1366,26 @@
         In Python, when you divide two integers (whole numbers) you always get a whole number back:
 
         ```
-        print 2 / 3 # prints 0
+        print(2 / 3) # prints 0
         ```
 
         To get the decimal number you expect, at least one of the two numbers being divided must be a `float`:
 
         ```
-        print 2 / float(3) # prints 0.6666666666666666
+        print(2 / float(3)) # prints 0.6666666666666666
         ```
 
         You can also signal to Python that a number you've typed is a float by adding an explicit decimal place:
 
         ```
-        print 1 / 2.0 # prints 0.5
+        print(1 / 2.0) # prints 0.5
         ```
 
         So to get the average as a decimal, we can use:
 
         ```python
         average = sum(temperatures) / float(len(temperatures))
-        print average # prints 2
+        print average # prints 2.6666666666666666
         ```
 
       </script>
@@ -1843,7 +1843,7 @@
         * [Invent with Python](http://inventwithpython.com/pygame/index.html) - a free book which teaches Python while writing games (with sound and pictures and everything).
         * [Codeacademy&rsquo;s Python course](https://www.codecademy.com/tracks/python)
         * [Full Stack Python](http://www.fullstackpython.com)
-        * [OpenHatch](https://openhatch.org/) - gettting started with open source
+        * [OpenHatch](https://openhatch.org/) - getting started with open source
         * [Pandas Cookbook](https://github.com/jvns/pandas-cookbook/) - Pandas is a powerful Python-based data analysis tool
 
         ##Web Development with Python:
